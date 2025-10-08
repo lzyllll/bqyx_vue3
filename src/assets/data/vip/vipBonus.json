@@ -1,0 +1,68 @@
+[
+    {
+        "expMul": 0,
+        "dpsVip": 0,
+        "lifeMul": 0,
+        "defenceMul": 0
+    },
+    {
+        "expMul": 0.10,
+        "dpsVip": 0.10,
+        "lifeMul": 0.20,
+        "defenceMul": 0.20
+    },
+    {
+        "expMul": 0.20,
+        "dpsVip": 0.18,
+        "lifeMul": 0.30,
+        "defenceMul": 0.30
+    },
+    {
+        "expMul": 0.30,
+        "dpsVip": 0.26,
+        "lifeMul": 0.40,
+        "defenceMul": 0.40
+    },
+    {
+        "expMul": 0.45,
+        "dpsVip": 0.34,
+        "lifeMul": 0.50,
+        "defenceMul": 0.50
+    },
+    {
+        "expMul": 0.60,
+        "dpsVip": 0.42,
+        "lifeMul": 0.60,
+        "defenceMul": 0.60
+    },
+    {
+        "expMul": 0.80,
+        "dpsVip": 0.50,
+        "lifeMul": 0.70,
+        "defenceMul": 0.70
+    },
+    {
+        "expMul": 0.95,
+        "dpsVip": 0.55,
+        "lifeMul": 0.80,
+        "defenceMul": 0.80
+    },
+    {
+        "expMul": 1.10,
+        "dpsVip": 0.60,
+        "lifeMul": 0.90,
+        "defenceMul": 0.90
+    },
+    {
+        "expMul": 1.25,
+        "dpsVip": 0.65,
+        "lifeMul": 1.00,
+        "defenceMul": 1.00
+    },
+    {
+        "expMul": 1.40,
+        "dpsVip": 0.70,
+        "lifeMul": 1.10,
+        "defenceMul": 1.10
+    }
+]

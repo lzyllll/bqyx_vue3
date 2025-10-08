@@ -1,0 +1,7 @@
+- 对应等级的文件，已做站位处理，不用考虑index为0，直接 list[lv] 就行， 
+- vehicle
+    - 掉落加成不知道怎么弄
+- PetStrenghDps
+    - 对应文件PetStrenghClass,已进行累加处理，不必执行函数累加直接对应 list[lv] 即可
+- equip
+    - evoAdd 是写死在flash中的，全局查hurtMulArr，在equipgroup中定义的

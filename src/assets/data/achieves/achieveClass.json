@@ -1,0 +1,4628 @@
+{
+  "demonTime_1": {
+    "name": "demonTime_1",
+    "cnName": "速通修罗V1",
+    "level": 1,
+    "description": "本周有1张修罗地图（非决斗）的通关时间少于30秒。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "修罗",
+    "gift": {
+      "type": "things",
+      "name": "demStone",
+      "num": 20
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "demonSingle",
+      "num": 1.0
+    }
+  },
+  "demonTime_2": {
+    "name": "demonTime_2",
+    "cnName": "速通修罗V2",
+    "level": 2,
+    "description": "本周有3张修罗地图（非决斗）的通关时间少于30秒。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "修罗",
+    "gift": {
+      "type": "things",
+      "name": "demStone",
+      "num": 20
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "demonSingle",
+      "num": 3.0
+    }
+  },
+  "demonTime_3": {
+    "name": "demonTime_3",
+    "cnName": "速通修罗V3",
+    "level": 3,
+    "description": "本周有5张修罗地图（非决斗）的通关时间少于30秒。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "修罗",
+    "gift": {
+      "type": "things",
+      "name": "demStone",
+      "num": 25
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "demonSingle",
+      "num": 5.0
+    }
+  },
+  "demonTime_4": {
+    "name": "demonTime_4",
+    "cnName": "速通修罗V4",
+    "level": 4,
+    "description": "本周有1张修罗八地图（非决斗）的通关时间少于30秒。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "修罗",
+    "gift": {
+      "type": "things",
+      "name": "demStone",
+      "num": 30
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "demonSingle8",
+      "num": 1.0
+    }
+  },
+  "demonTime_5": {
+    "name": "demonTime_5",
+    "cnName": "速通修罗V5",
+    "level": 5,
+    "description": "本周有3张修罗八地图（非决斗）的通关时间少于30秒。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "修罗",
+    "gift": {
+      "type": "things",
+      "name": "demStone",
+      "num": 35
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "demonSingle8",
+      "num": 3.0
+    }
+  },
+  "endless10": {
+    "name": "endless10",
+    "cnName": "无尽10层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第10层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.024
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 10.0
+    }
+  },
+  "endless20": {
+    "name": "endless20",
+    "cnName": "无尽20层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第20层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.048
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 20.0
+    }
+  },
+  "endless50": {
+    "name": "endless50",
+    "cnName": "无尽50层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第50层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.072
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 50.0
+    }
+  },
+  "endless80": {
+    "name": "endless80",
+    "cnName": "无尽80层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第80层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.096
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 80.0
+    }
+  },
+  "endless100": {
+    "name": "endless100",
+    "cnName": "无尽100层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第100层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.12
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 100.0
+    }
+  },
+  "endless110": {
+    "name": "endless110",
+    "cnName": "无尽110层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第110层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.132
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 110.0
+    }
+  },
+  "endless120": {
+    "name": "endless120",
+    "cnName": "无尽120层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第120层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.144
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 120.0
+    }
+  },
+  "endless130": {
+    "name": "endless130",
+    "cnName": "无尽130层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第130层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.156
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 130.0
+    }
+  },
+  "endless140": {
+    "name": "endless140",
+    "cnName": "无尽140层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第140层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.168
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 140.0
+    }
+  },
+  "endless150": {
+    "name": "endless150",
+    "cnName": "无尽150层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第150层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.18
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 150.0
+    }
+  },
+  "endless200": {
+    "name": "endless200",
+    "cnName": "无尽200层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第200层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.192
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 200.0
+    }
+  },
+  "endless300": {
+    "name": "endless300",
+    "cnName": "无尽300层",
+    "level": 0,
+    "description": "地图“实验室顶层”的无尽模式到达第300层。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "无尽",
+    "gift": {},
+    "roleBonus": {
+      "specialPartsDropPro": 0.21
+    },
+    "condition": {
+      "type": "endlessGrade99",
+      "num": 300.0
+    }
+  },
+  "VirtualScorpion1": {
+    "name": "VirtualScorpion1",
+    "cnName": "虚晶蝎x13",
+    "level": 0,
+    "description": "击败秘境“虚晶蝎”13次。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {
+      "type": "equip",
+      "name": "sprintSword_1",
+      "num": 1
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "VirtualScorpion",
+      "num": 13.0
+    }
+  },
+  "SaberTiger1": {
+    "name": "SaberTiger1",
+    "cnName": "异齿虎x13",
+    "level": 0,
+    "description": "击败秘境“异齿虎”13次。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {
+      "type": "equip",
+      "name": "saberDarts_1",
+      "num": 1
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "SaberTiger",
+      "num": 13.0
+    }
+  },
+  "wilderKing_1": {
+    "name": "wilderKing_1",
+    "cnName": "称霸秘境",
+    "level": 1,
+    "description": "击败1个地狱难度的秘境首领。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.03
+    },
+    "condition": {
+      "type": "wilderKing",
+      "num": 1.0
+    }
+  },
+  "wilderKing_2": {
+    "name": "wilderKing_2",
+    "cnName": "称霸秘境II",
+    "level": 2,
+    "description": "击败5个地狱难度的秘境首领。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.06
+    },
+    "condition": {
+      "type": "wilderKing",
+      "num": 5.0
+    }
+  },
+  "wilderKing_3": {
+    "name": "wilderKing_3",
+    "cnName": "称霸秘境III",
+    "level": 3,
+    "description": "击败13个地狱难度的秘境首领。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.09
+    },
+    "condition": {
+      "type": "wilderKing",
+      "num": 13.0
+    }
+  },
+  "wilderKing_4": {
+    "name": "wilderKing_4",
+    "cnName": "称霸秘境IV",
+    "level": 4,
+    "description": "击败20个地狱难度的秘境首领。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.12
+    },
+    "condition": {
+      "type": "wilderKing",
+      "num": 20.0
+    }
+  },
+  "wilderKing_5": {
+    "name": "wilderKing_5",
+    "cnName": "称霸秘境V",
+    "level": 5,
+    "description": "击败28个地狱难度的秘境首领。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.15
+    },
+    "condition": {
+      "type": "wilderKing",
+      "num": 28.0
+    }
+  },
+  "wilderKing_6": {
+    "name": "wilderKing_6",
+    "cnName": "称霸秘境VI",
+    "level": 6,
+    "description": "击败31个地狱难度的秘境首领。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.17
+    },
+    "condition": {
+      "type": "wilderKing",
+      "num": 31.0
+    }
+  },
+  "wilderKing_7": {
+    "name": "wilderKing_7",
+    "cnName": "称霸秘境VII",
+    "level": 7,
+    "description": "击败5个修罗难度的秘境首领。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.19
+    },
+    "condition": {
+      "type": "wilderKing7",
+      "num": 5.0
+    }
+  },
+  "wilderKing_8": {
+    "name": "wilderKing_8",
+    "cnName": "称霸秘境VIII",
+    "level": 8,
+    "description": "击败12个修罗难度的秘境首领。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.21
+    },
+    "condition": {
+      "type": "wilderKing7",
+      "num": 12.0
+    }
+  },
+  "wilderKing_9": {
+    "name": "wilderKing_9",
+    "cnName": "称霸秘境IX",
+    "level": 9,
+    "description": "击败20个修罗难度的秘境首领。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.23
+    },
+    "condition": {
+      "type": "wilderKing7",
+      "num": 20.0
+    }
+  },
+  "wilderKing_10": {
+    "name": "wilderKing_10",
+    "cnName": "称霸秘境X",
+    "level": 10,
+    "description": "击败30个修罗难度的秘境首领。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "秘境",
+    "gift": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.25
+    },
+    "condition": {
+      "type": "wilderKing7",
+      "num": 30.0
+    }
+  },
+  "weaponKillNum_1": {
+    "name": "weaponKillNum_1",
+    "cnName": "怒不可遏",
+    "level": 1,
+    "description": "在普通关卡中，使用副手消灭的敌人累计400个。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "副手消灭",
+    "gift": {},
+    "roleBonus": {
+      "bulletDedut": 0.02
+    },
+    "condition": {
+      "type": "weaponKillNum",
+      "num": 400.0
+    }
+  },
+  "weaponKillNum_2": {
+    "name": "weaponKillNum_2",
+    "cnName": "怒发冲冠",
+    "level": 2,
+    "description": "在普通关卡中，使用副手消灭的敌人累计1500个。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "副手消灭",
+    "gift": {},
+    "roleBonus": {
+      "bulletDedut": 0.06
+    },
+    "condition": {
+      "type": "weaponKillNum",
+      "num": 1500.0
+    }
+  },
+  "weaponKillNum_3": {
+    "name": "weaponKillNum_3",
+    "cnName": "怒气冲天",
+    "level": 3,
+    "description": "在普通关卡中，使用副手消灭的敌人累计3000个。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "副手消灭",
+    "gift": {},
+    "roleBonus": {
+      "bulletDedut": 0.1
+    },
+    "condition": {
+      "type": "weaponKillNum",
+      "num": 3000.0
+    }
+  },
+  "weaponKillNum_4": {
+    "name": "weaponKillNum_4",
+    "cnName": "恼羞成怒",
+    "level": 4,
+    "description": "在普通关卡中，使用副手消灭的敌人累计5000个。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "副手消灭",
+    "gift": {},
+    "roleBonus": {
+      "bulletDedut": 0.14
+    },
+    "condition": {
+      "type": "weaponKillNum",
+      "num": 5000.0
+    }
+  },
+  "weaponKillNum_5": {
+    "name": "weaponKillNum_5",
+    "cnName": "勃然大怒",
+    "level": 5,
+    "description": "在普通关卡中，使用副手消灭的敌人累计10000个。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "副手消灭",
+    "gift": {},
+    "roleBonus": {
+      "bulletDedut": 0.16
+    },
+    "condition": {
+      "type": "weaponKillNum",
+      "num": 10000.0
+    }
+  },
+  "weaponKillNum_6": {
+    "name": "weaponKillNum_6",
+    "cnName": "雷霆之怒",
+    "level": 6,
+    "description": "在普通关卡中，使用副手消灭的敌人累计20000个。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "副手消灭",
+    "gift": {},
+    "roleBonus": {
+      "bulletDedut": 0.18
+    },
+    "condition": {
+      "type": "weaponKillNum",
+      "num": 20000.0
+    }
+  },
+  "weaponKillNum_7": {
+    "name": "weaponKillNum_7",
+    "cnName": "万目睚眦",
+    "level": 7,
+    "description": "在普通关卡中，使用副手消灭的敌人累计30000个。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "副手消灭",
+    "gift": {},
+    "roleBonus": {
+      "bulletDedut": 0.2
+    },
+    "condition": {
+      "type": "weaponKillNum",
+      "num": 30000.0
+    }
+  },
+  "vehicleKillNum_1": {
+    "name": "vehicleKillNum_1",
+    "cnName": "追风逐日",
+    "level": 1,
+    "description": "在普通关卡中，使用载具消灭的敌人累计1000个。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "载具消灭",
+    "gift": {},
+    "roleBonus": {
+      "lottery": 1.0
+    },
+    "condition": {
+      "type": "vehicleKillNum",
+      "num": 1000.0
+    }
+  },
+  "vehicleKillNum_2": {
+    "name": "vehicleKillNum_2",
+    "cnName": "风驰电掣",
+    "level": 2,
+    "description": "在普通关卡中，使用载具消灭的敌人累计5000个。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "载具消灭",
+    "gift": {},
+    "roleBonus": {
+      "lottery": 3.0
+    },
+    "condition": {
+      "type": "vehicleKillNum",
+      "num": 5000.0
+    }
+  },
+  "vehicleKillNum_3": {
+    "name": "vehicleKillNum_3",
+    "cnName": "疾如雷电",
+    "level": 3,
+    "description": "在普通关卡中，使用载具消灭的敌人累计10000个。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "载具消灭",
+    "gift": {},
+    "roleBonus": {
+      "lottery": 5.0
+    },
+    "condition": {
+      "type": "vehicleKillNum",
+      "num": 10000.0
+    }
+  },
+  "vehicleKillNum_4": {
+    "name": "vehicleKillNum_4",
+    "cnName": "望尘莫及",
+    "level": 4,
+    "description": "在普通关卡中，使用载具消灭的敌人累计20000个。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "载具消灭",
+    "gift": {},
+    "roleBonus": {
+      "lottery": 7.0
+    },
+    "condition": {
+      "type": "vehicleKillNum",
+      "num": 20000.0
+    }
+  },
+  "killNum_1": {
+    "name": "killNum_1",
+    "cnName": "屠尸小兵",
+    "level": 1,
+    "description": "累计消灭500个敌人。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "屠尸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul": 0.0075
+    },
+    "condition": {
+      "type": "allKillNum",
+      "num": 500.0
+    }
+  },
+  "killNum_2": {
+    "name": "killNum_2",
+    "cnName": "屠尸勇士",
+    "level": 2,
+    "description": "累计消灭1000个敌人。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "屠尸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul": 0.015
+    },
+    "condition": {
+      "type": "allKillNum",
+      "num": 1000.0
+    }
+  },
+  "killNum_3": {
+    "name": "killNum_3",
+    "cnName": "屠尸战士",
+    "level": 3,
+    "description": "累计消灭5000个敌人。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "屠尸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul": 0.03
+    },
+    "condition": {
+      "type": "allKillNum",
+      "num": 5000.0
+    }
+  },
+  "killNum_4": {
+    "name": "killNum_4",
+    "cnName": "屠尸将军",
+    "level": 4,
+    "description": "累计消灭20000个敌人。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "屠尸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul": 0.075
+    },
+    "condition": {
+      "type": "allKillNum",
+      "num": 20000.0
+    }
+  },
+  "killNum_5": {
+    "name": "killNum_5",
+    "cnName": "屠尸王",
+    "level": 5,
+    "description": "累计消灭100000个敌人。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "屠尸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul": 0.15
+    },
+    "condition": {
+      "type": "allKillNum",
+      "num": 100000.0
+    }
+  },
+  "killNum_6": {
+    "name": "killNum_6",
+    "cnName": "屠尸大帝",
+    "level": 6,
+    "description": "累计消灭300000个敌人。",
+    "medalType": "valueCompare",
+    "category": "关卡",
+    "subcategory": "屠尸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul": 0.18
+    },
+    "condition": {
+      "type": "allKillNum",
+      "num": 300000.0
+    }
+  },
+  "rightHand_40": {
+    "name": "rightHand_40",
+    "cnName": "无敌右手40级",
+    "level": 40,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次40级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.01
+    },
+    "condition": null
+  },
+  "rightHand_45": {
+    "name": "rightHand_45",
+    "cnName": "无敌右手45级",
+    "level": 45,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次45级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.03
+    },
+    "condition": null
+  },
+  "rightHand_50": {
+    "name": "rightHand_50",
+    "cnName": "无敌右手50级",
+    "level": 50,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次50级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.05
+    },
+    "condition": null
+  },
+  "rightHand_55": {
+    "name": "rightHand_55",
+    "cnName": "无敌右手55级",
+    "level": 55,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次55级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.07
+    },
+    "condition": null
+  },
+  "rightHand_60": {
+    "name": "rightHand_60",
+    "cnName": "无敌右手60级",
+    "level": 60,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次60级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.09
+    },
+    "condition": null
+  },
+  "rightHand_65": {
+    "name": "rightHand_65",
+    "cnName": "无敌右手65级",
+    "level": 65,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次65级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.11
+    },
+    "condition": null
+  },
+  "rightHand_70": {
+    "name": "rightHand_70",
+    "cnName": "无敌右手70级",
+    "level": 70,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次70级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.13
+    },
+    "condition": null
+  },
+  "rightHand_75": {
+    "name": "rightHand_75",
+    "cnName": "超级右手75级",
+    "level": 75,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次75级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.15
+    },
+    "condition": null
+  },
+  "rightHand_80": {
+    "name": "rightHand_80",
+    "cnName": "超级右手80级",
+    "level": 80,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次80级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.16
+    },
+    "condition": null
+  },
+  "rightHand_85": {
+    "name": "rightHand_85",
+    "cnName": "超级右手85级",
+    "level": 85,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次85级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.17
+    },
+    "condition": null
+  },
+  "rightHand_90": {
+    "name": "rightHand_90",
+    "cnName": "超级右手90级",
+    "level": 90,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次90级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.18
+    },
+    "condition": null
+  },
+  "rightHand_95": {
+    "name": "rightHand_95",
+    "cnName": "超级右手95级",
+    "level": 95,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次95级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.19
+    },
+    "condition": null
+  },
+  "rightHand_99": {
+    "name": "rightHand_99",
+    "cnName": "超级右手99级",
+    "level": 99,
+    "description": "不上场任何队友和尸宠，不使用主动技能、载具、副手，同时只用徒手攻击，通关1次99级关卡。",
+    "medalType": "rightHand",
+    "category": "关卡",
+    "subcategory": "无敌右手",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_sniper": 0.2
+    },
+    "condition": null
+  },
+  "brokenGunners_30": {
+    "name": "brokenGunners_30",
+    "cnName": "破枪手30级",
+    "level": 30,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次30级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.01
+    },
+    "condition": null
+  },
+  "brokenGunners_35": {
+    "name": "brokenGunners_35",
+    "cnName": "破枪手35级",
+    "level": 35,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次35级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.03
+    },
+    "condition": null
+  },
+  "brokenGunners_40": {
+    "name": "brokenGunners_40",
+    "cnName": "破枪手40级",
+    "level": 40,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次40级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.05
+    },
+    "condition": null
+  },
+  "brokenGunners_45": {
+    "name": "brokenGunners_45",
+    "cnName": "破枪手45级",
+    "level": 45,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次45级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.08
+    },
+    "condition": null
+  },
+  "brokenGunners_50": {
+    "name": "brokenGunners_50",
+    "cnName": "破枪手50级",
+    "level": 50,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次50级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.11
+    },
+    "condition": null
+  },
+  "brokenGunners_55": {
+    "name": "brokenGunners_55",
+    "cnName": "破枪手55级",
+    "level": 55,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次55级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.14
+    },
+    "condition": null
+  },
+  "brokenGunners_60": {
+    "name": "brokenGunners_60",
+    "cnName": "破枪手60级",
+    "level": 60,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次60级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.17
+    },
+    "condition": null
+  },
+  "brokenGunners_65": {
+    "name": "brokenGunners_65",
+    "cnName": "破枪手65级",
+    "level": 65,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次65级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.2
+    },
+    "condition": null
+  },
+  "brokenGunners_70": {
+    "name": "brokenGunners_70",
+    "cnName": "破枪手70级",
+    "level": 70,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次70级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.22
+    },
+    "condition": null
+  },
+  "brokenGunners_75": {
+    "name": "brokenGunners_75",
+    "cnName": "超级破枪手75级",
+    "level": 75,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次75级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.24
+    },
+    "condition": null
+  },
+  "brokenGunners_80": {
+    "name": "brokenGunners_80",
+    "cnName": "超级破枪手80级",
+    "level": 80,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次80级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.26
+    },
+    "condition": null
+  },
+  "brokenGunners_85": {
+    "name": "brokenGunners_85",
+    "cnName": "超级破枪手85级",
+    "level": 85,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次85级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.28
+    },
+    "condition": null
+  },
+  "brokenGunners_90": {
+    "name": "brokenGunners_90",
+    "cnName": "超级破枪手90级",
+    "level": 90,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次90级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.3
+    },
+    "condition": null
+  },
+  "brokenGunners_95": {
+    "name": "brokenGunners_95",
+    "cnName": "超级破枪手95级",
+    "level": 95,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次95级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.32
+    },
+    "condition": null
+  },
+  "brokenGunners_99": {
+    "name": "brokenGunners_99",
+    "cnName": "超级破枪手99级",
+    "level": 99,
+    "description": "全队使用不装零件的蓝色或蓝色以下枪支，通关1次99级关卡。",
+    "medalType": "brokenGunners",
+    "category": "关卡",
+    "subcategory": "破枪手",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rifle": 0.34
+    },
+    "condition": null
+  },
+  "naked_30": {
+    "name": "naked_30",
+    "cnName": "裸奔王30级",
+    "level": 30,
+    "description": "全队不穿任何装备，通关1次30级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.025
+    },
+    "condition": null
+  },
+  "naked_35": {
+    "name": "naked_35",
+    "cnName": "裸奔王35级",
+    "level": 35,
+    "description": "全队不穿任何装备，通关1次35级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.075
+    },
+    "condition": null
+  },
+  "naked_40": {
+    "name": "naked_40",
+    "cnName": "裸奔王40级",
+    "level": 40,
+    "description": "全队不穿任何装备，通关1次40级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.15
+    },
+    "condition": null
+  },
+  "naked_45": {
+    "name": "naked_45",
+    "cnName": "裸奔王45级",
+    "level": 45,
+    "description": "全队不穿任何装备，通关1次45级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.225
+    },
+    "condition": null
+  },
+  "naked_50": {
+    "name": "naked_50",
+    "cnName": "裸奔王50级",
+    "level": 50,
+    "description": "全队不穿任何装备，通关1次50级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.3
+    },
+    "condition": null
+  },
+  "naked_55": {
+    "name": "naked_55",
+    "cnName": "裸奔王55级",
+    "level": 55,
+    "description": "全队不穿任何装备，通关1次55级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.35
+    },
+    "condition": null
+  },
+  "naked_60": {
+    "name": "naked_60",
+    "cnName": "裸奔王60级",
+    "level": 60,
+    "description": "全队不穿任何装备，通关1次60级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.4
+    },
+    "condition": null
+  },
+  "naked_65": {
+    "name": "naked_65",
+    "cnName": "裸奔王65级",
+    "level": 65,
+    "description": "全队不穿任何装备，通关1次65级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.45
+    },
+    "condition": null
+  },
+  "naked_70": {
+    "name": "naked_70",
+    "cnName": "裸奔王70级",
+    "level": 70,
+    "description": "全队不穿任何装备，通关1次70级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.5
+    },
+    "condition": null
+  },
+  "naked_75": {
+    "name": "naked_75",
+    "cnName": "超级裸奔王75级",
+    "level": 75,
+    "description": "全队不穿任何装备，通关1次75级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.55
+    },
+    "condition": null
+  },
+  "naked_80": {
+    "name": "naked_80",
+    "cnName": "超级裸奔王80级",
+    "level": 80,
+    "description": "全队不穿任何装备，通关1次80级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.575
+    },
+    "condition": null
+  },
+  "naked_85": {
+    "name": "naked_85",
+    "cnName": "超级裸奔王85级",
+    "level": 85,
+    "description": "全队不穿任何装备，通关1次85级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.6
+    },
+    "condition": null
+  },
+  "naked_90": {
+    "name": "naked_90",
+    "cnName": "超级裸奔王90级",
+    "level": 90,
+    "description": "全队不穿任何装备，通关1次90级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.65
+    },
+    "condition": null
+  },
+  "naked_95": {
+    "name": "naked_95",
+    "cnName": "超级裸奔王95级",
+    "level": 95,
+    "description": "全队不穿任何装备，通关1次95级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.7
+    },
+    "condition": null
+  },
+  "naked_99": {
+    "name": "naked_99",
+    "cnName": "超级裸奔王99级",
+    "level": 99,
+    "description": "全队不穿任何装备，通关1次99级关卡。",
+    "medalType": "naked",
+    "category": "关卡",
+    "subcategory": "裸装通关",
+    "gift": {},
+    "roleBonus": {
+      "lifeRateMul": 0.75
+    },
+    "condition": null
+  },
+  "seconds15_1": {
+    "name": "seconds15_1",
+    "cnName": "速灭狂战尸",
+    "level": 1,
+    "description": "消灭狂战尸，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.01
+    },
+    "condition": null
+  },
+  "seconds15_2": {
+    "name": "seconds15_2",
+    "cnName": "速灭狂战射手",
+    "level": 2,
+    "description": "消灭狂战射手，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.03
+    },
+    "condition": null
+  },
+  "seconds15_3": {
+    "name": "seconds15_3",
+    "cnName": "速灭巨毒尸",
+    "level": 3,
+    "description": "消灭巨毒尸，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.06
+    },
+    "condition": null
+  },
+  "seconds15_4": {
+    "name": "seconds15_4",
+    "cnName": "速灭霸王毒蛛",
+    "level": 4,
+    "description": "消灭霸王毒蛛，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.09
+    },
+    "condition": null
+  },
+  "seconds15_5": {
+    "name": "seconds15_5",
+    "cnName": "速灭暴君",
+    "level": 5,
+    "description": "消灭暴君，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.12
+    },
+    "condition": null
+  },
+  "seconds15_6": {
+    "name": "seconds15_6",
+    "cnName": "速灭天鹰小美",
+    "level": 6,
+    "description": "消灭天鹰小美，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.14
+    },
+    "condition": null
+  },
+  "seconds15_7": {
+    "name": "seconds15_7",
+    "cnName": "速灭钢铁僵尸王",
+    "level": 7,
+    "description": "消灭钢铁僵尸王，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.16
+    },
+    "condition": null
+  },
+  "seconds15_8": {
+    "name": "seconds15_8",
+    "cnName": "速灭飓风巫尸",
+    "level": 8,
+    "description": "消灭飓风巫尸，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.18
+    },
+    "condition": null
+  },
+  "seconds15_9": {
+    "name": "seconds15_9",
+    "cnName": "速灭无疆骑士",
+    "level": 9,
+    "description": "消灭无疆骑士，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.2
+    },
+    "condition": null
+  },
+  "seconds15_10": {
+    "name": "seconds15_10",
+    "cnName": "速灭火炮尸狼",
+    "level": 10,
+    "description": "消灭火炮尸狼，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.22
+    },
+    "condition": null
+  },
+  "seconds15_11": {
+    "name": "seconds15_11",
+    "cnName": "速灭狂战狼",
+    "level": 11,
+    "description": "消灭狂战狼，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.23
+    },
+    "condition": null
+  },
+  "seconds15_12": {
+    "name": "seconds15_12",
+    "cnName": "速灭狂野收割者",
+    "level": 12,
+    "description": "消灭狂野收割者，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.24
+    },
+    "condition": null
+  },
+  "seconds15_13": {
+    "name": "seconds15_13",
+    "cnName": "速灭毒魔",
+    "level": 13,
+    "description": "消灭毒魔，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.25
+    },
+    "condition": null
+  },
+  "seconds15_14": {
+    "name": "seconds15_14",
+    "cnName": "速灭狂人机器",
+    "level": 14,
+    "description": "消灭狂人机器，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.26
+    },
+    "condition": null
+  },
+  "seconds15_15": {
+    "name": "seconds15_15",
+    "cnName": "速灭末日坦克",
+    "level": 15,
+    "description": "消灭末日坦克，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.27
+    },
+    "condition": null
+  },
+  "seconds15_16": {
+    "name": "seconds15_16",
+    "cnName": "速灭战神",
+    "level": 16,
+    "description": "消灭战神，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需15秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.28
+    },
+    "condition": null
+  },
+  "seconds15_17": {
+    "name": "seconds15_17",
+    "cnName": "瞬秒末日坦克",
+    "level": 17,
+    "description": "消灭末日坦克，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需5秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.29
+    },
+    "condition": null
+  },
+  "seconds15_18": {
+    "name": "seconds15_18",
+    "cnName": "瞬秒战神",
+    "level": 18,
+    "description": "消灭战神，不使用首领召唤卡和魂卡的情况下，从它出现到被消灭，只需5秒！",
+    "medalType": "liveTime",
+    "category": "关卡",
+    "subcategory": "快速击毙",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_rocket": 0.3
+    },
+    "condition": null
+  },
+  "winNoHurt": {
+    "name": "winNoHurt",
+    "cnName": "绝缘体",
+    "level": 0,
+    "description": "保证在不受到任何伤害的情况下，通关任意关卡。",
+    "medalType": "heroHurtLess",
+    "category": "关卡",
+    "subcategory": "绝缘体",
+    "gift": {},
+    "roleBonus": {
+      "dodge": 0.02
+    },
+    "condition": null
+  },
+  "winNoHurtSuper": {
+    "name": "winNoHurtSuper",
+    "cnName": "超级绝缘体",
+    "level": 0,
+    "description": "保证在不受到任何伤害的情况下，通关与你同等级的关卡。",
+    "medalType": "heroHurtLess",
+    "category": "关卡",
+    "subcategory": "绝缘体",
+    "gift": {},
+    "roleBonus": {
+      "dodge": 0.05
+    },
+    "condition": null
+  },
+  "winLessLife": {
+    "name": "winLessLife",
+    "cnName": "涉险过关",
+    "level": 0,
+    "description": "消灭与你同级的首领之后，你的生命值小于0.05！",
+    "medalType": "heroLifeMulLess",
+    "category": "关卡",
+    "subcategory": "其他",
+    "gift": {},
+    "roleBonus": {
+      "headMul": 0.1
+    },
+    "condition": null
+  },
+  "goodLuck_2": {
+    "name": "goodLuck_2",
+    "cnName": "霞光好人品",
+    "level": 2,
+    "description": "消灭1位首领同时掉落2个橙色装备或武器。",
+    "medalType": "dropOrange",
+    "category": "掉落收集",
+    "subcategory": "好人品",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_pistol": 0.06
+    },
+    "condition": null
+  },
+  "goodLuck_3": {
+    "name": "goodLuck_3",
+    "cnName": "中国好人品",
+    "level": 3,
+    "description": "消灭1位首领同时掉落3个橙色装备或武器。",
+    "medalType": "dropOrange",
+    "category": "掉落收集",
+    "subcategory": "好人品",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_pistol": 0.11
+    },
+    "condition": null
+  },
+  "lowLuck_100": {
+    "name": "lowLuck_100",
+    "cnName": "霞光渣人品",
+    "level": 100,
+    "description": "连续消灭10个首领都不掉落橙色装备或者武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "渣人品",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_rifle": 0.03
+    },
+    "condition": {
+      "type": "bossNoOrangeNum",
+      "num": 10.0
+    }
+  },
+  "lowLuck_200": {
+    "name": "lowLuck_200",
+    "cnName": "中国渣人品",
+    "level": 200,
+    "description": "连续消灭20个首领都不掉落橙色装备或者武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "渣人品",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul_rifle": 0.06
+    },
+    "condition": {
+      "type": "bossNoOrangeNum",
+      "num": 20.0
+    }
+  },
+  "oneSuit_50": {
+    "name": "oneSuit_50",
+    "cnName": "豪华套装50级",
+    "level": 50,
+    "description": "集齐1套50级（或以上）的橙色（或以上）套装，并穿上它！",
+    "medalType": "oneSuit",
+    "category": "掉落收集",
+    "subcategory": "套装",
+    "gift": {},
+    "roleBonus": {
+      "reload": 0.09
+    },
+    "condition": null
+  },
+  "redSuit_55": {
+    "name": "redSuit_55",
+    "cnName": "红色套装55级",
+    "level": 55,
+    "description": "集齐1套55级（或以上）的红色（或以上）套装，并穿上它！",
+    "medalType": "oneSuit",
+    "category": "掉落收集",
+    "subcategory": "套装",
+    "gift": {},
+    "roleBonus": {
+      "reload": 0.135
+    },
+    "condition": null
+  },
+  "redSuit_60": {
+    "name": "redSuit_60",
+    "cnName": "红色套装60级",
+    "level": 60,
+    "description": "集齐1套60级（或以上）的红色（或以上）套装，并穿上它！",
+    "medalType": "oneSuit",
+    "category": "掉落收集",
+    "subcategory": "套装",
+    "gift": {},
+    "roleBonus": {
+      "reload": 0.165
+    },
+    "condition": null
+  },
+  "redSuit_65": {
+    "name": "redSuit_65",
+    "cnName": "红色套装65级",
+    "level": 65,
+    "description": "集齐1套65级（或以上）的红色（或以上）套装，并穿上它！",
+    "medalType": "oneSuit",
+    "category": "掉落收集",
+    "subcategory": "套装",
+    "gift": {},
+    "roleBonus": {
+      "reload": 0.195
+    },
+    "condition": null
+  },
+  "redSuit_70": {
+    "name": "redSuit_70",
+    "cnName": "红色套装70级",
+    "level": 70,
+    "description": "集齐1套70级（或以上）的红色（或以上）套装，并穿上它！",
+    "medalType": "oneSuit",
+    "category": "掉落收集",
+    "subcategory": "套装",
+    "gift": {},
+    "roleBonus": {
+      "reload": 0.225
+    },
+    "condition": null
+  },
+  "redSuit_75": {
+    "name": "redSuit_75",
+    "cnName": "红色稀有套装75级",
+    "level": 75,
+    "description": "集齐1套75级（或以上）的红色稀有套装，并穿上它！",
+    "medalType": "oneSuit",
+    "category": "掉落收集",
+    "subcategory": "套装",
+    "gift": {},
+    "roleBonus": {
+      "reload": 0.255
+    },
+    "condition": null
+  },
+  "redSuit_80": {
+    "name": "redSuit_80",
+    "cnName": "红色稀有套装80级",
+    "level": 80,
+    "description": "集齐1套80级（或以上）的红色稀有套装，并穿上它！",
+    "medalType": "oneSuit",
+    "category": "掉落收集",
+    "subcategory": "套装",
+    "gift": {},
+    "roleBonus": {
+      "reload": 0.27
+    },
+    "condition": null
+  },
+  "redSuit_85": {
+    "name": "redSuit_85",
+    "cnName": "黑色稀有套装85级",
+    "level": 85,
+    "description": "集齐1套85级（或以上）的黑色（或以上）稀有套装，并穿上它！",
+    "medalType": "oneSuit",
+    "category": "掉落收集",
+    "subcategory": "套装",
+    "gift": {},
+    "roleBonus": {
+      "reload": 0.285
+    },
+    "condition": null
+  },
+  "dpsEquip_50": {
+    "name": "dpsEquip_50",
+    "cnName": "战斗神装50级",
+    "level": 50,
+    "description": "获得1件50级（或以上）拥有4个战斗力或伤害属性的装备，并穿上它！",
+    "medalType": "dpsEquip",
+    "category": "掉落收集",
+    "subcategory": "战斗神装",
+    "gift": {},
+    "roleBonus": {
+      "chargerMul": 0.06
+    },
+    "condition": null
+  },
+  "dpsEquip_55": {
+    "name": "dpsEquip_55",
+    "cnName": "战斗神装55级",
+    "level": 55,
+    "description": "获得1件55级（或以上）拥有4个战斗力或伤害属性的装备，并穿上它！",
+    "medalType": "dpsEquip",
+    "category": "掉落收集",
+    "subcategory": "战斗神装",
+    "gift": {},
+    "roleBonus": {
+      "chargerMul": 0.09
+    },
+    "condition": null
+  },
+  "dpsEquip_60": {
+    "name": "dpsEquip_60",
+    "cnName": "战斗神装60级",
+    "level": 60,
+    "description": "获得1件60级（或以上）拥有4个战斗力或伤害属性的装备，并穿上它！",
+    "medalType": "dpsEquip",
+    "category": "掉落收集",
+    "subcategory": "战斗神装",
+    "gift": {},
+    "roleBonus": {
+      "chargerMul": 0.11
+    },
+    "condition": null
+  },
+  "dpsEquip_65": {
+    "name": "dpsEquip_65",
+    "cnName": "战斗神装65级",
+    "level": 65,
+    "description": "获得1件65级（或以上）拥有4个战斗力或伤害属性的装备，并穿上它！",
+    "medalType": "dpsEquip",
+    "category": "掉落收集",
+    "subcategory": "战斗神装",
+    "gift": {},
+    "roleBonus": {
+      "chargerMul": 0.13
+    },
+    "condition": null
+  },
+  "dpsEquip_70": {
+    "name": "dpsEquip_70",
+    "cnName": "战斗神装70级",
+    "level": 70,
+    "description": "获得1件70级（或以上）拥有4个战斗力或伤害属性的装备，并穿上它！",
+    "medalType": "dpsEquip",
+    "category": "掉落收集",
+    "subcategory": "战斗神装",
+    "gift": {},
+    "roleBonus": {
+      "chargerMul": 0.14
+    },
+    "condition": null
+  },
+  "blackEquip_1": {
+    "name": "blackEquip_1",
+    "cnName": "黑色神装",
+    "level": 1,
+    "description": "穿上至少2件暗黑装备。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "黑色神装",
+    "gift": {},
+    "roleBonus": {
+      "chargerMul": 0.16
+    },
+    "condition": {
+      "type": "blackEquipNum",
+      "num": 2.0
+    }
+  },
+  "blackEquip_2": {
+    "name": "blackEquip_2",
+    "cnName": "黑色神装II",
+    "level": 2,
+    "description": "穿上至少3件暗黑装备。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "黑色神装",
+    "gift": {},
+    "roleBonus": {
+      "chargerMul": 0.18
+    },
+    "condition": {
+      "type": "blackEquipNum",
+      "num": 3.0
+    }
+  },
+  "blackEquip_3": {
+    "name": "blackEquip_3",
+    "cnName": "黑色神装III",
+    "level": 3,
+    "description": "穿上至少4件暗黑装备。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "黑色神装",
+    "gift": {},
+    "roleBonus": {
+      "chargerMul": 0.2
+    },
+    "condition": {
+      "type": "blackEquipNum",
+      "num": 4.0
+    }
+  },
+  "blackEquip_4": {
+    "name": "blackEquip_4",
+    "cnName": "黑色神装IV",
+    "level": 4,
+    "description": "穿上至少4件进化至“绝世”的暗黑装备。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "黑色神装",
+    "gift": {},
+    "roleBonus": {
+      "chargerMul": 0.22
+    },
+    "condition": {
+      "type": "blackEquipEvo7Num",
+      "num": 4.0
+    }
+  },
+  "armsDropNum_1": {
+    "name": "armsDropNum_1",
+    "cnName": "武器收集者",
+    "level": 1,
+    "description": "消灭怪物累计获得超过100把武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "武器收集",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul": 0.0225
+    },
+    "condition": {
+      "type": "dropArmsNum",
+      "num": 100.0
+    }
+  },
+  "armsDropNum_2": {
+    "name": "armsDropNum_2",
+    "cnName": "武器收集专家",
+    "level": 2,
+    "description": "消灭怪物累计获得超过200把武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "武器收集",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul": 0.0375
+    },
+    "condition": {
+      "type": "dropArmsNum",
+      "num": 200.0
+    }
+  },
+  "armsDropNum_3": {
+    "name": "armsDropNum_3",
+    "cnName": "武器收集大师",
+    "level": 3,
+    "description": "消灭怪物累计获得超过1000把武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "武器收集",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul": 0.075
+    },
+    "condition": {
+      "type": "dropArmsNum",
+      "num": 1000.0
+    }
+  },
+  "armsDropNum_4": {
+    "name": "armsDropNum_4",
+    "cnName": "武器收集宗师",
+    "level": 4,
+    "description": "消灭怪物累计获得超过4000把武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "武器收集",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul": 0.105
+    },
+    "condition": {
+      "type": "dropArmsNum",
+      "num": 4000.0
+    }
+  },
+  "armsDropNum_5": {
+    "name": "armsDropNum_5",
+    "cnName": "武器收集王",
+    "level": 5,
+    "description": "消灭怪物累计获得超过10000把武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "武器收集",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul": 0.135
+    },
+    "condition": {
+      "type": "dropArmsNum",
+      "num": 10000.0
+    }
+  },
+  "armsDropNum_6": {
+    "name": "armsDropNum_6",
+    "cnName": "武器收集大帝",
+    "level": 6,
+    "description": "消灭怪物累计获得超过30000把武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "武器收集",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul": 0.15
+    },
+    "condition": {
+      "type": "dropArmsNum",
+      "num": 30000.0
+    }
+  },
+  "rareArmsBook": {
+    "name": "rareArmsBook",
+    "cnName": "武以稀为贵",
+    "level": 0,
+    "description": "收集图鉴中所有稀有武器，一共14把。（打开“图鉴>武器>稀有武器”刷新此数据）",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "武器收集",
+    "gift": {
+      "type": "things",
+      "name": "doubleArmsCard",
+      "num": 3
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "redArmsBook",
+      "num": 14.0
+    }
+  },
+  "blackArms_1": {
+    "name": "blackArms_1",
+    "cnName": "黑武收集专家",
+    "level": 1,
+    "description": "至少获得3把黑色武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "黑武收集",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul": 0.15
+    },
+    "condition": {
+      "type": "blackArmsNum",
+      "num": 3.0
+    }
+  },
+  "blackArms_2": {
+    "name": "blackArms_2",
+    "cnName": "黑武收集大师",
+    "level": 2,
+    "description": "至少获得5把黑色武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "黑武收集",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul": 0.165
+    },
+    "condition": {
+      "type": "blackArmsNum",
+      "num": 5.0
+    }
+  },
+  "blackArms_3": {
+    "name": "blackArms_3",
+    "cnName": "黑武收集宗师",
+    "level": 3,
+    "description": "至少获得7把黑色武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "黑武收集",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul": 0.18
+    },
+    "condition": {
+      "type": "blackArmsNum",
+      "num": 7.0
+    }
+  },
+  "blackArms_4": {
+    "name": "blackArms_4",
+    "cnName": "黑武收集王",
+    "level": 4,
+    "description": "至少获得10把黑色武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "黑武收集",
+    "gift": {},
+    "roleBonus": {
+      "hurtMul": 0.195
+    },
+    "condition": {
+      "type": "blackArmsNum",
+      "num": 10.0
+    }
+  },
+  "darkgoldArms_1": {
+    "name": "darkgoldArms_1",
+    "cnName": "金武收集专家",
+    "level": 1,
+    "description": "至少获得1种暗金武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "神武收集",
+    "gift": {},
+    "roleBonus": {
+      "blackArmsDropPro": 0.05
+    },
+    "condition": {
+      "type": "darkgoldArmsNum",
+      "num": 1.0
+    }
+  },
+  "darkgoldArms_2": {
+    "name": "darkgoldArms_2",
+    "cnName": "金武收集大师",
+    "level": 2,
+    "description": "至少获得3种暗金武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "神武收集",
+    "gift": {},
+    "roleBonus": {
+      "blackArmsDropPro": 0.1
+    },
+    "condition": {
+      "type": "darkgoldArmsNum",
+      "num": 3.0
+    }
+  },
+  "darkgoldArms_3": {
+    "name": "darkgoldArms_3",
+    "cnName": "金武收集宗师",
+    "level": 3,
+    "description": "至少获得6种暗金武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "神武收集",
+    "gift": {},
+    "roleBonus": {
+      "blackArmsDropPro": 0.15
+    },
+    "condition": {
+      "type": "darkgoldArmsNum",
+      "num": 6.0
+    }
+  },
+  "purglodArms_1": {
+    "name": "purglodArms_1",
+    "cnName": "无双收集专家",
+    "level": 1,
+    "description": "至少获得2种无双武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "神武收集",
+    "gift": {},
+    "roleBonus": {
+      "blackArmsDropPro": 0.175
+    },
+    "condition": {
+      "type": "purgoldArmsNum",
+      "num": 2.0
+    }
+  },
+  "purglodArms_2": {
+    "name": "purglodArms_2",
+    "cnName": "无双收集大师",
+    "level": 2,
+    "description": "至少获得5种无双武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "神武收集",
+    "gift": {},
+    "roleBonus": {
+      "blackArmsDropPro": 0.2
+    },
+    "condition": {
+      "type": "purgoldArmsNum",
+      "num": 5.0
+    }
+  },
+  "purglodArms_3": {
+    "name": "purglodArms_3",
+    "cnName": "无双收集宗师",
+    "level": 3,
+    "description": "至少获得8种无双武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "神武收集",
+    "gift": {},
+    "roleBonus": {
+      "blackArmsDropPro": 0.225
+    },
+    "condition": {
+      "type": "purgoldArmsNum",
+      "num": 8.0
+    }
+  },
+  "purglodArms_4": {
+    "name": "purglodArms_4",
+    "cnName": "无双收集王",
+    "level": 4,
+    "description": "至少获得11种无双武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "神武收集",
+    "gift": {},
+    "roleBonus": {
+      "blackArmsDropPro": 0.25
+    },
+    "condition": {
+      "type": "purgoldArmsNum",
+      "num": 11.0
+    }
+  },
+  "eleArms_1": {
+    "name": "eleArms_1",
+    "cnName": "元素武器x1",
+    "level": 1,
+    "description": "拥有1把45%元素伤害的武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "元素武器",
+    "gift": {},
+    "roleBonus": {
+      "moreDpsMul": 0.03
+    },
+    "condition": {
+      "type": "eleArms45Num",
+      "num": 1.0
+    }
+  },
+  "eleArms_2": {
+    "name": "eleArms_2",
+    "cnName": "元素武器x3",
+    "level": 2,
+    "description": "拥有3把45%元素伤害的武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "元素武器",
+    "gift": {},
+    "roleBonus": {
+      "moreDpsMul": 0.06
+    },
+    "condition": {
+      "type": "eleArms45Num",
+      "num": 3.0
+    }
+  },
+  "eleArms_3": {
+    "name": "eleArms_3",
+    "cnName": "元素武器x6",
+    "level": 3,
+    "description": "拥有6把45%元素伤害的武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "元素武器",
+    "gift": {},
+    "roleBonus": {
+      "moreDpsMul": 0.09
+    },
+    "condition": {
+      "type": "eleArms45Num",
+      "num": 6.0
+    }
+  },
+  "eleArms_4": {
+    "name": "eleArms_4",
+    "cnName": "元素武器x10",
+    "level": 4,
+    "description": "拥有10把45%元素伤害的武器。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "元素武器",
+    "gift": {},
+    "roleBonus": {
+      "moreDpsMul": 0.12
+    },
+    "condition": {
+      "type": "eleArms45Num",
+      "num": 10.0
+    }
+  },
+  "vehicle_1": {
+    "name": "vehicle_1",
+    "cnName": "载具收集x5",
+    "level": 1,
+    "description": "拥有5种载具。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "载具收集",
+    "gift": {},
+    "roleBonus": {
+      "vehicleDefMul": 0.08
+    },
+    "condition": {
+      "type": "vehicleNum",
+      "num": 5.0
+    }
+  },
+  "vehicle_2": {
+    "name": "vehicle_2",
+    "cnName": "载具收集x10",
+    "level": 2,
+    "description": "拥有10种载具。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "载具收集",
+    "gift": {},
+    "roleBonus": {
+      "vehicleDefMul": 0.16
+    },
+    "condition": {
+      "type": "vehicleNum",
+      "num": 10.0
+    }
+  },
+  "vehicle_3": {
+    "name": "vehicle_3",
+    "cnName": "载具收集x14",
+    "level": 3,
+    "description": "拥有14种载具。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "载具收集",
+    "gift": {},
+    "roleBonus": {
+      "vehicleDefMul": 0.24
+    },
+    "condition": {
+      "type": "vehicleNum",
+      "num": 14.0
+    }
+  },
+  "vehicle_4": {
+    "name": "vehicle_4",
+    "cnName": "载具收集x17",
+    "level": 4,
+    "description": "拥有17种载具。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "载具收集",
+    "gift": {},
+    "roleBonus": {
+      "vehicleDefMul": 0.32
+    },
+    "condition": {
+      "type": "vehicleNum",
+      "num": 17.0
+    }
+  },
+  "vehicleHigh_1": {
+    "name": "vehicleHigh_1",
+    "cnName": "三阶载具x3",
+    "level": 1,
+    "description": "拥有3种三阶载具。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "三阶载具",
+    "gift": {},
+    "roleBonus": {
+      "vehicleDpsMul": 0.07
+    },
+    "condition": {
+      "type": "vehicle3",
+      "num": 3.0
+    }
+  },
+  "vehicleHigh_2": {
+    "name": "vehicleHigh_2",
+    "cnName": "三阶载具x6",
+    "level": 2,
+    "description": "拥有6种三阶载具。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "三阶载具",
+    "gift": {},
+    "roleBonus": {
+      "vehicleDpsMul": 0.14
+    },
+    "condition": {
+      "type": "vehicle3",
+      "num": 6.0
+    }
+  },
+  "vehicleHigh_3": {
+    "name": "vehicleHigh_3",
+    "cnName": "三阶载具x9",
+    "level": 3,
+    "description": "拥有9种三阶载具。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "三阶载具",
+    "gift": {},
+    "roleBonus": {
+      "vehicleDpsMul": 0.21
+    },
+    "condition": {
+      "type": "vehicle3",
+      "num": 9.0
+    }
+  },
+  "weapon_1": {
+    "name": "weapon_1",
+    "cnName": "副手x5",
+    "level": 1,
+    "description": "拥有5种副手。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "副手装置",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 5
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "weaponNum",
+      "num": 5.0
+    }
+  },
+  "device_1": {
+    "name": "device_1",
+    "cnName": "装置x7",
+    "level": 1,
+    "description": "拥有7种装置。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "副手装置",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 5
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "deviceNum",
+      "num": 7.0
+    }
+  },
+  "device_2": {
+    "name": "device_2",
+    "cnName": "装置x13",
+    "level": 2,
+    "description": "拥有13种装置。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "副手装置",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 10
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "deviceNum",
+      "num": 13.0
+    }
+  },
+  "tCapsuleT": {
+    "name": "tCapsuleT",
+    "cnName": "悬停沙漏120秒",
+    "level": 0,
+    "description": "使用“悬停沙漏”让时间停止累计120秒。",
+    "medalType": "valueCompare",
+    "category": "掉落收集",
+    "subcategory": "副手装置",
+    "gift": {
+      "type": "things",
+      "name": "timeCapsule_1",
+      "num": 5
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "tCT",
+      "num": 120.0
+    }
+  },
+  "sprintSword8": {
+    "name": "sprintSword8",
+    "cnName": "8级凯撒",
+    "level": 0,
+    "description": "不可思议的任务——获得8级凯撒。",
+    "medalType": null,
+    "category": "掉落收集",
+    "subcategory": "副手装置",
+    "gift": {
+      "type": "things",
+      "name": "implodingSkill",
+      "num": 1
+    },
+    "roleBonus": {},
+    "condition": null
+  },
+  "p1Role1": {
+    "name": "p1Role1",
+    "cnName": "P1角色x1",
+    "level": 0,
+    "description": "解锁1位其他P1角色，并且都切换过一次。",
+    "medalType": "valueCompare",
+    "category": "角色统计",
+    "subcategory": "P1角色",
+    "gift": {
+      "type": "things",
+      "name": "profiStamp",
+      "num": 3
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "otherP1RoleNum",
+      "num": 1.0
+    }
+  },
+  "p1Role2": {
+    "name": "p1Role2",
+    "cnName": "P1角色x2",
+    "level": 0,
+    "description": "解锁2位其他P1角色，并且都切换过一次。",
+    "medalType": "valueCompare",
+    "category": "角色统计",
+    "subcategory": "P1角色",
+    "gift": {
+      "type": "things",
+      "name": "profiStamp",
+      "num": 3
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "otherP1RoleNum",
+      "num": 2.0
+    }
+  },
+  "petType_3": {
+    "name": "petType_3",
+    "cnName": "尸宠x3",
+    "level": 3,
+    "description": "拥有3种宠物。",
+    "medalType": "valueCompare",
+    "category": "尸宠",
+    "subcategory": "尸宠收集",
+    "gift": {},
+    "roleBonus": {
+      "rareGeneDropPro": 0.06
+    },
+    "condition": {
+      "type": "petType",
+      "num": 3.0
+    }
+  },
+  "petType_6": {
+    "name": "petType_6",
+    "cnName": "尸宠x5",
+    "level": 6,
+    "description": "拥有5种宠物。",
+    "medalType": "valueCompare",
+    "category": "尸宠",
+    "subcategory": "尸宠收集",
+    "gift": {},
+    "roleBonus": {
+      "rareGeneDropPro": 0.12
+    },
+    "condition": {
+      "type": "petType",
+      "num": 5.0
+    }
+  },
+  "petType_10": {
+    "name": "petType_10",
+    "cnName": "尸宠x10",
+    "level": 10,
+    "description": "拥有10种宠物。",
+    "medalType": "valueCompare",
+    "category": "尸宠",
+    "subcategory": "尸宠收集",
+    "gift": {},
+    "roleBonus": {
+      "rareGeneDropPro": 0.2
+    },
+    "condition": {
+      "type": "petType",
+      "num": 10.0
+    }
+  },
+  "petStren_1": {
+    "name": "petStren_1",
+    "cnName": "尸宠强化x99",
+    "level": 1,
+    "description": "任意宠物的任意属性强化到99级。",
+    "medalType": "valueCompare",
+    "category": "尸宠",
+    "subcategory": "尸宠强化",
+    "gift": {},
+    "roleBonus": {
+      "petBookDropPro": 0.02
+    },
+    "condition": {
+      "type": "petStren",
+      "num": 99.0
+    }
+  },
+  "petStren_2": {
+    "name": "petStren_2",
+    "cnName": "尸宠强化x120",
+    "level": 2,
+    "description": "任意宠物的任意属性强化到120级。",
+    "medalType": "valueCompare",
+    "category": "尸宠",
+    "subcategory": "尸宠强化",
+    "gift": {},
+    "roleBonus": {
+      "petBookDropPro": 0.04
+    },
+    "condition": {
+      "type": "petStren",
+      "num": 120.0
+    }
+  },
+  "petStren_3": {
+    "name": "petStren_3",
+    "cnName": "尸宠强化x140",
+    "level": 3,
+    "description": "任意宠物的任意属性强化到140级。",
+    "medalType": "valueCompare",
+    "category": "尸宠",
+    "subcategory": "尸宠强化",
+    "gift": {},
+    "roleBonus": {
+      "petBookDropPro": 0.06
+    },
+    "condition": {
+      "type": "petStren",
+      "num": 140.0
+    }
+  },
+  "skill13_10": {
+    "name": "skill13_10",
+    "cnName": "终极技能x10",
+    "level": 10,
+    "description": "所有角色一共拥有10个13级人物技能。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "终极技能",
+    "gift": {},
+    "roleBonus": {
+      "gemDropPro": 0.0795
+    },
+    "condition": {
+      "type": "skill13Num",
+      "num": 10.0
+    }
+  },
+  "skill13_20": {
+    "name": "skill13_20",
+    "cnName": "终极技能x20",
+    "level": 20,
+    "description": "所有角色一共拥有20个13级人物技能。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "终极技能",
+    "gift": {},
+    "roleBonus": {
+      "gemDropPro": 0.15
+    },
+    "condition": {
+      "type": "skill13Num",
+      "num": 20.0
+    }
+  },
+  "skill13_30": {
+    "name": "skill13_30",
+    "cnName": "终极技能x30",
+    "level": 30,
+    "description": "所有角色一共拥有30个13级人物技能。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "终极技能",
+    "gift": {},
+    "roleBonus": {
+      "gemDropPro": 0.18
+    },
+    "condition": {
+      "type": "skill13Num",
+      "num": 30.0
+    }
+  },
+  "skill13_40": {
+    "name": "skill13_40",
+    "cnName": "终极技能x40",
+    "level": 40,
+    "description": "所有角色一共拥有40个13级人物技能。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "终极技能",
+    "gift": {},
+    "roleBonus": {
+      "gemDropPro": 0.21
+    },
+    "condition": {
+      "type": "skill13Num",
+      "num": 40.0
+    }
+  },
+  "skill13_48": {
+    "name": "skill13_48",
+    "cnName": "终极技能x48",
+    "level": 48,
+    "description": "所有角色一共拥有48个13级人物技能。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "终极技能",
+    "gift": {},
+    "roleBonus": {
+      "gemDropPro": 0.24
+    },
+    "condition": {
+      "type": "skill13Num",
+      "num": 48.0
+    }
+  },
+  "skill14_17": {
+    "name": "skill14_17",
+    "cnName": "十四级技能x17",
+    "level": 17,
+    "description": "所有角色一共拥有17个14级人物技能。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "终极技能",
+    "gift": {},
+    "roleBonus": {
+      "gemDropPro": 0.27
+    },
+    "condition": {
+      "type": "skill14",
+      "num": 17.0
+    }
+  },
+  "gliding_1": {
+    "name": "gliding_1",
+    "cnName": "飘飘欲仙",
+    "level": 1,
+    "description": "累计在空中滑翔时间超过50分钟。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "滑翔",
+    "gift": {},
+    "roleBonus": {
+      "damageMul": 0.02
+    },
+    "condition": {
+      "type": "glidingTime",
+      "num": 50.0
+    }
+  },
+  "gliding_2": {
+    "name": "gliding_2",
+    "cnName": "天神下凡",
+    "level": 2,
+    "description": "累计在空中滑翔时间超过100分钟。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "滑翔",
+    "gift": {},
+    "roleBonus": {
+      "damageMul": 0.04
+    },
+    "condition": {
+      "type": "glidingTime",
+      "num": 100.0
+    }
+  },
+  "hyperopiaFillHurt": {
+    "name": "hyperopiaFillHurt",
+    "cnName": "望远镜",
+    "level": 0,
+    "description": "完成1次1的远视加成",
+    "medalType": "mulCompare",
+    "category": "技能",
+    "subcategory": "近视与远视",
+    "gift": {},
+    "roleBonus": {},
+    "condition": {
+      "type": "hyperopiaMaxMul",
+      "num": null
+    }
+  },
+  "myopiaFillHurt": {
+    "name": "myopiaFillHurt",
+    "cnName": "显微镜",
+    "level": 0,
+    "description": "完成1次1.1的近视加成",
+    "medalType": "mulCompare",
+    "category": "技能",
+    "subcategory": "近视与远视",
+    "gift": {},
+    "roleBonus": {},
+    "condition": {
+      "type": "myopiaMaxMul",
+      "num": null
+    }
+  },
+  "skillGiftNum_1": {
+    "name": "skillGiftNum_1",
+    "cnName": "小礼",
+    "level": 1,
+    "description": "一个关卡之内，触发馈赠效果30次以上。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "馈赠",
+    "gift": {},
+    "roleBonus": {
+      "cdMul": 0.015
+    },
+    "condition": {
+      "type": "skillGiftNum",
+      "num": 30.0
+    }
+  },
+  "skillGiftNum_2": {
+    "name": "skillGiftNum_2",
+    "cnName": "中礼",
+    "level": 2,
+    "description": "一个关卡之内，触发馈赠效果50次以上。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "馈赠",
+    "gift": {},
+    "roleBonus": {
+      "cdMul": 0.025
+    },
+    "condition": {
+      "type": "skillGiftNum",
+      "num": 50.0
+    }
+  },
+  "skillGiftNum_3": {
+    "name": "skillGiftNum_3",
+    "cnName": "大礼",
+    "level": 3,
+    "description": "一个关卡之内，触发馈赠效果80次以上。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "馈赠",
+    "gift": {},
+    "roleBonus": {
+      "cdMul": 0.035
+    },
+    "condition": {
+      "type": "skillGiftNum",
+      "num": 80.0
+    }
+  },
+  "skillGiftNum_4": {
+    "name": "skillGiftNum_4",
+    "cnName": "豪礼",
+    "level": 4,
+    "description": "一个关卡之内，触发馈赠效果120次以上。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "馈赠",
+    "gift": {},
+    "roleBonus": {
+      "cdMul": 0.045
+    },
+    "condition": {
+      "type": "skillGiftNum",
+      "num": 120.0
+    }
+  },
+  "charm_1": {
+    "name": "charm_1",
+    "cnName": "搔首弄姿",
+    "level": 1,
+    "description": "一个关卡之内，最多同时存在4个魅惑单位。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "魅惑",
+    "gift": {},
+    "roleBonus": {
+      "cdMul": 0.01
+    },
+    "condition": {
+      "type": "charmMaxNum",
+      "num": 4.0
+    }
+  },
+  "charm_2": {
+    "name": "charm_2",
+    "cnName": "妖娆多姿",
+    "level": 2,
+    "description": "一个关卡之内，最多同时存在7个魅惑单位。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "魅惑",
+    "gift": {},
+    "roleBonus": {
+      "cdMul": 0.02
+    },
+    "condition": {
+      "type": "charmMaxNum",
+      "num": 7.0
+    }
+  },
+  "charm_3": {
+    "name": "charm_3",
+    "cnName": "风情万种",
+    "level": 3,
+    "description": "一个关卡之内，最多同时存在10个魅惑单位。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "魅惑",
+    "gift": {},
+    "roleBonus": {
+      "cdMul": 0.03
+    },
+    "condition": {
+      "type": "charmMaxNum",
+      "num": 10.0
+    }
+  },
+  "charm_4": {
+    "name": "charm_4",
+    "cnName": "千娇百媚",
+    "level": 4,
+    "description": "一个关卡之内，最多同时存在14个魅惑单位。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "魅惑",
+    "gift": {},
+    "roleBonus": {
+      "cdMul": 0.04
+    },
+    "condition": {
+      "type": "charmMaxNum",
+      "num": 14.0
+    }
+  },
+  "charm_5": {
+    "name": "charm_5",
+    "cnName": "艳绝人寰",
+    "level": 5,
+    "description": "一个关卡之内，最多同时存在18个魅惑单位。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "魅惑",
+    "gift": {},
+    "roleBonus": {
+      "cdMul": 0.05
+    },
+    "condition": {
+      "type": "charmMaxNum",
+      "num": 18.0
+    }
+  },
+  "moreMissile_1": {
+    "name": "moreMissile_1",
+    "cnName": "十弹归宗",
+    "level": 1,
+    "description": "1个关卡之内，累计释放90颗万弹归宗导弹。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "万弹归宗",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_sniper": 0.02
+    },
+    "condition": {
+      "type": "moreMissileMaxNum",
+      "num": 90.0
+    }
+  },
+  "moreMissile_2": {
+    "name": "moreMissile_2",
+    "cnName": "百弹归宗",
+    "level": 2,
+    "description": "1个关卡之内，累计释放300颗万弹归宗导弹。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "万弹归宗",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_sniper": 0.06
+    },
+    "condition": {
+      "type": "moreMissileMaxNum",
+      "num": 300.0
+    }
+  },
+  "moreMissile_3": {
+    "name": "moreMissile_3",
+    "cnName": "千弹归宗",
+    "level": 3,
+    "description": "1个关卡之内，累计释放1000颗万弹归宗导弹。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "万弹归宗",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_sniper": 0.12
+    },
+    "condition": {
+      "type": "moreMissileMaxNum",
+      "num": 1000.0
+    }
+  },
+  "rolling_1": {
+    "name": "rolling_1",
+    "cnName": "翻滚100次",
+    "level": 1,
+    "description": "累计翻滚100次。",
+    "medalType": "valueCompare",
+    "category": "技能",
+    "subcategory": "翻滚",
+    "gift": {
+      "type": "things",
+      "name": "speedDrug",
+      "num": 3
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "rollNum",
+      "num": 100.0
+    }
+  },
+  "bPK82": {
+    "name": "bPK82",
+    "cnName": "越级击杀-5星",
+    "level": 0,
+    "description": "在魂卡PK中，使用5星魂卡击败8星或以上魂卡。",
+    "medalType": "bossCardPKCover8",
+    "category": "魂卡",
+    "subcategory": "越级击杀",
+    "gift": {
+      "type": "things",
+      "name": "bossCardStamp",
+      "num": 4
+    },
+    "roleBonus": {},
+    "condition": null
+  },
+  "bPK84": {
+    "name": "bPK84",
+    "cnName": "越级击杀-4星",
+    "level": 0,
+    "description": "在魂卡PK中，使用4星魂卡击败8星或以上魂卡。",
+    "medalType": "bossCardPKCover8",
+    "category": "魂卡",
+    "subcategory": "越级击杀",
+    "gift": {
+      "type": "things",
+      "name": "bossCardStamp",
+      "num": 4
+    },
+    "roleBonus": {},
+    "condition": null
+  },
+  "bPK83": {
+    "name": "bPK83",
+    "cnName": "越级击杀-3星",
+    "level": 0,
+    "description": "在魂卡PK中，使用3星魂卡击败8星或以上魂卡。",
+    "medalType": "bossCardPKCover8",
+    "category": "魂卡",
+    "subcategory": "越级击杀",
+    "gift": {
+      "type": "things",
+      "name": "bossCardStamp",
+      "num": 4
+    },
+    "roleBonus": {},
+    "condition": null
+  },
+  "bossCardPK_1": {
+    "name": "bossCardPK_1",
+    "cnName": "击败魂卡x10",
+    "level": 1,
+    "description": "累计击败10张敌人魂卡。",
+    "medalType": "valueCompare",
+    "category": "魂卡",
+    "subcategory": "魂卡PK",
+    "gift": {
+      "type": "things",
+      "name": "bossCardStamp",
+      "num": 4
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "bossCardPKNum",
+      "num": 10.0
+    }
+  },
+  "bossCardPK_2": {
+    "name": "bossCardPK_2",
+    "cnName": "击败魂卡x40",
+    "level": 2,
+    "description": "累计击败40张敌人魂卡。",
+    "medalType": "valueCompare",
+    "category": "魂卡",
+    "subcategory": "魂卡PK",
+    "gift": {
+      "type": "things",
+      "name": "bossCardStamp",
+      "num": 4
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "bossCardPKNum",
+      "num": 40.0
+    }
+  },
+  "bossCardPK_3": {
+    "name": "bossCardPK_3",
+    "cnName": "击败魂卡x100",
+    "level": 3,
+    "description": "累计击败100张敌人魂卡。",
+    "medalType": "valueCompare",
+    "category": "魂卡",
+    "subcategory": "魂卡PK",
+    "gift": {
+      "type": "things",
+      "name": "bossCardStamp",
+      "num": 8
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "bossCardPKNum",
+      "num": 100.0
+    }
+  },
+  "bossCardStar_5": {
+    "name": "bossCardStar_5",
+    "cnName": "五星魂卡",
+    "level": 5,
+    "description": "拥有1张抽到五星魂卡。",
+    "medalType": "valueCompare",
+    "category": "魂卡",
+    "subcategory": "抽魂卡",
+    "gift": {
+      "type": "things",
+      "name": "bossCardStamp",
+      "num": 4
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "bossCard5",
+      "num": 1.0
+    }
+  },
+  "bossCardStar_6": {
+    "name": "bossCardStar_6",
+    "cnName": "六星魂卡",
+    "level": 6,
+    "description": "拥有1张抽到六星魂卡。",
+    "medalType": "valueCompare",
+    "category": "魂卡",
+    "subcategory": "抽魂卡",
+    "gift": {
+      "type": "things",
+      "name": "bossCardStamp",
+      "num": 4
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "bossCard6",
+      "num": 1.0
+    }
+  },
+  "bossCardStar_7": {
+    "name": "bossCardStar_7",
+    "cnName": "七星魂卡",
+    "level": 7,
+    "description": "拥有1张抽到七星魂卡。",
+    "medalType": "valueCompare",
+    "category": "魂卡",
+    "subcategory": "抽魂卡",
+    "gift": {
+      "type": "things",
+      "name": "bossCardStamp",
+      "num": 8
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "bossCard7",
+      "num": 1.0
+    }
+  },
+  "memoryTask_1": {
+    "name": "memoryTask_1",
+    "cnName": "回忆任务x20",
+    "level": 1,
+    "description": "完成20个回忆任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "回忆任务",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 3
+    },
+    "roleBonus": {
+      "rareEquipDropPro": 0.125
+    },
+    "condition": {
+      "type": "memoryTask",
+      "num": 20.0
+    }
+  },
+  "memoryTask_2": {
+    "name": "memoryTask_2",
+    "cnName": "回忆任务x45",
+    "level": 2,
+    "description": "完成45个回忆任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "回忆任务",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 3
+    },
+    "roleBonus": {
+      "rareEquipDropPro": 0.25
+    },
+    "condition": {
+      "type": "memoryTask",
+      "num": 45.0
+    }
+  },
+  "memoryTask_3": {
+    "name": "memoryTask_3",
+    "cnName": "回忆任务x70",
+    "level": 3,
+    "description": "完成70个回忆任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "回忆任务",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 3
+    },
+    "roleBonus": {
+      "rareEquipDropPro": 0.375
+    },
+    "condition": {
+      "type": "memoryTask",
+      "num": 70.0
+    }
+  },
+  "memoryTask_4": {
+    "name": "memoryTask_4",
+    "cnName": "回忆任务x96",
+    "level": 4,
+    "description": "完成96个回忆任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "回忆任务",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 3
+    },
+    "roleBonus": {
+      "rareEquipDropPro": 0.5
+    },
+    "condition": {
+      "type": "memoryTask",
+      "num": 96.0
+    }
+  },
+  "spreadTask_1": {
+    "name": "spreadTask_1",
+    "cnName": "外传任务x7",
+    "level": 1,
+    "description": "完成7个外传任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "外传任务",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 6
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "spreadTask",
+      "num": 7.0
+    }
+  },
+  "spreadTask_2": {
+    "name": "spreadTask_2",
+    "cnName": "外传任务x15",
+    "level": 2,
+    "description": "完成15个外传任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "外传任务",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 6
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "spreadTask",
+      "num": 15.0
+    }
+  },
+  "bwallTask_1": {
+    "name": "bwallTask_1",
+    "cnName": "破壁任务x10",
+    "level": 1,
+    "description": "完成10个破壁任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "破壁任务",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 3
+    },
+    "roleBonus": {
+      "rareArmsDropPro": 0.125
+    },
+    "condition": {
+      "type": "bwallTask",
+      "num": 10.0
+    }
+  },
+  "bwallTask_2": {
+    "name": "bwallTask_2",
+    "cnName": "破壁任务x20",
+    "level": 2,
+    "description": "完成20个破壁任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "破壁任务",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 3
+    },
+    "roleBonus": {
+      "rareArmsDropPro": 0.25
+    },
+    "condition": {
+      "type": "bwallTask",
+      "num": 20.0
+    }
+  },
+  "deputyTask_1": {
+    "name": "deputyTask_1",
+    "cnName": "支线任务x10",
+    "level": 1,
+    "description": "完成10个支线任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "支线任务",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 5
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "deputyTask",
+      "num": 10.0
+    }
+  },
+  "deputyTask_2": {
+    "name": "deputyTask_2",
+    "cnName": "支线任务x20",
+    "level": 2,
+    "description": "完成20个支线任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "支线任务",
+    "gift": {
+      "type": "base",
+      "name": "wilderKey",
+      "num": 5
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "deputyTask",
+      "num": 20.0
+    }
+  },
+  "star5Task_1": {
+    "name": "star5Task_1",
+    "cnName": "五星任务x1",
+    "level": 1,
+    "description": "完成1个五星任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "五星任务",
+    "gift": {},
+    "roleBonus": {
+      "moreLifeMul": 0.02
+    },
+    "condition": {
+      "type": "star5TaskNum",
+      "num": 1.0
+    }
+  },
+  "star5Task_2": {
+    "name": "star5Task_2",
+    "cnName": "五星任务x3",
+    "level": 2,
+    "description": "完成3个五星任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "五星任务",
+    "gift": {},
+    "roleBonus": {
+      "moreLifeMul": 0.04
+    },
+    "condition": {
+      "type": "star5TaskNum",
+      "num": 3.0
+    }
+  },
+  "star5Task_3": {
+    "name": "star5Task_3",
+    "cnName": "五星任务x5",
+    "level": 3,
+    "description": "完成5个五星任务。",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "五星任务",
+    "gift": {},
+    "roleBonus": {
+      "moreLifeMul": 0.06
+    },
+    "condition": {
+      "type": "star5TaskNum",
+      "num": 5.0
+    }
+  },
+  "maxKingLevel_55": {
+    "name": "maxKingLevel_55",
+    "cnName": "擒王55级",
+    "level": 55,
+    "description": "在擒王任务中，消灭等级超过55级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.02
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 55.0
+    }
+  },
+  "maxKingLevel_60": {
+    "name": "maxKingLevel_60",
+    "cnName": "擒王60级",
+    "level": 60,
+    "description": "在擒王任务中，消灭等级超过60级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.05
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 60.0
+    }
+  },
+  "maxKingLevel_65": {
+    "name": "maxKingLevel_65",
+    "cnName": "擒王65级",
+    "level": 65,
+    "description": "在擒王任务中，消灭等级超过65级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.08
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 65.0
+    }
+  },
+  "maxKingLevel_70": {
+    "name": "maxKingLevel_70",
+    "cnName": "擒王70级",
+    "level": 70,
+    "description": "在擒王任务中，消灭等级超过70级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.11
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 70.0
+    }
+  },
+  "maxKingLevel_75": {
+    "name": "maxKingLevel_75",
+    "cnName": "擒王75级",
+    "level": 75,
+    "description": "在擒王任务中，消灭等级超过75级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.14
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 75.0
+    }
+  },
+  "maxKingLevel_80": {
+    "name": "maxKingLevel_80",
+    "cnName": "擒王80级",
+    "level": 80,
+    "description": "在擒王任务中，消灭等级超过80级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.17
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 80.0
+    }
+  },
+  "maxKingLevel_85": {
+    "name": "maxKingLevel_85",
+    "cnName": "擒王85级",
+    "level": 85,
+    "description": "在擒王任务中，消灭等级超过85级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.2
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 85.0
+    }
+  },
+  "maxKingLevel_90": {
+    "name": "maxKingLevel_90",
+    "cnName": "擒王90级",
+    "level": 90,
+    "description": "在擒王任务中，消灭等级超过90级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.22
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 90.0
+    }
+  },
+  "maxKingLevel_95": {
+    "name": "maxKingLevel_95",
+    "cnName": "擒王95级",
+    "level": 95,
+    "description": "在擒王任务中，消灭等级超过95级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.24
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 95.0
+    }
+  },
+  "maxKingLevel_100": {
+    "name": "maxKingLevel_100",
+    "cnName": "擒王100级",
+    "level": 100,
+    "description": "在擒王任务中，消灭等级超过100级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.26
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 100.0
+    }
+  },
+  "maxKingLevel_105": {
+    "name": "maxKingLevel_105",
+    "cnName": "擒王105级",
+    "level": 105,
+    "description": "在擒王任务中，消灭等级超过105级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.27
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 105.0
+    }
+  },
+  "maxKingLevel_110": {
+    "name": "maxKingLevel_110",
+    "cnName": "擒王110级",
+    "level": 110,
+    "description": "在擒王任务中，消灭等级超过110级的首领！",
+    "medalType": "valueCompare",
+    "category": "任务",
+    "subcategory": "擒王",
+    "gift": {},
+    "roleBonus": {
+      "lifeMul": 0.28
+    },
+    "condition": {
+      "type": "maxKingLevel",
+      "num": 110.0
+    }
+  },
+  "oldRocket3": {
+    "name": "oldRocket3",
+    "cnName": "不服老的火炮",
+    "level": 0,
+    "description": "完成一次3星或以上难度的“古老的火炮”。",
+    "medalType": "taskPan",
+    "category": "任务",
+    "subcategory": "每日任务",
+    "gift": {},
+    "roleBonus": {
+      "moveMul": 0.03
+    },
+    "condition": null
+  },
+  "runAway3": {
+    "name": "runAway3",
+    "cnName": "劫后余生",
+    "level": 0,
+    "description": "完成一次3星或以上难度的“逃出生天”。",
+    "medalType": "taskPan",
+    "category": "任务",
+    "subcategory": "每日任务",
+    "gift": {},
+    "roleBonus": {
+      "moveMul": 0.04
+    },
+    "condition": null
+  },
+  "coinChase3": {
+    "name": "coinChase3",
+    "cnName": "银矿追逐者",
+    "level": 0,
+    "description": "完成一次3星或以上难度的“银币追逐者”。",
+    "medalType": "taskPan",
+    "category": "任务",
+    "subcategory": "每日任务",
+    "gift": {},
+    "roleBonus": {
+      "moveMul": 0.07
+    },
+    "condition": null
+  },
+  "fly_1": {
+    "name": "fly_1",
+    "cnName": "升空180码",
+    "level": 1,
+    "description": "在关卡中，起跳或者被击飞，最终上升高度要超过180码。",
+    "medalType": "valueCompare",
+    "category": "运动",
+    "subcategory": "升空",
+    "gift": {},
+    "roleBonus": {
+      "moveMul": 0.005
+    },
+    "condition": {
+      "type": "maxFlyHigh",
+      "num": 180.0
+    }
+  },
+  "fly_2": {
+    "name": "fly_2",
+    "cnName": "升空500码",
+    "level": 2,
+    "description": "在关卡中，起跳或者被击飞，最终上升高度要超过500码。",
+    "medalType": "valueCompare",
+    "category": "运动",
+    "subcategory": "升空",
+    "gift": {},
+    "roleBonus": {
+      "moveMul": 0.02
+    },
+    "condition": {
+      "type": "maxFlyHigh",
+      "num": 500.0
+    }
+  },
+  "fly_3": {
+    "name": "fly_3",
+    "cnName": "升空1000码",
+    "level": 3,
+    "description": "在关卡中，起跳或者被击飞，最终上升高度要超过1000码。",
+    "medalType": "valueCompare",
+    "category": "运动",
+    "subcategory": "升空",
+    "gift": {},
+    "roleBonus": {
+      "moveMul": 0.04
+    },
+    "condition": {
+      "type": "maxFlyHigh",
+      "num": 1000.0
+    }
+  },
+  "fly_4": {
+    "name": "fly_4",
+    "cnName": "升空1800码",
+    "level": 4,
+    "description": "在关卡中，起跳或者被击飞，最终上升高度要超过1800码。",
+    "medalType": "valueCompare",
+    "category": "运动",
+    "subcategory": "升空",
+    "gift": {},
+    "roleBonus": {
+      "moveMul": 0.07
+    },
+    "condition": {
+      "type": "maxFlyHigh",
+      "num": 1800.0
+    }
+  },
+  "drop_1": {
+    "name": "drop_1",
+    "cnName": "坠落300码",
+    "level": 1,
+    "description": "在一次坠落中，坠落高度超过300码。",
+    "medalType": "valueCompare",
+    "category": "运动",
+    "subcategory": "坠落",
+    "gift": {},
+    "roleBonus": {
+      "moveMul": 0.005
+    },
+    "condition": {
+      "type": "maxFallHigh",
+      "num": 300.0
+    }
+  },
+  "drop_2": {
+    "name": "drop_2",
+    "cnName": "坠落700码",
+    "level": 2,
+    "description": "在一次坠落中，坠落高度超过700码。",
+    "medalType": "valueCompare",
+    "category": "运动",
+    "subcategory": "坠落",
+    "gift": {},
+    "roleBonus": {
+      "moveMul": 0.015
+    },
+    "condition": {
+      "type": "maxFallHigh",
+      "num": 700.0
+    }
+  },
+  "drop_3": {
+    "name": "drop_3",
+    "cnName": "坠落1100码",
+    "level": 3,
+    "description": "在一次坠落中，坠落高度超过1100码。",
+    "medalType": "valueCompare",
+    "category": "运动",
+    "subcategory": "坠落",
+    "gift": {},
+    "roleBonus": {
+      "moveMul": 0.035
+    },
+    "condition": {
+      "type": "maxFallHigh",
+      "num": 1100.0
+    }
+  },
+  "drop_4": {
+    "name": "drop_4",
+    "cnName": "坠落1440码",
+    "level": 4,
+    "description": "在一次坠落中，坠落高度超过1440码。",
+    "medalType": "valueCompare",
+    "category": "运动",
+    "subcategory": "坠落",
+    "gift": {},
+    "roleBonus": {
+      "moveMul": 0.065
+    },
+    "condition": {
+      "type": "maxFallHigh",
+      "num": 1440.0
+    }
+  },
+  "dieFly2": {
+    "name": "dieFly2",
+    "cnName": "死亡飞行700码",
+    "level": 0,
+    "description": "P1死亡后飞出700码。",
+    "medalType": "valueCompare",
+    "category": "运动",
+    "subcategory": "死亡飞行",
+    "gift": {
+      "type": "things",
+      "name": "speedDrug",
+      "num": 1
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "dieFly",
+      "num": 700.0
+    }
+  },
+  "dieFly3": {
+    "name": "dieFly3",
+    "cnName": "死亡飞行1140码",
+    "level": 0,
+    "description": "P1死亡后飞出1140码。",
+    "medalType": "valueCompare",
+    "category": "运动",
+    "subcategory": "死亡飞行",
+    "gift": {
+      "type": "things",
+      "name": "speedDrug",
+      "num": 1
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "dieFly",
+      "num": 1140.0
+    }
+  },
+  "dieNum_1": {
+    "name": "dieNum_1",
+    "cnName": "霞光市最脆",
+    "level": 1,
+    "description": "殒命次数超过20次。",
+    "medalType": "valueCompare",
+    "category": "特别",
+    "subcategory": "最脆",
+    "gift": {},
+    "roleBonus": {
+      "headMul": 0.025
+    },
+    "condition": {
+      "type": "dieNum",
+      "num": 20.0
+    }
+  },
+  "dieNum_2": {
+    "name": "dieNum_2",
+    "cnName": "全省最脆",
+    "level": 2,
+    "description": "殒命次数超过50次。",
+    "medalType": "valueCompare",
+    "category": "特别",
+    "subcategory": "最脆",
+    "gift": {},
+    "roleBonus": {
+      "headMul": 0.075
+    },
+    "condition": {
+      "type": "dieNum",
+      "num": 50.0
+    }
+  },
+  "dieNum_3": {
+    "name": "dieNum_3",
+    "cnName": "全国最脆",
+    "level": 3,
+    "description": "殒命次数超过100次。",
+    "medalType": "valueCompare",
+    "category": "特别",
+    "subcategory": "最脆",
+    "gift": {},
+    "roleBonus": {
+      "headMul": 0.15
+    },
+    "condition": {
+      "type": "dieNum",
+      "num": 100.0
+    }
+  },
+  "dieNum_4": {
+    "name": "dieNum_4",
+    "cnName": "全球最脆",
+    "level": 4,
+    "description": "殒命次数超过200次。",
+    "medalType": "valueCompare",
+    "category": "特别",
+    "subcategory": "最脆",
+    "gift": {},
+    "roleBonus": {
+      "headMul": 0.225
+    },
+    "condition": {
+      "type": "dieNum",
+      "num": 200.0
+    }
+  },
+  "dieNum_5": {
+    "name": "dieNum_5",
+    "cnName": "太阳系最脆",
+    "level": 5,
+    "description": "殒命次数超过400次。",
+    "medalType": "valueCompare",
+    "category": "特别",
+    "subcategory": "最脆",
+    "gift": {},
+    "roleBonus": {
+      "headMul": 0.3
+    },
+    "condition": {
+      "type": "dieNum",
+      "num": 400.0
+    }
+  },
+  "dieNum_6": {
+    "name": "dieNum_6",
+    "cnName": "银河最脆",
+    "level": 6,
+    "description": "殒命次数超过600次。",
+    "medalType": "valueCompare",
+    "category": "特别",
+    "subcategory": "最脆",
+    "gift": {},
+    "roleBonus": {
+      "headMul": 0.4
+    },
+    "condition": {
+      "type": "dieNum",
+      "num": 600.0
+    }
+  },
+  "dieNum_7": {
+    "name": "dieNum_7",
+    "cnName": "宇宙最脆",
+    "level": 7,
+    "description": "殒命次数超过800次。",
+    "medalType": "valueCompare",
+    "category": "特别",
+    "subcategory": "最脆",
+    "gift": {},
+    "roleBonus": {
+      "headMul": 0.45
+    },
+    "condition": {
+      "type": "dieNum",
+      "num": 800.0
+    }
+  },
+  "dieBelow_1": {
+    "name": "dieBelow_1",
+    "cnName": "弱不经风",
+    "level": 1,
+    "description": "命殒于低于人物等级5级的怪物（简单难度）手上。",
+    "medalType": "heroLevelLess",
+    "category": "特别",
+    "subcategory": "自寻短见",
+    "gift": {},
+    "roleBonus": {
+      "fightDedut": 0.01
+    },
+    "condition": null
+  },
+  "dieBelow_2": {
+    "name": "dieBelow_2",
+    "cnName": "生命垂危",
+    "level": 2,
+    "description": "命殒于低于人物等级10级的怪物（简单难度）手上。",
+    "medalType": "heroLevelLess",
+    "category": "特别",
+    "subcategory": "自寻短见",
+    "gift": {},
+    "roleBonus": {
+      "fightDedut": 0.02
+    },
+    "condition": null
+  },
+  "dieBelow_3": {
+    "name": "dieBelow_3",
+    "cnName": "无药可救",
+    "level": 3,
+    "description": "命殒于低于人物等级15级的怪物（简单难度）手上。",
+    "medalType": "heroLevelLess",
+    "category": "特别",
+    "subcategory": "自寻短见",
+    "gift": {},
+    "roleBonus": {
+      "fightDedut": 0.035
+    },
+    "condition": null
+  },
+  "fastDie1": {
+    "name": "fastDie1",
+    "cnName": "一命呜呼V1",
+    "level": 0,
+    "description": "进入关卡后1秒内P1死亡，工厂无效。",
+    "medalType": "fastDieTime",
+    "category": "特别",
+    "subcategory": "一命呜呼",
+    "gift": {},
+    "roleBonus": {},
+    "condition": null
+  },
+  "fastDie2": {
+    "name": "fastDie2",
+    "cnName": "一命呜呼V2",
+    "level": 0,
+    "description": "进入关卡后0.2秒内P1死亡，工厂无效。",
+    "medalType": "fastDieTime",
+    "category": "特别",
+    "subcategory": "一命呜呼",
+    "gift": {},
+    "roleBonus": {},
+    "condition": null
+  },
+  "rain3": {
+    "name": "rain3",
+    "cnName": "倾盆大雨",
+    "level": 0,
+    "description": "遭遇大雨天气。",
+    "medalType": "rain",
+    "category": "其他",
+    "subcategory": "天气",
+    "gift": {
+      "type": "base",
+      "name": "partsCoin",
+      "num": 20
+    },
+    "roleBonus": {},
+    "condition": null
+  },
+  "heat3": {
+    "name": "heat3",
+    "cnName": "酷热难耐",
+    "level": 0,
+    "description": "遭遇酷热天气。",
+    "medalType": "heat",
+    "category": "其他",
+    "subcategory": "天气",
+    "gift": {
+      "type": "base",
+      "name": "partsCoin",
+      "num": 20
+    },
+    "roleBonus": {},
+    "condition": null
+  },
+  "unionBattle1": {
+    "name": "unionBattle1",
+    "cnName": "军队争霸V1",
+    "level": 0,
+    "description": "军队争霸积分到达100分。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "军队争霸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_flamer": 0.12
+    },
+    "condition": {
+      "type": "unionBattleScore",
+      "num": 100.0
+    }
+  },
+  "unionBattle2": {
+    "name": "unionBattle2",
+    "cnName": "军队争霸V2",
+    "level": 0,
+    "description": "军队争霸积分到达200分。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "军队争霸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_flamer": 0.18
+    },
+    "condition": {
+      "type": "unionBattleScore",
+      "num": 200.0
+    }
+  },
+  "unionBattle3": {
+    "name": "unionBattle3",
+    "cnName": "军队争霸V3",
+    "level": 0,
+    "description": "军队争霸积分到达300分。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "军队争霸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_flamer": 0.24
+    },
+    "condition": {
+      "type": "unionBattleScore",
+      "num": 300.0
+    }
+  },
+  "unionBattle4": {
+    "name": "unionBattle4",
+    "cnName": "军队争霸V4",
+    "level": 0,
+    "description": "军队争霸积分到达500分。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "军队争霸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_flamer": 0.28
+    },
+    "condition": {
+      "type": "unionBattleScore",
+      "num": 500.0
+    }
+  },
+  "unionBattle5": {
+    "name": "unionBattle5",
+    "cnName": "军队争霸V5",
+    "level": 0,
+    "description": "军队争霸积分到达700分。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "军队争霸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_flamer": 0.3
+    },
+    "condition": {
+      "type": "unionBattleScore",
+      "num": 700.0
+    }
+  },
+  "unionBattle6": {
+    "name": "unionBattle6",
+    "cnName": "军队争霸V6",
+    "level": 0,
+    "description": "军队争霸积分到达960分。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "军队争霸",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_flamer": 0.32
+    },
+    "condition": {
+      "type": "unionBattleScore",
+      "num": 960.0
+    }
+  },
+  "battleScore1": {
+    "name": "battleScore1",
+    "cnName": "个人争霸25秒",
+    "level": 0,
+    "description": "争霸训练用时25秒以内。",
+    "medalType": "valueCompareLess",
+    "category": "其他",
+    "subcategory": "军队争霸",
+    "gift": {
+      "type": "base",
+      "name": "partsCoin",
+      "num": 8
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "unionBattleFastTimeAll",
+      "num": 25.0
+    }
+  },
+  "battleScore2": {
+    "name": "battleScore2",
+    "cnName": "个人争霸20秒",
+    "level": 0,
+    "description": "争霸训练用时20秒以内。",
+    "medalType": "valueCompareLess",
+    "category": "其他",
+    "subcategory": "军队争霸",
+    "gift": {
+      "type": "base",
+      "name": "partsCoin",
+      "num": 8
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "unionBattleFastTimeAll",
+      "num": 20.0
+    }
+  },
+  "battleScore3": {
+    "name": "battleScore3",
+    "cnName": "个人争霸15秒",
+    "level": 0,
+    "description": "争霸训练用时15秒以内。",
+    "medalType": "valueCompareLess",
+    "category": "其他",
+    "subcategory": "军队争霸",
+    "gift": {
+      "type": "base",
+      "name": "partsCoin",
+      "num": 8
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "unionBattleFastTimeAll",
+      "num": 15.0
+    }
+  },
+  "love_1": {
+    "name": "love_1",
+    "cnName": "好人缘",
+    "level": 1,
+    "description": "1个队友的好感度或者忠诚度到达24000。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "好人缘",
+    "gift": {},
+    "roleBonus": {
+      "dayLoveAdd": 7.0
+    },
+    "condition": {
+      "type": "loveMaxNum",
+      "num": 1.0
+    }
+  },
+  "love_2": {
+    "name": "love_2",
+    "cnName": "好人缘II",
+    "level": 2,
+    "description": "2个队友的好感度或者忠诚度到达24000。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "好人缘",
+    "gift": {},
+    "roleBonus": {
+      "dayLoveAdd": 14.0
+    },
+    "condition": {
+      "type": "loveMaxNum",
+      "num": 2.0
+    }
+  },
+  "love_3": {
+    "name": "love_3",
+    "cnName": "好人缘III",
+    "level": 3,
+    "description": "3个队友的好感度或者忠诚度到达24000。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "好人缘",
+    "gift": {},
+    "roleBonus": {
+      "dayLoveAdd": 21.0
+    },
+    "condition": {
+      "type": "loveMaxNum",
+      "num": 3.0
+    }
+  },
+  "love_4": {
+    "name": "love_4",
+    "cnName": "好人缘IV",
+    "level": 4,
+    "description": "4个队友的好感度或者忠诚度到达24000。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "好人缘",
+    "gift": {},
+    "roleBonus": {
+      "dayLoveAdd": 28.0
+    },
+    "condition": {
+      "type": "loveMaxNum",
+      "num": 4.0
+    }
+  },
+  "loveHate1": {
+    "name": "loveHate1",
+    "cnName": "孽缘",
+    "level": 0,
+    "description": "累计给队友送其不喜欢的礼物5次。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "孽缘",
+    "gift": {
+      "type": "things",
+      "name": "whiteRose",
+      "num": 8
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "loveHateNumAll",
+      "num": 5.0
+    }
+  },
+  "loveHate2": {
+    "name": "loveHate2",
+    "cnName": "孽缘II",
+    "level": 0,
+    "description": "累计给队友送其不喜欢的礼物10次。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "孽缘",
+    "gift": {
+      "type": "things",
+      "name": "lily",
+      "num": 8
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "loveHateNumAll",
+      "num": 10.0
+    }
+  },
+  "loveHate3": {
+    "name": "loveHate3",
+    "cnName": "孽缘III",
+    "level": 0,
+    "description": "累计给队友送其不喜欢的礼物15次。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "孽缘",
+    "gift": {
+      "type": "things",
+      "name": "teddyBear",
+      "num": 8
+    },
+    "roleBonus": {},
+    "condition": {
+      "type": "loveHateNumAll",
+      "num": 15.0
+    }
+  },
+  "blackMarketMaxNum_1": {
+    "name": "blackMarketMaxNum_1",
+    "cnName": "交易专家",
+    "level": 1,
+    "description": "一天中跟神秘商人的交易次数超过1次。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "神秘商人",
+    "gift": {},
+    "roleBonus": {
+      "critPro3": 0.01
+    },
+    "condition": {
+      "type": "blackMarketMaxNum",
+      "num": 1.0
+    }
+  },
+  "blackMarketMaxNum_2": {
+    "name": "blackMarketMaxNum_2",
+    "cnName": "交易大师",
+    "level": 2,
+    "description": "一天中跟神秘商人的交易次数超过2次。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "神秘商人",
+    "gift": {},
+    "roleBonus": {
+      "critPro3": 0.03
+    },
+    "condition": {
+      "type": "blackMarketMaxNum",
+      "num": 2.0
+    }
+  },
+  "blackMarketMaxNum_3": {
+    "name": "blackMarketMaxNum_3",
+    "cnName": "交易王",
+    "level": 3,
+    "description": "一天中跟神秘商人的交易次数超过3次。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "神秘商人",
+    "gift": {},
+    "roleBonus": {
+      "critPro3": 0.05
+    },
+    "condition": {
+      "type": "blackMarketMaxNum",
+      "num": 3.0
+    }
+  },
+  "dailySign30": {
+    "name": "dailySign30",
+    "cnName": "签到王",
+    "level": 0,
+    "description": "当月签到次数超过20天。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "签到",
+    "gift": {},
+    "roleBonus": {
+      "critPro3": 0.06
+    },
+    "condition": {
+      "type": "dailySignNum",
+      "num": 20.0
+    }
+  },
+  "lotteryCoin_1": {
+    "name": "lotteryCoin_1",
+    "cnName": "喜爱银币",
+    "level": 1,
+    "description": "在关卡抽奖中，累计抽中银币到达50次。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "银币抽奖",
+    "gift": {},
+    "roleBonus": {
+      "coinMul": 0.06
+    },
+    "condition": {
+      "type": "lotteryCoin",
+      "num": 50.0
+    }
+  },
+  "lotteryCoin_2": {
+    "name": "lotteryCoin_2",
+    "cnName": "热爱银币",
+    "level": 2,
+    "description": "在关卡抽奖中，累计抽中银币到达120次。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "银币抽奖",
+    "gift": {},
+    "roleBonus": {
+      "coinMul": 0.12
+    },
+    "condition": {
+      "type": "lotteryCoin",
+      "num": 120.0
+    }
+  },
+  "lotteryCoin_3": {
+    "name": "lotteryCoin_3",
+    "cnName": "酷爱银币",
+    "level": 3,
+    "description": "在关卡抽奖中，累计抽中银币到达300次。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "银币抽奖",
+    "gift": {},
+    "roleBonus": {
+      "coinMul": 0.2
+    },
+    "condition": {
+      "type": "lotteryCoin",
+      "num": 300.0
+    }
+  },
+  "lotteryOrange_1": {
+    "name": "lotteryOrange_1",
+    "cnName": "喜爱橙色",
+    "level": 1,
+    "description": "在关卡抽奖中，累计抽中神护碎片10次以上。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "物品抽奖",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_shotgun": 0.02
+    },
+    "condition": {
+      "type": "lotteryAllOrangeNum",
+      "num": 10.0
+    }
+  },
+  "lotteryOrange_2": {
+    "name": "lotteryOrange_2",
+    "cnName": "热爱橙色",
+    "level": 2,
+    "description": "在关卡抽奖中，累计抽中神护碎片30次以上。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "物品抽奖",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_shotgun": 0.05
+    },
+    "condition": {
+      "type": "lotteryAllOrangeNum",
+      "num": 30.0
+    }
+  },
+  "lotteryOrange_3": {
+    "name": "lotteryOrange_3",
+    "cnName": "酷爱橙色",
+    "level": 3,
+    "description": "在关卡抽奖中，累计抽中神护碎片50次以上。",
+    "medalType": "valueCompare",
+    "category": "其他",
+    "subcategory": "物品抽奖",
+    "gift": {},
+    "roleBonus": {
+      "dpsMul_shotgun": 0.08
+    },
+    "condition": {
+      "type": "lotteryAllOrangeNum",
+      "num": 50.0
+    }
+  }
+}

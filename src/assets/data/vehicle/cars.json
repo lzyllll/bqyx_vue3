@@ -1,0 +1,482 @@
+{
+  "FireWolfCar": {
+    "cnName": "虚炎狼",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.07,
+      "lifeAll": 0.07,
+      "rareGeneDropPro": 0.091
+    }
+  },
+  "NianCar": {
+    "cnName": "年兽",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.07,
+      "lifeAll": 0.07,
+      "rareGeneDropPro": 0.091
+    }
+  },
+  "Daybreak": {
+    "cnName": "破晓",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.05,
+      "lifeAll": 0.05,
+      "rareGeneDropPro": 0.065
+    }
+  },
+  "MoonLack": {
+    "cnName": "月蚀",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.08,
+      "lifeAll": 0.08,
+      "rareGeneDropPro": 0.104
+    }
+  },
+  "Dayspring": {
+    "cnName": "黎明",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.1,
+      "lifeAll": 0.1,
+      "rareGeneDropPro": 0.13
+    }
+  },
+  "Daylight": {
+    "cnName": "曙光",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.16,
+      "lifeAll": 0.16,
+      "rareGeneDropPro": 0.208
+    }
+  },
+  "RedReaper": {
+    "cnName": "收割者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.05,
+      "lifeAll": 0.05,
+      "rareGeneDropPro": 0.065
+    }
+  },
+  "RedCrusher": {
+    "cnName": "碾压者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.08,
+      "lifeAll": 0.08,
+      "rareGeneDropPro": 0.104
+    }
+  },
+  "RedSweeps": {
+    "cnName": "扫荡者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.1,
+      "lifeAll": 0.1,
+      "rareGeneDropPro": 0.13
+    }
+  },
+  "FlyDragonAir": {
+    "cnName": "异祖龙",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.22,
+      "lifeAll": 0.2,
+      "rareGeneDropPro": 0.242
+    }
+  },
+  "FrozenDragonAir": {
+    "cnName": "冰霜祖龙",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.24,
+      "lifeAll": 0.2,
+      "rareGeneDropPro": 0.312
+    }
+  },
+  "DesertTank": {
+    "cnName": "沙漠进袭者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.03,
+      "lifeAll": 0.03,
+      "rareGeneDropPro": 0.039
+    }
+  },
+  "ForestTank": {
+    "cnName": "丛林狂袭者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.05,
+      "lifeAll": 0.05,
+      "rareGeneDropPro": 0.065
+    }
+  },
+  "DarkTank": {
+    "cnName": "暗夜侵袭者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.09,
+      "lifeAll": 0.09,
+      "rareGeneDropPro": 0.117
+    }
+  },
+  "FloorTank": {
+    "cnName": "大地掠袭者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.16,
+      "lifeAll": 0.16,
+      "rareGeneDropPro": 0.208
+    }
+  },
+  "BlueWhale": {
+    "cnName": "巨鲸",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.05,
+      "lifeAll": 0.05,
+      "rareGeneDropPro": 0.065
+    }
+  },
+  "TheEagle": {
+    "cnName": "雄鹰",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.08,
+      "lifeAll": 0.08,
+      "rareGeneDropPro": 0.104
+    }
+  },
+  "TheRoc": {
+    "cnName": "大鹏",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.1,
+      "lifeAll": 0.1,
+      "rareGeneDropPro": 0.13
+    }
+  },
+  "TheKun": {
+    "cnName": "鲲",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.16,
+      "lifeAll": 0.16,
+      "rareGeneDropPro": 0.208
+    }
+  },
+  "Punisher": {
+    "cnName": "制裁者",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.12,
+      "lifeAll": 0.12,
+      "rareGeneDropPro": 0.156,
+      "petBookDropPro": 0.096
+    }
+  },
+  "Adjudicator": {
+    "cnName": "判决者",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.16,
+      "lifeAll": 0.16,
+      "rareGeneDropPro": 0.208,
+      "petBookDropPro": 0.128
+    }
+  },
+  "Chastener": {
+    "cnName": "惩戒者",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.2,
+      "lifeAll": 0.2,
+      "rareGeneDropPro": 0.26,
+      "petBookDropPro": 0.16
+    }
+  },
+  "Executioner": {
+    "cnName": "处决者",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.26,
+      "lifeAll": 0.26,
+      "rareGeneDropPro": 0.338,
+      "petBookDropPro": 0.208
+    }
+  },
+  "RedMoto": {
+    "cnName": "赤焰",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.08,
+      "lifeAll": 0.08,
+      "rareGeneDropPro": 0.104
+    }
+  },
+  "RedMotoSec": {
+    "cnName": "烈焰",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.1,
+      "lifeAll": 0.1,
+      "rareGeneDropPro": 0.13
+    }
+  },
+  "RedMotoThird": {
+    "cnName": "圣焰",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.16,
+      "lifeAll": 0.16,
+      "rareGeneDropPro": 0.208
+    }
+  },
+  "SeaShark": {
+    "cnName": "潜行者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.04,
+      "lifeAll": 0.04,
+      "rareGeneDropPro": 0.052
+    }
+  },
+  "Lurker": {
+    "cnName": "潜伏者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.07,
+      "lifeAll": 0.07,
+      "rareGeneDropPro": 0.091
+    }
+  },
+  "LurkerThird": {
+    "cnName": "潜影者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.1,
+      "lifeAll": 0.1,
+      "rareGeneDropPro": 0.13
+    }
+  },
+  "Titans": {
+    "cnName": "泰坦",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.14,
+      "lifeAll": 0.14,
+      "rareGeneDropPro": 0.182,
+      "petBookDropPro": 0.112
+    }
+  },
+  "BlackTitans": {
+    "cnName": "黑暗泰坦",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.18,
+      "lifeAll": 0.18,
+      "rareGeneDropPro": 0.234,
+      "petBookDropPro": 0.144
+    }
+  },
+  "Gaia": {
+    "cnName": "盖亚",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.22,
+      "lifeAll": 0.22,
+      "rareGeneDropPro": 0.286,
+      "petBookDropPro": 0.176
+    }
+  },
+  "RedGaia": {
+    "cnName": "狂怒盖亚",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.25,
+      "lifeAll": 0.25,
+      "rareGeneDropPro": 0.325,
+      "petBookDropPro": 0.2
+    }
+  },
+  "GoldGaia": {
+    "cnName": "神圣盖亚",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.3,
+      "lifeAll": 0.3,
+      "rareGeneDropPro": 0.39,
+      "petBookDropPro": 0.24
+    }
+  },
+  "BoneBreaker": {
+    "cnName": "切割者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.15,
+      "hurtMul_pistol": 0.15,
+      "specialPartsDropPro": 0.2,
+      "rareGeneDropPro": 0.195
+    }
+  },
+  "AircraftGun": {
+    "cnName": "狩猎者",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.08,
+      "lifeAll": 0.08,
+      "rareGeneDropPro": 0.104
+    }
+  },
+  "Diggers": {
+    "cnName": "挖掘者",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.11,
+      "lifeAll": 0.11,
+      "rareGeneDropPro": 0.121
+    }
+  },
+  "SecDiggers": {
+    "cnName": "腥红挖掘者",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.18,
+      "lifeAll": 0.18,
+      "rareGeneDropPro": 0.234,
+      "petBookDropPro": 0.144
+    }
+  },
+  "ThirdDiggers": {
+    "cnName": "炙热挖掘者",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.2,
+      "lifeAll": 0.2,
+      "rareGeneDropPro": 0.26,
+      "petBookDropPro": 0.16
+    }
+  },
+  "FourDiggers": {
+    "cnName": "血锯挖掘者",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.24,
+      "lifeAll": 0.24,
+      "rareGeneDropPro": 0.312,
+      "petBookDropPro": 0.192
+    }
+  },
+  "Prophet": {
+    "cnName": "先知",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.1,
+      "lifeAll": 0.1,
+      "rareGeneDropPro": 0.13,
+      "petBookDropPro": 0.08
+    }
+  },
+  "Temmoku": {
+    "cnName": "天目",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.14,
+      "lifeAll": 0.14,
+      "rareGeneDropPro": 0.182,
+      "petBookDropPro": 0.112
+    }
+  },
+  "SourceCode": {
+    "cnName": "源代码",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.17,
+      "lifeAll": 0.17,
+      "rareGeneDropPro": 0.221,
+      "petBookDropPro": 0.136
+    }
+  },
+  "TimeMachine": {
+    "cnName": "时光机",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.24,
+      "lifeAll": 0.24,
+      "rareGeneDropPro": 0.312,
+      "petBookDropPro": 0.192
+    }
+  },
+  "Thunder": {
+    "cnName": "雷鸣",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.22,
+      "lifeAll": 0.2,
+      "rareGeneDropPro": 0.242
+    }
+  },
+  "Thunderbolt": {
+    "cnName": "雷霆",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.24,
+      "lifeAll": 0.2,
+      "rareGeneDropPro": 0.312
+    }
+  },
+  "SaberTigerCar": {
+    "cnName": "异齿虎",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.21,
+      "hurtMul_sniper": 0.1,
+      "lottery": 15,
+      "rareGeneDropPro": 0.231
+    }
+  },
+  "WatchEagleAir": {
+    "cnName": "守望之翼",
+    "shop": false,
+    "roleBonus": {
+      "dpsAll": 0.08,
+      "lifeAll": 0.08,
+      "rareGeneDropPro": 0.104
+    }
+  },
+  "BlueMoto": {
+    "cnName": "幽鬼",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.18,
+      "lifeAll": 0.18,
+      "rareGeneDropPro": 0.234,
+      "petBookDropPro": 0.144
+    }
+  },
+  "BlueMotoSec": {
+    "cnName": "血魂",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.21,
+      "lifeAll": 0.21,
+      "rareGeneDropPro": 0.273,
+      "petBookDropPro": 0.168
+    }
+  },
+  "BlueMotoThird": {
+    "cnName": "飞魄",
+    "shop": true,
+    "roleBonus": {
+      "dpsAll": 0.27,
+      "lifeAll": 0.27,
+      "rareGeneDropPro": 0.351,
+      "petBookDropPro": 0.216
+    }
+  }
+}

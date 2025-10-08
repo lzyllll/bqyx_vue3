@@ -1,0 +1,11 @@
+{
+  "dpsAll": 0.01,
+  "lifeAll": 0.015,
+  "fightDedut": 0.015,
+  "moveMul": 0.015,
+  "vehicleDpsMul": 0.04,
+  "cdMul": 0.005,
+  "critPro3": 0.005,
+  "bulletDedut": 0.015,
+  "dodge": 0.015
+}

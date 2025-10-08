@@ -1,0 +1,26 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "src/**/__tests__/*"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    //开启装饰器
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    //检查宽松一点，不要管类的构造方法了，我用class-transformer
+    "strict": false,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": [
+      "element-plus/global"
+    ]
+  }
+}

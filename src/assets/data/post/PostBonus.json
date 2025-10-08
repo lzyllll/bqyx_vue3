@@ -1,0 +1,77 @@
+[
+    {
+        "lifeAll": 0,
+        "dpsAll": 0,
+        "hurtAll": 0,
+        "lottery": 0
+    },
+    {
+
+        "lifeAll": 0.04,
+        "dpsAll": 0.04,
+        "hurtAll": 0.04,
+        "lottery": 3
+    },
+    {
+
+        "lifeAll": 0.08,
+        "dpsAll": 0.08,
+        "hurtAll": 0.08,
+        "lottery": 6
+    },
+    {
+
+        "lifeAll": 0.12,
+        "dpsAll": 0.12,
+        "hurtAll": 0.12,
+        "lottery": 9
+    },
+    {
+
+        "lifeAll": 0.16,
+        "dpsAll": 0.16,
+        "hurtAll": 0.16,
+        "lottery": 12
+    },
+    {
+
+        "lifeAll": 0.20,
+        "dpsAll": 0.20,
+        "hurtAll": 0.20,
+        "lottery": 15
+    },
+    {
+
+        "lifeAll": 0.24,
+        "dpsAll": 0.24,
+        "hurtAll": 0.24,
+        "lottery": 18
+    },
+    {
+
+        "lifeAll": 0.28,
+        "dpsAll": 0.28,
+        "hurtAll": 0.28,
+        "lottery": 21
+    },
+    {
+
+        "lifeAll": 0.32,
+        "dpsAll": 0.32,
+        "hurtAll": 0.32,
+        "lottery": 24
+    },
+    {
+
+        "lifeAll": 0.36,
+        "dpsAll": 0.36,
+        "hurtAll": 0.36,
+        "lottery": 27
+    },
+    {
+        "lifeAll": 0.40,
+        "dpsAll": 0.40,
+        "hurtAll": 0.40,
+        "lottery": 30
+    }
+]

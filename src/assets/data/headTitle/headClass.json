@@ -1,0 +1,727 @@
+{
+  "maxBug": {
+    "cnName": "史上最大bug",
+    "score": 40,
+    "type": "新的",
+    "description": "商店领取补偿礼包",
+    "condition": {},
+    "roleBonus": {
+      "ranBlackArmsDropPro": 0.26
+    }
+  },
+  "anniver11": {
+    "cnName": "十一周年快乐",
+    "score": 100,
+    "type": "新的",
+    "description": "十一周年签到奖励。",
+    "condition": {},
+    "roleBonus": {
+      "dpsAll": 0.21,
+      "gemDropPro": 0.17
+    }
+  },
+  "upBody": {
+    "cnName": "UP达人",
+    "score": 200,
+    "type": "新的",
+    "description": "参加UP达人活动。",
+    "condition": {},
+    "roleBonus": {
+      "gemDropPro": 0.25,
+      "specialPartsDropPro": 0.25
+    }
+  },
+  "anniver10": {
+    "cnName": "十年相伴",
+    "score": 100,
+    "type": "新的",
+    "description": "十周年签到奖励。",
+    "condition": {},
+    "roleBonus": {
+      "dpsAll": 0.2,
+      "gemDropPro": 0.16
+    }
+  },
+  "armsSkinCreator": {
+    "cnName": "武器制造大师",
+    "score": 200,
+    "type": "新的",
+    "description": "参加武器皮肤大赛获得",
+    "condition": {
+      "type": "armsSkinCreator",
+      "num": null
+    },
+    "roleBonus": {
+      "moreDpsMul": 0.05,
+      "moreLifeMul": 0.1
+    }
+  },
+  "bbs23": {
+    "cnName": "群组达人",
+    "score": 100,
+    "type": "新的",
+    "description": "参加群组活动获得",
+    "condition": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.6
+    }
+  },
+  "anniver9": {
+    "cnName": "九周年快乐",
+    "score": 100,
+    "type": "新的",
+    "description": "九周年签到奖励。",
+    "condition": {},
+    "roleBonus": {
+      "dpsAll": 0.15,
+      "gemDropPro": 0.16
+    }
+  },
+  "achieveKing": {
+    "cnName": "成就之皇",
+    "score": 320,
+    "type": "新的",
+    "description": "获得209个成就。",
+    "condition": {
+      "type": "num",
+      "num": 209
+    },
+    "roleBonus": {
+      "lottery": 15
+    }
+  },
+  "achieveGod": {
+    "cnName": "成就之神",
+    "score": 360,
+    "type": "新的",
+    "description": "获得255个成就。",
+    "condition": {
+      "type": "num",
+      "num": 255
+    },
+    "roleBonus": {
+      "lottery": 19
+    }
+  },
+  "anniver8": {
+    "cnName": "八周年快乐",
+    "score": 100,
+    "type": "新的",
+    "description": "八周年签到奖励。",
+    "condition": {},
+    "roleBonus": {
+      "dpsAll": 0.12,
+      "gemDropPro": 0.15
+    }
+  },
+  "zodiac12": {
+    "cnName": "十二生肖",
+    "score": 300,
+    "type": "新的",
+    "description": "获得12种生肖武器。",
+    "condition": {
+      "type": "num",
+      "num": 12
+    },
+    "roleBonus": {
+      "zodiacArmsHurtAdd": 0.25
+    }
+  },
+  "battle4": {
+    "cnName": "霞光领主",
+    "score": 320,
+    "type": "新的",
+    "description": "军队争霸总积分超过900可获得。",
+    "condition": {},
+    "roleBonus": {
+      "lottery": 10,
+      "specialPartsDropPro": 0.3
+    }
+  },
+  "battle3": {
+    "cnName": "霞光天军",
+    "score": 200,
+    "type": "新的",
+    "description": "军队争霸总积分超过850可获得。",
+    "condition": {},
+    "roleBonus": {
+      "lottery": 5,
+      "specialPartsDropPro": 0.2
+    }
+  },
+  "battle2": {
+    "cnName": "霞光雄狮",
+    "score": 160,
+    "type": "新的",
+    "description": "军队争霸总积分超过800可获得。",
+    "condition": {},
+    "roleBonus": {
+      "lottery": 4,
+      "specialPartsDropPro": 0.16
+    }
+  },
+  "battle1": {
+    "cnName": "霞光劲旅",
+    "score": 120,
+    "type": "新的",
+    "description": "军队争霸总积分超过750可获得。",
+    "condition": {},
+    "roleBonus": {
+      "lottery": 3,
+      "specialPartsDropPro": 0.12
+    }
+  },
+  "joyousFool": {
+    "cnName": "愚人欢乐",
+    "score": 100,
+    "type": "新的",
+    "description": "在{purple 2025年4月20号}之前累计6天活跃度达到60。",
+    "condition": {},
+    "roleBonus": {
+      "lifeAll": 20.25,
+      "dpsAll": -20.25
+    }
+  },
+  "anniver7": {
+    "cnName": "爆枪七周年",
+    "score": 100,
+    "type": "新的",
+    "description": "七周年签到奖励。",
+    "condition": {},
+    "roleBonus": {
+      "dpsAll": 0.12,
+      "gemDropPro": 0.13
+    }
+  },
+  "singleAF": {
+    "cnName": "单身狗",
+    "score": 80,
+    "type": "新的",
+    "description": "在{purple 2024年11月15号}之前累计6天活跃度达到90。",
+    "condition": {},
+    "roleBonus": {
+      "vehicleDpsMul": 3.5,
+      "vehicleDefMul": 3.5
+    }
+  },
+  "happyFool": {
+    "cnName": "愚人快乐",
+    "score": 80,
+    "type": "新的",
+    "description": "在{purple 2020年4月13号}之前累计6天活跃度达到50。",
+    "condition": {
+      "type": "num",
+      "num": 6
+    },
+    "roleBonus": {
+      "lifeAll": 0.7,
+      "dpsAll": -0.4
+    }
+  },
+  "anniver6": {
+    "cnName": "爆枪六周年",
+    "score": 100,
+    "type": "新的",
+    "description": "六周年签到奖励。",
+    "condition": {},
+    "roleBonus": {
+      "dpsAll": 0.1,
+      "gemDropPro": 0.11
+    }
+  },
+  "childrenDay": {
+    "cnName": "六一快乐",
+    "score": 60,
+    "type": "新的",
+    "description": "在{purple 2023年6月15号之前}累计6天活跃度达到90。",
+    "condition": {},
+    "roleBonus": {
+      "maxJumpNumAdd": 2
+    }
+  },
+  "childrenFly": {
+    "cnName": "六一起飞",
+    "score": 60,
+    "type": "新的",
+    "description": "在{purple 2025年6月20号之前}累计8天活跃度达到90。",
+    "condition": {},
+    "roleBonus": {
+      "fgNE": 0.5
+    }
+  },
+  "anniver5": {
+    "cnName": "爆枪五周年",
+    "score": 100,
+    "type": "新的",
+    "description": "五周年签到奖励。",
+    "condition": {},
+    "roleBonus": {
+      "lifeAll": 0.2,
+      "gemDropPro": 0.1
+    }
+  },
+  "anniver4": {
+    "cnName": "爆枪四周年",
+    "score": 100,
+    "type": "新的",
+    "description": "四周年签到奖励。",
+    "condition": {},
+    "roleBonus": {
+      "lottery": 10
+    }
+  },
+  "anniver3": {
+    "cnName": "爆枪三周年",
+    "score": 100,
+    "type": "新的",
+    "description": "三周年签到奖励。",
+    "condition": {},
+    "roleBonus": {
+      "blackEquipDropPro": 0.4
+    }
+  },
+  "qixi": {
+    "cnName": "七夕眷侣",
+    "score": 100,
+    "type": "新的",
+    "description": "在{purple 2016年8月21号}之前累计5天活跃度达到90。",
+    "condition": {
+      "type": "num",
+      "num": 5
+    },
+    "roleBonus": {
+      "dpsAll": 0.06,
+      "loveAdd": 50
+    }
+  },
+  "zongzi": {
+    "cnName": "粽叶飘香",
+    "score": 80,
+    "type": "新的",
+    "description": "通关猪头洋、百丈道、水升村、白鹭镇、西池的超难难度各1次，清理这些地方的僵尸，为举办龙舟赛做准备。",
+    "condition": {
+      "type": "zongzi",
+      "num": null
+    },
+    "roleBonus": {
+      "lottery": 2,
+      "dpsAll": 0.02
+    }
+  },
+  "happySpring": {
+    "cnName": "春节快乐",
+    "score": 40,
+    "type": "新的",
+    "description": "春节点灯活动礼包。",
+    "condition": {},
+    "roleBonus": {
+      "lottery": 2
+    }
+  },
+  "widerAll": {
+    "cnName": "秘境征服者",
+    "score": 160,
+    "type": "新的",
+    "description": "累计通关5个神难秘境副本。",
+    "condition": {
+      "type": "num",
+      "num": 5
+    },
+    "roleBonus": {
+      "dpsAll": 0.06,
+      "lottery": 5
+    }
+  },
+  "superHero": {
+    "cnName": "超能英雄",
+    "score": 240,
+    "type": "新的",
+    "description": "使用“竞技宝箱”合成。",
+    "condition": {},
+    "roleBonus": {
+      "dpsMul": 1.0,
+      "rareArmsDropPro": 0.7
+    }
+  },
+  "specialSoldiers": {
+    "cnName": "特种奇兵",
+    "score": 240,
+    "type": "新的",
+    "description": "使用“竞技宝箱”合成。",
+    "condition": {},
+    "roleBonus": {
+      "lifeMul": 1.0,
+      "rareEquipDropPro": 0.7
+    }
+  },
+  "headshot_20": {
+    "cnName": "爆头王",
+    "score": 40,
+    "type": "新的",
+    "description": "连续通关20个关卡（不包括竞技场、任务），并且爆头率都在80%以上。",
+    "condition": {
+      "type": "num",
+      "num": 20
+    },
+    "roleBonus": {
+      "dpsMul_sniper": 0.02
+    }
+  },
+  "goddiff_30": {
+    "cnName": "踏平霞光",
+    "score": 60,
+    "type": "新的",
+    "description": "解锁神难地图超过30个。",
+    "condition": {
+      "type": "num",
+      "num": 30
+    },
+    "roleBonus": {
+      "arenaStampDropNum": 3
+    }
+  },
+  "death": {
+    "cnName": "死神",
+    "score": 30,
+    "type": "新的",
+    "description": "获得“宇宙最脆”和“无药可救”2个成就勋章。",
+    "condition": {
+      "type": "death",
+      "num": null
+    },
+    "roleBonus": {
+      "lifeRateMul": 0.05
+    }
+  },
+  "rareArms_5": {
+    "cnName": "武器收藏家",
+    "score": 40,
+    "type": "新的",
+    "description": "获得4种稀有武器，并装上它们。",
+    "condition": {
+      "type": "rareArms_5",
+      "num": null
+    },
+    "roleBonus": {
+      "rareArmsDropPro": 0.06
+    }
+  },
+  "fakeFinale": {
+    "cnName": "假的大结局",
+    "score": 300,
+    "type": "新的",
+    "description": "完成96个主线任务。这不是大结局！这不是大结局！这不是大结局！",
+    "condition": {
+      "type": "num",
+      "num": 96
+    },
+    "roleBonus": {
+      "lottery": 5
+    }
+  },
+  "dpsTop_1": {
+    "cnName": "战神",
+    "score": 300,
+    "type": "排行榜",
+    "description": "主角战斗力到达500000000。",
+    "condition": {
+      "type": "num",
+      "num": 500000000
+    },
+    "roleBonus": {
+      "weaponDropPro": 0.1
+    }
+  },
+  "arena_1": {
+    "cnName": "竞技之王",
+    "score": 200,
+    "type": "排行榜",
+    "description": "累计在竞技场中挑战超过240次。",
+    "condition": {
+      "type": "num",
+      "num": 240
+    },
+    "roleBonus": {
+      "arenaStampDropNum": 8
+    }
+  },
+  "rifle_1": {
+    "cnName": "步枪之王",
+    "score": 180,
+    "type": "排行榜",
+    "description": "装上一把战斗力达到600000000的{green 步枪}。",
+    "condition": {
+      "type": "num",
+      "num": 600000000
+    },
+    "roleBonus": {
+      "dpsMul_rifle": 0.04
+    }
+  },
+  "sniper_1": {
+    "cnName": "狙击之王",
+    "score": 180,
+    "type": "排行榜",
+    "description": "装上一把战斗力达到700000000的{green 狙击}。",
+    "condition": {
+      "type": "num",
+      "num": 700000000
+    },
+    "roleBonus": {
+      "dpsMul_sniper": 0.04
+    }
+  },
+  "shotgun_1": {
+    "cnName": "散弹之王",
+    "score": 180,
+    "type": "排行榜",
+    "description": "装上一把战斗力达到800000000的{green 散弹}。",
+    "condition": {
+      "type": "num",
+      "num": 800000000
+    },
+    "roleBonus": {
+      "dpsMul_shotgun": 0.04
+    }
+  },
+  "pistol_1": {
+    "cnName": "手枪之王",
+    "score": 180,
+    "type": "排行榜",
+    "description": "装上一把战斗力达到900000000的{green 手枪}。",
+    "condition": {
+      "type": "num",
+      "num": 900000000
+    },
+    "roleBonus": {
+      "dpsMul_pistol": 0.04
+    }
+  },
+  "rocket_1": {
+    "cnName": "火炮之王",
+    "score": 180,
+    "type": "排行榜",
+    "description": "装上一把战斗力达到1000000000的{green 火炮}。",
+    "condition": {
+      "type": "num",
+      "num": 1000000000
+    },
+    "roleBonus": {
+      "dpsMul_rocket": 0.04
+    }
+  },
+  "almighty_10": {
+    "cnName": "十项全能",
+    "score": 160,
+    "type": "排行榜",
+    "description": "背包中拥有10把类型不同并且战力达到5亿的武器。",
+    "condition": {
+      "type": "num",
+      "num": 10
+    },
+    "roleBonus": {
+      "dpsAll": 0.1
+    }
+  },
+  "weapon_4": {
+    "cnName": "兵器大亨",
+    "score": 160,
+    "type": "收集",
+    "description": "获得所有副手的{orange 第四级}。",
+    "condition": {
+      "type": "weapon_4",
+      "num": null
+    },
+    "roleBonus": {
+      "bloodStoneDropPro": 0.15
+    }
+  },
+  "device_4": {
+    "cnName": "装置大亨",
+    "score": 80,
+    "type": "收集",
+    "description": "获得所有装置的{orange 第四级}。",
+    "condition": {
+      "type": "device_4",
+      "num": null
+    },
+    "roleBonus": {
+      "lifeCatalystDropPro": 0.2
+    }
+  },
+  "achieve_70": {
+    "cnName": "成就大亨",
+    "score": 100,
+    "type": "收集",
+    "description": "获得70个成就。",
+    "condition": {
+      "type": "num",
+      "num": 70
+    },
+    "roleBonus": {
+      "lifeMul": 0.1
+    }
+  },
+  "achieve_123": {
+    "cnName": "成就之王",
+    "score": 140,
+    "type": "收集",
+    "description": "获得123个成就。",
+    "condition": {
+      "type": "num",
+      "num": 123
+    },
+    "roleBonus": {
+      "dodge": 0.03
+    }
+  },
+  "dominating": {
+    "cnName": "独霸一方",
+    "score": 260,
+    "type": "收集",
+    "description": "同时装上仲裁者套装、小卡时装、四级副手、五级装置、盖亚载具。",
+    "condition": {
+      "type": "dominating",
+      "num": null
+    },
+    "roleBonus": {
+      "critPro3": 0.03
+    }
+  },
+  "unionIsMyHome": {
+    "cnName": "公会是我家",
+    "score": 170,
+    "type": "军队",
+    "description": "个人军队贡献超过153600。",
+    "condition": {
+      "type": "num",
+      "num": 153600
+    },
+    "roleBonus": {
+      "dpsMul": 0.05
+    }
+  },
+  "wantUpgrade": {
+    "cnName": "我要升级",
+    "score": 40,
+    "type": "其他",
+    "description": "连续4天在线1个小时以上。",
+    "condition": {
+      "type": "num",
+      "num": 4
+    },
+    "roleBonus": {
+      "expMul": 0.25
+    }
+  },
+  "petEvo_4": {
+    "cnName": "闲着蛋疼",
+    "score": 100,
+    "type": "其他",
+    "description": "累计进化3只尸宠。",
+    "condition": {
+      "type": "num",
+      "num": 3
+    },
+    "roleBonus": {
+      "godStoneDropPro": 0.15
+    }
+  },
+  "vehicleEvo_4": {
+    "cnName": "载具新时代",
+    "score": 140,
+    "type": "其他",
+    "description": "累计进化4个载具。",
+    "condition": {
+      "type": "num",
+      "num": 4
+    },
+    "roleBonus": {
+      "converStoneDropPro": 0.15
+    }
+  },
+  "ask_5": {
+    "cnName": "学霸",
+    "score": 140,
+    "type": "其他",
+    "description": "连续5天答题全对。",
+    "condition": {
+      "type": "num",
+      "num": 5
+    },
+    "roleBonus": {
+      "weaponDropPro": 0.2
+    }
+  },
+  "heroSkill_21": {
+    "cnName": "全能人",
+    "score": 50,
+    "type": "其他",
+    "description": "P1角色学习超过21个技能。",
+    "condition": {
+      "type": "num",
+      "num": 21
+    },
+    "roleBonus": {
+      "cdMul": 0.03
+    }
+  },
+  "armsRemake100": {
+    "cnName": "武器锻造家",
+    "score": 100,
+    "type": "其他",
+    "description": "累计重造100把武器。",
+    "condition": {
+      "type": "num",
+      "num": 100
+    },
+    "roleBonus": {
+      "rareArmsDropPro": 0.13
+    }
+  },
+  "equipRemake100": {
+    "cnName": "装备锻造家",
+    "score": 100,
+    "type": "其他",
+    "description": "累计重造100个装备。",
+    "condition": {
+      "type": "num",
+      "num": 100
+    },
+    "roleBonus": {
+      "rareEquipDropPro": 0.13
+    }
+  },
+  "baoqiang": {
+    "cnName": "爆枪突击",
+    "score": 100,
+    "type": "其他",
+    "description": "爆枪突击直播专属称号",
+    "condition": {},
+    "roleBonus": {
+      "blackArmsDropPro": 0.2
+    }
+  },
+  "gameKing": {
+    "cnName": "佣兵之王",
+    "score": 200,
+    "type": "其他",
+    "description": "佣兵之王活动奖励。",
+    "condition": {},
+    "roleBonus": {
+      "dpsAll": 0.08,
+      "lifeAll": 0.08
+    }
+  },
+  "gameSuper": {
+    "cnName": "佣兵精英",
+    "score": 120,
+    "type": "其他",
+    "description": "佣兵之王活动奖励。",
+    "condition": {},
+    "roleBonus": {
+      "dpsAll": 0.06,
+      "lifeAll": 0.06
+    }
+  }
+}

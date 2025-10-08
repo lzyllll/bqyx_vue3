@@ -1,0 +1,66 @@
+[
+  {
+    "min": 2300,
+    "roleBonus": {
+      "expMul": 0.25,
+      "lifeAll": 0.14,
+      "dpsMul": 0.14,
+      "rareArmsDropPro": 0.25,
+      "rareEquipDropPro": 0.25,
+      "blackArmsDropPro": 0.1,
+      "blackEquipDropPro": 0.1
+    }
+  },
+  {
+    "min": 2000,
+    "roleBonus": {
+      "expMul": 0.2,
+      "lifeAll": 0.11,
+      "dpsMul": 0.1,
+      "rareArmsDropPro": 0.2,
+      "rareEquipDropPro": 0.2,
+      "blackArmsDropPro": 0.05,
+      "blackEquipDropPro": 0.05
+    }
+  },
+  {
+    "min": 1700,
+    "roleBonus": {
+      "expMul": 0.15,
+      "lifeAll": 0.09,
+      "dpsMul": 0.06,
+      "rareArmsDropPro": 0.15,
+      "rareEquipDropPro": 0.15
+    }
+  },
+  {
+    "min": 1100,
+    "roleBonus": {
+      "expMul": 0.15,
+      "lifeAll": 0.07,
+      "dpsMul": 0.04,
+      "rareArmsDropPro": 0.15
+    }
+  },
+  {
+    "min": 750,
+    "roleBonus": {
+      "expMul": 0.15,
+      "lifeAll": 0.05,
+      "dpsMul": 0.02
+    }
+  },
+  {
+    "min": 350,
+    "roleBonus": {
+      "expMul": 0.15,
+      "lifeAll": 0.03
+    }
+  },
+  {
+    "min": 85,
+    "roleBonus": {
+      "expMul": 0.15
+    }
+  }
+]
