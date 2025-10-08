@@ -96,41 +96,66 @@ npm run build
 
 ## 数据结构
 
-### 武器对象 (WeaponObject)
-```typescript
-interface WeaponObject {
-  cnName?: string;           // 武器名称
-  baseLabel?: string;         // 基础标签
-  pn?: string;               // PN
-  name?: string;              // 名称
-  capacity?: number;          // 容量
-  bulletNum?: number;        // 子弹数量
-  attackGap?: number;        // 攻击间隔
-  reloadGap?: number;        // 重装间隔
-  skillArr?: string[];       // 技能数组
-  godSkillArr?: string[];    // 神技数组
-  // ... 更多字段
-}
-```
+### 存档解析
+- 存档解析已完成的部分
+  - bossCard
+  - equip
+  - head
+  - main
+  - partsBag
+  - peak
+  - vip
+- 将json解析的相关类，以及类的功能，在types/archive中
+- 实现时，class-transform
+  - 不支持字典和范型，有些type没有加装饰器，后期使用时，记得加
 
-### Boss对象 (BossObject)
-```typescript
-interface BossObject {
-  n?: string;                 // 名称
-  pn?: string;               // PN
-  ud?: string;               // UD
-  mp?: string;               // MP
-  lv?: number;               // 等级
-  li?: number;               // LI
-  sk?: string[];             // 技能数组
-  si?: boolean;              // SI标志
-  ve?: boolean;              // VE标志
-  pa?: boolean;              // PA标志
-  pr?: boolean;              // PR标志
-  pe?: boolean;              // PE标志
-  hb?: boolean;              // HB标志
-}
-```
+### 工具
+- utils
+  - decorator 
+    - 将class-transform不支持范型和records的相关实现的装饰器
+  - backgroundImages
+    - 根据名称，获取对应图片，以及背景框
+  - bonusAdd
+    - 对象计算属性加成的方法
+  - moduleRenderers.ts
+    - 侧边栏导航
+  - percent,safeGEt
+    - 百分比格式，安全访问
+  - components
+    - 属性展示组件
+      - BonusDisplay
+      - BonusList
+    - 原始json展示组件
+      - JsonViwer
+  - 使用方法
+    
+    ``` html
+          <!-- 常用于页面展示 -->
+            <BonusDisplay 
+                :bonus-list="getTotalCardBonus()"
+                :compact="false"
+                title="魂卡总加成"
+                subtitle="魂卡属性总加成"
+                empty-text="暂无装备加成"
+            />
+            <!-- 常用于负悬卡片 -->
+            <BonusList 
+                :bonus-list="getEquipBonus(equipItems[equipType])"
+                title="属性加成"
+                :compact="false"
+              />
+
+              <!-- 显示原始json -->
+            <JsonViewer 
+                :json-data="jsonData"
+                title="详细数据"
+                collapse-title="查看完整JSON数据"
+                :rows="10"
+            />
+
+
+    ```
+
 
 ## 使用说明
 
