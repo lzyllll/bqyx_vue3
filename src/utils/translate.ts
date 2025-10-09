@@ -164,7 +164,6 @@ export function getItemInfo(itemType: string, itemName: string): any {
   
   const itemInfo = dataSource[itemName as keyof typeof dataSource]
   if (!itemInfo) {
-    console.warn(`未找到物品: ${itemName} 在类型 ${itemType} 中`)
     return null
   }
   

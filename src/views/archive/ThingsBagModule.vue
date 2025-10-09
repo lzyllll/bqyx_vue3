@@ -17,6 +17,7 @@
           clearable
           style="width: 150px"
           @change="handleCategoryChange"
+          filterable
         >
           <el-option
             v-for="category in categories"
@@ -32,6 +33,7 @@
           clearable
           style="width: 150px"
           :disabled="!selectedCategory"
+          filterable
         >
           <el-option
             v-for="subcategory in subcategories"
@@ -74,15 +76,41 @@
         >
           重置
         </el-button>
+        
+        <el-button 
+          @click="toggleViewMode"
+          type="primary"
+          size="default"
+        >
+          {{ viewMode === 'grid' ? '列表视图' : '网格视图' }}
+        </el-button>
+      </div>
+      
+      <!-- 统计信息 -->
+      <div class="stats-row">
+        <span class="stat-item">
+          显示 {{ paginatedItems.length }} / {{ filteredItems.length }} 个物品
+        </span>
+        <span class="stat-item" v-if="selectedCategory">
+          分类: {{ selectedCategory }}
+        </span>
+        <span class="stat-item" v-if="selectedSubcategory">
+          子分类: {{ selectedSubcategory }}
+        </span>
+        <span class="stat-item" v-if="searchText">
+          搜索: "{{ searchText }}"
+        </span>
       </div>
     </div>
     
-    <div class="items-grid">
+    <div :class="viewMode === 'grid' ? 'items-grid' : 'items-list'">
       <div 
         v-for="item in paginatedItems"
         :key="item.id"
-        class="item-slot"
-        :class="{ 'new-item': item.newB, 'locked': item.lockB }"
+        :class="[
+          viewMode === 'grid' ? 'item-slot' : 'item-list-item',
+          { 'new-item': item.newB, 'locked': item.lockB }
+        ]"
       >
         <!-- 物品图片和背景 -->
         <el-popover
@@ -171,6 +199,17 @@
             >
               {{ getItemTypeName(item.itemsType) }}
             </el-tag>
+            <!-- 列表视图额外信息 -->
+            <div v-if="viewMode === 'list'" class="list-extra-info">
+              <span class="quantity-info">数量: {{ item.nowNum || 1 }}</span>
+              <el-tag 
+                :type="getColorTagType(item.color) as any" 
+                size="small"
+                class="color-tag"
+              >
+                {{ getColorName(item.color) }}
+              </el-tag>
+            </div>
           </div>
         </div>
       </div>
@@ -208,7 +247,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch, nextTick } from 'vue'
 import { useArchiveStore } from '@/stores/archive'
 import { getItemCnName, getItemDescription, getItemFullInfo } from '@/utils/translate'
 import { getThingsBackgroundStyle } from '@/utils/backgroundImages'
@@ -242,13 +281,29 @@ const pageSize = ref(48)
 const categories = ref<string[]>([])
 const subcategories = ref<string[]>([])
 
+// 缓存物品信息，避免重复计算
+const itemInfoCache = new Map<string, any>()
+
+// 视图模式
+const viewMode = ref<'grid' | 'list'>('grid')
+
+// 获取物品信息的缓存版本
+const getCachedItemInfo = (itemType: string, itemName: string) => {
+  const cacheKey = `${itemType}:${itemName}`
+  if (!itemInfoCache.has(cacheKey)) {
+    const itemInfo = getItemFullInfo(itemType, itemName)
+    itemInfoCache.set(cacheKey, itemInfo)
+  }
+  return itemInfoCache.get(cacheKey)
+}
+
 // 初始化分类数据
 const initializeCategories = () => {
   if (!thingsBag.value?.arr) return
   
   const cats = new Set<string>()
   thingsBag.value.arr.forEach(item => {
-    const itemInfo = getItemFullInfo(item.itemsType, item.name)
+    const itemInfo = getCachedItemInfo(item.itemsType, item.name)
     if (itemInfo?.originalData?.category) {
       cats.add(itemInfo.originalData.category)
     }
@@ -265,7 +320,7 @@ const updateSubcategories = () => {
   
   const subcats = new Set<string>()
   thingsBag.value.arr.forEach(item => {
-    const itemInfo = getItemFullInfo(item.itemsType, item.name)
+    const itemInfo = getCachedItemInfo(item.itemsType, item.name)
     if (itemInfo?.originalData?.category === selectedCategory.value && 
         itemInfo?.originalData?.subcategory) {
       subcats.add(itemInfo.originalData.subcategory)
@@ -273,6 +328,7 @@ const updateSubcategories = () => {
   })
   subcategories.value = Array.from(subcats).sort()
 }
+
 
 // 过滤后的物品
 const filteredItems = computed(() => {
@@ -289,7 +345,7 @@ const filteredItems = computed(() => {
     
     // 分类过滤
     if (selectedCategory.value) {
-      const itemInfo = getItemFullInfo(item.itemsType, item.name)
+      const itemInfo = getCachedItemInfo(item.itemsType, item.name)
       if (itemInfo?.originalData?.category !== selectedCategory.value) {
         return false
       }
@@ -297,7 +353,7 @@ const filteredItems = computed(() => {
     
     // 子分类过滤
     if (selectedSubcategory.value) {
-      const itemInfo = getItemFullInfo(item.itemsType, item.name)
+      const itemInfo = getCachedItemInfo(item.itemsType, item.name)
       if (itemInfo?.originalData?.subcategory !== selectedSubcategory.value) {
         return false
       }
@@ -345,10 +401,16 @@ const handleCategoryChange = () => {
   updateSubcategories()
 }
 
-// 初始化分类数据
-if (thingsBag.value?.arr) {
-  initializeCategories()
-}
+// 监听数据变化，自动初始化分类
+watch(thingsBag, (newBag) => {
+  if (newBag?.arr) {
+    // 清空缓存
+    itemInfoCache.clear()
+    nextTick(() => {
+      initializeCategories()
+    })
+  }
+}, { immediate: true, deep: true })
 
 // 处理分页变化
 const handleSizeChange = (newSize: number) => {
@@ -358,6 +420,11 @@ const handleSizeChange = (newSize: number) => {
 
 const handleCurrentChange = (newPage: number) => {
   currentPage.value = newPage
+}
+
+// 切换视图模式
+const toggleViewMode = () => {
+  viewMode.value = viewMode.value === 'grid' ? 'list' : 'grid'
 }
 
 // 重置所有过滤条件
@@ -370,124 +437,121 @@ const resetFilters = () => {
   subcategories.value = []
 }
 
-/**
- * 获取物品背景样式
- */
-function getItemBackgroundStyle(item: any) {
-  return getThingsBackgroundStyle(
-    { name: item.name, partType: item.itemsType || 'materials' }, 
-    item.color || 'white'
-  )
-}
+// 常量定义
+const ITEM_TYPE_CONFIG = {
+  skillChip: { tagType: 'success', name: '技能碎片' },
+  normalChip: { tagType: 'info', name: '普通碎片' },
+  materials: { tagType: 'warning', name: '材料' },
+  props: { tagType: 'danger', name: '道具' },
+  rareChip: { tagType: 'primary', name: '稀有碎片' },
+  blackChip: { tagType: 'dark', name: '黑色碎片' }
+} as const
 
-/**
- * 获取物品显示名称（使用翻译功能）
- */
-function getItemDisplayName(item: any): string {
-  if (!item.itemsType || !item.name) return item.cnName || '未知物品'
-  
-  // 使用翻译功能获取中文名称
-  const translatedName = getItemCnName(item.itemsType, item.name)
-  return translatedName !== item.name ? translatedName : (item.cnName || item.name)
-}
+const COLOR_CONFIG = {
+  white: { tagType: 'info', name: '白色' },
+  green: { tagType: 'success', name: '绿色' },
+  blue: { tagType: 'primary', name: '蓝色' },
+  purple: { tagType: 'warning', name: '紫色' },
+  orange: { tagType: 'danger', name: '橙色' },
+  red: { tagType: 'danger', name: '红色' },
+  black: { tagType: 'dark', name: '黑色' },
+  darkgold: { tagType: 'warning', name: '暗金' },
+  purgold: { tagType: 'warning', name: '紫金' },
+  yagold: { tagType: 'warning', name: '雅金' }
+} as const
 
-/**
- * 获取物品完整名称（用于tooltip）
- */
-function getItemFullName(item: any): string {
-  if (!item.itemsType || !item.name) return item.cnName || '未知物品'
-  
-  const translatedName = getItemCnName(item.itemsType, item.name)
-  const description = getItemDescription(item.itemsType, item.name)
-  
-  let fullName = translatedName !== item.name ? translatedName : (item.cnName || item.name)
-  
-  if (description) {
-    fullName += `\n${description}`
+// 工具函数
+const ItemUtils = {
+  /**
+   * 获取物品背景样式
+   */
+  getBackgroundStyle(item: any) {
+    return getThingsBackgroundStyle(
+      { name: item.name, partType: item.itemsType || 'materials' }, 
+      item.color || 'white'
+    )
+  },
+
+  /**
+   * 获取物品显示名称（使用翻译功能）
+   */
+  getDisplayName(item: any): string {
+    if (!item.itemsType || !item.name) return item.cnName || '未知物品'
+    
+    const translatedName = getItemCnName(item.itemsType, item.name)
+    return translatedName !== item.name ? translatedName : (item.cnName || item.name)
+  },
+
+  /**
+   * 获取物品完整名称（用于tooltip）
+   */
+  getFullName(item: any): string {
+    if (!item.itemsType || !item.name) return item.cnName || '未知物品'
+    
+    const translatedName = getItemCnName(item.itemsType, item.name)
+    const description = getItemDescription(item.itemsType, item.name)
+    
+    let fullName = translatedName !== item.name ? translatedName : (item.cnName || item.name)
+    
+    if (description) {
+      fullName += `\n${description}`
+    }
+    
+    return fullName
+  },
+
+  /**
+   * 格式化数字显示
+   */
+  formatNumber(num: number): string {
+    if (num >= 1000000) {
+      return (num / 1000000).toFixed(1) + 'M'
+    } else if (num >= 1000) {
+      return (num / 1000).toFixed(1) + 'K'
+    }
+    return num.toString()
+  },
+
+  /**
+   * 获取物品类型标签类型
+   */
+  getTypeTagType(itemsType: string): string {
+    return ITEM_TYPE_CONFIG[itemsType as keyof typeof ITEM_TYPE_CONFIG]?.tagType || 'info'
+  },
+
+  /**
+   * 获取物品类型名称
+   */
+  getTypeName(itemsType: string): string {
+    return ITEM_TYPE_CONFIG[itemsType as keyof typeof ITEM_TYPE_CONFIG]?.name || itemsType
+  },
+
+  /**
+   * 获取颜色标签类型
+   */
+  getColorTagType(color: string): string {
+    return COLOR_CONFIG[color as keyof typeof COLOR_CONFIG]?.tagType || 'info'
+  },
+
+  /**
+   * 获取颜色名称
+   */
+  getColorName(color: string): string {
+    return COLOR_CONFIG[color as keyof typeof COLOR_CONFIG]?.name || color
   }
-  
-  return fullName
 }
 
-/**
- * 格式化数字显示
- */
-function formatNumber(num: number): string {
-  if (num >= 1000000) {
-    return (num / 1000000).toFixed(1) + 'M'
-  } else if (num >= 1000) {
-    return (num / 1000).toFixed(1) + 'K'
-  }
-  return num.toString()
-}
-
-/**
- * 获取物品类型标签类型
- */
-function getItemTypeTagType(itemsType: string): string {
-  const typeMap: Record<string, string> = {
-    'skillChip': 'success',
-    'normalChip': 'info',
-    'materials': 'warning',
-    'props': 'danger',
-    'rareChip': 'primary',
-    'blackChip': 'dark'
-  }
-  return typeMap[itemsType] || 'info'
-}
-
-/**
- * 获取物品类型名称
- */
-function getItemTypeName(itemsType: string): string {
-  const typeMap: Record<string, string> = {
-    'skillChip': '技能碎片',
-    'normalChip': '普通碎片',
-    'materials': '材料',
-    'props': '道具',
-    'rareChip': '稀有碎片',
-    'blackChip': '黑色碎片'
-  }
-  return typeMap[itemsType] || itemsType
-}
-
-/**
- * 获取颜色标签类型
- */
-function getColorTagType(color: string): string {
-  const colorMap: Record<string, string> = {
-    'white': 'info',
-    'green': 'success',
-    'blue': 'primary',
-    'purple': 'warning',
-    'orange': 'danger',
-    'red': 'danger',
-    'black': 'dark',
-    'darkgold': 'warning',
-    'purgold': 'warning',
-    'yagold': 'warning'
-  }
-  return colorMap[color] || 'info'
-}
-
-/**
- * 获取颜色名称
- */
-function getColorName(color: string): string {
-  const colorMap: Record<string, string> = {
-    'white': '白色',
-    'green': '绿色',
-    'blue': '蓝色',
-    'purple': '紫色',
-    'orange': '橙色',
-    'red': '红色',
-    'black': '黑色',
-    'darkgold': '暗金',
-    'purgold': '紫金',
-    'yagold': '雅金'
-  }
-  return colorMap[color] || color
-}
+// 导出工具函数供模板使用
+const {
+  getBackgroundStyle: getItemBackgroundStyle,
+  getDisplayName: getItemDisplayName,
+  getFullName: getItemFullName,
+  formatNumber,
+  getTypeTagType: getItemTypeTagType,
+  getTypeName: getItemTypeName,
+  getColorTagType,
+  getColorName
+} = ItemUtils
 </script>
 
 <style scoped>
@@ -534,6 +598,25 @@ function getColorName(color: string): string {
   gap: 15px;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 8px 0;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 10px;
+}
+
+.stat-item {
+  font-size: 12px;
+  color: #666;
+  background: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 .items-grid {
@@ -544,6 +627,76 @@ function getColorName(color: string): string {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.item-list-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.item-list-item:hover {
+  border-color: #409eff;
+  box-shadow: 0 2px 8px rgba(64, 158, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.item-list-item .item-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  margin-bottom: 0;
+}
+
+.item-list-item .item-info {
+  flex: 1;
+  text-align: left;
+}
+
+.item-list-item .item-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  max-width: none;
+}
+
+.item-list-item .item-meta {
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.list-extra-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.quantity-info {
+  font-size: 12px;
+  color: #666;
+}
+
+.color-tag {
+  font-size: 10px;
+  height: 16px;
+  line-height: 14px;
 }
 
 .item-slot {
