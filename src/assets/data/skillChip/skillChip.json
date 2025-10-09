@@ -1,0 +1,46 @@
+{
+  "gliding_heroChip": {
+    "category": "技能碎片",
+    "addDropDefineB": 1,
+    "cnName": "滑翔技能碎片",
+    "description": "学习人物技能“滑翔”所需物品。在秘境“守望者”中获得。",
+    "smeltD": {
+      "grade": 2,
+      "addType": "",
+      "price": 2
+    }
+  },
+  "rolling_heroChip": {
+    "category": "技能碎片",
+    "addDropDefineB": 1,
+    "cnName": "翻滚技能碎片",
+    "description": "学习人物技能“翻滚”所需物品。在秘境“炸裂者”中获得。[n][n]{b}{font color='#FF66FF'}也是合成黑色武器“熔炉”必需品之一，需求40个。{/font}{/b}",
+    "smeltD": {
+      "grade": 2,
+      "addType": "",
+      "price": 14
+    }
+  },
+  "kingWing_heroChip": {
+    "category": "技能碎片",
+    "addDropDefineB": 1,
+    "cnName": "王者之翼碎片",
+    "description": "学习人物技能“王者之翼”所需物品。在秘境“王者兔”中获得。"
+  },
+  "possession_heroChip": {
+    "category": "技能碎片",
+    "addDropDefineB": 1,
+    "cnName": "附身碎片",
+    "description": "学习和升级人物技能“附身”所需物品。在竞技场商店和纪念币商店中兑换获得。"
+  },
+  "silverScreen_heroChip": {
+    "category": "技能碎片",
+    "cnName": "全域光波碎片",
+    "description": "学习和升级人物技能“全域光波”所需物品。在秘境“铁犬”中获得。"
+  },
+  "FoggyHeroChip": {
+    "category": "技能碎片",
+    "cnName": "抵御碎片",
+    "description": "学习和升级人物技能“抵御”所需物品。在秘境“黄金隼”中获得。"
+  }
+}

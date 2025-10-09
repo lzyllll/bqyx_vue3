@@ -1,0 +1,210 @@
+{
+  "boneRing_1": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "部落骨环碎片",
+    "btnList": "compose",
+    "description": "消灭秘境“异猛象”掉落。",
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 3
+    }
+  },
+  "duelistClaw_1": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "斗士之角碎片",
+    "btnList": "compose",
+    "description": "消灭秘境“决斗者”掉落。[n][n]{b}{font color='#FF66FF'}也是合成黑色武器“熔炉”[n]必需品之一，需求80个。{/font}{/b}",
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 6
+    }
+  },
+  "corpseTeeth_1": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "尸牙碎片",
+    "btnList": "compose",
+    "description": "小美好感度奖励。",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "longGlasses_1": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "远视镜碎片",
+    "btnList": "compose",
+    "description": "2024年十月活动、纪念币商店、黄金商店",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "crabShell": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "兽甲碎片",
+    "btnList": "compose",
+    "description": "时光洞秘境“掘地兽”掉落。",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "spongeShell": {
+    "category": "碎片",
+    "cnName": "海绵碎片",
+    "btnList": "compose",
+    "description": "表哥忠诚度到达一定时可获得。",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "fuGuang": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "扶光时装碎片",
+    "btnList": "compose",
+    "description": "消灭秘境“扶光”掉落。",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "wangShu": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "望舒时装碎片",
+    "btnList": "compose",
+    "description": "消灭秘境“扶光”掉落。",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "antMan": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "小蚁时装碎片",
+    "btnList": "compose",
+    "description": "消灭秘境“虚炎狼”掉落。",
+    "smeltD": {
+      "grade": 2,
+      "addType": "",
+      "price": 5
+    }
+  },
+  "wolfFashion": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "狼首时装碎片",
+    "btnList": "compose",
+    "description": "消灭秘境“阿巴达斯”掉落。"
+  },
+  "soldier76": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "小7时装碎片",
+    "btnList": "compose",
+    "description": "三周年活动期间的活跃礼包。",
+    "smeltD": {
+      "grade": 2,
+      "addType": "",
+      "price": 5
+    }
+  },
+  "dogHead": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "神烦狗时装碎片",
+    "btnList": "compose",
+    "description": "。"
+  },
+  "workerHead": {
+    "category": "碎片",
+    "cnName": "工人帽时装碎片",
+    "btnList": "compose",
+    "description": "1、活动任务“狂人的新品”[n]2、纪念币商店[n]3、黄金商店[n]"
+  },
+  "sanji": {
+    "category": "碎片",
+    "cnName": "小治时装碎片",
+    "btnList": "compose",
+    "description": "2018年暑期期间的活跃礼包。"
+  },
+  "bioShock": {
+    "category": "碎片",
+    "cnName": "生化奇兵碎片",
+    "btnList": "compose",
+    "description": "五周年活动。"
+  },
+  "terroristBox_1": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "恐怖盒子碎片",
+    "btnList": "compose",
+    "description": "3月21日~4月4日之间所有秘境[n]都会掉落。",
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 7
+    }
+  },
+  "knightsMedal_1": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "无疆之章碎片",
+    "btnList": "compose",
+    "description": "消灭秘境“编织者”掉落。[n][n]{b}{font color='#FF66FF'}也是合成黑色武器“熔炉”必[n]需品之一，需求40个。{/font}{/b}[n]",
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 7
+    }
+  },
+  "skeletonMedal_1": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "暴君之骷碎片",
+    "btnList": "compose",
+    "description": "消灭秘境“暴君”掉落。"
+  },
+  "hookDevice_1": {
+    "category": "碎片",
+    "cnName": "斩之核心碎片",
+    "btnList": "compose",
+    "description": "消灭秘境“斩之使者”掉落。"
+  },
+  "dinosaurEgg_1": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "异龙蛋碎片",
+    "btnList": "compose",
+    "description": "消灭秘境“异角龙”掉落。",
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 7
+    }
+  },
+  "skeletonWand_1": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "骷髅权杖碎片",
+    "btnList": "compose",
+    "description": "消灭秘境“骷髅巫师”掉落。[n][n]{b}{font color='#FF66FF'}可在“锻造”中合成“银狐[n]之眼”。{/font}{/b}[n]"
+  },
+  "timeCapsule_1": {
+    "category": "碎片",
+    "addDropDefineB": 1,
+    "cnName": "悬停沙漏碎片",
+    "btnList": "compose",
+    "description": "绿岛地图“仙草镇入口”掉落。"
+  },
+  "sickleScythe_1": {
+    "category": "碎片",
+    "cnName": "死神碎片",
+    "btnList": "compose",
+    "description": {}
+  }
+}

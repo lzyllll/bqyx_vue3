@@ -1,0 +1,201 @@
+{
+  "oracleSuit_head": {
+    "category": "黑色碎片",
+    "cnName": "神谕头盔碎片",
+    "description": "{b}{font color='#FF66FF'}也是进阶黑色装备到第七级的必需品。{/font}{/b}"
+  },
+  "oracleSuit_belt": {
+    "category": "黑色碎片",
+    "cnName": "神谕腰带碎片",
+    "description": "{b}{font color='#FF66FF'}也是进阶黑色装备到第七级的必需品。{/font}{/b}"
+  },
+  "oracleSuit_coat": {
+    "category": "黑色碎片",
+    "cnName": "神谕战衣碎片",
+    "description": "{b}{font color='#FF66FF'}也是进阶黑色战衣、腰带到第八级的必需品。{/font}{/b}"
+  },
+  "oracleSuit_pants": {
+    "category": "黑色碎片",
+    "cnName": "神谕战裤碎片",
+    "description": "纪念币商店获取。"
+  },
+  "blackChip": {
+    "category": "黑色碎片",
+    "hideB": 1,
+    "addDropDefineB": 1,
+    "cnName": "碎片",
+    "btnList": "compose,conver",
+    "description": "。"
+  },
+  "rifleHornet": {
+    "category": "黑色碎片",
+    "cnName": "青蜂之触"
+  },
+  "shotgunSkunk": {
+    "category": "黑色碎片",
+    "cnName": "赤鼬之心"
+  },
+  "sniperCicada": {
+    "category": "黑色碎片",
+    "cnName": "金蝉之翼"
+  },
+  "pistolFox": {
+    "category": "黑色碎片",
+    "cnName": "银狐之眼",
+    "smeltD": {
+      "price": 15
+    }
+  },
+  "redFire": {
+    "category": "黑色碎片",
+    "cnName": "猩之焰"
+  },
+  "rocketCate": {
+    "category": "黑色碎片",
+    "cnName": "卡特巨炮碎片"
+  },
+  "meltFlamer": {
+    "category": "黑色碎片",
+    "cnName": "铄金之源"
+  },
+  "lightCone": {
+    "category": "黑色碎片",
+    "cnName": "光锥碎片"
+  },
+  "falconGun": {
+    "category": "黑色碎片",
+    "cnName": "隼武碎片",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "extremeGun": {
+    "category": "黑色碎片",
+    "cnName": "极源碎片",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "consCancer": {
+    "category": "黑色碎片",
+    "cnName": "巨蟹座碎片",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "consVirgo": {
+    "category": "黑色碎片",
+    "cnName": "处女座碎片",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "consLibra": {
+    "category": "黑色碎片",
+    "cnName": "天秤座碎片",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "rainGun": {
+    "category": "黑色碎片",
+    "cnName": "降雨炮碎片",
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "erosionFlamer": {
+    "category": "黑色碎片",
+    "cnName": "蚀骨碎片",
+    "description": "{b}{font color='#FF66FF'}也是进阶黑色武器到第七级的必需品。{/font}{/b}",
+    "smeltD": {
+      "grade": 1,
+      "price": 10
+    }
+  },
+  "beadCrossbow": {
+    "category": "黑色碎片",
+    "cnName": "烟花弩碎片",
+    "description": "{b}{font color='#FF66FF'}也是进阶黑色战裤、头盔到第八级的必需品。{/font}{/b}",
+    "smeltD": {
+      "grade": 1,
+      "price": 8
+    }
+  },
+  "ghostAxe": {
+    "category": "黑色碎片",
+    "cnName": "鬼斧碎片"
+  },
+  "yearPig": {
+    "category": "黑色碎片",
+    "cnName": "亥猪碎片"
+  },
+  "yearDog": {
+    "category": "黑色碎片",
+    "cnName": "戌狗碎片",
+    "description": "{b}{font color='#FF66FF'}也是进阶暗金武器的消耗品。{/font}{/b}"
+  },
+  "yearSnake": {
+    "category": "黑色碎片",
+    "cnName": "巳蛇碎片",
+    "description": "{b}{font color='#FF66FF'}进阶青蜂至暗金的必需品。{/font}{/b}"
+  },
+  "yearChicken": {
+    "category": "黑色碎片",
+    "cnName": "酉鸡碎片"
+  },
+  "yearHourse": {
+    "category": "黑色碎片",
+    "cnName": "午马碎片"
+  },
+  "yearMouse": {
+    "category": "黑色碎片",
+    "cnName": "子鼠碎片"
+  },
+  "yearMonkey": {
+    "category": "黑色碎片",
+    "addDropDefineB": 1,
+    "cnName": "申猴碎片"
+  },
+  "yearRabbit": {
+    "category": "黑色碎片",
+    "cnName": "卯兔碎片"
+  },
+  "penGun": {
+    "category": "黑色碎片",
+    "cnName": "钢笔枪碎片"
+  },
+  "yearCattle": {
+    "category": "黑色碎片",
+    "addDropDefineB": 1,
+    "cnName": "丑牛碎片"
+  },
+  "greedySnake": {
+    "category": "黑色碎片",
+    "cnName": "贪吃蛇碎片"
+  },
+  "pianoGun": {
+    "category": "黑色碎片",
+    "cnName": "弦音碎片"
+  },
+  "skyArch": {
+    "category": "黑色碎片",
+    "cnName": "天弓碎片"
+  },
+  "iceCone": {
+    "category": "黑色碎片",
+    "cnName": "冰锥碎片"
+  },
+  "barrenAwn": {
+    "category": "黑色碎片",
+    "cnName": "荒芒碎片"
+  },
+  "starTrails": {
+    "category": "黑色碎片",
+    "cnName": "星轨碎片"
+  },
+  "roamRocket": {
+    "category": "黑色碎片",
+    "cnName": "漫游碎片"
+  }
+}

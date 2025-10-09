@@ -1,0 +1,4245 @@
+{
+  "sweepingCard": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "cnName": "扫荡卡",
+    "zuobiNum": 30000,
+    "description": "使用后添加1次扫荡机会，今天如果没用完，第二天次数将消失。",
+    "effectD": {
+      "type": "addGift",
+      "dayUseLimit": 7
+    },
+    "gift": [
+      {
+        "type": "base",
+        "name": "daySweeping",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 0
+    }
+  },
+  "electromagnet": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "addDropDefineB": 1,
+    "cnName": "电磁铁",
+    "stateD": {
+      "skill": "electromagnet",
+      "time": 120,
+      "gamingB": 1,
+      "demNoneB": 1
+    },
+    "description": "使用后将在战斗中不断释放磁力场（主线任务、修罗模式无效），扰乱敌人子弹轨迹，持续120秒。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "skeletonCard": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "addDropDefineB": 1,
+    "cnName": "骷髅卡",
+    "stateD": {
+      "skill": "skeletonCard",
+      "time": 30,
+      "gamingB": 1,
+      "demNoneB": 1
+    },
+    "description": "使用后在关卡中（任务、修罗模式无效）让敌人每秒损失2%的生命值（首领每秒损失1%，生命低于15%时不再损失），持续30秒。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "superSpreadCard": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "addDropDefineB": 1,
+    "cnName": "超级散射卡",
+    "stateD": {
+      "skill": "superSpreadCard",
+      "time": 40,
+      "gamingB": 1,
+      "demNoneB": 1
+    },
+    "description": "使用后，让自己在战斗中进入超级散射状态，持续40秒。99级任务、争霸、修罗模式无效。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "demonSpreadCard": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "addDropDefineB": 1,
+    "cnName": "修罗散射卡",
+    "stateD": {
+      "skill": "superSpreadCard",
+      "time": 40,
+      "gamingB": 1,
+      "demO": 1
+    },
+    "description": "在修罗模式、星谷地图中使用该道具，会让自己在战斗中进入超级散射状态，持续40秒。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "bossSumCard": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "btnList": "use",
+    "cnName": "首领召唤卡",
+    "description": "\n\t\t\t\t该物品可让你在关卡中召唤自己的主力首领（不能召唤战神、宠物、载具以及我方单位），每周该道具有使用上限。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]魂卡送卡中获得\n\t\t\t",
+    "loveD": {
+      "num": 0
+    },
+    "effectD": {
+      "type": "bossSumCard",
+      "value": 1,
+      "useInLevelB": 1,
+      "levelUseLimitNum": 1,
+      "effectLabel": "boomEffect/showLight",
+      "effectSound": "uiSound/swapHero"
+    }
+  },
+  "bigDrug": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "cnName": "放大药剂",
+    "effectD": {
+      "type": "skill",
+      "skillArr": "bigDrug",
+      "useInLevelB": 1,
+      "levelUseLimitNum": 1,
+      "sTaskNoB": 1
+    },
+    "description": "自己的身体放大3倍，惊吓周围的敌人。部分任务无法使用。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "smallDrug": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "cnName": "缩小药剂",
+    "effectD": {
+      "type": "skill",
+      "skillArr": "smallDrug",
+      "useInLevelB": 1,
+      "levelUseLimitNum": 1,
+      "sTaskNoB": 1
+    },
+    "description": "自己的身体缩小2倍，让敌人无法发现自己。部分任务无法使用。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "speedDrug": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "cnName": "加速药剂",
+    "effectD": {
+      "type": "skill",
+      "skillArr": "speedDrug",
+      "useInLevelB": 1,
+      "levelUseLimitNum": 1,
+      "sTaskNoB": 1
+    },
+    "description": "把自身的速度提升至无限大。部分任务无法使用。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "zeroGravityCard": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "cnName": "失重卡片",
+    "effectD": {
+      "type": "skill",
+      "skillArr": "zeroGravityCard",
+      "useInLevelB": 1,
+      "levelUseLimitNum": 1,
+      "sTaskNoB": 1
+    },
+    "description": "使游戏里的重力降低至10%。部分任务无法使用。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "bigHurtCard": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "cnName": "巨伤卡",
+    "effectD": {
+      "type": "skill",
+      "skillArr": "bigHurtCard",
+      "useInLevelB": 1,
+      "levelUseLimitNum": 1,
+      "sTaskNoB": 1
+    },
+    "description": "使自身伤害提高30倍，受到伤害也提高30倍。部分任务无法使用。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "iconGiftCase": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "cnName": "圣诞铁箱",
+    "addDropDefineB": 1,
+    "effectD": {
+      "type": "skill",
+      "skillArr": "iconGiftBox",
+      "useInLevelB": 1,
+      "sTaskNoB": 1
+    },
+    "description": "释放存在120秒的圣诞铁盒，铁盒将强制吸引所有僵尸的攻击，直到铁盒消失。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "glutinous": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "cnName": "辣椒糯米饭",
+    "addDropDefineB": 1,
+    "effectD": {
+      "type": "skill",
+      "skillArr": "glutinous",
+      "useInLevelB": 1,
+      "levelUseLimitNum": 1,
+      "sTaskNoB": 1
+    },
+    "description": "在关卡中食用该物品，爆辣的风味将使角色嘴巴冒烟，获得无限怒气，并且近战伤害增加50%。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "zombieBottle": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "cnName": "僵尸血瓶",
+    "effectD": {
+      "type": "skill",
+      "skillArr": "zombieBottle",
+      "useInLevelB": 1,
+      "levelUseLimitNum": 1,
+      "sTaskNoB": 1
+    },
+    "description": "给在场所有我方单位抹上僵尸血液，使其不会成为敌人的攻击目标。部分任务无法使用。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "type": "festival"
+    }
+  },
+  "exploitCard": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "cnName": "队友功勋牌",
+    "btnList": "use",
+    "description": "使用后添加10000当前角色的功勋值。",
+    "effectD": {
+      "type": "addGift"
+    },
+    "gift": [
+      {
+        "type": "base",
+        "name": "exploit",
+        "num": 10000
+      }
+    ]
+  },
+  "soldiersStamp": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "addDropDefineB": 1,
+    "cnName": "募兵券",
+    "description": "\n\t\t\t\t开启支线任务“队友齐上阵”的必需品。把它赠送给表哥或者藏师还将获得180点左右的忠诚度。直接使用将给小樱添加170点好感度。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]周年庆签到礼包\n\t\t\t",
+    "loveD": {
+      "num": 1
+    },
+    "effectD": {
+      "type": "addLove",
+      "value": 170
+    }
+  },
+  "redBag": {
+    "category": "物品",
+    "subcategory": "新道具",
+    "addDropDefineB": 1,
+    "cnName": "红包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]周年庆活动期间，消灭首领有几率掉落。\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "useSave": "chest",
+    "loveD": {
+      "num": 2
+    },
+    "smeltD": {
+      "grade": -1
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "base",
+        "name": "anniCoin",
+        "num": 6,
+        "weight": 150
+      },
+      {
+        "type": "things",
+        "name": "yearMonkey",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "yearCattle",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "yearPig",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "yearHourse",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "yearMouse",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "yearRabbit",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "yearSnake",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "yearDog",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "parts",
+        "name": "huntParts_1",
+        "num": 5,
+        "weight": 50
+      },
+      {
+        "type": "parts",
+        "name": "acidicParts_1",
+        "num": 5,
+        "weight": 50
+      },
+      {
+        "type": "equip",
+        "name": "cyanArmy",
+        "num": 1,
+        "weight": 15
+      }
+    ]
+  },
+  "expCard1": {
+    "category": "物品",
+    "subcategory": "经验卡",
+    "cnName": "初级经验卡",
+    "description": "使用后添加100万所有角色的经验，人物40级以后可以使用。",
+    "effectD": {
+      "type": "addGift",
+      "minLv": 40
+    },
+    "gift": [
+      {
+        "type": "base",
+        "name": "exp",
+        "num": 3000000
+      }
+    ]
+  },
+  "expCard2": {
+    "category": "物品",
+    "subcategory": "经验卡",
+    "cnName": "中级经验卡",
+    "description": "使用后添加1000万所有角色的经验，人物60级以后可以使用。",
+    "effectD": {
+      "type": "addGift",
+      "minLv": 60
+    },
+    "gift": [
+      {
+        "type": "base",
+        "name": "exp",
+        "num": 10000000
+      }
+    ]
+  },
+  "expCard3": {
+    "category": "物品",
+    "subcategory": "经验卡",
+    "cnName": "高级经验卡",
+    "description": "使用后添加3000万所有角色的经验，人物80级以后可以使用。",
+    "effectD": {
+      "type": "addGift",
+      "minLv": 80
+    },
+    "gift": [
+      {
+        "type": "base",
+        "name": "exp",
+        "num": 30000000
+      }
+    ]
+  },
+  "highPetCard": {
+    "category": "物品",
+    "subcategory": "经验卡",
+    "cnName": "神宠卡片",
+    "zuobiNum": 1000,
+    "stateD": {
+      "skill": "highPetCard",
+      "time": 300,
+      "gamingB": 1,
+      "demNoneB": 1
+    },
+    "smeltD": {
+      "price": 30
+    },
+    "description": "使用后在战斗中增加宠物400%的伤害，持续5分钟。",
+    "loveD": {
+      "num": 1
+    }
+  },
+  "highVehicleCard": {
+    "category": "物品",
+    "subcategory": "经验卡",
+    "cnName": "神车卡片",
+    "zuobiNum": 1000,
+    "stateD": {
+      "skill": "highVehicleCard",
+      "time": 300,
+      "gamingB": 1,
+      "demNoneB": 1
+    },
+    "smeltD": {
+      "price": 30
+    },
+    "description": "使用后在战斗中增加载具400%的伤害，持续5分钟。",
+    "loveD": {
+      "num": 1
+    }
+  },
+  "highPartnerCard": {
+    "category": "物品",
+    "subcategory": "经验卡",
+    "cnName": "神队卡片",
+    "zuobiNum": 10000,
+    "stateD": {
+      "skill": "highPartnerCard",
+      "time": 60,
+      "gamingB": 1,
+      "demNoneB": 1
+    },
+    "smeltD": {
+      "price": 50
+    },
+    "description": "使用后在战斗中增加队友100%的伤害，持续1分钟。",
+    "loveD": {
+      "num": 1
+    }
+  },
+  "anniver2025_1": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "周年畅玩礼包",
+    "useSave": "shopAuto",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "base",
+        "name": "anniCoin",
+        "num": 15
+      },
+      {
+        "type": "things",
+        "name": "normalChest",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "magicChest",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "dragonChest",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "tigerChest",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 25
+      },
+      {
+        "type": "things",
+        "name": "allBlackEquipCash",
+        "num": 25
+      },
+      {
+        "type": "things",
+        "name": "armsGemChest",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "equipGemChest",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "yaStone",
+        "num": 4
+      },
+      {
+        "type": "things",
+        "name": "yaRock",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "zodiacBag",
+        "num": 2
+      }
+    ]
+  },
+  "anniver2025_2": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "周年豪华礼包",
+    "useSave": "shopAuto",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店黄金购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "zodiacCash",
+        "num": 25
+      },
+      {
+        "type": "things",
+        "name": "demonChest",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "madheart",
+        "num": 15
+      },
+      {
+        "type": "things",
+        "name": "demStone",
+        "num": 15
+      },
+      {
+        "type": "things",
+        "name": "yaStone",
+        "num": 15
+      },
+      {
+        "type": "things",
+        "name": "yaRock",
+        "num": 15
+      },
+      {
+        "type": "things",
+        "name": "armsGemChest",
+        "num": 25
+      },
+      {
+        "type": "things",
+        "name": "equipGemChest",
+        "num": 25
+      },
+      {
+        "type": "base",
+        "name": "partsCoin",
+        "num": 10
+      },
+      {
+        "type": "base",
+        "name": "wilderKey",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "ghostStone",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "partsChest90",
+        "num": 1
+      }
+    ]
+  },
+  "offset2025_7": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "bug补偿礼包",
+    "useSave": "shopAuto",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "head",
+        "name": "maxBug",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "demStone",
+        "num": 15
+      },
+      {
+        "type": "things",
+        "name": "demBall",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "madheart",
+        "num": 15
+      },
+      {
+        "type": "things",
+        "name": "yaStone",
+        "num": 15
+      },
+      {
+        "type": "things",
+        "name": "yaRock",
+        "num": 15
+      },
+      {
+        "type": "things",
+        "name": "nuclearStone",
+        "num": 20
+      },
+      {
+        "type": "base",
+        "name": "partsCoin",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "bossCardStamp",
+        "num": 20
+      },
+      {
+        "type": "base",
+        "name": "wilderKey",
+        "num": 10
+      }
+    ]
+  },
+  "zodiacDis": {
+    "category": "物品",
+    "subcategory": "特惠礼包-下架后就可以删掉了，因为是每日限购，所以不删掉也可以，作为日后只用",
+    "cnName": "生肖特惠包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店黄金购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "yearMonkey",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "yearPig",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "yearRabbit",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "yearMouse",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "yearSnake",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "yearHourse",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "yearDog",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "yearCattle",
+        "num": 3
+      }
+    ]
+  },
+  "gaiaGift": {
+    "category": "物品",
+    "subcategory": "特惠礼包-下架后就可以删掉了，因为是每日限购，所以不删掉也可以，作为日后只用",
+    "cnName": "狂怒盖亚特惠包",
+    "description": "\n\t\t\t\t特惠包内含载具“泰坦”、以及将它进化至“狂怒盖亚”所需的所有材料。使用后获得以下所有物品：\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "showGiftB": 1,
+    "loveD": {
+      "num": 4
+    },
+    "gift": [
+      {
+        "type": "equip",
+        "name": "Titans",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "TitansCash",
+        "num": 1200
+      },
+      {
+        "type": "things",
+        "name": "NianCarCash",
+        "num": 205
+      }
+    ]
+  },
+  "chipDis": {
+    "category": "物品",
+    "subcategory": "特惠礼包-下架后就可以删掉了，因为是每日限购，所以不删掉也可以，作为日后只用",
+    "cnName": "碎片特惠包",
+    "description": "\n\t\t\t\t使用后获得以下所有物品：\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "showGiftB": 1,
+    "loveD": {
+      "num": 4
+    },
+    "gift": [
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "allBlackEquipCash",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "anniversaryCash",
+        "num": 20
+      }
+    ]
+  },
+  "upgradeDis": {
+    "category": "物品",
+    "subcategory": "特惠礼包-下架后就可以删掉了，因为是每日限购，所以不删掉也可以，作为日后只用",
+    "cnName": "升级特惠包",
+    "description": "\n\t\t\t\t使用后获得以下所有物品：\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "showGiftB": 1,
+    "loveD": {
+      "num": 4
+    },
+    "gift": [
+      {
+        "type": "things",
+        "name": "doubleHighCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "doubleArmsCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "doubleEquipCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "doubleMaterialsCard",
+        "num": 5
+      }
+    ]
+  },
+  "partsDis": {
+    "category": "物品",
+    "subcategory": "特惠礼包-下架后就可以删掉了，因为是每日限购，所以不删掉也可以，作为日后只用",
+    "cnName": "零件特惠包",
+    "description": "\n\t\t\t\t使用后获得以下所有物品：\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "showGiftB": 1,
+    "loveD": {
+      "num": 4
+    },
+    "gift": [
+      {
+        "type": "parts",
+        "name": "huntParts_1",
+        "num": 5
+      },
+      {
+        "type": "parts",
+        "name": "acidicParts_1",
+        "num": 5
+      }
+    ]
+  },
+  "disEver22_10": {
+    "category": "物品",
+    "subcategory": "永久礼包",
+    "cnName": "噬原补偿礼包",
+    "description": "\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 0
+    },
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "zodiacCash",
+        "num": 60
+      },
+      {
+        "type": "things",
+        "name": "demStone",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "equipGemChest",
+        "num": 150
+      },
+      {
+        "type": "things",
+        "name": "armsGemChest",
+        "num": 150
+      }
+    ]
+  },
+  "normalChristmasGift": {
+    "category": "物品",
+    "subcategory": "永久礼包",
+    "cnName": "圣诞畅玩礼包",
+    "useSave": "shopAuto",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "doubleCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "weaponChest",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "doubleMaterialsCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "doubleEquipCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "skillFleshCard",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "anniversaryCash",
+        "num": 50
+      },
+      {
+        "type": "things",
+        "name": "coinHeap_1",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "normalChest",
+        "num": 1
+      }
+    ]
+  },
+  "goldChristmasGift": {
+    "category": "物品",
+    "subcategory": "永久礼包",
+    "cnName": "圣诞豪华礼包",
+    "useSave": "shopAuto",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店黄金购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "weaponChest",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "coinHeap_2",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "strengthenDrug",
+        "num": 50
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "skillFleshCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "armsEchelonCard",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "equipEchelonCard",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "doubleArmsCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "armsRadium",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 20
+      }
+    ]
+  },
+  "lifeBottle": {
+    "category": "物品",
+    "subcategory": "银币消费类",
+    "cnName": "生命药瓶",
+    "zuobiNum": 20000000,
+    "btnList": "use",
+    "description": "在正常关卡中，使用后补充主角100%的生命值。在竞技场中，使用后补充单位50%的生命值。",
+    "effectD": {
+      "type": "addLifeMul",
+      "value": 1,
+      "useInLevelB": 1,
+      "levelUseLimitNum": 2,
+      "effectLabel": "skillEffect/groupLight_hero",
+      "effectSound": "sound/groupLight_hero"
+    },
+    "loveD": {
+      "num": 30
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 1
+    }
+  },
+  "teamLifeBottle": {
+    "category": "物品",
+    "subcategory": "银币消费类",
+    "cnName": "队友生命药瓶",
+    "zuobiNum": 20000000,
+    "btnList": "use",
+    "description": "在正常关卡中，使用后补充所有队友以及尸宠100%的生命值。在竞技场中，使用后补充所有队友以及尸宠50%的生命值。",
+    "effectD": {
+      "type": "addTeamLifeMul",
+      "value": 1,
+      "useInLevelB": 1,
+      "levelUseLimitNum": 2,
+      "moreLimitB": 1,
+      "effectLabel": "skillEffect/groupLight_hero",
+      "effectSound": "sound/groupLight_hero"
+    },
+    "loveD": {
+      "num": 30
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 1
+    }
+  },
+  "caisson": {
+    "category": "物品",
+    "subcategory": "银币消费类",
+    "cnName": "弹药箱",
+    "zuobiNum": 20000000,
+    "btnList": "use",
+    "description": "使用后补充所有友方单位所有枪支类型的携弹量。",
+    "effectD": {
+      "type": "addAllChargerMul",
+      "value": 1,
+      "useInLevelB": 1,
+      "levelUseLimitNum": 4,
+      "effectLabel": "skillEffect/greenLight",
+      "effectSound": "sound/groupLight_hero"
+    },
+    "loveD": {
+      "num": 30
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 1
+    }
+  },
+  "mobilePhone": {
+    "category": "物品",
+    "subcategory": "其他",
+    "cnName": "一部手机",
+    "noOverlayB": 1,
+    "btnList": "uncall",
+    "description": "一部只能接听无法拨打的手机。"
+  },
+  "teamRebirthCard": {
+    "category": "物品",
+    "subcategory": "消耗型卡片",
+    "cnName": "队友重生卡",
+    "zuobiNum": 2000,
+    "btnList": "use",
+    "description": "使用后复活关卡中已倒下的队友。",
+    "effectD": {
+      "type": "rebirthTeam",
+      "value": 1,
+      "useInLevelB": 1,
+      "moreLimitB": 1,
+      "levelUseLimitNum": 2,
+      "arenaLevelUseLimitNum": 1,
+      "effectLabel": "skillEffect/groupLight_hero",
+      "effectSound": "sound/groupLight_hero"
+    },
+    "smeltD": {
+      "addType": "box",
+      "price": 5
+    }
+  },
+  "skillFleshCard": {
+    "category": "物品",
+    "subcategory": "消耗型卡片",
+    "cnName": "技能刷新卡",
+    "zuobiNum": 2000,
+    "btnList": "use",
+    "description": "使用后刷新当前控制单位所有主动技能的冷却时间、载具的冷却时间。",
+    "effectD": {
+      "type": "fleshSkillCd",
+      "value": 1,
+      "useInLevelB": 1,
+      "levelUseLimitNum": 2
+    },
+    "smeltD": {
+      "addType": "festival",
+      "price": 5
+    }
+  },
+  "qingming2017Gift": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "清明节礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 1
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "normalChest",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "doubleHighCard",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "armsTitanium",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "armsRadium",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 50
+      },
+      {
+        "type": "things",
+        "name": "rifleHornet",
+        "num": 5
+      }
+    ]
+  },
+  "arborDayGift": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "绿色家园礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 1
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "skillFleshCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "coinHeap_3",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "lifeCatalyst",
+        "num": 100
+      },
+      {
+        "type": "things",
+        "name": "energyCatalyst",
+        "num": 100
+      },
+      {
+        "type": "things",
+        "name": "variationCatalyst",
+        "num": 100
+      },
+      {
+        "type": "things",
+        "name": "magicChest",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "armsTitanium",
+        "num": 50
+      },
+      {
+        "type": "things",
+        "name": "armsRadium",
+        "num": 80
+      }
+    ]
+  },
+  "normalGratitudeGift": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "感恩节全民礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "godStone",
+        "num": 80
+      },
+      {
+        "type": "things",
+        "name": "skillStone",
+        "num": 120
+      },
+      {
+        "type": "things",
+        "name": "converStone",
+        "num": 80
+      }
+    ]
+  },
+  "goldGratitudeGift": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "感恩节豪华礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店黄金购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "sniperSmilodon",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "rebirthStone",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "skillFleshCard",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "converStone",
+        "num": 20
+      }
+    ]
+  },
+  "normalYuanGift2016": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "元宵节全民礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "armsEchelonCard",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "equipEchelonCard",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "godStone",
+        "num": 20
+      }
+    ]
+  },
+  "goldYuanGift2016": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "元宵节黄金礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店黄金购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "anniversaryCash",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "armsEchelonCard",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "equipEchelonCard",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "godStone",
+        "num": 20
+      }
+    ]
+  },
+  "normalYuanGift2017": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "元宵节全民礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "doubleMaterialsCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "doubleEquipCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "keyChest",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "coinHeap_1",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "anniversaryCash",
+        "num": 50
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "teamRebirthCard",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "skillFleshCard",
+        "num": 3
+      }
+    ]
+  },
+  "goldYuanGift2017": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "元宵节黄金礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店黄金购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "deviceChest",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "rebirthStone",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "highArmsEchelonCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "highEquipEchelonCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "armsTitanium",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "armsRadium",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "allBlackEquipCash",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "oracleSuit_belt",
+        "num": 10
+      }
+    ]
+  },
+  "normalChildrenGift": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "儿童节全民礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "shotgunBlade",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "FlyDragonGun",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "normalChest",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "converStone",
+        "num": 80
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 50
+      },
+      {
+        "type": "things",
+        "name": "rebirthStone",
+        "num": 1
+      }
+    ]
+  },
+  "goldChildrenGift": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "儿童节豪华礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店黄金购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "rifleHornet",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "shotgunBlade",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "FlyDragonGun",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "magicChest",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 80
+      },
+      {
+        "type": "things",
+        "name": "rebirthStone",
+        "num": 2
+      }
+    ]
+  },
+  "normalChildrenGift2017": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "六一全民礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "normalChest",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "doubleHighCard",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "allBlackEquipCash",
+        "num": 10
+      }
+    ]
+  },
+  "goldChildrenGift2017": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "六一节豪华礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店黄金购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "deviceChest",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "highArmsEchelonCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "highEquipEchelonCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "armsTitanium",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "armsRadium",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "allBlackEquipCash",
+        "num": 20
+      }
+    ]
+  },
+  "kaixueGift2016": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "开学礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "magicChest",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "duelistClaw_1",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "knightsMedal_1",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "WatchEagleAirCash",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "rolling_heroChip",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "godStone",
+        "num": 100
+      },
+      {
+        "type": "things",
+        "name": "converStone",
+        "num": 100
+      },
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 50
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 50
+      }
+    ]
+  },
+  "normalNationalGift": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "国庆畅玩礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "doubleCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "armsTitanium",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "armsRadium",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "strengthenDrug",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "lifeCatalyst",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "energyCatalyst",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "variationCatalyst",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "keyChest",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "magicChest",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 2
+      }
+    ]
+  },
+  "goldNationalGift": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "国庆豪华礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店黄金购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "rebirthStone",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "armsTitanium",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "armsRadium",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "lightStone",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "armsEchelonCard",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "equipEchelonCard",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "dragonChest",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 10
+      }
+    ]
+  },
+  "normalAnniverGift": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "周年畅玩礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "doubleCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "armsTitanium",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "armsRadium",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "lifeCatalyst",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "energyCatalyst",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "variationCatalyst",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "erosionFlamer",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "magicChest",
+        "num": 1
+      }
+    ]
+  },
+  "goldAnniverGift": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "周年豪华礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店黄金购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "rebirthStone",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "armsTitanium",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "armsRadium",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "armsEchelonCard",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "equipEchelonCard",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "dragonChest",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "erosionFlamer",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 10
+      }
+    ]
+  },
+  "kaixueGift2017_1": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "开学畅玩礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店银币购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "doubleArmsCard",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 20
+      },
+      {
+        "type": "things",
+        "name": "godStone",
+        "num": 100
+      },
+      {
+        "type": "things",
+        "name": "converStone",
+        "num": 100
+      },
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 50
+      },
+      {
+        "type": "things",
+        "name": "ultiArmsEchelonCard",
+        "num": 5
+      }
+    ]
+  },
+  "kaixueGift2017_2": {
+    "category": "物品",
+    "subcategory": "节日礼包",
+    "cnName": "开学豪华礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店黄金购买\n\t\t\t\t[n][n]使用后将获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "useSave": "shopAuto",
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "magicChest",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "doubleArmsCard",
+        "num": 5
+      },
+      {
+        "type": "things",
+        "name": "oracleSuit_belt",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "oracleSuit_head",
+        "num": 10
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 30
+      },
+      {
+        "type": "things",
+        "name": "godStone",
+        "num": 200
+      },
+      {
+        "type": "things",
+        "name": "converStone",
+        "num": 200
+      },
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 60
+      },
+      {
+        "type": "things",
+        "name": "fineStone",
+        "num": 10
+      }
+    ]
+  },
+  "firstArmsBox": {
+    "category": "物品",
+    "subcategory": "普通武器箱",
+    "cnName": "1级武器箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把1级的武器。\n\t\t\t\t[n][n]{font color='#FFFF00'}品质概率：{/font}\n\t\t\t\t[n]白色 25%\n\t\t\t\t[n]绿色 60%\n\t\t\t\t[n]蓝色 12%\n\t\t\t\t[n]紫色 2.6%\n\t\t\t\t[n]橙色 0.34%\n\t\t\t\t[n]红色 0.006%\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "dropLv",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "armsBox": {
+    "category": "物品",
+    "subcategory": "普通武器箱",
+    "cnName": "普通武器箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把武器，等级为(人物等级)~(人物等级-7)之间。\n\t\t\t\t[n][n]{font color='#FFFF00'}品质概率：{/font}\n\t\t\t\t[n]白色 25%\n\t\t\t\t[n]绿色 60%\n\t\t\t\t[n]蓝色 12%\n\t\t\t\t[n]紫色 2.6%\n\t\t\t\t[n]橙色 0.34%\n\t\t\t\t[n]红色 0.006%\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "drop",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 0.1
+    }
+  },
+  "armsHighBox": {
+    "category": "物品",
+    "subcategory": "普通武器箱",
+    "cnName": "高级武器箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把武器，等级为(人物等级)~(人物等级-6)之间。\n\t\t\t\t[n][n]{font color='#FFFF00'}品质概率：{/font}\n\t\t\t\t[n]蓝色 83%\n\t\t\t\t[n]紫色 13%\n\t\t\t\t[n]橙色 3%\n\t\t\t\t[n]红色 1%\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "dropBoss",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 10
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 0.5
+    }
+  },
+  "rifleBox": {
+    "category": "物品",
+    "subcategory": "普通武器箱",
+    "cnName": "高级步枪箱子",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把步枪，等级为(人物等级)~(人物等级-6)之间。\n\t\t\t\t[n][n]{font color='#FFFF00'}品质概率：{/font}\n\t\t\t\t[n]蓝色 83%\n\t\t\t\t[n]紫色 13%\n\t\t\t\t[n]橙色 3%\n\t\t\t\t[n]红色 1%\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "dropBoss",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 10
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 0.8
+    }
+  },
+  "sniperBox": {
+    "category": "物品",
+    "subcategory": "普通武器箱",
+    "cnName": "高级狙击箱子",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把狙击枪，等级为(人物等级)~(人物等级-6)之间。\n\t\t\t\t[n][n]{font color='#FFFF00'}品质概率：{/font}\n\t\t\t\t[n]蓝色 83%\n\t\t\t\t[n]紫色 13%\n\t\t\t\t[n]橙色 3%\n\t\t\t\t[n]红色 1%\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "dropBoss",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 10
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 0.8
+    }
+  },
+  "shotgunBox": {
+    "category": "物品",
+    "subcategory": "普通武器箱",
+    "cnName": "高级散弹箱子",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把散弹枪，等级为(人物等级)~(人物等级-6)之间。\n\t\t\t\t[n][n]{font color='#FFFF00'}品质概率：{/font}\n\t\t\t\t[n]蓝色 83%\n\t\t\t\t[n]紫色 13%\n\t\t\t\t[n]橙色 3%\n\t\t\t\t[n]红色 1%\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "dropBoss",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 10
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 0.8
+    }
+  },
+  "pistolBox": {
+    "category": "物品",
+    "subcategory": "普通武器箱",
+    "cnName": "高级手枪箱子",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把手枪，等级为(人物等级)~(人物等级-6)之间。\n\t\t\t\t[n][n]{font color='#FFFF00'}品质概率：{/font}\n\t\t\t\t[n]蓝色 83%\n\t\t\t\t[n]紫色 13%\n\t\t\t\t[n]橙色 3%\n\t\t\t\t[n]红色 1%\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "dropBoss",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 10
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 0.8
+    }
+  },
+  "blackArmsBox": {
+    "category": "物品",
+    "subcategory": "黑色武器箱",
+    "cnName": "黑色武器箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把99级的黑色随机属性武器。",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "ranBlack",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "blackRifleBox": {
+    "category": "物品",
+    "subcategory": "黑色武器箱",
+    "cnName": "黑色步枪箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把99级的黑色随机属性步枪。",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "ranBlack",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "blackSniperBox": {
+    "category": "物品",
+    "subcategory": "黑色武器箱",
+    "cnName": "黑色狙击箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把99级的黑色随机属性狙击枪。",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "ranBlack",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "blackShotgunBox": {
+    "category": "物品",
+    "subcategory": "黑色武器箱",
+    "cnName": "黑色散弹箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把99级的黑色随机属性散弹枪。",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "ranBlack",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "blackPistolBox": {
+    "category": "物品",
+    "subcategory": "黑色武器箱",
+    "cnName": "黑色手枪箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把99级的黑色随机属性手枪。",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "ranBlack",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "blackRocketBox": {
+    "category": "物品",
+    "subcategory": "黑色武器箱",
+    "cnName": "黑色火炮箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把99级的黑色随机属性火炮。",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "ranBlack",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "blackLaserBox": {
+    "category": "物品",
+    "subcategory": "黑色武器箱",
+    "cnName": "黑色激光箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一把99级的黑色随机属性激光枪。",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "arms",
+        "name": "ranBlack",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1
+    }
+  },
+  "equipBox": {
+    "category": "物品",
+    "subcategory": "装备箱",
+    "cnName": "普通装备箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一件装备，等级为(人物等级)~(人物等级-7)之间。\n\t\t\t\t[n][n]{font color='#FFFF00'}品质概率：{/font}\n\t\t\t\t[n]白色 25%\n\t\t\t\t[n]绿色 60%\n\t\t\t\t[n]蓝色 12%\n\t\t\t\t[n]紫色 2.6%\n\t\t\t\t[n]橙色 0.34%\n\t\t\t\t[n]红色 0.006%\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "equip",
+        "name": "drop",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 0.1
+    }
+  },
+  "equipHighBox": {
+    "category": "物品",
+    "subcategory": "装备箱",
+    "cnName": "高级装备箱",
+    "zuobiNum": 30000,
+    "description": "使用后将随机获得一件装备，等级为(人物等级)~(人物等级-6)之间，出现高品质装备的概率为普通装备箱的10倍。\n\t\t\t\t[n][n]{font color='#FFFF00'}品质概率：{/font}\n\t\t\t\t[n]蓝色 83%\n\t\t\t\t[n]紫色 13%\n\t\t\t\t[n]橙色 3%\n\t\t\t\t[n]红色 1%\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "equip",
+        "name": "dropBoss",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 10
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 0.5
+    }
+  },
+  "coinHeap_1": {
+    "category": "物品",
+    "subcategory": "银币堆",
+    "cnName": "小型银币堆",
+    "zuobiNum": 30000,
+    "description": "使用后添加1万银币。",
+    "effectD": {
+      "type": "addGift"
+    },
+    "gift": [
+      {
+        "type": "base",
+        "name": "coin",
+        "num": 10000
+      }
+    ],
+    "smeltD": {
+      "addType": "coin",
+      "price": 2
+    }
+  },
+  "coinHeap_2": {
+    "category": "物品",
+    "subcategory": "银币堆",
+    "cnName": "中型银币堆",
+    "zuobiNum": 2000,
+    "description": "使用后添加10万银币。",
+    "effectD": {
+      "type": "addGift"
+    },
+    "gift": [
+      {
+        "type": "base",
+        "name": "coin",
+        "num": 100000
+      }
+    ],
+    "smeltD": {
+      "addType": "coin",
+      "price": 15
+    }
+  },
+  "coinHeap_3": {
+    "category": "物品",
+    "subcategory": "银币堆",
+    "cnName": "大型银币堆",
+    "zuobiNum": 200,
+    "description": "使用后添加100万银币。",
+    "effectD": {
+      "type": "addGift"
+    },
+    "gift": [
+      {
+        "type": "base",
+        "name": "coin",
+        "num": 1000000
+      }
+    ],
+    "smeltD": {
+      "addType": "coin",
+      "price": 100
+    }
+  },
+  "doubleCard": {
+    "category": "物品",
+    "subcategory": "双倍卡片",
+    "cnName": "双倍经验绿卡",
+    "zuobiNum": 2000,
+    "description": "使用后获得20分钟的双倍经验时间。",
+    "effectD": {
+      "type": "addGift"
+    },
+    "gift": [
+      {
+        "type": "time",
+        "name": "doubleExpTime",
+        "num": 1200
+      }
+    ],
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 5
+    }
+  },
+  "doubleHighCard": {
+    "category": "物品",
+    "subcategory": "双倍卡片",
+    "zuobiNum": 1000,
+    "cnName": "双倍经验金卡",
+    "description": "使用后获得60分钟的双倍经验时间。",
+    "effectD": {
+      "type": "addGift"
+    },
+    "gift": [
+      {
+        "type": "time",
+        "name": "doubleExpTime",
+        "num": 3600
+      }
+    ],
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 10
+    }
+  },
+  "doubleArmsCard": {
+    "category": "物品",
+    "subcategory": "双倍卡片",
+    "cnName": "双倍武器掉率卡",
+    "zuobiNum": 2000,
+    "description": "使用后获得20分钟的双倍武器掉率时间，武器包括橙色武器、红色武器、稀有武器、黑色武器碎片。",
+    "effectD": {
+      "type": "addGift"
+    },
+    "gift": [
+      {
+        "type": "time",
+        "name": "doubleArmsDropTime",
+        "num": 1200
+      }
+    ],
+    "smeltD": {
+      "grade": 1,
+      "addType": "armsChip",
+      "price": 10
+    },
+    "loveD": {
+      "num": 0
+    }
+  },
+  "doubleEquipCard": {
+    "category": "物品",
+    "subcategory": "双倍卡片",
+    "cnName": "双倍装备掉率卡",
+    "zuobiNum": 2000,
+    "description": "使用后获得20分钟的双倍装备掉率时间，装备包括橙色装备、红色装备、稀有装备、黑色装备碎片。",
+    "effectD": {
+      "type": "addGift"
+    },
+    "gift": [
+      {
+        "type": "time",
+        "name": "doubleEquipDropTime",
+        "num": 1200
+      }
+    ],
+    "smeltD": {
+      "grade": 1,
+      "addType": "equipChip",
+      "price": 8
+    },
+    "loveD": {
+      "num": 0
+    }
+  },
+  "doubleMaterialsCard": {
+    "category": "物品",
+    "subcategory": "双倍卡片",
+    "cnName": "双倍材料掉率卡",
+    "zuobiNum": 2000,
+    "description": "使用后获得15分钟的双倍材料掉率时间，材料包括神能石、转化石、生命催化剂、商券、血石。",
+    "effectD": {
+      "type": "addGift"
+    },
+    "gift": [
+      {
+        "type": "time",
+        "name": "doubleMaterialsDropTime",
+        "num": 900
+      }
+    ],
+    "smeltD": {
+      "grade": 1,
+      "addType": "otherChip",
+      "price": 5
+    },
+    "loveD": {
+      "num": 0
+    }
+  },
+  "partsChest69": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "69级零件箱",
+    "description": "\n\t\t\t\t使用后将获得6个69级的普通零件。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]无尽模式(产量很高)\n\t\t\t\t[n]锻造合成\n\t\t\t\t[n]商店、竞技场兑换、军队商店\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 4
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 10
+    },
+    "gift": [
+      {
+        "type": "parts",
+        "name": "loaderParts_69",
+        "num": 6
+      }
+    ]
+  },
+  "partsChest72": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "72级零件箱",
+    "description": "\n\t\t\t\t使用后将获得6个72级的普通零件。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]vip每日礼包领取\n\t\t\t\t[n]每日任务\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 4
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 25
+    },
+    "gift": [
+      {
+        "type": "parts",
+        "name": "loaderParts_72",
+        "num": 6
+      }
+    ]
+  },
+  "partsChest75": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "75级零件箱",
+    "description": "\n\t\t\t\t使用后将获得6个75级的普通零件。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]锻造合成\n\t\t\t\t[n]商店、军队商店\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 4
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 50
+    },
+    "gift": [
+      {
+        "type": "parts",
+        "name": "loaderParts_75",
+        "num": 6
+      }
+    ]
+  },
+  "partsChest78": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "addDropDefineB": 1,
+    "cnName": "78级零件箱",
+    "description": "\n\t\t\t\t使用后将获得6个78级的普通零件。{font color='#FFFFFF'}也是冶炼屋的重要增产物品，请谨慎使用。{/font}\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店\n\t\t\t\t[n]每周任务\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 4
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": "",
+      "price": 150
+    },
+    "gift": [
+      {
+        "type": "parts",
+        "name": "loaderParts_78",
+        "num": 6
+      }
+    ]
+  },
+  "partsChest81": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "81级零件箱",
+    "description": "\n\t\t\t\t使用后将获得6个81级的普通零件。{font color='#FFFFFF'}可分解为冶炼屋的重要增产物品：78级零件箱，请谨慎使用。{/font}\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 4
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": ""
+    },
+    "gift": [
+      {
+        "type": "parts",
+        "name": "loaderParts_81",
+        "num": 6
+      }
+    ]
+  },
+  "partsChest84": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "84级零件箱",
+    "description": "\n\t\t\t\t使用后将获得6个84级的普通零件。{font color='#FFFFFF'}可逐步分解为冶炼屋的重要增产物品：78级零件箱，请谨慎使用。{/font}\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 4
+    },
+    "gift": [
+      {
+        "type": "parts",
+        "name": "loaderParts_84",
+        "num": 6
+      }
+    ]
+  },
+  "partsChest87": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "87级零件箱",
+    "description": "\n\t\t\t\t使用后将获得6个87级的普通零件。{font color='#FFFFFF'}可逐步分解为冶炼屋的重要增产物品：78级零件箱，请谨慎使用。{/font}\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 4
+    },
+    "gift": [
+      {
+        "type": "parts",
+        "name": "loaderParts_87",
+        "num": 6
+      }
+    ]
+  },
+  "partsChest90": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "90级零件箱",
+    "description": "\n\t\t\t\t使用后将获得6个90级的普通零件。\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 4
+    },
+    "gift": [
+      {
+        "type": "parts",
+        "name": "loaderParts_90",
+        "num": 6
+      }
+    ]
+  },
+  "sprintSword20": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "凯撒箱",
+    "description": "\n\t\t\t\t使用后获得20把凯撒。[n]\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1
+    },
+    "gift": [
+      {
+        "type": "equip",
+        "name": "sprintSword_1",
+        "num": 20
+      }
+    ]
+  },
+  "shuttleSword": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "镭射箱",
+    "description": "\n\t\t\t\t使用后获得30个镭射穿梭器装置。[n]\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买(小樱好感度需到达15000)\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1
+    },
+    "gift": [
+      {
+        "type": "equip",
+        "name": "shuttleDevicer_1",
+        "num": 30
+      }
+    ]
+  },
+  "blackHoleSword": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "黑洞箱",
+    "description": "\n\t\t\t\t使用后获得30个黑洞发生器装置。[n]\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买(藏师忠诚度需到达24000)\n\t\t\t",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1
+    },
+    "gift": [
+      {
+        "type": "equip",
+        "name": "blackHoleDevicer_1",
+        "num": 30
+      }
+    ]
+  },
+  "weaponChest": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "副手箱",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、每日任务“特种兵的赌约”（2星难度以上）。\n\t\t\t\t[n]2、活跃值礼包。\n\t\t\t\t[n]3、通关后抽奖。\n\t\t\t\t[n]4、每日问答答题全对奖励。\n\t\t\t\t[n]6、商店购买。\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 4
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 15
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "equip",
+        "name": "butcherBlade_1",
+        "num": 1,
+        "weight": 1
+      },
+      {
+        "type": "equip",
+        "name": "moonDagger_1",
+        "num": 1,
+        "weight": 1
+      },
+      {
+        "type": "equip",
+        "name": "wolongStick_1",
+        "num": 1,
+        "weight": 1
+      }
+    ]
+  },
+  "deviceChest": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "装置箱",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、每日任务“古老的火炮”。\n\t\t\t\t[n]2、活跃值礼包。\n\t\t\t\t[n]3、通关后抽奖。\n\t\t\t\t[n]4、每日问答答题全对奖励。\n\t\t\t\t[n]6、商店购买。\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 4
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 10
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "equip",
+        "name": "earthquakeGenerator_1",
+        "num": 1,
+        "weight": 1
+      },
+      {
+        "type": "equip",
+        "name": "endlessRocket_1",
+        "num": 1,
+        "weight": 1
+      },
+      {
+        "type": "equip",
+        "name": "lightningTower_1",
+        "num": 1,
+        "weight": 1
+      },
+      {
+        "type": "equip",
+        "name": "energyShield_1",
+        "num": 1,
+        "weight": 1
+      },
+      {
+        "type": "equip",
+        "name": "electricDevicer_1",
+        "num": 1,
+        "weight": 1
+      }
+    ]
+  },
+  "keyChest": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "钥匙箱",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、每日任务“逃出升天”。\n\t\t\t\t[n]2、通关后抽奖。\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 3
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 2
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "things",
+        "name": "dreamKey",
+        "num": 1,
+        "weight": 1
+      },
+      {
+        "type": "things",
+        "name": "courageKey",
+        "num": 1,
+        "weight": 1
+      },
+      {
+        "type": "things",
+        "name": "energyKey",
+        "num": 1,
+        "weight": 1
+      },
+      {
+        "type": "things",
+        "name": "victoryKey",
+        "num": 1,
+        "weight": 1
+      }
+    ]
+  },
+  "armsGemChest": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "武器宝石箱",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、副本任务“古飙”。\n\t\t\t\t[n]2、商店购买。\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 3
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": "",
+      "price": 3
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "things",
+        "name": "fireGem",
+        "num": 1,
+        "weight": 28
+      },
+      {
+        "type": "things",
+        "name": "electricGem",
+        "num": 1,
+        "weight": 28
+      },
+      {
+        "type": "things",
+        "name": "frozenGem",
+        "num": 1,
+        "weight": 28
+      },
+      {
+        "type": "things",
+        "name": "poisonGem",
+        "num": 1,
+        "weight": 16
+      }
+    ]
+  },
+  "equipGemChest": {
+    "category": "物品",
+    "subcategory": "一般箱子",
+    "cnName": "装备宝石箱",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买。\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 3
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": "",
+      "price": 3
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "things",
+        "name": "wisdomGem",
+        "num": 1,
+        "weight": 40
+      },
+      {
+        "type": "things",
+        "name": "agileGem",
+        "num": 1,
+        "weight": 33
+      },
+      {
+        "type": "things",
+        "name": "defenceGem",
+        "num": 1,
+        "weight": 27
+      },
+      {
+        "type": "things",
+        "name": "alertGem",
+        "num": 1,
+        "weight": 33
+      }
+    ]
+  },
+  "demonChest": {
+    "category": "物品",
+    "subcategory": "宝箱",
+    "cnName": "修罗宝箱",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t[n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]修罗九\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 0
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "base",
+        "name": "anniCoin",
+        "num": 30,
+        "weight": 50
+      },
+      {
+        "type": "things",
+        "name": "demStone",
+        "num": 5,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "madheart",
+        "num": 5,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "demBall",
+        "num": 5,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "roamRocket",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "starTrails",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "barrenAwn",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "iceCone",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "pianoGun",
+        "num": 3,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "bossCardStamp",
+        "num": 5,
+        "weight": 200
+      },
+      {
+        "type": "base",
+        "name": "partsCoin",
+        "num": 10,
+        "weight": 100
+      },
+      {
+        "type": "base",
+        "name": "wilderKey",
+        "num": 5,
+        "weight": 80
+      },
+      {
+        "type": "parts",
+        "name": "demCapacityParts_1",
+        "num": 1,
+        "weight": 50
+      }
+    ]
+  },
+  "normalChest": {
+    "category": "物品",
+    "subcategory": "宝箱",
+    "addDropDefineB": 1,
+    "cnName": "稀有宝箱",
+    "description": "\n\t\t\t\t可在“锻造>合成>物品”中合成小卡、小隆、小娜、小田等时装。\n\t\t\t\t[n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、消灭财宝僵尸。\n\t\t\t\t[n]2、竞技场兑换、商店购买。\n\t\t\t\t[n]3、完成活跃任务领取活跃礼包。\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "smeltD": {
+      "grade": 2,
+      "addType": "armsEquip",
+      "price": 40
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "arms",
+        "name": "pistolSange",
+        "num": 1,
+        "weight": 2
+      },
+      {
+        "type": "arms",
+        "name": "shotgunLightning",
+        "num": 1,
+        "weight": 2
+      },
+      {
+        "type": "arms",
+        "name": "rocketHummer",
+        "num": 1,
+        "weight": 4
+      },
+      {
+        "type": "equip",
+        "name": "earthquakeGenerator_1",
+        "num": 8,
+        "weight": 66
+      },
+      {
+        "type": "equip",
+        "name": "endlessRocket_1",
+        "num": 8,
+        "weight": 66
+      },
+      {
+        "type": "equip",
+        "name": "lightningTower_1",
+        "num": 8,
+        "weight": 66
+      },
+      {
+        "type": "equip",
+        "name": "energyShield_1",
+        "num": 8,
+        "weight": 66
+      },
+      {
+        "type": "equip",
+        "name": "electricDevicer_1",
+        "num": 8,
+        "weight": 66
+      },
+      {
+        "type": "things",
+        "name": "skillStone",
+        "num": 200,
+        "weight": 250
+      },
+      {
+        "type": "things",
+        "name": "godStone",
+        "num": 100,
+        "weight": 250
+      },
+      {
+        "type": "things",
+        "name": "converStone",
+        "num": 100,
+        "weight": 250
+      },
+      {
+        "type": "things",
+        "name": "taxStamp",
+        "num": 200,
+        "weight": 250
+      },
+      {
+        "type": "base",
+        "name": "coin",
+        "num": 800000,
+        "weight": 200
+      }
+    ]
+  },
+  "magicChest": {
+    "category": "物品",
+    "subcategory": "宝箱",
+    "addDropDefineB": 1,
+    "cnName": "传奇宝箱",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、每次消灭完首领将有一定几率出现财宝僵尸，关卡难度越高、关卡等级越高，出现财宝僵尸的概率就越高。消灭财宝僵尸将有一定几率掉落传奇宝箱。\n\t\t\t\t[n]2、竞技场兑换。\n\t\t\t\t[n]3、商店购买（每天限定次数）。\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "smeltD": {
+      "grade": 2,
+      "addType": "armsEquip",
+      "price": 60
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "equip",
+        "name": "Thunder",
+        "num": 1,
+        "weight": 25
+      },
+      {
+        "type": "arms",
+        "name": "pistolRed",
+        "num": 1,
+        "weight": 45
+      },
+      {
+        "type": "arms",
+        "name": "rifleYellow",
+        "num": 1,
+        "weight": 45
+      },
+      {
+        "type": "arms",
+        "name": "sniperBlue",
+        "num": 1,
+        "weight": 45
+      },
+      {
+        "type": "arms",
+        "name": "shotgunRed",
+        "num": 1,
+        "weight": 45
+      },
+      {
+        "type": "equip",
+        "name": "butcherBlade_1",
+        "num": 15,
+        "weight": 120
+      },
+      {
+        "type": "equip",
+        "name": "moonDagger_1",
+        "num": 15,
+        "weight": 120
+      },
+      {
+        "type": "equip",
+        "name": "wolongStick_1",
+        "num": 15,
+        "weight": 120
+      },
+      {
+        "type": "things",
+        "name": "dreamKey",
+        "num": 8,
+        "weight": 1286
+      },
+      {
+        "type": "things",
+        "name": "courageKey",
+        "num": 8,
+        "weight": 1286
+      },
+      {
+        "type": "things",
+        "name": "energyKey",
+        "num": 8,
+        "weight": 1286
+      },
+      {
+        "type": "things",
+        "name": "victoryKey",
+        "num": 8,
+        "weight": 1286
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 30,
+        "weight": 667
+      },
+      {
+        "type": "things",
+        "name": "arenaStamp",
+        "num": 200,
+        "weight": 1587
+      },
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 30,
+        "weight": 750
+      },
+      {
+        "type": "things",
+        "name": "converStone",
+        "num": 150,
+        "weight": 1295
+      }
+    ]
+  },
+  "dragonChest": {
+    "category": "物品",
+    "subcategory": "宝箱",
+    "addDropDefineB": 1,
+    "cnName": "远古宝箱",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、消灭50级以上普通关卡、秘境首领有几率掉落，每天最多掉落2个。\n\t\t\t\t[n]2、竞技场兑换、军队商店兑换。\n\t\t\t\t[n]3、商店购买（每天限定次数）。\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "smeltD": {
+      "grade": 2,
+      "addType": "armsEquip",
+      "price": 60
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "equip",
+        "name": "FlyDragonAir",
+        "num": 1,
+        "weight": 6
+      },
+      {
+        "type": "things",
+        "name": "rifleHornet",
+        "num": 10,
+        "weight": 50
+      },
+      {
+        "type": "things",
+        "name": "pistolCabrite",
+        "num": 10,
+        "weight": 167
+      },
+      {
+        "type": "things",
+        "name": "christmasGun",
+        "num": 10,
+        "weight": 250
+      },
+      {
+        "type": "things",
+        "name": "anniversaryCash",
+        "num": 20,
+        "weight": 333
+      },
+      {
+        "type": "things",
+        "name": "lightStone",
+        "num": 40,
+        "weight": 167
+      },
+      {
+        "type": "things",
+        "name": "converStone",
+        "num": 200,
+        "weight": 250
+      },
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 30,
+        "weight": 250
+      },
+      {
+        "type": "things",
+        "name": "armsTitanium",
+        "num": 20,
+        "weight": 333
+      },
+      {
+        "type": "things",
+        "name": "armsRadium",
+        "num": 20,
+        "weight": 500
+      },
+      {
+        "type": "things",
+        "name": "partsChest81",
+        "num": 1,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "partsChest84",
+        "num": 1,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "partsChest87",
+        "num": 1,
+        "weight": 20
+      },
+      {
+        "type": "things",
+        "name": "yearPig",
+        "num": 1,
+        "weight": 310
+      }
+    ]
+  },
+  "artifactChest": {
+    "category": "物品",
+    "subcategory": "宝箱",
+    "cnName": "神器宝箱",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "things",
+        "name": "ghostAxe",
+        "num": 1,
+        "weight": 700
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 5,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "allBlackEquipCash",
+        "num": 5,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "AircraftGunCash",
+        "num": 5,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "erosionFlamer",
+        "num": 3,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "beadCrossbow",
+        "num": 3,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "oracleSuit_head",
+        "num": 3,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "oracleSuit_belt",
+        "num": 3,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "oracleSuit_coat",
+        "num": 3,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "weaponChest",
+        "num": 1,
+        "weight": 500
+      },
+      {
+        "type": "things",
+        "name": "deviceChest",
+        "num": 1,
+        "weight": 500
+      },
+      {
+        "type": "things",
+        "name": "fineStone",
+        "num": 1,
+        "weight": 500
+      },
+      {
+        "type": "things",
+        "name": "skillStone",
+        "num": 30,
+        "weight": 800
+      },
+      {
+        "type": "things",
+        "name": "strengthenDrug",
+        "num": 30,
+        "weight": 800
+      }
+    ]
+  },
+  "tigerChest": {
+    "category": "物品",
+    "subcategory": "宝箱",
+    "cnName": "异虎宝箱",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]活跃度礼包\n\t\t\t\t[n]商店购买（每天限定次数）\n\t\t\t\t[n][n]使用后获得以下所有物品：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 0
+    },
+    "showGiftB": 1,
+    "gift": [
+      {
+        "type": "things",
+        "name": "SaberTigerCarCash",
+        "num": 1
+      },
+      {
+        "type": "base",
+        "name": "coin",
+        "num": 20000
+      },
+      {
+        "type": "things",
+        "name": "bloodStone",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "allBlackCash",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "allBlackEquipCash",
+        "num": 2
+      },
+      {
+        "type": "things",
+        "name": "armsRadium",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "armsTitanium",
+        "num": 3
+      },
+      {
+        "type": "things",
+        "name": "redFire",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "rocketCate",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "meltFlamer",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "pistolFox",
+        "num": 1
+      }
+    ]
+  },
+  "arenaChest": {
+    "category": "物品",
+    "subcategory": "宝箱",
+    "cnName": "竞技宝箱",
+    "description": "\n\t\t\t\t可在“锻造>合成>物品”中合成小鸣时装、小波时装、小艾时装、超能英雄称号、特种奇兵称号。\n\t\t\t\t[n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]首领工厂高难度首领\n\t\t\t\t[n]功勋牌兑换\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 0
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "things",
+        "name": "yearDog",
+        "num": 1,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "yearMonkey",
+        "num": 1,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "yearSnake",
+        "num": 1,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "yearCattle",
+        "num": 1,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "yearPig",
+        "num": 1,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "yearHourse",
+        "num": 1,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "yearMouse",
+        "num": 1,
+        "weight": 200
+      },
+      {
+        "type": "things",
+        "name": "yearRabbit",
+        "num": 1,
+        "weight": 200
+      }
+    ]
+  },
+  "zodiacBag": {
+    "category": "物品",
+    "subcategory": "宝箱",
+    "cnName": "生肖碎片包",
+    "description": "\n\t\t\t\t包含6种生肖碎片\n\t\t\t\t[n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]活跃值礼包\n\t\t\t\t[n][n]使用后获得以下所有物品",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "showGiftB": 1,
+    "loveD": {
+      "num": 0
+    },
+    "gift": [
+      {
+        "type": "things",
+        "name": "yearMonkey",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "yearPig",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "yearRabbit",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "yearMouse",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "yearHourse",
+        "num": 1
+      },
+      {
+        "type": "things",
+        "name": "yearCattle",
+        "num": 1
+      }
+    ]
+  },
+  "postNormalChest": {
+    "category": "物品",
+    "subcategory": "宝箱",
+    "cnName": "联邦工资包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、职务系统中的每日礼包。\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "things",
+        "name": "armsEchelonCard",
+        "num": 5,
+        "weight": 240
+      },
+      {
+        "type": "things",
+        "name": "equipEchelonCard",
+        "num": 5,
+        "weight": 240
+      },
+      {
+        "type": "things",
+        "name": "strengthenStone",
+        "num": 5,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "lightStone",
+        "num": 5,
+        "weight": 100
+      },
+      {
+        "type": "things",
+        "name": "militarySupplies",
+        "num": 50,
+        "weight": 33
+      },
+      {
+        "type": "things",
+        "name": "normalChest",
+        "num": 1,
+        "weight": 33
+      },
+      {
+        "type": "things",
+        "name": "magicChest",
+        "num": 1,
+        "weight": 33
+      },
+      {
+        "type": "things",
+        "name": "coinHeap_1",
+        "num": 5,
+        "weight": 218
+      }
+    ]
+  },
+  "postPlatinumChest": {
+    "category": "物品",
+    "subcategory": "宝箱",
+    "cnName": "元首礼包",
+    "description": "\n\t\t\t\t{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、职务系统中的每日礼包。\n\t\t\t\t[n][n]使用后将随机获得以下物品中的1种：",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "loveD": {
+      "num": 2
+    },
+    "giftRandomB": 1,
+    "loot": [
+      {
+        "type": "things",
+        "name": "doubleArmsCard",
+        "num": 1,
+        "weight": 120
+      },
+      {
+        "type": "things",
+        "name": "doubleEquipCard",
+        "num": 1,
+        "weight": 160
+      },
+      {
+        "type": "things",
+        "name": "doubleMaterialsCard",
+        "num": 1,
+        "weight": 120
+      },
+      {
+        "type": "things",
+        "name": "coinHeap_1",
+        "num": 5,
+        "weight": 300
+      }
+    ]
+  },
+  "moonCake": {
+    "category": "物品",
+    "subcategory": "活动道具",
+    "addDropDefineB": 1,
+    "cnName": "月饼",
+    "zuobiNum": 5000,
+    "stateD": {
+      "skill": "moonCake",
+      "time": 300,
+      "gamingB": 1,
+      "demNoneB": 1
+    },
+    "description": "使用后将增加战斗中100%的攻击力（99级主线任务、修罗模式无效），持续5分钟。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": "",
+      "price": 20,
+      "maxNum": 1
+    }
+  },
+  "tangyuan": {
+    "category": "物品",
+    "subcategory": "活动道具",
+    "addDropDefineB": 1,
+    "cnName": "汤圆",
+    "zuobiNum": 1000,
+    "stateD": {
+      "skill": "tangyuan",
+      "time": 120,
+      "gamingB": 1,
+      "demNoneB": 1
+    },
+    "description": "使用后将增加战斗中100%的攻击力（99级主线任务、修罗模式无效），持续2分钟。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": "",
+      "price": 10,
+      "maxNum": 1
+    }
+  },
+  "jiaozi": {
+    "category": "物品",
+    "subcategory": "活动道具",
+    "addDropDefineB": 1,
+    "cnName": "饺子",
+    "zuobiNum": 1000,
+    "stateD": {
+      "skill": "jiaozi",
+      "time": 60,
+      "gamingB": 1,
+      "demNoneB": 1
+    },
+    "description": "使用后在战斗中将处于无敌状态（99级主线任务、修罗模式无效），持续1分钟。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": "",
+      "price": 10,
+      "maxNum": 1
+    }
+  },
+  "nineCake": {
+    "category": "物品",
+    "subcategory": "活动道具",
+    "addDropDefineB": 1,
+    "cnName": "九层糕",
+    "zuobiNum": 1000,
+    "stateD": {
+      "skill": "nineCake",
+      "time": 60,
+      "gamingB": 1,
+      "demNoneB": 1
+    },
+    "description": "使用后将增加战斗中100%的射速（99级主线任务、修罗模式无效），持续1分钟。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": "",
+      "price": 10,
+      "maxNum": 1
+    }
+  },
+  "leafArbor": {
+    "category": "物品",
+    "subcategory": "活动道具",
+    "addDropDefineB": 1,
+    "cnName": "树叶",
+    "zuobiNum": 1000,
+    "stateD": {
+      "skill": "armsDropDoubleAndGem",
+      "time": 1800,
+      "gamingB": 1
+    },
+    "description": "使用后增加100%的稀有武器、黑色武器掉率，增加30%的元素宝石掉落，持续30分钟。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": "",
+      "price": 20,
+      "maxNum": 1
+    }
+  },
+  "seedArbor": {
+    "category": "物品",
+    "subcategory": "活动道具",
+    "addDropDefineB": 1,
+    "cnName": "种子",
+    "zuobiNum": 1000,
+    "stateD": {
+      "skill": "equipDropDoubleAndEquipGem",
+      "time": 1800,
+      "gamingB": 1
+    },
+    "description": "使用后增加100%的稀有装备、黑色装备掉率，增加30%的装备宝石掉落，持续30分钟。",
+    "loveD": {
+      "num": 0
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": "",
+      "price": 20,
+      "maxNum": 1
+    }
+  },
+  "geneBox": {
+    "category": "物品",
+    "subcategory": "活动道具",
+    "addDropDefineB": 1,
+    "cnName": "尸宠基因盒",
+    "zuobiNum": 1000,
+    "description": "使用后将随机获得一个基因体（不包括商店出售的基因体），品质在紫色到红色之间。",
+    "effectD": {
+      "type": "addGift",
+      "useSurplusBagB": 1
+    },
+    "gift": [
+      {
+        "type": "gene",
+        "name": "box",
+        "num": 1
+      }
+    ],
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "price": 30
+    }
+  }
+}

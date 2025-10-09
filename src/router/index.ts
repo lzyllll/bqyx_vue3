@@ -30,6 +30,7 @@ const GenericModule = () => import('@/views/archive/GenericModule.vue')
 const BossCardModule = () => import('@/views/archive/BossCardModule.vue')
 const PetModule = () => import('@/views/archive/PetModule.vue')
 const VipModule = () => import('@/views/archive/VipModule.vue')
+const ThingsBagModule = () => import('@/views/archive/ThingsBagModule.vue')
 const routes: RouteRecordRaw[] = [
   {
     path: '/login',
@@ -135,7 +136,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'thingsBag',
         name: 'ThingsBagModule',
-        component: GenericModule,
+        component: ThingsBagModule,
         meta: { requiresAuth: false }
       },
       {

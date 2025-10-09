@@ -145,6 +145,7 @@ export class EquipItems {
   belt?: EquipItem
   fashion?: EquipItem
   vehicle?: EquipItem
+  /**副手 */
   weapon?: EquipItem
   device?: EquipItem
   jewelry?: EquipItem
@@ -160,7 +161,6 @@ export class Equip {
     var result = new EquipItems()
     for (let i = 0; i < value.length; i++) {
       var item = plainToClass(EquipItem, value[i])
-      console.log(item.site, posType[item.site])
       result[posType[item.site]] = item
     }
     return result

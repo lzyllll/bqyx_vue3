@@ -1,6 +1,23 @@
 import translateData from '@/assets/data/bonus/translate.json'
 import mapData from '@/assets/data/map.json'
 import headClassData from '@/assets/data/headTitle/headClass.json'
+//物品相关的json
+import blackChipData from '@/assets/data/blackChip/blackChip.json'
+import rareChipData from '@/assets/data/rareChip/rareChip.json'
+import skillChipData from '@/assets/data/skillChip/skillChip.json'
+import materialsData from '@/assets/data/materials/materials.json'
+import normalChipData from '@/assets/data/normalChip/normalChip.json'
+import propsData from '@/assets/data/props/props.json'
+
+// 物品类型数据映射json详细的信息
+const itemTypeDataMap = {
+  skillChip: skillChipData,
+  normalChip: normalChipData,
+  materials: materialsData,
+  props: propsData,
+  rareChip: rareChipData,
+  blackChip: blackChipData
+}
 
 // 模块级缓存变量
 let flatMapData: Record<string, string> | null = null
@@ -73,6 +90,9 @@ export function getHeadTitleInfo(key: string): { cnName: string; description: st
   }
 }
 
+
+
+
 /**
  * 批量翻译属性对象
  * @param bonus 属性加成对象
@@ -125,4 +145,112 @@ export function getFormattedBonusList(bonus: Record<string, any>): Array<{key: s
     key: translateSingleBonus(key),
     value: formatBonusValue(key, value)
   }))
+}
+
+
+
+/**
+ * 根据itemtype获取物品详细信息
+ * @param itemType 物品类型
+ * @param itemName 物品名
+ * @returns 物品详细信息对象或null
+ */
+export function getItemInfo(itemType: string, itemName: string): any {
+  const dataSource = itemTypeDataMap[itemType as keyof typeof itemTypeDataMap]
+  if (!dataSource) {
+    console.warn(`未知的物品类型: ${itemType}`)
+    return null
+  }
+  
+  const itemInfo = dataSource[itemName as keyof typeof dataSource]
+  if (!itemInfo) {
+    console.warn(`未找到物品: ${itemName} 在类型 ${itemType} 中`)
+    return null
+  }
+  
+  return itemInfo
+}
+
+/**
+ * 根据itemtype获取物品中文名称
+ * @param itemType 物品类型
+ * @param itemName 物品名
+ * @returns 中文名称或原始ID
+ */
+export function getItemCnName(itemType: string, itemName: string): string {
+  const itemInfo = getItemInfo(itemType, itemName)
+  return itemInfo?.cnName || itemName
+}
+
+/**
+ * 根据itemtype获取物品描述
+ * @param itemType 物品类型
+ * @param itemId 物品ID
+ * @returns 物品描述或空字符串
+ */
+export function getItemDescription(itemType: string, itemId: string): string {
+  const itemInfo = getItemInfo(itemType, itemId)
+  return itemInfo?.description || ''
+}
+
+/**
+ * 根据itemtype获取物品分类
+ * @param itemType 物品类型
+ * @param itemId 物品ID
+ * @returns 物品分类或空字符串
+ */
+export function getItemCategory(itemType: string, itemId: string): string {
+  const itemInfo = getItemInfo(itemType, itemId)
+  return itemInfo?.category || ''
+}
+
+/**
+ * 根据itemtype获取物品完整信息（包含翻译）
+ * @param itemType 物品类型
+ * @param itemId 物品ID
+ * @returns 包含翻译的完整物品信息
+ */
+export function getItemFullInfo(itemType: string, itemId: string): {
+  id: string
+  cnName: string
+  description: string
+  category: string
+  originalData: any
+} | null {
+  const itemInfo = getItemInfo(itemType, itemId)
+  if (!itemInfo) return null
+  
+  return {
+    id: itemId,
+    cnName: itemInfo.cnName || itemId,
+    description: itemInfo.description || '',
+    category: itemInfo.category || '',
+    originalData: itemInfo
+  }
+}
+
+/**
+ * 批量获取多个物品的信息
+ * @param items 物品列表，格式为 [{itemType, itemId}, ...]
+ * @returns 物品信息列表
+ */
+export function getBatchItemInfo(items: Array<{itemType: string, itemId: string}>): Array<{
+  itemType: string
+  itemId: string
+  cnName: string
+  description: string
+  category: string
+  success: boolean
+}> {
+  return items.map(({itemType, itemId}) => {
+    const itemInfo = getItemInfo(itemType, itemId)
+    return {
+      itemType,
+      itemId,
+      cnName: itemInfo?.cnName || itemId,
+      description: itemInfo?.description || '',
+      category: itemInfo?.category || '',
+      success: !!itemInfo
+    }
+  })
 }

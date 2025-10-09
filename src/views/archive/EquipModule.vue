@@ -324,7 +324,7 @@ import { useArchiveStore } from '@/stores/archive'
 import { Tools, List, Trophy, Star, Setting, Box, Plus } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 import type { Equip, EquipItem, EquipItems } from '@/types/archive/module/equip'
-import { getEquipBackgroundStyle } from '@/utils/backgroundImages'
+import { getThingsBackgroundStyle } from '@/utils/backgroundImages'
 import { getFormattedBonusList } from '@/utils/translate'
 import { BonusMerge } from '@/utils/bonusAdd'
 import BonusDisplay from '@/components/BonusDisplay.vue'
@@ -379,7 +379,7 @@ const getColorType = (color: string): 'primary' | 'success' | 'warning' | 'info'
 
 // 获取装备图像样式
 const getEquipImageStyle = (equip: EquipItem) => {
-  return getEquipBackgroundStyle(equip, equip.color)
+  return getThingsBackgroundStyle(equip, equip.color)
 }
 
 // 获取装备类型名称
@@ -391,7 +391,7 @@ const getEquipTypeName = (type: string): string => {
     'belt': '腰带',
     'fashion': '时装',
     'vehicle': '载具',
-    'weapon': '武器',
+    'weapon': '副手',
     'device': '设备',
     'jewelry':"饰品",
     'shield':"护盾"

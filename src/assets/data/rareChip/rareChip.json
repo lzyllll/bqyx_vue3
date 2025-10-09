@@ -1,0 +1,10 @@
+{
+  "rareChip": {
+    "category": "稀有碎片",
+    "hideB": 1,
+    "addDropDefineB": 1,
+    "cnName": "稀有",
+    "btnList": "compose",
+    "description": "。"
+  }
+}

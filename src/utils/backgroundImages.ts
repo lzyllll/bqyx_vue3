@@ -114,8 +114,8 @@ const equipImageMap: Record<string, string> = {
   'parts': 'parts'
 }
 
-export function getEquipImage(item: { name: string; partType: string }): string {
-  const imageDir = equipImageMap[item.partType] || 'equip'
+export function getThingsImage(item: { name: string; partType: string }): string {
+  const imageDir = equipImageMap[item.partType] || item.partType
   // 对于基础装备类型，使用 name_partType 格式
   //images/equip/xxxx_head.png
   if (['head', 'coat', 'pants', 'belt'].includes(item.partType)) {
@@ -132,12 +132,29 @@ export function getEquipImage(item: { name: string; partType: string }): string 
  * @param color 背景颜色
  * @returns CSS样式对象
  */
-export function getEquipBackgroundStyle(item: { name: string; partType: string }, color: string) {
-  const equipImageUrl = getEquipImage(item)
+export function getThingsBackgroundStyle(item: { name: string; partType: string }, color: string) {
+  const equipImageUrl = getThingsImage(item)
   const gridImageUrl = getGridBackgroundImage(color)
   return {
     backgroundImage: `url(${equipImageUrl}), url(${gridImageUrl})`,
     backgroundSize: '48px 48px, 56px 56px',
+    backgroundRepeat: 'no-repeat, no-repeat',
+    backgroundPosition: 'center, center'
+  }
+}
+
+/**
+ * 获取零件背景样式（零件图片在上，格子背景在下）
+ * @param item 零件对象
+ * @param color 背景颜色
+ * @returns CSS样式对象
+ */
+export function getPartsBackgroundStyle(item: { name: string; itemsLevel: number }, color: string) {
+  const partsImageUrl = getpartsImage(item)
+  const gridImageUrl = getGridBackgroundImage(color)
+  return {
+    backgroundImage: `url(${partsImageUrl}), url(${gridImageUrl})`,
+    backgroundSize: '40px 40px, 56px 56px',
     backgroundRepeat: 'no-repeat, no-repeat',
     backgroundPosition: 'center, center'
   }

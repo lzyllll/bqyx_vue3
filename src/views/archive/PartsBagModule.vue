@@ -115,40 +115,42 @@
           <div 
             v-for="item in paginatedItems" 
             :key="item.id"
-            class="item-card"
-            :class="{
-              'item-new': item.newB,
-              'item-auto-use': item.autoUseB,
-              [`item-${item.color}`]: true
-            }"
-            :style="getItemBackgroundStyle(item)"
+            class="item-slot"
+            :class="{ 'new-item': item.newB, 'locked': item.lockB }"
           >
-            <!-- 新物品标记 -->
-            <div v-if="item.newB" class="new-item-badge">
-              <el-icon class="new-icon"><Star /></el-icon>
+            <!-- 物品图片和背景 -->
+            <div 
+              class="item-image"
+              :style="getPartsBackgroundStyle(item, item.color)"
+            >
+              <!-- 物品数量显示 -->
+              <div v-if="item.nowNum && item.nowNum > 1" class="item-count">
+                {{ formatNumber(item.nowNum) }}
+              </div>
+              
+              <!-- 新物品标识 -->
+              <div v-if="item.newB" class="new-badge">新</div>
+              
+              <!-- 锁定标识 -->
+              <div v-if="item.lockB" class="lock-badge">🔒</div>
             </div>
             
-            <div class="item-content">
-              <!-- 物品图像 -->
-              <div class="item-image">
-                <img 
-                  :src="getItemImage(item)" 
-                  :alt="item.cnName"
-                  class="item-img"
-                />
-                <div class="item-level-overlay">{{ item.itemsLevel }}</div>
+            <!-- 物品信息 -->
+            <div class="item-info">
+              <div class="item-name" :title="item.cnName">
+                {{ item.cnName }}
               </div>
-              <div class="item-name">{{ item.cnName }}</div>
-              <div class="item-quantity">
-                <el-icon><Box /></el-icon>
-                <span>{{ item.nowNum }}</span>
-              </div>
-            </div>
-            
-            <div class="item-footer">
-              <div class="item-flags">
-                <el-tag v-if="item.newB" type="warning" size="small">新</el-tag>
-                <el-tag v-if="item.autoUseB" type="info" size="small">自动</el-tag>
+              <div class="item-meta">
+                <div class="item-level" v-if="item.itemsLevel > 1">
+                  Lv.{{ item.itemsLevel }}
+                </div>
+                <el-tag 
+                  :type="getColorTagType(item.color) as any" 
+                  size="small"
+                  class="item-type-tag"
+                >
+                  {{ getColorName(item.color) }}
+                </el-tag>
               </div>
             </div>
           </div>
@@ -183,6 +185,7 @@
 import { computed, ref, watch } from 'vue'
 import { useArchiveStore } from '@/stores/archive'
 import { Box, Grid, Collection, Search, Refresh, Star } from '@element-plus/icons-vue'
+import { getPartsBackgroundStyle } from '@/utils/backgroundImages'
 
 import { PartsBag, PartsItem } from '@/types/archive/module/parts'
 import JsonViewer from '@/components/JsonViewer.vue'
@@ -319,43 +322,60 @@ const handleCurrentChange = (val: number) => {
   currentPage.value = val
 }
 
-
-
-// 获取物品背景样式
-const getItemBackgroundStyle = (item: PartsItem) => {
-  const colorMap: Record<string, string> = {
-    'darkgold': 'rgba(184, 134, 11, 0.3)', // 暗金色，透明度0.15
-    'black': 'rgba(0, 0, 0, 0.15)', // 黑色，透明度0.15
-    'red': 'rgba(245, 108, 108, 0.15)', // 红色，透明度0.15
-    'purple': 'rgba(142, 68, 173, 0.15)', // 紫色，透明度0.15
-    'blue': 'rgba(64, 158, 255, 0.15)', // 蓝色，透明度0.15
-    'green': 'rgba(103, 194, 58, 0.15)', // 绿色，透明度0.15
-    'white': 'rgba(144, 147, 153, 0.15)', // 白色，透明度0.15
-    'orange': 'rgba(255, 140, 0, 0.15)' // 橙色，使用更鲜明的橙色
+/**
+ * 格式化数字显示
+ */
+function formatNumber(num: number): string {
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1) + 'M'
+  } else if (num >= 1000) {
+    return (num / 1000).toFixed(1) + 'K'
   }
-  
-  const backgroundColor = colorMap[item.color] || 'rgba(144, 147, 153, 0.15)'
-  return {
-    backgroundColor: backgroundColor,
-    backgroundImage: `linear-gradient(135deg, ${backgroundColor} 0%, transparent 100%)`
-  }
+  return num.toString()
 }
 
-// 获取物品图像
-const getItemImage = (item: PartsItem) => {
-  // 如果是loaderParts类型
-  if (item.name === 'loaderParts') {
-    // 如果等级小于69，都使用loaderParts_69.png
-    if (item.itemsLevel < 69) {
-      return new URL('@/assets/images/parts/loaderParts_69.png', import.meta.url).href
-    }
-    // 否则使用对应等级的图像
-    //不知道为什么，拼接  @/assets不起作用
-    return new URL(`../../assets/images/parts/loaderParts_${item.itemsLevel}.png`, import.meta.url).href
-  }
+/**
+ * 获取颜色标签类型
+ */
+function getColorTagType(color: string): string {
+  // 确保color不为空或undefined
+  if (!color) return 'info'
   
-  // 如果不是loaderParts，使用对应名称的图像（暂时返回默认图像）
-  return new URL(`../../assets/images/parts/${item.name}_${item.itemsLevel}.png`, import.meta.url).href
+  const colorMap: Record<string, string> = {
+    'white': 'info',
+    'green': 'success',
+    'blue': 'primary',
+    'purple': 'warning',
+    'orange': 'danger',
+    'red': 'danger',
+    'black': 'info', // 改为info，因为el-tag不支持dark
+    'darkgold': 'warning',
+    'purgold': 'warning',
+    'yagold': 'warning'
+  }
+  return colorMap[color] || 'info'
+}
+
+/**
+ * 获取颜色名称
+ */
+function getColorName(color: string): string {
+  // 确保color不为空或undefined
+  if (!color) return '未知'
+  
+  const colorMap: Record<string, string> = {
+    'white': '白色',
+    'green': '绿色',
+    'blue': '蓝色',
+    'purple': '紫色',
+    'orange': '橙色',
+    'red': '红色',
+    'black': '黑色',
+    'darkgold': '暗金',
+    'purgold': '紫金',
+    'yagold': '雅金'
+  }
+  return colorMap[color] || color
 }
 
 
@@ -368,7 +388,8 @@ watch(() => data.value, () => {
 <style scoped>
 .parts-bag-module {
   padding: 20px;
-  overflow-y: auto;
+  background: #f5f5f5;
+  min-height: 100vh;
 }
 
 .module-card {
@@ -478,216 +499,124 @@ watch(() => data.value, () => {
 
 .items-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 24px;
 }
 
-.item-card {
-  background: #fff;
-  border: 2px solid #e4e7ed;
-  border-radius: 6px;
-  padding: 8px;
+.item-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
 }
 
-.item-card:hover {
+.item-slot:hover {
+  border-color: #409eff;
+  box-shadow: 0 4px 8px rgba(64, 158, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.item-card.item-new {
-  border-color: #e6a23c;
-  background: linear-gradient(135deg, #fdf6ec 0%, #faecd8 100%);
-  box-shadow: 0 0 8px rgba(230, 162, 60, 0.3);
+.item-slot.new-item {
+  border-color: #67c23a;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
 }
 
-.item-card.item-auto-use {
-  border-color: #e6a23c;
-}
-
-.item-card.item-white {
-  border-left: 4px solid #909399;
-}
-
-.item-card.item-green {
-  border-left: 4px solid #67c23a;
-}
-
-.item-card.item-blue {
-  border-left: 4px solid #409eff;
-}
-
-.item-card.item-purple {
-  border-left: 4px solid #8e44ad;
-}
-
-.item-card.item-orange {
-  border-left: 4px solid #e6a23c;
-}
-
-.item-card.item-red {
-  border-left: 4px solid #f56c6c;
-}
-
-.item-card.item-darkgold {
-  border-left: 4px solid #b8860b;
-}
-
-.item-card.item-black {
-  border-left: 4px solid #000;
-}
-
-.item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 6px;
-}
-
-.item-level {
-  background: #409eff;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.item-type-tag {
-  font-size: 10px;
-}
-
-.item-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.item-slot.locked {
+  opacity: 0.6;
+  border-color: #f56c6c;
 }
 
 .item-image {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 56px;
+  height: 56px;
+  position: relative;
+  margin-bottom: 8px;
   border-radius: 4px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
-.item-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.item-img:hover {
-  transform: scale(1.1);
-}
-
-.item-level-overlay {
+.item-count {
   position: absolute;
-  top: -4px;
-  right: -4px;
-  background: #409eff;
+  bottom: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.8);
   color: white;
   font-size: 10px;
-  padding: 2px 4px;
-  border-radius: 8px;
+  padding: 1px 4px;
+  border-radius: 3px;
   font-weight: bold;
   min-width: 16px;
   text-align: center;
-  z-index: 10;
+}
+
+.new-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #67c23a;
+  color: white;
+  font-size: 8px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.lock-badge {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  font-size: 12px;
+}
+
+.item-info {
+  text-align: center;
+  width: 100%;
 }
 
 .item-name {
   font-size: 12px;
-  font-weight: 600;
-  color: #303133;
-  margin-bottom: 4px;
-  text-align: center;
+  color: #333;
+  font-weight: 500;
   line-height: 1.2;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100px;
 }
 
-.item-quantity {
+.item-meta {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2px;
-  font-size: 11px;
-  color: #606266;
-}
-
-.item-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 4px;
-}
-
-
-.item-flags {
-  display: flex;
   gap: 4px;
-}
-
-.new-item-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: #e6a23c;
-  color: white;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: 12px;
-  font-weight: bold;
-  box-shadow: 0 2px 8px rgba(230, 162, 60, 0.4);
-  animation: pulse 2s infinite;
-  z-index: 10;
 }
 
-.new-icon {
-  font-size: 14px;
-  animation: rotate 2s linear infinite;
+.item-level {
+  font-size: 10px;
+  color: #666;
+  background: #f0f0f0;
+  padding: 1px 4px;
+  border-radius: 3px;
+  display: inline-block;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 2px 8px rgba(230, 162, 60, 0.4);
-  }
-  50% {
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(230, 162, 60, 0.6);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 2px 8px rgba(230, 162, 60, 0.4);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item-type-tag {
+  font-size: 9px;
+  height: 18px;
+  line-height: 16px;
 }
 
 .pagination-section {
@@ -696,61 +625,48 @@ watch(() => data.value, () => {
   margin-top: 24px;
 }
 
-.data-section {
-  margin-top: 24px;
-}
-
-.json-viewer {
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-@media (max-width: 1200px) {
-  .items-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
+/* 响应式设计 */
 @media (max-width: 768px) {
-  .parts-bag-module {
-    padding: 16px;
-  }
-  
   .items-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 8px;
+    padding: 10px;
   }
   
-  .item-card {
-    min-height: 100px;
+  .item-slot {
     padding: 8px;
   }
   
+  .item-image {
+    width: 48px;
+    height: 48px;
+  }
+  
   .item-name {
-    font-size: 12px;
-  }
-  
-  .stat-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 8px;
-  }
-  
-  .stat-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
-  }
-  
-  .stat-value {
-    font-size: 16px;
+    font-size: 11px;
+    max-width: 80px;
   }
 }
 
 @media (max-width: 480px) {
   .items-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 6px;
+    padding: 8px;
+  }
+  
+  .item-slot {
+    padding: 6px;
+  }
+  
+  .item-image {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .item-name {
+    font-size: 10px;
+    max-width: 60px;
   }
 }
 </style>

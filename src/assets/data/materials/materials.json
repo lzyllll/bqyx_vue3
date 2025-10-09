@@ -1,0 +1,1122 @@
+{
+  "ultiEquipEchelonCard": {
+    "category": "材料",
+    "cnName": "终级装备守护卡",
+    "description": "\n\t\t\t\t强化装备的保级道具，最高保级26级。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]高级装备守护卡合成\n\t\t\t\t[n]商店购买\n\t\t\t\t[n]优胜券兑换\n\t\t\t\t[n]功勋牌兑换\n\t\t\t",
+    "smeltD": {
+      "addType": "equipChip",
+      "price": 20,
+      "maxNum": 1
+    }
+  },
+  "ultiArmsEchelonCard": {
+    "category": "材料",
+    "cnName": "终级武器守护卡",
+    "description": "\n\t\t\t\t强化武器的保级道具，最高保级26级。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]高级武器守护卡合成\n\t\t\t\t[n]商店购买\n\t\t\t\t[n]优胜券兑换\n\t\t\t\t[n]功勋牌兑换\n\t\t\t",
+    "smeltD": {
+      "addType": "armsChip",
+      "price": 20,
+      "maxNum": 1
+    }
+  },
+  "dressStamp": {
+    "category": "材料",
+    "cnName": "装扮券",
+    "description": "\n\t\t\t\t增加主城装扮位所需。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]活跃礼包\n\t\t\t\t[n]商店购买\n\t\t\t"
+  },
+  "dressStampHigh": {
+    "category": "材料",
+    "addDropDefineB": 1,
+    "cnName": "高级装扮券",
+    "description": "\n\t\t\t\t增加主城装扮位所需。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]财宝僵尸掉落\n\t\t\t\t[n]商店购买\n\t\t\t"
+  },
+  "dressStampGold": {
+    "category": "材料",
+    "cnName": "黄金装扮券",
+    "description": "\n\t\t\t\t增加主城装扮位所需。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]装扮券合成\n\t\t\t\t[n]商店购买\n\t\t\t"
+  },
+  "bossCardStamp": {
+    "category": "材料",
+    "cnName": "魂卡券",
+    "addDropDefineB": 1,
+    "loveD": {
+      "num": 0
+    },
+    "description": "\n\t\t\t\t购买魂卡券后，可直接增加1次抽魂卡次数，无需使用。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买\n\t\t\t"
+  },
+  "vehicleCash": {
+    "category": "材料",
+    "cnName": "万能载具碎片",
+    "description": "\n\t\t\t\t可在“锻造>合成”界面中合成指定载具碎片。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]四周年庆感恩礼包。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "type": "vehicle",
+      "grade": 2,
+      "addType": "box",
+      "price": 20,
+      "maxNum": 1
+    }
+  },
+  "zodiacCash": {
+    "category": "材料",
+    "cnName": "万能生肖碎片",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t可在“锻造>合成”界面中合成指定生肖武器碎片。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]活跃度礼包。\n\t\t\t\t[n]功勋牌兑换。\n\t\t\t",
+    "loveD": {
+      "num": 0
+    }
+  },
+  "PetBoomSkullBook": {
+    "category": "材料",
+    "cnName": "爆骷S图鉴",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t进化和培养爆骷所需的材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]秘境“爆骷S”\n\t\t\t",
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "type": "pet"
+    }
+  },
+  "PetIronChiefBook": {
+    "category": "材料",
+    "cnName": "冥王图鉴",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t进化和培养铁魁进化体所需的材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]消灭98级关卡“冥王”\n\t\t\t",
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "type": "pet"
+    }
+  },
+  "PetLakeBook": {
+    "category": "材料",
+    "cnName": "雷斯图鉴",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t进化和培养雷克进化体所需的材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n][n]秘境“黑暗雷尔”\n\t\t\t",
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "type": "pet"
+    }
+  },
+  "profiStamp": {
+    "category": "材料",
+    "cnName": "技能熟练卡",
+    "description": "\n\t\t\t\t增加技能3000点熟练度所需的材料，在技能升级界面中操作。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "loveD": {
+      "num": 0
+    }
+  },
+  "renameCard": {
+    "category": "材料",
+    "cnName": "改名卡",
+    "loveD": {
+      "num": 0
+    },
+    "description": "\n\t\t\t\t修改角色昵称、宠物昵称需要消耗的物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买\n\t\t\t"
+  },
+  "partsGridCard": {
+    "category": "材料",
+    "cnName": "零件位卡",
+    "loveD": {
+      "num": 0
+    },
+    "description": "\n\t\t\t\t解锁武器其中1个零件位所需物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]零件券兑换\n\t\t\t\t[n]黄金商店\n\t\t\t"
+  },
+  "bagGridCard": {
+    "category": "材料",
+    "cnName": "背包位卡",
+    "loveD": {
+      "num": 0
+    },
+    "description": "\n\t\t\t\t解锁背包位所需物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]等级礼包\n\t\t\t\t[n]黄金商店\n\t\t\t"
+  },
+  "houseGridCard": {
+    "category": "材料",
+    "cnName": "仓库位卡",
+    "loveD": {
+      "num": 0
+    },
+    "description": "\n\t\t\t\t解锁仓库位所需物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]等级礼包\n\t\t\t\t[n]黄金商店\n\t\t\t"
+  },
+  "yaRock": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "cnName": "氩岗岩",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t部分武器进化所需材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]反客任务。\n\t\t\t\t[n]太空成就。\n\t\t\t",
+    "loveD": {
+      "num": 0
+    }
+  },
+  "yaStone": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "cnName": "氩石",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t武器进化至“氩星”级别的必需材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]太空探索成就。\n\t\t\t\t[n]击毙溪山顶首领“双头僵尸”。\n\t\t\t",
+    "loveD": {
+      "num": 0
+    }
+  },
+  "madheart": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "战神之心",
+    "description": "\n\t\t\t\t狂人进阶至战神的必需材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]地图星谷“战神”。\n\t\t\t",
+    "loveD": {
+      "num": 0
+    }
+  },
+  "demStone": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "无双水晶",
+    "description": "\n\t\t\t\t武器进化至无双的必需材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]修罗模式。\n\t\t\t",
+    "loveD": {
+      "num": 0
+    }
+  },
+  "demBall": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "万能球",
+    "description": "\n\t\t\t\t可在锻造合成中合成指定物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]修罗模式。\n\t\t\t",
+    "loveD": {
+      "num": 0
+    }
+  },
+  "intensDrug": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "升化剂",
+    "description": "\n\t\t\t\t用于提升尸宠99级以后的强化等级。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]地图“绝壁窟”。\n\t\t\t",
+    "loveD": {
+      "num": 0
+    }
+  },
+  "ghostStone": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "cnName": "聚魂石",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t用于重造8星魂卡。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]锻造>物品合成。\n\t\t\t\t[n]纪念币兑换。\n\t\t\t",
+    "loveD": {
+      "num": 0
+    }
+  },
+  "wisdomGem": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "智慧宝石",
+    "description": "\n\t\t\t\t在“锻造>合成>装备”界面中合成暗金头盔所需材料，也是进化暗金头盔所需材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]秘境“电棍僵尸”。\n\t\t\t",
+    "loveD": {
+      "num": 10
+    }
+  },
+  "agileGem": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "敏捷宝石",
+    "description": "\n\t\t\t\t在“锻造>合成>装备”界面中合成暗金战裤所需材料，也是进化暗金战裤所需材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]97级首领“防毒僵尸”。\n\t\t\t",
+    "loveD": {
+      "num": 10
+    }
+  },
+  "defenceGem": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "守护宝石",
+    "description": "\n\t\t\t\t在“锻造>合成>装备”界面中合成暗金战衣所需材料，也是进化宠物“铁魁”所需材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]消灭98级关卡“冥王”\n\t\t\t",
+    "loveD": {
+      "num": 10
+    }
+  },
+  "alertGem": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "戒备宝石",
+    "description": "\n\t\t\t\t在“锻造>合成>装备”界面中合成暗金腰带所需材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]秘境“运毒尸”。\n\t\t\t",
+    "loveD": {
+      "num": 10
+    }
+  },
+  "fireGem": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "火焰宝石",
+    "description": "\n\t\t\t\t在“锻造>转化>武器元素”界面中给武器添加火焰元素伤害。也是进化部分武器、以及部分尸宠的材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]96级看门狗、秘境“多肉”。\n\t\t\t",
+    "loveD": {
+      "num": 10
+    }
+  },
+  "electricGem": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "电磁宝石",
+    "description": "\n\t\t\t\t在“锻造>转化>武器元素”界面中给武器添加电磁元素伤害。也是进化部分武器、以及部分尸宠的材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]96级看门狗。\n\t\t\t",
+    "loveD": {
+      "num": 10
+    }
+  },
+  "frozenGem": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "冷冻宝石",
+    "description": "\n\t\t\t\t在“锻造>转化>武器元素”界面中给武器添加冷冻元素伤害。也是进化部分武器、以及部分尸宠的材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]98级冥王。\n\t\t\t",
+    "loveD": {
+      "num": 10
+    }
+  },
+  "poisonGem": {
+    "category": "材料",
+    "subcategory": "宝石、无双水晶",
+    "addDropDefineB": 1,
+    "cnName": "生化宝石",
+    "description": "\n\t\t\t\t在“锻造>转化>武器元素”界面中给武器添加生化元素伤害。也是进化部分武器、以及部分尸宠的材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]98级首领“球形闪电”。\n\t\t\t",
+    "loveD": {
+      "num": 10
+    }
+  },
+  "battleMedel": {
+    "category": "材料",
+    "subcategory": "特别物品",
+    "cnName": "凯旋徽章",
+    "description": "每周争霸分数到达960分时，可获得一个。该物品无任何效果，仅为纪念之用。",
+    "loveD": {
+      "num": 1
+    }
+  },
+  "implodingSkill": {
+    "category": "材料",
+    "subcategory": "特别物品",
+    "cnName": "爆石",
+    "description": "可使武器增加爆石技能。",
+    "loveD": {
+      "num": 1
+    }
+  },
+  "rebirthStone": {
+    "category": "材料",
+    "subcategory": "金币道具",
+    "cnName": "重生石",
+    "zuobiNum": 1000,
+    "description": "来自外星的另外一种奇特石头，可用于复活你的生命。",
+    "effectD": {
+      "type": "rebirth",
+      "value": 1,
+      "useInLevelB": 1,
+      "levelUseLimitNum": 4,
+      "arenaLevelUseLimitNum": 1,
+      "effectLabel": "skillEffect/groupLight_hero",
+      "effectSound": "sound/groupLight_hero"
+    },
+    "smeltD": {
+      "addType": "stone",
+      "price": 9
+    }
+  },
+  "occupyStamp": {
+    "category": "材料",
+    "subcategory": "活动物品",
+    "cnName": "抢楼券",
+    "itemsLevel": 999,
+    "description": "\n\t\t\t\t全民抢楼活动所需物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]消灭普通关卡首领必然掉落\n\t\t\t",
+    "loveD": {
+      "num": 4
+    }
+  },
+  "whiteRose": {
+    "category": "材料",
+    "subcategory": "活动物品",
+    "cnName": "白色玫瑰",
+    "zuobiNum": 5000,
+    "description": "把它赠送给小樱将额外200点好感度。",
+    "effectD": {
+      "type": "addLove",
+      "value": 200
+    },
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 20
+    }
+  },
+  "lily": {
+    "category": "材料",
+    "subcategory": "活动物品",
+    "cnName": "百合花",
+    "zuobiNum": 5000,
+    "description": "\n\t\t\t\t开启心零支线任务的必需品。把它赠送给心零将获得180点左右的好感度。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店\n\t\t\t\t[n]纪念币商店\n\t\t\t\t[n]竞技场兑换\n\t\t\t",
+    "effectD": {
+      "type": "addLove",
+      "value": 170
+    },
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1,
+      "price": 20
+    }
+  },
+  "teddyBear": {
+    "category": "材料",
+    "subcategory": "活动物品",
+    "cnName": "玩具熊",
+    "zuobiNum": 5000,
+    "description": "\n\t\t\t\t开启小美支线任务的必需品。把它赠送给小美将获得200点左右的好感度。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]十年币兑换\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "effectD": {
+      "type": "addLove",
+      "value": 190
+    },
+    "loveD": {
+      "num": 1
+    },
+    "smeltD": {
+      "grade": -1,
+      "price": 20
+    }
+  },
+  "zongzi": {
+    "category": "材料",
+    "subcategory": "活动物品",
+    "cnName": "粽子测试",
+    "zuobiNum": 5000,
+    "description": "在商店中用于兑换商品。",
+    "loveD": {
+      "num": 1
+    }
+  },
+  "spaceToken": {
+    "category": "材料",
+    "subcategory": "道具",
+    "cnName": "时空令牌",
+    "description": "\n\t\t\t\t该物品可让你在关卡中随机召唤出一位未出战的队友，每次使用消耗1个时空令牌。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "loveD": {
+      "num": 15
+    },
+    "effectD": {
+      "levelUseLimitNum": 1
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 5
+    }
+  },
+  "soulChip": {
+    "category": "材料",
+    "subcategory": "道具",
+    "cnName": "灵魂芯片",
+    "description": "\n\t\t\t\t功能暂未开放。\n\t\t\t",
+    "loveD": {
+      "num": 15
+    }
+  },
+  "mochaToken": {
+    "category": "材料",
+    "subcategory": "道具",
+    "addDropDefineB": 1,
+    "cnName": "摩卡令牌",
+    "description": "\n\t\t\t\t点击自动使用，则玩家在进入普通关卡（不包含修罗模式）时，会自动消耗1张摩卡令牌，同时召唤摩卡参加战斗。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]秘境“异角龙”\n\t\t\t",
+    "effectD": {
+      "type": "skill",
+      "skillArr": "addMocha",
+      "autoUseCondition": "startLevel",
+      "endlessAutoUseOneB": 1
+    },
+    "loveD": {
+      "num": 15
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 10
+    }
+  },
+  "armsEchelonCard": {
+    "category": "材料",
+    "subcategory": "金币道具",
+    "cnName": "武器守护卡",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t强化武器的保级道具，最高保级14级。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]活跃度礼包\n\t\t\t\t[n]优胜券兑换\n\t\t\t\t[n]功勋牌兑换\n\t\t\t\t[n]纪念币兑换\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "smeltD": {
+      "addType": "armsChip",
+      "price": 1
+    }
+  },
+  "equipEchelonCard": {
+    "category": "材料",
+    "subcategory": "金币道具",
+    "cnName": "装备守护卡",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t强化装备的保级道具，最高保级14级。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "smeltD": {
+      "addType": "equipChip",
+      "price": 1
+    }
+  },
+  "highEquipEchelonCard": {
+    "category": "材料",
+    "subcategory": "金币道具",
+    "cnName": "高级装备守护卡",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t强化装备的保级道具，最高保级20级。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]装备守护卡合成\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "smeltD": {
+      "addType": "equipChip",
+      "price": 10,
+      "maxNum": 2
+    }
+  },
+  "highArmsEchelonCard": {
+    "category": "材料",
+    "subcategory": "金币道具",
+    "cnName": "高级武器守护卡",
+    "addDropDefineB": 1,
+    "description": "\n\t\t\t\t强化武器的保级道具，最高保级20级。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]武器守护卡合成\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "smeltD": {
+      "addType": "armsChip",
+      "price": 10,
+      "maxNum": 2
+    }
+  },
+  "platinumMonthCard": {
+    "category": "材料",
+    "subcategory": "月卡",
+    "cnName": "白金月卡",
+    "description": "。"
+  },
+  "platinumMonthCard3": {
+    "category": "材料",
+    "subcategory": "月卡",
+    "cnName": "白金月卡3天",
+    "description": "。"
+  },
+  "goldMonthCard": {
+    "category": "材料",
+    "subcategory": "月卡",
+    "cnName": "黄金月卡",
+    "description": "。"
+  },
+  "normalMonthCard": {
+    "category": "材料",
+    "subcategory": "月卡",
+    "cnName": "普通月卡",
+    "description": "。"
+  },
+  "skillStone": {
+    "category": "材料",
+    "subcategory": "石头消耗品",
+    "cnName": "超能石",
+    "description": "\n\t\t\t\t学习和升级技能所需的石头。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]无尽模式(产量很高)\n\t\t\t\t[n]消灭怪物掉落\n\t\t\t\t[n]商店购买、竞技场兑换\n\t\t\t",
+    "loveD": {
+      "num": 3,
+      "growB": 1
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 0.1
+    }
+  },
+  "godStone": {
+    "category": "材料",
+    "subcategory": "石头消耗品",
+    "cnName": "神能石",
+    "description": "\n\t\t\t\t学习和升级技能所需的稀有石头，同时还可以用于重造武器、替换尸宠资质、升级载具。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]无尽模式(产量很高)\n\t\t\t\t[n]消灭怪物掉落\n\t\t\t\t[n]商店购买、竞技场兑换\n\t\t\t",
+    "loveD": {
+      "num": 1,
+      "growB": 1
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 0.4
+    }
+  },
+  "lightStone": {
+    "category": "材料",
+    "subcategory": "石头消耗品",
+    "addDropDefineB": 1,
+    "cnName": "光能石",
+    "description": "\n\t\t\t\t学习和升级技能高等级所需的稀有石头。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]锻造合成所得\n\t\t\t\t[n]商店购买、竞技场兑换\n\t\t\t",
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 3
+    }
+  },
+  "nuclearStone": {
+    "category": "材料",
+    "subcategory": "石头消耗品",
+    "cnName": "核能石",
+    "loveD": {
+      "num": 0
+    },
+    "description": "\n\t\t\t\t升级载具技能至最高级所需的稀有石头。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买\n\t\t\t"
+  },
+  "converStone": {
+    "category": "材料",
+    "subcategory": "石头消耗品",
+    "cnName": "转化石",
+    "description": "\n\t\t\t\t可用于转化生成套装、升级武器和装备、升级尸宠资质的稀有石头。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]无尽模式(产量很高)\n\t\t\t\t[n]消灭怪物掉落\n\t\t\t\t[n]商店购买、竞技场兑换\n\t\t\t",
+    "loveD": {
+      "num": 1,
+      "growB": 1
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 0.4
+    }
+  },
+  "strengthenStone": {
+    "category": "材料",
+    "subcategory": "石头消耗品",
+    "addDropDefineB": 1,
+    "cnName": "强化石",
+    "description": "\n\t\t\t\t可用于强化装备、武器。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、活跃礼包领取\n\t\t\t\t[n]2、每日任务“银币追逐者”\n\t\t\t\t[n]3、寻宝任务“强化石宝藏”\n\t\t\t\t[n]4、商店购买、竞技场兑换\n\t\t\t",
+    "loveD": {
+      "num": 10
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 1.5
+    }
+  },
+  "bloodStone": {
+    "category": "材料",
+    "subcategory": "石头消耗品",
+    "addDropDefineB": 1,
+    "cnName": "血石",
+    "description": "\n\t\t\t\t可用于培养尸宠的资质、强化载具。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]签到礼包领取\n\t\t\t\t[n]消灭50级以上的首领掉落\n\t\t\t\t[n]商店购买、竞技场兑换\n\t\t\t\t[n]寻宝任务“血石宝藏”\n\t\t\t",
+    "loveD": {
+      "num": 10
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 2
+    }
+  },
+  "fineStone": {
+    "category": "材料",
+    "subcategory": "石头消耗品",
+    "addDropDefineB": 1,
+    "cnName": "精石",
+    "description": "\n\t\t\t\t可用于强化载具。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]秘境掉落，8月14日截止\n\t\t\t\t[n]血石合成（锻造>物品合成）\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "loveD": {
+      "num": 10
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 15
+    }
+  },
+  "armsTitanium": {
+    "category": "材料",
+    "subcategory": "石头消耗品",
+    "cnName": "钛晶",
+    "description": "\n\t\t\t\t进化武器所需材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]分解黑色武器装备碎片\n\t\t\t\t[n]分解80级以上黑色、稀有武器装备\n\t\t\t\t[n]商店购买\n\t\t\t\t[n]竞技场兑换\n\t\t\t\t[n]功勋牌兑换\n\t\t\t",
+    "loveD": {
+      "num": 1,
+      "growB": 1
+    },
+    "smeltD": {
+      "type": "armsEquip",
+      "grade": 1,
+      "addType": "",
+      "price": 3
+    }
+  },
+  "armsRadium": {
+    "category": "材料",
+    "subcategory": "石头消耗品",
+    "addDropDefineB": 1,
+    "cnName": "镭晶",
+    "description": "\n\t\t\t\t进化武器所需材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]竞技场兑换\n\t\t\t\t[n]功勋牌兑换\n\t\t\t\t[n]每日签到、活跃礼包\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "loveD": {
+      "num": 1,
+      "growB": 1
+    },
+    "smeltD": {
+      "type": "armsEquip",
+      "grade": 1,
+      "addType": "",
+      "price": 2
+    }
+  },
+  "strengthenDrug": {
+    "category": "材料",
+    "subcategory": "其他消耗品",
+    "cnName": "强化剂",
+    "addDropDefineB": 1,
+    "zuobiNum": 10000000,
+    "description": "\n\t\t\t\t用于强化尸宠的战斗力、生命值、头部防御，还可用于直接升级尸宠等级。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]分解基因体\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "loveD": {
+      "num": 30
+    },
+    "smeltD": {
+      "type": "pet",
+      "grade": 0,
+      "addType": "",
+      "price": 0.2
+    }
+  },
+  "petSuppleCard": {
+    "category": "材料",
+    "subcategory": "其他消耗品",
+    "cnName": "战宠号角",
+    "addDropDefineB": 1,
+    "zuobiNum": 100000,
+    "description": "\n\t\t\t\t用于获得宠物的替补功能。放生宠物后，系统也会返还一定的战宠号角。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]秘境\n\t\t\t",
+    "loveD": {
+      "num": 10
+    },
+    "smeltD": {
+      "type": "pet",
+      "grade": 1,
+      "addType": "",
+      "price": 10
+    }
+  },
+  "lifeCatalyst": {
+    "category": "材料",
+    "subcategory": "其他消耗品",
+    "cnName": "生命催化剂",
+    "description": "\n\t\t\t\t用于进化尸宠。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、商店购买\n\t\t\t\t[n]2、消灭75级以上怪物掉落，掉率与转化石相同\n\t\t\t",
+    "loveD": {
+      "num": 8
+    },
+    "smeltD": {
+      "type": "pet",
+      "grade": 1,
+      "addType": "",
+      "price": 1
+    }
+  },
+  "energyCatalyst": {
+    "category": "材料",
+    "subcategory": "其他消耗品",
+    "cnName": "能量催化剂",
+    "description": "\n\t\t\t\t用于进化尸宠。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、商店购买\n\t\t\t\t[n]2、活跃礼包领取\n\t\t\t",
+    "loveD": {
+      "num": 8
+    },
+    "smeltD": {
+      "type": "pet",
+      "grade": 1,
+      "addType": "",
+      "price": 1
+    }
+  },
+  "variationCatalyst": {
+    "category": "材料",
+    "subcategory": "其他消耗品",
+    "cnName": "变异催化剂",
+    "description": "\n\t\t\t\t用于进化尸宠。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、商店购买\n\t\t\t\t[n]2、竞技场商店兑换\n\t\t\t",
+    "loveD": {
+      "num": 8
+    },
+    "smeltD": {
+      "type": "pet",
+      "grade": 1,
+      "addType": "",
+      "price": 1
+    }
+  },
+  "arenaStamp": {
+    "category": "材料",
+    "subcategory": "兑换币",
+    "cnName": "优胜券",
+    "zuobiNum": 400000,
+    "description": "\n\t\t\t\t可用来兑换极为稀有的竞技场奖励，在竞技场的“奖励兑换”界面中使用。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]挑战竞技场可获得优胜券\n\t\t\t",
+    "loveD": {
+      "num": 100
+    },
+    "smeltD": {
+      "price": 0.02
+    }
+  },
+  "exploitCards": {
+    "category": "材料",
+    "subcategory": "兑换币",
+    "cnName": "军队功勋牌",
+    "description": "\n\t\t\t\t可在军队功勋商店里兑换指定商品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、在军队中进行黄金捐献\n\t\t\t\t[n]2、完成活跃任务领取活跃礼包\n\t\t\t",
+    "smeltD": {
+      "price": 10
+    }
+  },
+  "militarySupplies": {
+    "category": "材料",
+    "subcategory": "兑换币",
+    "cnName": "军备物资",
+    "description": "\n\t\t\t\t用于升级军队中守望者的饲养等级、联邦大厦的权利等级、炊事馆的食用等级。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]军队每日福利礼包\n\t\t\t\t[n]军队建筑“联邦大厦”中获得\n\t\t\t\t[n]通过军队功勋牌兑换获得\n\t\t\t\t[n]商店购买（限购）\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "price": 0.1
+    }
+  },
+  "taxStamp": {
+    "category": "材料",
+    "subcategory": "兑换币",
+    "cnName": "商券",
+    "description": "\n\t\t\t\t想要从神秘商人那购买物品，你必须缴纳对应数量的商券。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]无尽模式(产量很高)\n\t\t\t\t[n]寻宝任务奖励\n\t\t\t\t[n]30级以上怪物掉落\n\t\t\t\t[n]商店购买\n\t\t\t",
+    "loveD": {
+      "num": 2,
+      "growB": 1
+    },
+    "smeltD": {
+      "price": 0.3
+    }
+  },
+  "DesertTankCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "cnName": "沙漠进袭者碎片",
+    "description": "\n\t\t\t\t用于合成和进化载具“沙漠进袭者”。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买。\n\t\t\t\t[n]副本任务“狂刃之尸”奖励和掉落。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 2
+    }
+  },
+  "DaybreakCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "cnName": "破晓碎片",
+    "description": "\n\t\t\t\t用于合成和进化载具“破晓”。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买。\n\t\t\t\t[n]副本任务“幽灵毒气弹”奖励和掉落。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 2
+    }
+  },
+  "RedReaperCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "cnName": "收割者碎片",
+    "description": "\n\t\t\t\t用于合成和进化载具“收割者”。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买。\n\t\t\t\t[n]副本任务“酸雨城”奖励和掉落。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 2
+    }
+  },
+  "SeaSharkCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "cnName": "潜行者碎片",
+    "description": "\n\t\t\t\t用于合成和进化载具“潜行者”。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买。\n\t\t\t\t[n]副本任务“眩晕之锤”奖励和掉落。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 2
+    }
+  },
+  "BlueWhaleCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "cnName": "巨鲸碎片",
+    "description": "\n\t\t\t\t用于合成和进化载具“巨鲸”。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买。\n\t\t\t\t[n]副本任务“克隆之魂”奖励和掉落。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 2
+    }
+  },
+  "ProphetCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "cnName": "先知碎片",
+    "description": "\n\t\t\t\t进化载具“先知”所需的物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买。\n\t\t\t\t[n]副本任务“钢铁之躯”奖励和掉落。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 2,
+      "addType": "",
+      "price": 3
+    }
+  },
+  "PunisherCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "cnName": "制裁者碎片",
+    "description": "\n\t\t\t\t进化载具“制裁者”所需的物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买。\n\t\t\t\t[n]副本任务“飓风力量”奖励和掉落。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 2,
+      "addType": "",
+      "price": 3
+    }
+  },
+  "DiggersCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "addDropDefineB": 1,
+    "cnName": "挖掘者碎片",
+    "description": "\n\t\t\t\t进化载具“挖掘者”所需的物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买。\n\t\t\t\t[n]副本任务“鬼爵降临”奖励和掉落。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 3
+    }
+  },
+  "TitansCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "cnName": "泰坦碎片",
+    "description": "\n\t\t\t\t进化载具“泰坦”、“黑暗泰坦”所需的物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]商店购买。\n\t\t\t\t[n]副本任务“无疆统治”奖励和掉落。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 2,
+      "addType": "",
+      "price": 3
+    }
+  },
+  "RedMotoCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "addDropDefineB": 1,
+    "cnName": "赤焰碎片",
+    "description": "\n\t\t\t\t合成载具“赤焰”所需的物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]秘境“虚空客”掉落。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 1
+    }
+  },
+  "AircraftGunCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "addDropDefineB": 1,
+    "cnName": "狩猎者碎片",
+    "description": "\n\t\t\t\t用于合成和进化载具“狩猎者”，也是武器进化到第八级所需的材料。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]秘境“钢铁僵尸王”奖励。\n\t\t\t\t[n]纪念币商店。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 8
+    }
+  },
+  "WatchEagleAirCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "addDropDefineB": 1,
+    "cnName": "守望之翼碎片",
+    "description": "\n\t\t\t\t用于合成飞行器“守望之翼”。[n]{b}{font color='#FF66FF'}也是合成黑色武器“熔炉”必需品之一，需求40个。{/font}{/b}\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]秘境“极速守卫”。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 8
+    }
+  },
+  "SaberTigerCarCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "addDropDefineB": 1,
+    "cnName": "异齿虎碎片",
+    "description": "\n\t\t\t\t用于合成载具“异齿虎”。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]异虎宝箱\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": "",
+      "price": 8
+    }
+  },
+  "NianCarCash": {
+    "category": "材料",
+    "subcategory": "载具碎片",
+    "addDropDefineB": 1,
+    "cnName": "年兽碎片",
+    "description": "\n\t\t\t\t进化载具的材料，也可以用于合成载具“年兽”。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]秘境年兽\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": -1,
+      "addType": "",
+      "price": 8
+    }
+  },
+  "anniversaryCash": {
+    "category": "材料",
+    "subcategory": "其他碎片",
+    "addDropDefineB": 1,
+    "cnName": "周年碎片",
+    "description": "\n\t\t\t\t可在“锻造>合成”界面中合成黑色武器碎片。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]无尽模式(产量很高)\n\t\t\t\t[n]VIP每日礼包\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 1,
+      "addType": "",
+      "price": 1
+    }
+  },
+  "allBlackCash": {
+    "category": "材料",
+    "subcategory": "其他碎片",
+    "addDropDefineB": 1,
+    "cnName": "神武碎片",
+    "description": "\n\t\t\t\t可在“锻造>合成”界面中合成指定黑色武器碎片。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]每日任务大逃亡、直上云霄。\n\t\t\t\t[n]问答。\n\t\t\t\t[n]秘境“GM三人组”。\n\t\t\t\t[n]VIP每日礼包。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 2,
+      "addType": "box",
+      "price": 10,
+      "maxNum": 1
+    }
+  },
+  "allBlackEquipCash": {
+    "category": "材料",
+    "subcategory": "其他碎片",
+    "addDropDefineB": 1,
+    "cnName": "神护碎片",
+    "description": "\n\t\t\t\t可在“锻造>合成”界面中合成指定黑色装备碎片。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]每日任务狙击之王、枪林弹雨。\n\t\t\t\t[n]问答。\n\t\t\t\t[n]秘境“GM三人组”。\n\t\t\t\t[n]VIP每日礼包。\n\t\t\t",
+    "loveD": {
+      "num": 20
+    },
+    "smeltD": {
+      "grade": 2,
+      "addType": "box",
+      "price": 10,
+      "maxNum": 1
+    }
+  },
+  "dreamKey": {
+    "category": "材料",
+    "subcategory": "钥匙",
+    "addDropDefineB": 1,
+    "cnName": "幻想钥匙",
+    "dropLevelArr": [
+      76,
+      84
+    ],
+    "description": "\n\t\t\t\t开启某些任务所需物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、消灭76、84级普通关卡首领有一定几率掉落。\n\t\t\t\t[n]2、钥匙箱开出。\n\t\t\t",
+    "loveD": {
+      "num": 4
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 1
+    }
+  },
+  "courageKey": {
+    "category": "材料",
+    "subcategory": "钥匙",
+    "addDropDefineB": 1,
+    "cnName": "勇气钥匙",
+    "dropLevelArr": [
+      77,
+      83
+    ],
+    "description": "\n\t\t\t\t开启某些任务所需物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、消灭77、83级普通关卡首领有一定几率掉落。\n\t\t\t\t[n]2、钥匙箱开出。\n\t\t\t",
+    "loveD": {
+      "num": 4
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 1
+    }
+  },
+  "energyKey": {
+    "category": "材料",
+    "subcategory": "钥匙",
+    "addDropDefineB": 1,
+    "cnName": "能量钥匙",
+    "dropLevelArr": [
+      78,
+      82
+    ],
+    "description": "\n\t\t\t\t开启某些任务所需物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、消灭78、82级普通关卡首领有一定几率掉落。\n\t\t\t\t[n]2、钥匙箱开出。\n\t\t\t",
+    "loveD": {
+      "num": 4
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 1
+    }
+  },
+  "victoryKey": {
+    "category": "材料",
+    "subcategory": "钥匙",
+    "addDropDefineB": 1,
+    "cnName": "胜利钥匙",
+    "dropLevelArr": [
+      79,
+      81
+    ],
+    "description": "\n\t\t\t\t开启某些任务所需物品。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]1、消灭79、81级普通关卡首领有一定几率掉落。\n\t\t\t\t[n]2、钥匙箱开出。\n\t\t\t",
+    "loveD": {
+      "num": 4
+    },
+    "smeltD": {
+      "grade": 0,
+      "addType": "",
+      "price": 1
+    }
+  }
+}
