@@ -161,24 +161,15 @@
               </div>
               <div class="detail-row">
                 <span class="label">品质:</span>
-                <el-tag :type="getColorTagType(item.color) as any" size="small">
-                  {{ getColorName(item.color) }}
-                </el-tag>
+                 <el-tag :type="getColorTagType(item.color) as any" size="small">
+                   {{ translateColorName(item.color) }}
+                 </el-tag>
               </div>
             </div>
             
             <div class="detail-section" v-if="getItemDescription(item.itemsType, item.name)">
               <h4>描述</h4>
               <div class="description">{{ getItemDescription(item.itemsType, item.name) }}</div>
-            </div>
-            
-            <div class="detail-section">
-              <h4>状态</h4>
-              <div class="status-tags">
-                <el-tag v-if="item.newB" type="success" size="small">新物品</el-tag>
-                <el-tag v-if="item.lockB" type="warning" size="small">已锁定</el-tag>
-                <el-tag v-if="item.autoUseB" type="info" size="small">自动使用</el-tag>
-              </div>
             </div>
           </div>
         </el-popover>
@@ -202,13 +193,13 @@
             <!-- 列表视图额外信息 -->
             <div v-if="viewMode === 'list'" class="list-extra-info">
               <span class="quantity-info">数量: {{ item.nowNum || 1 }}</span>
-              <el-tag 
-                :type="getColorTagType(item.color) as any" 
-                size="small"
-                class="color-tag"
-              >
-                {{ getColorName(item.color) }}
-              </el-tag>
+               <el-tag 
+                 :type="getColorTagType(item.color) as any" 
+                 size="small"
+                 class="color-tag"
+               >
+                 {{ translateColorName(item.color) }}
+               </el-tag>
             </div>
           </div>
         </div>
@@ -251,6 +242,7 @@ import { computed, ref, watch, nextTick } from 'vue'
 import { useArchiveStore } from '@/stores/archive'
 import { getItemCnName, getItemDescription, getItemFullInfo } from '@/utils/translate'
 import { getThingsBackgroundStyle } from '@/utils/backgroundImages'
+import { getColorTagType, translateColorName } from '@/utils/colorUtils'
 import { ThingsBag } from '@/types/archive/module/things'
 import JsonViewer from '@/components/JsonViewer.vue'
 import { Search, Refresh } from '@element-plus/icons-vue'
@@ -281,52 +273,53 @@ const pageSize = ref(48)
 const categories = ref<string[]>([])
 const subcategories = ref<string[]>([])
 
-// 缓存物品信息，避免重复计算
-const itemInfoCache = new Map<string, any>()
+// 分类缓存 - 避免重复遍历
+const categoryMap = new Map<string, Set<string>>() // category -> subcategories
 
 // 视图模式
 const viewMode = ref<'grid' | 'list'>('grid')
-
-// 获取物品信息的缓存版本
-const getCachedItemInfo = (itemType: string, itemName: string) => {
-  const cacheKey = `${itemType}:${itemName}`
-  if (!itemInfoCache.has(cacheKey)) {
-    const itemInfo = getItemFullInfo(itemType, itemName)
-    itemInfoCache.set(cacheKey, itemInfo)
-  }
-  return itemInfoCache.get(cacheKey)
-}
 
 // 初始化分类数据
 const initializeCategories = () => {
   if (!thingsBag.value?.arr) return
   
+  // 清空缓存
+  categoryMap.clear()
+  
   const cats = new Set<string>()
+  
   thingsBag.value.arr.forEach(item => {
-    const itemInfo = getCachedItemInfo(item.itemsType, item.name)
-    if (itemInfo?.originalData?.category) {
-      cats.add(itemInfo.originalData.category)
+    const itemInfo = getItemFullInfo(item.itemsType, item.name)
+    const category = itemInfo?.originalData?.category || ''
+    const subcategory = itemInfo?.originalData?.subcategory || ''
+    
+    if (category) {
+      cats.add(category)
+      
+      // 构建分类到子分类的映射
+      if (!categoryMap.has(category)) {
+        categoryMap.set(category, new Set<string>())
+      }
+      
+      if (subcategory) {
+        categoryMap.get(category)!.add(subcategory)
+      }
     }
   })
+  
   categories.value = Array.from(cats).sort()
 }
 
-// 更新子分类
+// 更新子分类 - 使用缓存数据
 const updateSubcategories = () => {
-  if (!selectedCategory.value || !thingsBag.value?.arr) {
+  if (!selectedCategory.value) {
     subcategories.value = []
     return
   }
   
-  const subcats = new Set<string>()
-  thingsBag.value.arr.forEach(item => {
-    const itemInfo = getCachedItemInfo(item.itemsType, item.name)
-    if (itemInfo?.originalData?.category === selectedCategory.value && 
-        itemInfo?.originalData?.subcategory) {
-      subcats.add(itemInfo.originalData.subcategory)
-    }
-  })
-  subcategories.value = Array.from(subcats).sort()
+  // 直接从缓存中获取子分类
+  const subcats = categoryMap.get(selectedCategory.value)
+  subcategories.value = subcats ? Array.from(subcats).sort() : []
 }
 
 
@@ -345,7 +338,7 @@ const filteredItems = computed(() => {
     
     // 分类过滤
     if (selectedCategory.value) {
-      const itemInfo = getCachedItemInfo(item.itemsType, item.name)
+      const itemInfo = getItemFullInfo(item.itemsType, item.name)
       if (itemInfo?.originalData?.category !== selectedCategory.value) {
         return false
       }
@@ -353,7 +346,7 @@ const filteredItems = computed(() => {
     
     // 子分类过滤
     if (selectedSubcategory.value) {
-      const itemInfo = getCachedItemInfo(item.itemsType, item.name)
+      const itemInfo = getItemFullInfo(item.itemsType, item.name)
       if (itemInfo?.originalData?.subcategory !== selectedSubcategory.value) {
         return false
       }
@@ -404,8 +397,6 @@ const handleCategoryChange = () => {
 // 监听数据变化，自动初始化分类
 watch(thingsBag, (newBag) => {
   if (newBag?.arr) {
-    // 清空缓存
-    itemInfoCache.clear()
     nextTick(() => {
       initializeCategories()
     })
@@ -447,111 +438,69 @@ const ITEM_TYPE_CONFIG = {
   blackChip: { tagType: 'dark', name: '黑色碎片' }
 } as const
 
-const COLOR_CONFIG = {
-  white: { tagType: 'info', name: '白色' },
-  green: { tagType: 'success', name: '绿色' },
-  blue: { tagType: 'primary', name: '蓝色' },
-  purple: { tagType: 'warning', name: '紫色' },
-  orange: { tagType: 'danger', name: '橙色' },
-  red: { tagType: 'danger', name: '红色' },
-  black: { tagType: 'dark', name: '黑色' },
-  darkgold: { tagType: 'warning', name: '暗金' },
-  purgold: { tagType: 'warning', name: '紫金' },
-  yagold: { tagType: 'warning', name: '雅金' }
-} as const
-
-// 工具函数
-const ItemUtils = {
-  /**
-   * 获取物品背景样式
-   */
-  getBackgroundStyle(item: any) {
-    return getThingsBackgroundStyle(
-      { name: item.name, partType: item.itemsType || 'materials' }, 
-      item.color || 'white'
-    )
-  },
-
-  /**
-   * 获取物品显示名称（使用翻译功能）
-   */
-  getDisplayName(item: any): string {
-    if (!item.itemsType || !item.name) return item.cnName || '未知物品'
-    
-    const translatedName = getItemCnName(item.itemsType, item.name)
-    return translatedName !== item.name ? translatedName : (item.cnName || item.name)
-  },
-
-  /**
-   * 获取物品完整名称（用于tooltip）
-   */
-  getFullName(item: any): string {
-    if (!item.itemsType || !item.name) return item.cnName || '未知物品'
-    
-    const translatedName = getItemCnName(item.itemsType, item.name)
-    const description = getItemDescription(item.itemsType, item.name)
-    
-    let fullName = translatedName !== item.name ? translatedName : (item.cnName || item.name)
-    
-    if (description) {
-      fullName += `\n${description}`
-    }
-    
-    return fullName
-  },
-
-  /**
-   * 格式化数字显示
-   */
-  formatNumber(num: number): string {
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(1) + 'M'
-    } else if (num >= 1000) {
-      return (num / 1000).toFixed(1) + 'K'
-    }
-    return num.toString()
-  },
-
-  /**
-   * 获取物品类型标签类型
-   */
-  getTypeTagType(itemsType: string): string {
-    return ITEM_TYPE_CONFIG[itemsType as keyof typeof ITEM_TYPE_CONFIG]?.tagType || 'info'
-  },
-
-  /**
-   * 获取物品类型名称
-   */
-  getTypeName(itemsType: string): string {
-    return ITEM_TYPE_CONFIG[itemsType as keyof typeof ITEM_TYPE_CONFIG]?.name || itemsType
-  },
-
-  /**
-   * 获取颜色标签类型
-   */
-  getColorTagType(color: string): string {
-    return COLOR_CONFIG[color as keyof typeof COLOR_CONFIG]?.tagType || 'info'
-  },
-
-  /**
-   * 获取颜色名称
-   */
-  getColorName(color: string): string {
-    return COLOR_CONFIG[color as keyof typeof COLOR_CONFIG]?.name || color
-  }
+/**
+ * 获取物品背景样式
+ */
+function getItemBackgroundStyle(item: any) {
+  return getThingsBackgroundStyle(
+    { name: item.name, partType: item.itemsType || 'materials',imgName:item.imgName }, 
+    item.color || 'white'
+  )
 }
 
-// 导出工具函数供模板使用
-const {
-  getBackgroundStyle: getItemBackgroundStyle,
-  getDisplayName: getItemDisplayName,
-  getFullName: getItemFullName,
-  formatNumber,
-  getTypeTagType: getItemTypeTagType,
-  getTypeName: getItemTypeName,
-  getColorTagType,
-  getColorName
-} = ItemUtils
+/**
+ * 获取物品显示名称（使用翻译功能）
+ */
+function getItemDisplayName(item: any): string {
+  if (!item.itemsType || !item.name) return item.cnName || '未知物品'
+  
+  const translatedName = getItemCnName(item.itemsType, item.name)
+  return translatedName !== item.name ? translatedName : (item.cnName || item.name)
+}
+
+/**
+ * 获取物品完整名称（用于tooltip）
+ */
+function getItemFullName(item: any): string {
+  if (!item.itemsType || !item.name) return item.cnName || '未知物品'
+  
+  const translatedName = getItemCnName(item.itemsType, item.name)
+  const description = getItemDescription(item.itemsType, item.name)
+  
+  let fullName = translatedName !== item.name ? translatedName : (item.cnName || item.name)
+  
+  if (description) {
+    fullName += `\n${description}`
+  }
+  
+  return fullName
+}
+
+/**
+ * 格式化数字显示
+ */
+function formatNumber(num: number): string {
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1) + 'M'
+  } else if (num >= 1000) {
+    return (num / 1000).toFixed(1) + 'K'
+  }
+  return num.toString()
+}
+
+/**
+ * 获取物品类型标签类型
+ */
+function getItemTypeTagType(itemsType: string): string {
+  return ITEM_TYPE_CONFIG[itemsType as keyof typeof ITEM_TYPE_CONFIG]?.tagType || 'info'
+}
+
+/**
+ * 获取物品类型名称
+ */
+function getItemTypeName(itemsType: string): string {
+  return ITEM_TYPE_CONFIG[itemsType as keyof typeof ITEM_TYPE_CONFIG]?.name || itemsType
+}
 </script>
 
 <style scoped>
@@ -622,8 +571,8 @@ const {
 .items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 10px;
-  padding: 15px;
+  gap: 5px;
+  padding: 10px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -865,11 +814,7 @@ const {
   overflow-y: auto;
 }
 
-.status-tags {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-}
+
 
 .pagination-section {
   display: flex;

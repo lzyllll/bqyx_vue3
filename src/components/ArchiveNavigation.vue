@@ -175,7 +175,7 @@ const goBack = () => {
   border-right: 1px solid #e4e7ed;
   height: 100vh;
   overflow-y: auto;
-  width: 280px;
+  width: 240px;
 }
 
 .nav-header {

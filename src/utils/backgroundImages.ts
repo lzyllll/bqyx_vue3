@@ -114,25 +114,31 @@ const equipImageMap: Record<string, string> = {
   'parts': 'parts'
 }
 
-export function getThingsImage(item: { name: string; partType: string }): string {
+export function getThingsImage(item: { name: string; partType: string,imgName:string }): string {
   const imageDir = equipImageMap[item.partType] || item.partType
   // 对于基础装备类型，使用 name_partType 格式
+  //其实没必要哈，只要imgName就够了
   //images/equip/xxxx_head.png
-  if (['head', 'coat', 'pants', 'belt'].includes(item.partType)) {
-    return new URL(`../assets/images/${imageDir}/${item.name}_${item.partType}.png`, import.meta.url).href
-  }
+  // if (['head', 'coat', 'pants', 'belt'].includes(item.partType)) {
+  //   return new URL(`../assets/images/${imageDir}/${item.name}_${item.partType}.png`, import.meta.url).href
+  // }
   //images/device/xxxx.png
-  // 对于其他类型，直接使用名称
+  // 如果有imgname，直接使用
+  if(item.imgName){
+    console.log(`../assets/images/${imageDir}/${item.imgName}.png`)
+    return new URL(`../assets/images/${imageDir}/${item.imgName}.png`, import.meta.url).href
+  }
+  //使用name拼接的
   return new URL(`../assets/images/${imageDir}/${item.name}.png`, import.meta.url).href
 }
 
 /**
- * 获取装备背景样式（装备图片在上，格子背景在下）
+ * 获取装备格子图片的背景及图片的样式（装备图片在上，格子背景在下）
  * @param item 装备对象
  * @param color 背景颜色
  * @returns CSS样式对象
  */
-export function getThingsBackgroundStyle(item: { name: string; partType: string }, color: string) {
+export function getThingsBackgroundStyle(item: { name: string; partType: string,imgName:string }, color: string) {
   const equipImageUrl = getThingsImage(item)
   const gridImageUrl = getGridBackgroundImage(color)
   return {
@@ -155,6 +161,35 @@ export function getPartsBackgroundStyle(item: { name: string; itemsLevel: number
   return {
     backgroundImage: `url(${partsImageUrl}), url(${gridImageUrl})`,
     backgroundSize: '40px 40px, 56px 56px',
+    backgroundRepeat: 'no-repeat, no-repeat',
+    backgroundPosition: 'center, center'
+  }
+}
+
+/**
+ * 获取武器图像
+ * @param item 武器对象
+ * @returns 武器图像URL
+ */
+export function getArmsImage(item: { name: string; imgName?: string }): string {
+  // 如果有imgName，直接使用
+
+  // 使用name
+  return new URL(`../assets/images/arms/${item.name}.png`, import.meta.url).href
+}
+
+/**
+ * 获取武器背景样式（武器图片在上，格子背景在下）
+ * @param item 武器对象
+ * @param color 背景颜色
+ * @returns CSS样式对象
+ */
+export function getArmsBackgroundStyle(item: { name: string; imgName?: string }, color: string) {
+  const armsImageUrl = getArmsImage(item)
+  const gridImageUrl = getGridBackgroundImage(color)
+  return {
+    backgroundImage: `url(${armsImageUrl}), url(${gridImageUrl})`,
+    backgroundSize: '173px 69px, 173px 69px',
     backgroundRepeat: 'no-repeat, no-repeat',
     backgroundPosition: 'center, center'
   }

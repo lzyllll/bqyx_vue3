@@ -12,27 +12,7 @@
         </template>
         
         <!-- 装备统计 -->
-        <div class="equip-stats">
-          <el-row :gutter="20">
-            <el-col :span="6" v-for="stat in equipStats" :key="stat.key">
-              <el-card class="stat-card" shadow="hover">
-                <div class="stat-content">
-                  <div class="stat-icon">
-                    <el-icon :class="stat.iconClass">
-                      <component :is="stat.icon" />
-                    </el-icon>
-                  </div>
-                  <div class="stat-info">
-                    <div class="stat-label">{{ stat.label }}</div>
-                    <div class="stat-value" :class="stat.valueClass">
-                      {{ stat.value }}
-                    </div>
-                  </div>
-                </div>
-              </el-card>
-            </el-col>
-          </el-row>
-        </div>
+        <StatsCards :stats="equipStats" />
         
         <!-- 装备总加成 -->
         <BonusDisplay 
@@ -70,7 +50,7 @@
                           <div class="equip-name">{{ equipItems[equipType].cnName }}</div>
                           <div class="equip-quality">
                             <el-tag :type="getColorType(equipItems[equipType].color)" size="small">
-                              {{ equipItems[equipType].color }}
+                              {{ translateColorName(equipItems[equipType].color) }}
                             </el-tag>
                           </div>
                         </div>
@@ -88,7 +68,7 @@
                       <h4 class="popover-title">{{ equipItems[equipType].cnName }}</h4>
                       <div class="popover-category">
                         <el-tag size="small" type="primary">{{ getEquipTypeName(equipType) }}</el-tag>
-                        <el-tag size="small" :type="getColorType(equipItems[equipType].color)">{{ equipItems[equipType].color }}</el-tag>
+                        <el-tag size="small" :type="getColorType(equipItems[equipType].color)">{{ translateColorName(equipItems[equipType].color) }}</el-tag>
                       </div>
                     </div>
                     
@@ -155,7 +135,7 @@
                           <div class="equip-name">{{ equipItems[equipType].cnName }}</div>
                           <div class="equip-quality">
                             <el-tag :type="getColorType(equipItems[equipType].color)" size="small">
-                              {{ equipItems[equipType].color }}
+                              {{ translateColorName(equipItems[equipType].color) }}
                             </el-tag>
                           </div>
                         </div>
@@ -173,7 +153,7 @@
                       <h4 class="popover-title">{{ equipItems[equipType].cnName }}</h4>
                       <div class="popover-category">
                         <el-tag size="small" type="primary">{{ getEquipTypeName(equipType) }}</el-tag>
-                        <el-tag size="small" :type="getColorType(equipItems[equipType].color)">{{ equipItems[equipType].color }}</el-tag>
+                        <el-tag size="small" :type="getColorType(equipItems[equipType].color)">{{ translateColorName(equipItems[equipType].color) }}</el-tag>
                       </div>
                     </div>
                     
@@ -240,7 +220,7 @@
                           <div class="equip-name">{{ equipItems[equipType].cnName }}</div>
                           <div class="equip-quality">
                             <el-tag :type="getColorType(equipItems[equipType].color)" size="small">
-                              {{ equipItems[equipType].color }}
+                              {{ translateColorName(equipItems[equipType].color) }}
                             </el-tag>
                           </div>
                         </div>
@@ -258,7 +238,7 @@
                       <h4 class="popover-title">{{ equipItems[equipType].cnName }}</h4>
                       <div class="popover-category">
                         <el-tag size="small" type="primary">{{ getEquipTypeName(equipType) }}</el-tag>
-                        <el-tag size="small" :type="getColorType(equipItems[equipType].color)">{{ equipItems[equipType].color }}</el-tag>
+                        <el-tag size="small" :type="getColorType(equipItems[equipType].color)">{{ translateColorName(equipItems[equipType].color) }}</el-tag>
                       </div>
                     </div>
                     
@@ -320,7 +300,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useArchiveStore } from '@/stores/archive'
-
+import { getColorType,translateColorName } from '@/utils/colorUtils'
 import { Tools, List, Trophy, Star, Setting, Box, Plus } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 import type { Equip, EquipItem, EquipItems } from '@/types/archive/module/equip'
@@ -330,6 +310,7 @@ import { BonusMerge } from '@/utils/bonusAdd'
 import BonusDisplay from '@/components/BonusDisplay.vue'
 import BonusList from '@/components/BonusList.vue'
 import JsonViewer from '@/components/JsonViewer.vue'
+import StatsCards from '@/components/StatsCards.vue'
 
 const archiveStore = useArchiveStore()
 
@@ -364,18 +345,6 @@ const equipStats = computed(() => [
   }
 ])
 
-// 获取颜色类型
-const getColorType = (color: string): 'primary' | 'success' | 'warning' | 'info' | 'danger' => {
-  const colorMap: Record<string, 'primary' | 'success' | 'warning' | 'info' | 'danger'> = {
-    'white': 'info',
-    'green': 'success',
-    'blue': 'primary',
-    'purple': 'warning',
-    'orange': 'danger',
-    'red': 'danger'
-  }
-  return colorMap[color.toLowerCase()] || 'info'
-}
 
 // 获取装备图像样式
 const getEquipImageStyle = (equip: EquipItem) => {
@@ -468,71 +437,6 @@ const jsonData = computed(() => {
   font-size: 14px;
 }
 
-.equip-stats {
-  margin-bottom: 24px;
-}
-
-.stat-card {
-  margin-bottom: 16px;
-  transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-2px);
-}
-
-.stat-content {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.stat-icon {
-  font-size: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #f5f7fa;
-}
-
-.stat-info {
-  flex: 1;
-}
-
-.stat-label {
-  font-size: 14px;
-  color: #909399;
-  margin-bottom: 4px;
-}
-
-.stat-value {
-  font-size: 18px;
-  font-weight: 600;
-  color: #303133;
-}
-
-.text-primary {
-  color: #409eff !important;
-}
-
-.text-success {
-  color: #67c23a !important;
-}
-
-.text-warning {
-  color: #e6a23c !important;
-}
-
-.text-danger {
-  color: #f56c6c !important;
-}
-
-.text-info {
-  color: #909399 !important;
-}
 
 .equip-display-section {
   margin-top: 24px;

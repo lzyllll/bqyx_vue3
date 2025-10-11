@@ -8,33 +8,22 @@ import { getOrZero } from '@/utils/safeGet';
 import { BonusMerge } from '@/utils/bonusAdd';
 import { isDarkgoldOrHigher } from '@/utils/colorJudge';
 import { type RoleBonus } from '../Bonus';
-/**
- * 武器位置对应的类型
- */
-var posType = {
-  0: 'head',
-  1: 'coat',
-  2: 'pants',
-  3: 'belt',
-  4: 'fashion',
-  5: 'vehicle',
-  6: 'weapon',
-  7: 'device',
-  9: "shield",
-  8:'jewelry'
-}
 
-enum EquipType {
-  HEAD = 0,
-  COAT = 1,
-  PANTS = 2,
-  BELT = 3,
-  FASHION = 4,
-  VEHICLE = 5,
-  WEAPON = 6,
-  DEVICE = 7,
-  SHIELD = 9,
-  JEWELRY = 8
+
+/**
+ * 装备部位类型枚举
+ */
+export enum EquipPartType {
+  HEAD = 'head',
+  COAT = 'coat',
+  PANTS = 'pants',
+  BELT = 'belt',
+  FASHION = 'fashion',
+  VEHICLE = 'vehicle',
+  WEAPON = 'weapon',
+  DEVICE = 'device',
+  SHIELD = 'shield',
+  JEWELRY = 'jewelry'
 }
 
 
@@ -71,18 +60,17 @@ export class EquipItem extends BagItemBase {
     if (!this.strengthenLv) {
       return {}
     }
-    var type = this.site
     var strengthenLevel = getOrZero(this.strengthenLv)
     const bonus: RoleBonus = {};
     const addValue: number = StrengthenDict.addMul[strengthenLevel]
-    if (type === EquipType.COAT) {
+    if (this.partType === EquipPartType.COAT) {
       bonus.lifeMul = addValue;
-    } else if (type === EquipType.PANTS) {
+    } else if (this.partType === EquipPartType.PANTS) {
       bonus.dpsMul = addValue;
-    } else if (type === EquipType.HEAD) {
+    } else if (this.partType === EquipPartType.HEAD) {
       bonus.lifeRateMul = addValue;
       bonus.skillDedut = StrengthenDict.skillDedutAddMul[strengthenLevel];
-    } else if (type === EquipType.BELT) {
+    } else if (this.partType === EquipPartType.BELT) {
       bonus.bulletDedut = Number((strengthenLevel * 0.01).toFixed(2));
     }
     return bonus as RoleBonus;
@@ -124,7 +112,7 @@ export class EquipItem extends BagItemBase {
   //获取属性加成
   getRoleBonus(): RoleBonus {
     // 如果为vehicle类型,属性需要从字典中获取
-    if (this.site == EquipType.VEHICLE) {
+    if (this.partType === EquipPartType.VEHICLE) {
       return CarsDict[this.name]['roleBonus'] as RoleBonus
     }
     // todo 将一些固定的武器，属性从字典中获取
@@ -161,7 +149,7 @@ export class Equip {
     var result = new EquipItems()
     for (let i = 0; i < value.length; i++) {
       var item = plainToClass(EquipItem, value[i])
-      result[posType[item.site]] = item
+      result[item.partType] = item
     }
     return result
   })

@@ -1,5 +1,6 @@
 import { Type } from 'class-transformer';
 import { SaveObject } from '../base';
+import { TypeRecord } from '@/utils/decorator/typeRecords';
 
 /**
  * 计数保存实现类
@@ -89,7 +90,7 @@ export class WorldMap {
   /** 掉落火箭B */
   dropRocketB: boolean;
   /** 对象 */
-  @Type(() => WorldMapItem)
+  @TypeRecord(WorldMapItem)
   obj: Record<string, WorldMapItem>;
   /** 超级数量 */
   superNum: number;

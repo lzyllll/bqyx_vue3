@@ -34,6 +34,28 @@
           </el-row>
         </div>
         
+        <!-- 武器展示 -->
+        <div class="arms-display-section">
+          <el-divider content-position="left">
+            <el-icon><Tools /></el-icon>
+            <span>武器展示</span>
+          </el-divider>
+          
+          <div class="arms-grid">
+            <el-row :gutter="16">
+              <el-col 
+                :span="8" 
+                v-for="(armsItem, index) in data?.items" 
+                :key="armsItem.id"
+              >
+                <div class="arms-item-wrapper">
+                  <ArmsDisplay :arms-item="armsItem" />
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
+        
         
         <!-- 详细数据 -->
         <JsonViewer 
@@ -53,6 +75,7 @@ import { Tools, List, Trophy, Star, Setting, Box } from '@element-plus/icons-vue
 import { ElMessage } from 'element-plus'
 import type { Arms, ArmsItem } from '@/types/archive/module/arms'
 import JsonViewer from '@/components/JsonViewer.vue'
+import ArmsDisplay from '@/components/ArmsDisplay.vue'
 
 const archiveStore = useArchiveStore()
 
@@ -83,18 +106,6 @@ const armsStats = computed(() => [
   }
 ])
 
-// 获取颜色类型
-const getColorType = (color: string): 'primary' | 'success' | 'warning' | 'info' | 'danger' => {
-  const colorMap: Record<string, 'primary' | 'success' | 'warning' | 'info' | 'danger'> = {
-    'white': 'info',
-    'green': 'success',
-    'blue': 'primary',
-    'purple': 'warning',
-    'orange': 'danger',
-    'red': 'danger'
-  }
-  return colorMap[color.toLowerCase()] || 'info'
-}
 
 // 查看武器详情
 const viewArmsDetail = (arms: ArmsItem) => {
@@ -207,9 +218,18 @@ const jsonData = computed(() => {
   color: #909399 !important;
 }
 
-.arms-list-section,
-.data-section {
+.arms-display-section {
   margin-top: 24px;
+}
+
+.arms-grid {
+  margin-top: 16px;
+}
+
+.arms-item-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .json-viewer {
@@ -237,6 +257,10 @@ const jsonData = computed(() => {
   
   .stat-value {
     font-size: 16px;
+  }
+  
+  .arms-grid .el-col {
+    margin-bottom: 16px;
   }
 }
 </style>

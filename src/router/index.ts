@@ -31,6 +31,10 @@ const BossCardModule = () => import('@/views/archive/BossCardModule.vue')
 const PetModule = () => import('@/views/archive/PetModule.vue')
 const VipModule = () => import('@/views/archive/VipModule.vue')
 const ThingsBagModule = () => import('@/views/archive/ThingsBagModule.vue')
+const EquipBagModule = () => import('@/views/archive/EquipBagModule.vue')
+const SkillBagModule = () => import('@/views/archive/SkillBagModule.vue')
+const WorldMapModule = () => import('@/views/archive/WorldMapModule.vue')
+const PayModule = () => import('@/views/archive/PayModule.vue')
 const routes: RouteRecordRaw[] = [
   {
     path: '/login',
@@ -112,13 +116,19 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'skillBag',
         name: 'SkillBagModule',
-        component: GenericModule,
+        component: SkillBagModule,
         meta: { requiresAuth: false }
       },
       {
         path: 'equipBag',
         name: 'EquipBagModule',
-        component: GenericModule,
+        component: EquipBagModule,
+        meta: { requiresAuth: false }
+      },
+      {
+        path: 'skillBag',
+        name: 'SkillBagModule',
+        component: SkillBagModule,
         meta: { requiresAuth: false }
       },
       {
@@ -229,7 +239,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'worldMap',
         name: 'WorldMapModule',
-        component: GenericModule,
+        component: WorldMapModule,
         meta: { requiresAuth: false }
       },
       {
@@ -242,7 +252,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'pay',
         name: 'PayModule',
-        component: GenericModule,
+        component: PayModule,
         meta: { requiresAuth: false }
       },
       {

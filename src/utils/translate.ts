@@ -19,26 +19,26 @@ const itemTypeDataMap = {
   blackChip: blackChipData
 }
 
-// 模块级缓存变量
-let flatMapData: Record<string, string> | null = null
+// 地图信息缓存
+let mapInfoCache: Record<string, { name: string; category: string }> | null = null
 
 /**
- * 扁平化地图数据
- * @param data 嵌套的地图数据
- * @returns 扁平化的地图数据
+ * 初始化地图信息缓存
  */
-function flattenMapData(data: any): Record<string, string> {
-  const result: Record<string, string> = {}
+function initializeMapInfoCache(): void {
+  if (mapInfoCache) return
   
-  for (const [category, maps] of Object.entries(data)) {
+  mapInfoCache = {}
+  for (const [category, maps] of Object.entries(mapData)) {
     if (typeof maps === 'object' && maps !== null) {
       for (const [key, value] of Object.entries(maps)) {
-        result[key] = value as string
+        mapInfoCache[key] = {
+          name: value as string,
+          category: category
+        }
       }
     }
   }
-  
-  return result
 }
 
 /**
@@ -51,16 +51,36 @@ export function translateSingleBonus(key: string): string {
 }
 
 /**
+ * 获取地图信息（包含名称和类别）
+ * @param key 地图键名
+ * @returns 地图信息对象
+ */
+export function getMapInfo(key: string): { name: string; category: string } | null {
+  // 初始化缓存（如果还没有）
+  initializeMapInfoCache()
+  
+  // 从缓存中获取信息
+  return mapInfoCache![key] || null
+}
+
+/**
  * 翻译地图名称
  * @param key 地图键名
  * @returns 中文地图名称
  */
 export function translateMap(key: string): string {
-  // 如果还没有扁平化数据，则进行扁平化
-  if (!flatMapData) {
-    flatMapData = flattenMapData(mapData)
-  }
-  return flatMapData[key] || key
+  const mapInfo = getMapInfo(key)
+  return mapInfo ? mapInfo.name : key
+}
+
+/**
+ * 翻译地图名称并显示类别
+ * @param key 地图键名
+ * @returns 格式化的地图信息字符串
+ */
+export function translateMapWithCategory(key: string): string {
+  const mapInfo = getMapInfo(key)
+  return mapInfo ? `${mapInfo.name} (${mapInfo.category})` : key
 }
 
 /**

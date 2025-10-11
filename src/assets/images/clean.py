@@ -1,15 +1,14 @@
 from pathlib import Path
 
-dir = Path('normalChip')
+dir_path = Path('skill')
 
-for path in dir.iterdir():
-    if path.is_file() and path.stem.endswith('Chip'):
-        # 构造新路径
-        new_path = path.with_name(path.stem[:-4] + path.suffix)
+for path in dir_path.iterdir():
+    if path.is_file():  # 确保是文件而不是目录
+        # 创建新的文件名（保持原文件名，只修改后缀）
+        new_path = path.with_suffix('.png')
         
-        # 如果目标文件已存在，先删除它
-        new_path.unlink(missing_ok=True)
-        
-        # 执行重命名
+        # 重命名文件
         path.rename(new_path)
-        print(f"重命名: {path.name} → {new_path.name}")
+        print(f"已重命名: {path.name} -> {new_path.name}")
+
+print("批量重命名完成！")

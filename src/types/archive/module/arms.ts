@@ -154,17 +154,8 @@ Object.keys(armsItemsInstance).forEach((key, index) => {
 export class Arms {
   /** 武器数组 */
   @Type(() => ArmsItem)
-  @Transform(({ value }) => {
-    var result = new ArmsItems()
-    for (let i = 0; i < value.length; i++) {
-      var item = plainToInstance(ArmsItem, value[i])
-      result[posDict[item.site]] = item
-    }
-    console.log(result)
-    return result
-  })
   @Expose({ name: 'arr' })
-  items: ArmsItem;
+  items: ArmsItem[];
   /** 抓取最大数量 */
   gripMaxNum: number;
   /** 最后ID */

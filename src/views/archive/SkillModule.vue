@@ -41,41 +41,75 @@
             <span>技能列表</span>
           </el-divider>
           <el-card>
-            <el-table 
-              :data="skillList" 
-              stripe 
-              style="width: 100%"
-              max-height="400"
-              v-loading="!data"
-            >
-              <el-table-column prop="baseLabel" label="技能标识" width="150" />
-              <!-- <el-table-column prop="cnName" label="中文名称" width="150" /> -->
-              <el-table-column prop="lv" label="等级" width="80" />
-              <el-table-column prop="color" label="品质" width="100">
-                <template #default="scope">
-                  <el-tag :type="getColorType(scope.row.color)">
-                    {{ scope.row.color }}
-                  </el-tag>
-                </template>
-              </el-table-column>
-              <el-table-column prop="site" label="位置" width="80" />
-              <el-table-column prop="profi" label="熟练度" width="100" />
-              <el-table-column prop="studyBodyLv" label="学习等级" width="100" />
-              <el-table-column label="状态" width="120">
-                <template #default="scope">
-                  <el-tag v-if="scope.row.lockB" type="warning">锁定</el-tag>
-                  <el-tag v-if="scope.row.newB" type="success">新技能</el-tag>
-                  <el-tag v-if="scope.row.effB" type="info">生效中</el-tag>
-                </template>
-              </el-table-column>
-              <el-table-column label="操作" width="120">
-                <template #default="scope">
-                  <el-button size="small" @click="viewSkillDetail(scope.row)">
-                    查看详情
-                  </el-button>
-                </template>
-              </el-table-column>
-            </el-table>
+            <div class="skill-list-container" v-loading="!data">
+              <!-- 表头 -->
+              <div class="skill-list-header">
+                <div class="header-cell skill-cell">技能</div>
+                <div class="header-cell position-cell">位置</div>
+                <div class="header-cell proficiency-cell">熟练度</div>
+                <div class="header-cell study-level-cell">学习等级</div>
+                <div class="header-cell status-cell">状态</div>
+                <div class="header-cell action-cell">操作</div>
+              </div>
+              
+              <!-- 技能列表 -->
+              <div class="skill-list-body">
+                <div 
+                  v-for="(skill, index) in skillList" 
+                  :key="skill.baseLabel"
+                  class="skill-list-row"
+                  :class="{ 'even-row': index % 2 === 0 }"
+                >
+                  <!-- 技能信息 -->
+                  <div class="skill-cell">
+                    <div class="skill-item">
+                      <div class="skill-image" :style="getSkillImageStyle(skill)">
+                        <div class="skill-level">{{ skill.lv }}</div>
+                      </div>
+                      <div class="skill-info">
+                        <div class="skill-name">{{ skill.baseLabel }}</div>
+                        <div class="skill-quality">
+                          <span class="quality-tag" :class="getColorType(skill.color)">
+                            {{ translateColorName(skill.color) }}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- 位置 -->
+                  <div class="position-cell">
+                    {{ skill.site }}
+                  </div>
+                  
+                  <!-- 熟练度 -->
+                  <div class="proficiency-cell">
+                    {{ skill.profi }}
+                  </div>
+                  
+                  <!-- 学习等级 -->
+                  <div class="study-level-cell">
+                    {{ skill.studyBodyLv }}
+                  </div>
+                  
+                  <!-- 状态 -->
+                  <div class="status-cell">
+                    <div class="status-tags">
+                      <span v-if="skill.lockB" class="status-tag warning">锁定</span>
+                      <span v-if="skill.newB" class="status-tag success">新技能</span>
+                      <span v-if="skill.effB" class="status-tag info">生效中</span>
+                    </div>
+                  </div>
+                  
+                  <!-- 操作 -->
+                  <div class="action-cell">
+                    <button class="action-btn" @click="viewSkillDetail(skill)">
+                      查看详情
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </el-card>
         </div>
         
@@ -97,9 +131,13 @@ import { useArchiveStore } from '@/stores/archive'
 import { MagicStick, List, Trophy, Star, Setting, Box } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 import type { Skill, SkillItem } from '@/types/archive/module/skill'
+import { getColorType, translateColorName } from '@/utils/colorUtils'
+import { getThingsBackgroundStyle } from '@/utils/backgroundImages'
 import JsonViewer from '@/components/JsonViewer.vue'
 
 const archiveStore = useArchiveStore()
+
+// 移除表格高度计算，让页面自然滚动
 
 // 获取技能模块数据
 const data = computed((): Skill | null => {
@@ -149,17 +187,15 @@ const skillStats = computed(() => [
   }
 ])
 
-// 获取品质颜色
-const getColorType = (color: string): 'primary' | 'success' | 'warning' | 'info' | 'danger' => {
-  const colorMap: Record<string, 'primary' | 'success' | 'warning' | 'info' | 'danger'> = {
-    'white': 'info',
-    'green': 'success',
-    'blue': 'primary',
-    'purple': 'warning',
-    'orange': 'danger',
-    'red': 'danger'
+// 获取技能图片样式
+const getSkillImageStyle = (skill: SkillItem) => {
+  // 为技能创建适合的对象结构
+  const skillObj = {
+    name: skill.baseLabel,
+    partType: 'skill', // 技能类型
+    imgName: skill.baseLabel // 使用技能标识作为图片名
   }
-  return colorMap[color.toLowerCase()] || 'info'
+  return getThingsBackgroundStyle(skillObj, skill.color)
 }
 
 // 查看技能详情
@@ -177,7 +213,9 @@ const jsonData = computed(() => {
 <style scoped>
 .skill-module {
   padding: 20px;
-  overflow-y: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .module-card {
@@ -276,6 +314,186 @@ const jsonData = computed(() => {
 .skill-list-section,
 .data-section {
   margin-top: 24px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skill-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skill-level {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #409eff;
+  color: white;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 8px;
+  font-weight: bold;
+  min-width: 16px;
+  text-align: center;
+}
+
+.skill-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.skill-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #303133;
+  margin-bottom: 4px;
+  word-break: break-all;
+}
+
+.skill-quality {
+  display: flex;
+  align-items: center;
+}
+
+.status-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* 自定义技能列表样式 */
+.skill-list-container {
+  width: 100%;
+  border: 1px solid #ebeef5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-list-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr 1fr;
+  background: #f5f7fa;
+  border-bottom: 1px solid #ebeef5;
+  font-weight: 600;
+  color: #909399;
+}
+
+.header-cell {
+  padding: 12px 16px;
+  border-right: 1px solid #ebeef5;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.header-cell:last-child {
+  border-right: none;
+}
+
+/* 技能列表内容区域 - 移除固定高度限制，让内容自然展开 */
+
+.skill-list-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr 1fr;
+  border-bottom: 1px solid #ebeef5;
+  transition: background-color 0.3s;
+}
+
+.skill-list-row:hover {
+  background-color: #f5f7fa;
+}
+
+.skill-list-row.even-row {
+  background-color: #fafafa;
+}
+
+.skill-list-row.even-row:hover {
+  background-color: #f0f2f5;
+}
+
+.skill-list-row:last-child {
+  border-bottom: none;
+}
+
+.skill-cell,
+.position-cell,
+.proficiency-cell,
+.study-level-cell,
+.status-cell,
+.action-cell {
+  padding: 12px 16px;
+  border-right: 1px solid #ebeef5;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  min-height: 60px;
+}
+
+.skill-cell:last-child,
+.position-cell:last-child,
+.proficiency-cell:last-child,
+.study-level-cell:last-child,
+.status-cell:last-child,
+.action-cell:last-child {
+  border-right: none;
+}
+
+/* 品质标签样式 */
+.quality-tag {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.quality-tag.primary { background: #ecf5ff; color: #409eff; }
+.quality-tag.success { background: #f0f9ff; color: #67c23a; }
+.quality-tag.warning { background: #fdf6ec; color: #e6a23c; }
+.quality-tag.info { background: #f4f4f5; color: #909399; }
+.quality-tag.danger { background: #fef0f0; color: #f56c6c; }
+
+/* 状态标签样式 */
+.status-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.status-tag {
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.status-tag.warning { background: #fdf6ec; color: #e6a23c; }
+.status-tag.success { background: #f0f9ff; color: #67c23a; }
+.status-tag.info { background: #ecf5ff; color: #409eff; }
+
+/* 操作按钮样式 */
+.action-btn {
+  padding: 6px 12px;
+  background: #409eff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+  background: #337ecc;
 }
 
 .json-viewer {
