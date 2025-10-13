@@ -63,7 +63,8 @@
                   <!-- 技能信息 -->
                   <div class="skill-cell">
                     <div class="skill-item">
-                      <div class="skill-image" :style="getSkillImageStyle(skill)">
+                      <div class="skill-image">
+                        <img :src="getSkillImageUrl(skill)" :alt="skill.baseLabel" class="skill-img" />
                         <div class="skill-level">{{ skill.lv }}</div>
                       </div>
                       <div class="skill-info">
@@ -132,7 +133,7 @@ import { MagicStick, List, Trophy, Star, Setting, Box } from '@element-plus/icon
 import { ElMessage } from 'element-plus'
 import type { Skill, SkillItem } from '@/types/archive/module/skill'
 import { getColorType, translateColorName } from '@/utils/colorUtils'
-import { getThingsBackgroundStyle } from '@/utils/backgroundImages'
+import { getSkillSvg } from '@/utils/backgroundImages'
 import JsonViewer from '@/components/JsonViewer.vue'
 
 const archiveStore = useArchiveStore()
@@ -187,15 +188,9 @@ const skillStats = computed(() => [
   }
 ])
 
-// 获取技能图片样式
-const getSkillImageStyle = (skill: SkillItem) => {
-  // 为技能创建适合的对象结构
-  const skillObj = {
-    name: skill.baseLabel,
-    partType: 'skill', // 技能类型
-    imgName: skill.baseLabel // 使用技能标识作为图片名
-  }
-  return getThingsBackgroundStyle(skillObj, skill.color)
+// 获取技能图片URL
+const getSkillImageUrl = (skill: SkillItem) => {
+  return getSkillSvg(skill.baseLabel)
 }
 
 // 查看技能详情
@@ -331,6 +326,13 @@ const jsonData = computed(() => {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.skill-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
 }
 
 .skill-level {

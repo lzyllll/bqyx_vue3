@@ -78,8 +78,8 @@ const getArmsImageStyle = (item: ArmsItem) => {
 
 .arms-image-container {
   position: relative;
-  width: 173px;
-  height: 69px;
+  width: 200px;
+  height: 80px;
 }
 
 .arms-image {
@@ -89,6 +89,7 @@ const getArmsImageStyle = (item: ArmsItem) => {
   position: relative;
   border: 2px solid #e0e0e0;
 }
+
 
 .lock-badge {
   position: absolute;
@@ -155,8 +156,8 @@ const getArmsImageStyle = (item: ArmsItem) => {
 /* 响应式设计 */
 @media (max-width: 768px) {
   .arms-image-container {
-    width: 140px;
-    height: 56px;
+    width: 160px;
+    height: 64px;
   }
   
   .lock-badge,

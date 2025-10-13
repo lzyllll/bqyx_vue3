@@ -1,7 +1,10 @@
 # 武器管理系统 (TypeScript版本)
 
 基于Vue 3 + TypeScript + Element Plus构建的武器管理系统，提供完整的武器和Boss CRUD功能。
+todo arms equip parts device skill fashion jewelly shield vehcile weapon
+things相关的也是  blackchip normalchip material sprops rarechip skillChip
 
+当前使用的Image，后期改为svg
 ## 功能特性
 
 - 🔐 用户认证（登录/注册）

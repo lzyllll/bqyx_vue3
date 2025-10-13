@@ -75,6 +75,8 @@ export class PartsSave {
  * 注意：根据BagItemBase实现类的定义，某些字段可能是可选的
  */
 export class ArmsItem extends BagItemBase {
+  /**声明覆盖，添加装饰器，修正evoLv */
+  declare evoLv?: number;
   /** 武器图片标签 */
   armsImgLabel: string;
   /** 攻击间隔 */

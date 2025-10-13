@@ -35,6 +35,8 @@ const EquipBagModule = () => import('@/views/archive/EquipBagModule.vue')
 const SkillBagModule = () => import('@/views/archive/SkillBagModule.vue')
 const WorldMapModule = () => import('@/views/archive/WorldMapModule.vue')
 const PayModule = () => import('@/views/archive/PayModule.vue')
+const EquipHouseModule = () => import('@/views/archive/EquipHouseModule.vue')
+const DropModule = () => import('@/views/archive/DropModule.vue')
 const routes: RouteRecordRaw[] = [
   {
     path: '/login',
@@ -158,7 +160,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'equipHouse',
         name: 'EquipHouseModule',
-        component: GenericModule,
+        component: EquipHouseModule,
         meta: { requiresAuth: false }
       },
       {
@@ -302,7 +304,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'drop',
         name: 'DropModule',
-        component: GenericModule,
+        component: DropModule,
         meta: { requiresAuth: false }
       },
       {

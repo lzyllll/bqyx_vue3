@@ -21,7 +21,7 @@
           <el-option
             v-for="partType in partTypes"
             :key="partType"
-            :label="getPartTypeName(partType)"
+            :label="translateTypeName(partType)"
             :value="partType"
           />
         </el-select>
@@ -92,7 +92,7 @@
           显示 {{ paginatedItems.length }} / {{ filteredItems.length }} 个装备
         </span>
         <span class="stat-item" v-if="selectedPartType">
-          部位: {{ getPartTypeName(selectedPartType) }}
+          部位: {{ translateTypeName(selectedPartType) }}
         </span>
         <span class="stat-item" v-if="selectedColor">
           品质: {{ translateColorName(selectedColor) }}
@@ -104,152 +104,12 @@
     </div>
     
     <div :class="viewMode === 'grid' ? 'items-grid' : 'items-list'">
-      <div 
-        v-for="equip in paginatedItems"
-        :key="equip.id"
-        :class="[
-          viewMode === 'grid' ? 'item-slot' : 'item-list-item',
-          { 'new-item': equip.newB, 'locked': equip.lockB }
-        ]"
-      >
-        <!-- 装备图片和背景 -->
-        <el-popover
-          placement="bottom"
-          :width="350"
-          trigger="hover"
-          :title="equip.cnName"
-        >
-          <template #reference>
-            <div 
-              class="item-image"
-              :style="getEquipImageStyle(equip)"
-            >
-              <!-- 装备等级显示 -->
-              <div v-if="equip.itemsLevel > 1" class="item-level">
-                Lv.{{ equip.itemsLevel }}
-              </div>
-              
-              <!-- 新装备标识 -->
-              <div v-if="equip.newB" class="new-badge">新</div>
-              
-              <!-- 锁定标识 -->
-              <div v-if="equip.lockB" class="lock-badge">🔒</div>
-            </div>
-            
-            <!-- 装备类型标签 -->
-            <div class="item-type-badge">
-              <el-tag 
-                :type="getPartTypeTagType(equip.partType) as any" 
-                size="small"
-                class="type-badge"
-              >
-                {{ getPartTypeName(equip.partType) }}
-              </el-tag>
-            </div>
-            
-            <!-- 装备品质标签 -->
-            <div class="item-quality-badge">
-              <el-tag 
-                :type="getColorTagType(equip.color) as any" 
-                size="small"
-                class="quality-badge"
-              >
-                {{ translateColorName(equip.color) }}
-              </el-tag>
-            </div>
-          </template>
-        
-          <!-- Popover内容 -->
-          <div class="equip-details">
-            <div class="detail-section">
-              <h4>基本信息</h4>
-              <div class="detail-grid">
-                <div class="detail-row">
-                  <span class="label">名称:</span>
-                  <span class="value">{{ equip.cnName }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="label">部位:</span>
-                  <el-tag :type="getPartTypeTagType(equip.partType) as any" size="small">
-                    {{ getPartTypeName(equip.partType) }}
-                  </el-tag>
-                </div>
-                <div class="detail-row" v-if="equip.itemsLevel > 1">
-                  <span class="label">等级:</span>
-                  <span class="value">Lv.{{ equip.itemsLevel }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="label">品质:</span>
-                  <el-tag :type="getColorTagType(equip.color) as any" size="small">
-                    {{ translateColorName(equip.color) }}
-                  </el-tag>
-                </div>
-                <div class="detail-row" v-if="equip.strengthenLv > 0">
-                  <span class="label">强化等级:</span>
-                  <span class="value">+{{ equip.strengthenLv }}</span>
-                </div>
-                <div class="detail-row" v-if="equip.evoLv > 0">
-                  <span class="label">进化等级:</span>
-                  <span class="value">进化{{ equip.evoLv }}</span>
-                </div>
-                <div class="detail-row" v-if="equip.shopB">
-                  <span class="label">来源:</span>
-                  <span class="value shop-source">商店购买</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="detail-section" v-if="getEquipBonus(equip).length > 0">
-              <h4>属性加成</h4>
-              <BonusList 
-                :bonus-list="getEquipBonus(equip)"
-                title=""
-                :compact="true"
-              />
-            </div>
-            
-            <div class="detail-section">
-              <h4>时间信息</h4>
-              <div class="detail-row">
-                <span class="label">获取时间:</span>
-                <span class="value">{{ equip.getTime }}</span>
-              </div>
-              <div class="detail-row">
-                <span class="label">服务器时间:</span>
-                <span class="value">{{ equip.severTime }}</span>
-              </div>
-            </div>
-          </div>
-        </el-popover>
-        
-        <!-- 装备信息 -->
-        <div class="item-info">
-          <div class="item-name" :title="equip.cnName">
-            {{ equip.cnName }}
-          </div>
-          <div class="item-meta">
-            <el-tag 
-              :type="getPartTypeTagType(equip.partType) as any" 
-              size="small"
-              class="item-type-tag"
-            >
-              {{ getPartTypeName(equip.partType) }}
-            </el-tag>
-            <el-tag 
-              :type="getColorTagType(equip.color) as any" 
-              size="small"
-              class="color-tag"
-            >
-              {{ translateColorName(equip.color) }}
-            </el-tag>
-            <!-- 列表视图额外信息 -->
-            <div v-if="viewMode === 'list'" class="list-extra-info">
-              <span v-if="equip.strengthenLv > 0" class="strengthen-info">+{{ equip.strengthenLv }}</span>
-              <span v-if="equip.evoLv > 0" class="evo-info">进化{{ equip.evoLv }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
+        <EquipItemComponent 
+          v-for="equip in paginatedItems"
+          :key="equip.id"
+          :equip="equip"
+          :view-mode="viewMode"
+        />
     </div>
     
     <!-- 分页 -->
@@ -286,13 +146,13 @@
 <script setup lang="ts">
 import { computed, ref, watch, nextTick } from 'vue'
 import { useArchiveStore } from '@/stores/archive'
-import { getThingsBackgroundStyle } from '@/utils/backgroundImages'
+import { EquipBag, EquipItem as EquipItemType } from '@/types/archive/module/equip'
 import { getColorTagType, translateColorName } from '@/utils/colorUtils'
-import { getFormattedBonusList } from '@/utils/translate'
-import { EquipBag, EquipItem } from '@/types/archive/module/equip'
+import { translateTypeName } from '@/utils/typeUtils'
 import JsonViewer from '@/components/JsonViewer.vue'
 import BonusList from '@/components/BonusList.vue'
 import StatsCards from '@/components/StatsCards.vue'
+import EquipItemComponent from '@/components/EquipItem.vue'
 import { Search, Refresh, Box, Star, Setting, Trophy } from '@element-plus/icons-vue'
 
 const archiveStore = useArchiveStore()
@@ -489,53 +349,7 @@ const resetFilters = () => {
   currentPage.value = 1
 }
 
-// 部位类型配置
-const PART_TYPE_CONFIG = {
-  head: { tagType: 'primary', name: '头盔' },
-  coat: { tagType: 'success', name: '衣服' },
-  pants: { tagType: 'warning', name: '裤子' },
-  belt: { tagType: 'info', name: '腰带' },
-  fashion: { tagType: 'danger', name: '时装' },
-  vehicle: { tagType: 'primary', name: '载具' },
-  weapon: { tagType: 'warning', name: '副手' },
-  device: { tagType: 'info', name: '设备' },
-  jewelry: { tagType: 'success', name: '饰品' },
-  shield: { tagType: 'primary', name: '护盾' }
-} as const
 
-/**
- * 获取装备背景样式
- */
-function getEquipImageStyle(equip: EquipItem) {
-  return getThingsBackgroundStyle(
-    { name: equip.name, partType: equip.partType || 'weapon',imgName:equip.imgName }, 
-    equip.color || 'white'
-  )
-}
-
-/**
- * 获取部位类型标签类型
- */
-function getPartTypeTagType(partType: string): string {
-  return PART_TYPE_CONFIG[partType as keyof typeof PART_TYPE_CONFIG]?.tagType || 'info'
-}
-
-/**
- * 获取部位类型名称
- */
-function getPartTypeName(partType: string): string {
-  return PART_TYPE_CONFIG[partType as keyof typeof PART_TYPE_CONFIG]?.name || partType
-}
-
-/**
- * 获取装备属性加成
- */
-function getEquipBonus(equip: EquipItem) {
-  if (!equip) return []
-  
-  const bonus = equip.getRoleBonus()
-  return getFormattedBonusList(bonus)
-}
 </script>
 
 <style scoped>

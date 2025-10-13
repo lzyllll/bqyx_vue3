@@ -42,8 +42,8 @@ export class BagItemBase {
   id: string;
   /** 物品名称 */
   // 将 loaderparts_1  转为 loaderparts
-  @Transform(({ value }) => {
-    if (typeof value === 'string' && value.includes('_')) {
+  @Transform(({ value,obj }) => {
+    if (typeof value === 'string' && value.includes('_') ) {
       // 如果有下划线，取下划线前的部分
       return value.split('_')[0];
     }
@@ -53,7 +53,13 @@ export class BagItemBase {
   /** 物品中文名称 */
   cnName: string;
   /** 物品等级 */
+  @Transform(({ value,obj }) => {
+    return (value??0) + (obj.addLevel??0);
+  })
+  /** 物品等级 */
   itemsLevel: number;
+  /** 物品强化了的等级 */
+  addLevel: number;
   /** 物品类型 */
   itemsType: string | null;
   /** 物品颜色/品质 */
@@ -72,8 +78,6 @@ export class BagItemBase {
   shopB: boolean;
   /** 物品数量（对于可堆叠物品） */
   nowNum?: number;
-  /** 附加等级 */
-  addLevel?: number;
   /** 进化等级 */
   evoLv?: number;
   /** 强化等级 */

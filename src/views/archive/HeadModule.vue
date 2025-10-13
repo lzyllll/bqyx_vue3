@@ -11,25 +11,34 @@
            <div class="current-head-section">
              <h3>当前头衔</h3>
              <div class="current-head-card" v-if="data.nowHead">
-               <div class="head-info">
-                 <div class="head-name">{{ getCurrentHeadName() }}</div>
-                 <div class="head-description">{{ getCurrentHeadDescription() }}</div>
-                 <div class="head-type">
-                   <el-tag :type="getHeadTypeColor(getCurrentHeadType())" size="small">
-                     {{ getCurrentHeadType() }}
-                   </el-tag>
-                 </div>
+               <div class="head-banner">
+                 <img 
+                   :src="getHeadTitleSvg(data.nowHead)" 
+                   :alt="getCurrentHeadName()"
+                   class="head-banner-image"
+                 />
                </div>
-               <div class="head-bonus" v-if="getCurrentHeadBonus().length > 0">
-                 <div class="bonus-title">头衔加成</div>
-                 <div class="bonus-list">
-                   <div 
-                     v-for="bonus in getCurrentHeadBonus()" 
-                     :key="bonus.key"
-                     class="bonus-item"
-                   >
-                     <span class="bonus-key">{{ bonus.key }}</span>
-                     <span class="bonus-value">{{ bonus.value }}</span>
+               <div class="head-content">
+                 <div class="head-info">
+                   <div class="head-name">{{ getCurrentHeadName() }}</div>
+                   <div class="head-description">{{ getCurrentHeadDescription() }}</div>
+                   <div class="head-type">
+                     <el-tag :type="getHeadTypeColor(getCurrentHeadType())" size="small">
+                       {{ getCurrentHeadType() }}
+                     </el-tag>
+                   </div>
+                 </div>
+                 <div class="head-bonus" v-if="getCurrentHeadBonus().length > 0">
+                   <div class="bonus-title">头衔加成</div>
+                   <div class="bonus-list">
+                     <div 
+                       v-for="bonus in getCurrentHeadBonus()" 
+                       :key="bonus.key"
+                       class="bonus-item"
+                     >
+                       <span class="bonus-key">{{ bonus.key }}</span>
+                       <span class="bonus-value">{{ bonus.value }}</span>
+                     </div>
                    </div>
                  </div>
                </div>
@@ -82,14 +91,23 @@
                >
                  <template #reference>
                    <div class="head-item">
-                     <div class="head-name">{{ getHeadTitleName(key) }}</div>
-                     <div class="head-description">{{ getHeadTitleDescription(key) }}</div>
-                     <div class="head-type">
-                       <el-tag :type="getHeadTypeColor(getHeadTitleType(key))" size="small">
-                         {{ getHeadTitleType(key) }}
-                       </el-tag>
+                     <div class="head-item-banner">
+                       <img 
+                         :src="getHeadTitleSvg(key)" 
+                         :alt="getHeadTitleName(key)"
+                         class="head-item-banner-image"
+                       />
                      </div>
-                     <div class="head-time">{{ headInfo?.getTimeStr || '未知时间' }}</div>
+                     <div class="head-item-content">
+                       <div class="head-name">{{ getHeadTitleName(key) }}</div>
+                       <div class="head-description">{{ getHeadTitleDescription(key) }}</div>
+                       <div class="head-type">
+                         <el-tag :type="getHeadTypeColor(getHeadTitleType(key))" size="small">
+                           {{ getHeadTitleType(key) }}
+                         </el-tag>
+                       </div>
+                       <div class="head-time">{{ headInfo?.getTimeStr || '未知时间' }}</div>
+                     </div>
                    </div>
                  </template>
                  
@@ -147,6 +165,7 @@
   import { useArchiveStore } from '@/stores/archive'
   import type { Head } from '@/types/archive/module/head'
   import { translateHeadTitle, getHeadTitleInfo, getFormattedBonusList } from '@/utils/translate'
+import { getHeadTitleSvg } from '@/utils/backgroundImages'
   
   const archiveStore = useArchiveStore()
   const moduleKey = "head"
@@ -307,6 +326,28 @@
     border-radius: 8px;
     padding: 20px;
     display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .head-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    border-radius: 8px;
+    background: #f5f7fa;
+  }
+
+  .head-banner-image {
+    width: 100%;
+    height: 60px;
+    object-fit: contain;
+  }
+
+  .head-content {
+    display: flex;
     gap: 20px;
   }
 
@@ -418,7 +459,7 @@
 
   .head-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 16px;
   }
 
@@ -429,11 +470,34 @@
     padding: 16px;
     cursor: pointer;
     transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .head-item:hover {
     border-color: #409eff;
     box-shadow: 0 2px 8px rgba(64, 158, 255, 0.1);
+  }
+
+  .head-item-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 6px;
+    background: #f5f7fa;
+  }
+
+  .head-item-banner-image {
+    width: 100%;
+    height: 35px;
+    object-fit: contain;
+  }
+
+  .head-item-content {
+    flex: 1;
   }
 
   .head-item .head-name {

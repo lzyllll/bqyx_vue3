@@ -87,7 +87,8 @@
               <template #reference>
                 <div class="skill-card-content">
                   <!-- 技能图片 -->
-                  <div class="skill-image" :style="getSkillImageStyle(skill)">
+                  <div class="skill-image">
+                    <img :src="getSkillImageUrl(skill)" :alt="skill.baseLabel" class="skill-img" />
                     <div class="skill-level">{{ skill.lv }}</div>
                   </div>
                   
@@ -198,7 +199,7 @@ import { useArchiveStore } from '@/stores/archive'
 import { Box, List, Search } from '@element-plus/icons-vue'
 import type { SkillBag, SkillItem } from '@/types/archive/module/skill'
 import { getColorType, translateColorName } from '@/utils/colorUtils'
-import { getThingsBackgroundStyle } from '@/utils/backgroundImages'
+import { getSkillSvg } from '@/utils/backgroundImages'
 import StatsCards from '@/components/StatsCards.vue'
 import JsonViewer from '@/components/JsonViewer.vue'
 
@@ -271,14 +272,9 @@ const skillBagStats = computed(() => [
   }
 ])
 
-// 获取技能图片样式
-const getSkillImageStyle = (skill: SkillItem) => {
-  const skillObj = {
-    name: skill.baseLabel,
-    partType: 'skill',
-    imgName: skill.baseLabel
-  }
-  return getThingsBackgroundStyle(skillObj, skill.color)
+// 获取技能图片URL
+const getSkillImageUrl = (skill: SkillItem) => {
+  return getSkillSvg(skill.baseLabel)
 }
 
 // 筛选后的技能列表
@@ -458,6 +454,13 @@ const jsonData = computed(() => {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+.skill-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
 }
 
 .skill-level {

@@ -8,23 +8,10 @@ import { getOrZero } from '@/utils/safeGet';
 import { BonusMerge } from '@/utils/bonusAdd';
 import { isDarkgoldOrHigher } from '@/utils/colorJudge';
 import { type RoleBonus } from '../Bonus';
+import { EquipPartType } from '../shared/equipType';
 
 
-/**
- * 装备部位类型枚举
- */
-export enum EquipPartType {
-  HEAD = 'head',
-  COAT = 'coat',
-  PANTS = 'pants',
-  BELT = 'belt',
-  FASHION = 'fashion',
-  VEHICLE = 'vehicle',
-  WEAPON = 'weapon',
-  DEVICE = 'device',
-  SHIELD = 'shield',
-  JEWELRY = 'jewelry'
-}
+
 
 
 /**
@@ -246,4 +233,8 @@ export class EquipContainer {
   lockObj: Record<string, number>;
   /** 是否显示时装 */
   showFashionB: boolean;
+  /** 入库时间 */
+  inHouseTime: string | null;
+  
+  
 }

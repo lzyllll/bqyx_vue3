@@ -12,34 +12,34 @@
     <div class="filter-section">
       <div class="filter-row">
         <el-select
-          v-model="selectedCategory"
-          placeholder="选择分类"
+          v-model="selectedItemType"
+          placeholder="选择物品类型"
           clearable
           style="width: 150px"
-          @change="handleCategoryChange"
+          @change="handleItemTypeChange"
           filterable
         >
           <el-option
-            v-for="category in categories"
-            :key="category"
-            :label="category"
-            :value="category"
+            v-for="itemType in itemTypes"
+            :key="itemType"
+            :label="getItemTypeName(itemType)"
+            :value="itemType"
           />
         </el-select>
         
         <el-select
-          v-model="selectedSubcategory"
-          placeholder="选择子分类"
+          v-model="selectedSubType"
+          placeholder="选择小类"
           clearable
           style="width: 150px"
-          :disabled="!selectedCategory"
+          :disabled="!selectedItemType"
           filterable
         >
           <el-option
-            v-for="subcategory in subcategories"
-            :key="subcategory"
-            :label="subcategory"
-            :value="subcategory"
+            v-for="subType in subTypes"
+            :key="subType"
+            :label="getSubTypeName(subType)"
+            :value="subType"
           />
         </el-select>
         
@@ -91,11 +91,11 @@
         <span class="stat-item">
           显示 {{ paginatedItems.length }} / {{ filteredItems.length }} 个物品
         </span>
-        <span class="stat-item" v-if="selectedCategory">
-          分类: {{ selectedCategory }}
+        <span class="stat-item" v-if="selectedItemType">
+          类型: {{ getItemTypeName(selectedItemType) }}
         </span>
-        <span class="stat-item" v-if="selectedSubcategory">
-          子分类: {{ selectedSubcategory }}
+        <span class="stat-item" v-if="selectedSubType">
+          小类: {{ getSubTypeName(selectedSubType) }}
         </span>
         <span class="stat-item" v-if="searchText">
           搜索: "{{ searchText }}"
@@ -260,8 +260,8 @@ const jsonData = computed(() => {
 })
 
 // 过滤和搜索
-const selectedCategory = ref('')
-const selectedSubcategory = ref('')
+const selectedItemType = ref('')
+const selectedSubType = ref('')
 const searchText = ref('')
 const sortBy = ref('quantity-desc')
 
@@ -269,57 +269,63 @@ const sortBy = ref('quantity-desc')
 const currentPage = ref(1)
 const pageSize = ref(48)
 
-// 分类数据
-const categories = ref<string[]>([])
-const subcategories = ref<string[]>([])
+// 物品类型和小类数据
+const itemTypes = ref<string[]>([])
+const subTypes = ref<string[]>([])
 
-// 分类缓存 - 避免重复遍历
-const categoryMap = new Map<string, Set<string>>() // category -> subcategories
+// 小类缓存 - 按物品类型分组
+const subTypeMap = new Map<string, Set<string>>()
 
 // 视图模式
 const viewMode = ref<'grid' | 'list'>('grid')
 
-// 初始化分类数据
-const initializeCategories = () => {
+// 初始化物品类型和小类数据
+const initializeItemTypes = () => {
   if (!thingsBag.value?.arr) return
   
   // 清空缓存
-  categoryMap.clear()
+  subTypeMap.clear()
   
-  const cats = new Set<string>()
+  const types = new Set<string>()
   
   thingsBag.value.arr.forEach(item => {
-    const itemInfo = getItemFullInfo(item.itemsType, item.name)
-    const category = itemInfo?.originalData?.category || ''
-    const subcategory = itemInfo?.originalData?.subcategory || ''
-    
-    if (category) {
-      cats.add(category)
+    // 收集物品类型
+    if (item.itemsType) {
+      types.add(item.itemsType)
       
-      // 构建分类到子分类的映射
-      if (!categoryMap.has(category)) {
-        categoryMap.set(category, new Set<string>())
+      // 构建小类映射
+      if (!subTypeMap.has(item.itemsType)) {
+        subTypeMap.set(item.itemsType, new Set<string>())
       }
       
-      if (subcategory) {
-        categoryMap.get(category)!.add(subcategory)
+      // 从JSON数据中获取小类
+      const subType = getItemSubType(item)
+      if (subType) {
+        subTypeMap.get(item.itemsType)!.add(subType)
       }
     }
   })
   
-  categories.value = Array.from(cats).sort()
+  itemTypes.value = Array.from(types).sort()
 }
 
-// 更新子分类 - 使用缓存数据
-const updateSubcategories = () => {
-  if (!selectedCategory.value) {
-    subcategories.value = []
+// 获取物品的小类（从JSON数据中读取）
+const getItemSubType = (item: any): string => {
+  // 从JSON数据中获取subcategory
+  const itemInfo = getItemFullInfo(item.itemsType, item.name)
+  return itemInfo?.originalData?.subcategory || ''
+}
+
+// 更新小类选项
+const updateSubTypes = () => {
+  if (!selectedItemType.value) {
+    subTypes.value = []
     return
   }
   
-  // 直接从缓存中获取子分类
-  const subcats = categoryMap.get(selectedCategory.value)
-  subcategories.value = subcats ? Array.from(subcats).sort() : []
+  // 从缓存中获取小类
+  const subTypeSet = subTypeMap.get(selectedItemType.value)
+  subTypes.value = subTypeSet ? Array.from(subTypeSet).sort() : []
 }
 
 
@@ -336,18 +342,17 @@ const filteredItems = computed(() => {
       }
     }
     
-    // 分类过滤
-    if (selectedCategory.value) {
-      const itemInfo = getItemFullInfo(item.itemsType, item.name)
-      if (itemInfo?.originalData?.category !== selectedCategory.value) {
+    // 物品类型过滤
+    if (selectedItemType.value) {
+      if (item.itemsType !== selectedItemType.value) {
         return false
       }
     }
     
-    // 子分类过滤
-    if (selectedSubcategory.value) {
-      const itemInfo = getItemFullInfo(item.itemsType, item.name)
-      if (itemInfo?.originalData?.subcategory !== selectedSubcategory.value) {
+    // 小类过滤
+    if (selectedSubType.value) {
+      const itemSubType = getItemSubType(item)
+      if (itemSubType !== selectedSubType.value) {
         return false
       }
     }
@@ -387,18 +392,18 @@ const paginatedItems = computed(() => {
   return filteredItems.value.slice(start, end)
 })
 
-// 处理分类变化
-const handleCategoryChange = () => {
-  selectedSubcategory.value = ''
+// 处理物品类型变化
+const handleItemTypeChange = () => {
+  selectedSubType.value = ''
   currentPage.value = 1
-  updateSubcategories()
+  updateSubTypes()
 }
 
-// 监听数据变化，自动初始化分类
+// 监听数据变化，自动初始化物品类型
 watch(thingsBag, (newBag) => {
   if (newBag?.arr) {
     nextTick(() => {
-      initializeCategories()
+      initializeItemTypes()
     })
   }
 }, { immediate: true, deep: true })
@@ -420,12 +425,12 @@ const toggleViewMode = () => {
 
 // 重置所有过滤条件
 const resetFilters = () => {
-  selectedCategory.value = ''
-  selectedSubcategory.value = ''
+  selectedItemType.value = ''
+  selectedSubType.value = ''
   searchText.value = ''
   sortBy.value = 'quantity-desc'
   currentPage.value = 1
-  subcategories.value = []
+  subTypes.value = []
 }
 
 // 常量定义
@@ -435,7 +440,32 @@ const ITEM_TYPE_CONFIG = {
   materials: { tagType: 'warning', name: '材料' },
   props: { tagType: 'danger', name: '道具' },
   rareChip: { tagType: 'primary', name: '稀有碎片' },
-  blackChip: { tagType: 'dark', name: '黑色碎片' }
+  blackChip: { tagType: 'dark', name: '黑色碎片' },
+  // 扩展更多物品类型
+  equip: { tagType: 'primary', name: '装备' },
+  weapon: { tagType: 'danger', name: '武器' },
+  vehicle: { tagType: 'warning', name: '载具' },
+  fashion: { tagType: 'success', name: '时装' },
+  device: { tagType: 'info', name: '设备' },
+  jewelry: { tagType: 'primary', name: '饰品' },
+  shield: { tagType: 'warning', name: '护盾' },
+  parts: { tagType: 'info', name: '零件' },
+  arms: { tagType: 'danger', name: '枪械' },
+  // 其他可能的类型
+  chip: { tagType: 'info', name: '芯片' },
+  gem: { tagType: 'primary', name: '宝石' },
+  stone: { tagType: 'warning', name: '石头' },
+  key: { tagType: 'success', name: '钥匙' },
+  chest: { tagType: 'primary', name: '宝箱' },
+  book: { tagType: 'info', name: '书籍' },
+  gun: { tagType: 'danger', name: '枪械' },
+  heart: { tagType: 'danger', name: '心脏' },
+  bag: { tagType: 'success', name: '背包' },
+  pumpkin: { tagType: 'warning', name: '南瓜' },
+  arbor: { tagType: 'success', name: '植树' },
+  dongzhi: { tagType: 'info', name: '冬至' },
+  wuyi: { tagType: 'primary', name: '五一' },
+  echelon: { tagType: 'warning', name: '梯队' }
 } as const
 
 /**
@@ -443,7 +473,7 @@ const ITEM_TYPE_CONFIG = {
  */
 function getItemBackgroundStyle(item: any) {
   return getThingsBackgroundStyle(
-    { name: item.name, partType: item.itemsType || 'materials',imgName:item.imgName }, 
+    { name: item.name, partType: item.itemsType || 'materials', imgName: item.imgName }, 
     item.color || 'white'
   )
 }
@@ -500,6 +530,13 @@ function getItemTypeTagType(itemsType: string): string {
  */
 function getItemTypeName(itemsType: string): string {
   return ITEM_TYPE_CONFIG[itemsType as keyof typeof ITEM_TYPE_CONFIG]?.name || itemsType
+}
+
+/**
+ * 获取小类名称
+ */
+function getSubTypeName(subType: string): string {
+  return subType
 }
 </script>
 

@@ -34,83 +34,18 @@
           <div class="main-equip-area">
             <el-row :gutter="20">
               <el-col :span="12" v-for="equipType in ['head', 'coat', 'pants','belt']" :key="equipType">
-                <el-popover 
-                  placement="top"
-                  :disabled="!equipItems[equipType]"
-                  trigger="hover"
-                  width="300"
-                >
-                  <template #reference>
-                    <div class="equip-slot" :class="{ 'empty': !equipItems[equipType] }">
-                      <div v-if="equipItems[equipType]" class="equip-item">
-                        <div class="equip-image" :style="getEquipImageStyle(equipItems[equipType])">
-                          <div class="equip-level">{{ equipItems[equipType].itemsLevel }}</div>
-                        </div>
-                        <div class="equip-info">
-                          <div class="equip-name">{{ equipItems[equipType].cnName }}</div>
-                          <div class="equip-quality">
-                            <el-tag :type="getColorType(equipItems[equipType].color)" size="small">
-                              {{ translateColorName(equipItems[equipType].color) }}
-                            </el-tag>
-                          </div>
-                        </div>
-                      </div>
-                      <div v-else class="empty-slot">
-                        <el-icon><Plus /></el-icon>
-                        <span>{{ getEquipTypeName(equipType) }}</span>
-                      </div>
-                    </div>
-                  </template>
-                  
-                  <!-- 悬浮卡片内容 -->
-                  <div v-if="equipItems[equipType]" class="equip-popover-content">
-                    <div class="popover-header">
-                      <h4 class="popover-title">{{ equipItems[equipType].cnName }}</h4>
-                      <div class="popover-category">
-                        <el-tag size="small" type="primary">{{ getEquipTypeName(equipType) }}</el-tag>
-                        <el-tag size="small" :type="getColorType(equipItems[equipType].color)">{{ translateColorName(equipItems[equipType].color) }}</el-tag>
-                      </div>
-                    </div>
-                    
-                    <div class="popover-description">
-                      <div class="description-row">
-                        <span class="desc-label">等级:</span>
-                        <span class="desc-value">{{ equipItems[equipType].itemsLevel }}</span>
-                      </div>
-                      <div class="description-row">
-                        <span class="desc-label">强化等级:</span>
-                        <span class="desc-value">{{ equipItems[equipType].strengthenLv || 0 }}</span>
-                      </div>
-                      <div class="description-row">
-                        <span class="desc-label">进化等级:</span>
-                        <span class="desc-value">{{ equipItems[equipType].evoLv || 0 }}</span>
-                      </div>
-                      <div v-if="equipItems[equipType].shopB" class="description-row">
-                        <span class="desc-label">来源:</span>
-                        <span class="desc-value shop-source">商店购买</span>
-                      </div>
-                    </div>
-                    
-                    <div class="popover-time">
-                      <div class="time-row">
-                        <span class="time-label">获取时间:</span>
-                        <span class="time-value">{{ equipItems[equipType].getTime }}</span>
-                      </div>
-                      <div class="time-row">
-                        <span class="time-label">服务器时间:</span>
-                        <span class="time-value">{{ equipItems[equipType].severTime }}</span>
-                      </div>
-                    </div>
-                    
-                    <div v-if="getEquipBonus(equipItems[equipType]).length > 0" class="popover-bonus">
-                      <BonusList 
-                        :bonus-list="getEquipBonus(equipItems[equipType])"
-                        title="属性加成"
-                        :compact="false"
-                      />
-                    </div>
+                <div class="equip-slot" :class="{ 'empty': !equipItems[equipType] }">
+                  <EquipItem 
+                    v-if="equipItems[equipType]" 
+                    :equip="equipItems[equipType]"
+                    view-mode="grid"
+                    class="equip-item-component"
+                  />
+                  <div v-else class="empty-slot">
+                    <el-icon><Plus /></el-icon>
+                    <span>{{ getEquipTypeName(equipType) }}</span>
                   </div>
-                </el-popover>
+                </div>
               </el-col>
             </el-row>
           </div>
@@ -119,83 +54,18 @@
           <div class="other-equip-area">
             <el-row :gutter="20">
               <el-col :span="6" v-for="equipType in ['fashion', 'vehicle', 'weapon', 'device']" :key="equipType">
-                <el-popover 
-                  placement="top"
-                  :disabled="!equipItems[equipType]"
-                  trigger="hover"
-                  width="300"
-                >
-                  <template #reference>
-                    <div class="equip-slot" :class="{ 'empty': !equipItems[equipType] }">
-                      <div v-if="equipItems[equipType]" class="equip-item">
-                        <div class="equip-image" :style="getEquipImageStyle(equipItems[equipType])">
-                          <div class="equip-level">{{ equipItems[equipType].itemsLevel }}</div>
-                        </div>
-                        <div class="equip-info">
-                          <div class="equip-name">{{ equipItems[equipType].cnName }}</div>
-                          <div class="equip-quality">
-                            <el-tag :type="getColorType(equipItems[equipType].color)" size="small">
-                              {{ translateColorName(equipItems[equipType].color) }}
-                            </el-tag>
-                          </div>
-                        </div>
-                      </div>
-                      <div v-else class="empty-slot">
-                        <el-icon><Plus /></el-icon>
-                        <span>{{ getEquipTypeName(equipType) }}</span>
-                      </div>
-                    </div>
-                  </template>
-                  
-                  <!-- 悬浮卡片内容 -->
-                  <div v-if="equipItems[equipType]" class="equip-popover-content">
-                    <div class="popover-header">
-                      <h4 class="popover-title">{{ equipItems[equipType].cnName }}</h4>
-                      <div class="popover-category">
-                        <el-tag size="small" type="primary">{{ getEquipTypeName(equipType) }}</el-tag>
-                        <el-tag size="small" :type="getColorType(equipItems[equipType].color)">{{ translateColorName(equipItems[equipType].color) }}</el-tag>
-                      </div>
-                    </div>
-                    
-                    <div class="popover-description">
-                      <div class="description-row">
-                        <span class="desc-label">等级:</span>
-                        <span class="desc-value">{{ equipItems[equipType].itemsLevel }}</span>
-                      </div>
-                      <div class="description-row">
-                        <span class="desc-label">强化等级:</span>
-                        <span class="desc-value">{{ equipItems[equipType].strengthenLv || 0 }}</span>
-                      </div>
-                      <div class="description-row">
-                        <span class="desc-label">进化等级:</span>
-                        <span class="desc-value">{{ equipItems[equipType].evoLv || 0 }}</span>
-                      </div>
-                      <div v-if="equipItems[equipType].shopB" class="description-row">
-                        <span class="desc-label">来源:</span>
-                        <span class="desc-value shop-source">商店购买</span>
-                      </div>
-                    </div>
-                    
-                    <div class="popover-time">
-                      <div class="time-row">
-                        <span class="time-label">获取时间:</span>
-                        <span class="time-value">{{ equipItems[equipType].getTime }}</span>
-                      </div>
-                      <div class="time-row">
-                        <span class="time-label">服务器时间:</span>
-                        <span class="time-value">{{ equipItems[equipType].severTime }}</span>
-                      </div>
-                    </div>
-                    
-                    <div v-if="getEquipBonus(equipItems[equipType]).length > 0" class="popover-bonus">
-                      <BonusList 
-                        :bonus-list="getEquipBonus(equipItems[equipType])"
-                        title="属性加成"
-                        :compact="true"
-                      />
-                    </div>
+                <div class="equip-slot" :class="{ 'empty': !equipItems[equipType] }">
+                  <EquipItem 
+                    v-if="equipItems[equipType]" 
+                    :equip="equipItems[equipType]"
+                    view-mode="grid"
+                    class="equip-item-component"
+                  />
+                  <div v-else class="empty-slot">
+                    <el-icon><Plus /></el-icon>
+                    <span>{{ getEquipTypeName(equipType) }}</span>
                   </div>
-                </el-popover>
+                </div>
               </el-col>
             </el-row>
           </div>
@@ -204,83 +74,18 @@
           <div class="shield-jewelry-area">
             <el-row :gutter="20">
               <el-col :span="12" v-for="equipType in ['shield', 'jewelry']" :key="equipType">
-                <el-popover 
-                  placement="top"
-                  :disabled="!equipItems[equipType]"
-                  trigger="hover"
-                  width="300"
-                >
-                  <template #reference>
-                    <div class="equip-slot" :class="{ 'empty': !equipItems[equipType] }">
-                      <div v-if="equipItems[equipType]" class="equip-item">
-                        <div class="equip-image" :style="getEquipImageStyle(equipItems[equipType])">
-                          <div class="equip-level">{{ equipItems[equipType].itemsLevel }}</div>
-                        </div>
-                        <div class="equip-info">
-                          <div class="equip-name">{{ equipItems[equipType].cnName }}</div>
-                          <div class="equip-quality">
-                            <el-tag :type="getColorType(equipItems[equipType].color)" size="small">
-                              {{ translateColorName(equipItems[equipType].color) }}
-                            </el-tag>
-                          </div>
-                        </div>
-                      </div>
-                      <div v-else class="empty-slot">
-                        <el-icon><Plus /></el-icon>
-                        <span>{{ getEquipTypeName(equipType) }}</span>
-                      </div>
-                    </div>
-                  </template>
-                  
-                  <!-- 悬浮卡片内容 -->
-                  <div v-if="equipItems[equipType]" class="equip-popover-content">
-                    <div class="popover-header">
-                      <h4 class="popover-title">{{ equipItems[equipType].cnName }}</h4>
-                      <div class="popover-category">
-                        <el-tag size="small" type="primary">{{ getEquipTypeName(equipType) }}</el-tag>
-                        <el-tag size="small" :type="getColorType(equipItems[equipType].color)">{{ translateColorName(equipItems[equipType].color) }}</el-tag>
-                      </div>
-                    </div>
-                    
-                    <div class="popover-description">
-                      <div class="description-row">
-                        <span class="desc-label">等级:</span>
-                        <span class="desc-value">{{ equipItems[equipType].itemsLevel }}</span>
-                      </div>
-                      <div class="description-row">
-                        <span class="desc-label">强化等级:</span>
-                        <span class="desc-value">{{ equipItems[equipType].strengthenLv || 0 }}</span>
-                      </div>
-                      <div class="description-row">
-                        <span class="desc-label">进化等级:</span>
-                        <span class="desc-value">{{ equipItems[equipType].evoLv || 0 }}</span>
-                      </div>
-                      <div v-if="equipItems[equipType].shopB" class="description-row">
-                        <span class="desc-label">来源:</span>
-                        <span class="desc-value shop-source">商店购买</span>
-                      </div>
-                    </div>
-                    
-                    <div class="popover-time">
-                      <div class="time-row">
-                        <span class="time-label">获取时间:</span>
-                        <span class="time-value">{{ equipItems[equipType].getTime }}</span>
-                      </div>
-                      <div class="time-row">
-                        <span class="time-label">服务器时间:</span>
-                        <span class="time-value">{{ equipItems[equipType].severTime }}</span>
-                      </div>
-                    </div>
-                    
-                    <div v-if="getEquipBonus(equipItems[equipType]).length > 0" class="popover-bonus">
-                      <BonusList 
-                        :bonus-list="getEquipBonus(equipItems[equipType])"
-                        title="属性加成"
-                        :compact="true"
-                      />
-                    </div>
+                <div class="equip-slot" :class="{ 'empty': !equipItems[equipType] }">
+                  <EquipItem 
+                    v-if="equipItems[equipType]" 
+                    :equip="equipItems[equipType]"
+                    view-mode="grid"
+                    class="equip-item-component"
+                  />
+                  <div v-else class="empty-slot">
+                    <el-icon><Plus /></el-icon>
+                    <span>{{ getEquipTypeName(equipType) }}</span>
                   </div>
-                </el-popover>
+                </div>
               </el-col>
             </el-row>
           </div>
@@ -300,17 +105,15 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useArchiveStore } from '@/stores/archive'
-import { getColorType,translateColorName } from '@/utils/colorUtils'
 import { Tools, List, Trophy, Star, Setting, Box, Plus } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
-import type { Equip, EquipItem, EquipItems } from '@/types/archive/module/equip'
-import { getThingsBackgroundStyle } from '@/utils/backgroundImages'
+import type { Equip, EquipItem as EquipItemType, EquipItems } from '@/types/archive/module/equip'
 import { getFormattedBonusList } from '@/utils/translate'
 import { BonusMerge } from '@/utils/bonusAdd'
 import BonusDisplay from '@/components/BonusDisplay.vue'
-import BonusList from '@/components/BonusList.vue'
 import JsonViewer from '@/components/JsonViewer.vue'
 import StatsCards from '@/components/StatsCards.vue'
+import EquipItem from '@/components/EquipItem.vue'
 
 const archiveStore = useArchiveStore()
 
@@ -346,10 +149,6 @@ const equipStats = computed(() => [
 ])
 
 
-// 获取装备图像样式
-const getEquipImageStyle = (equip: EquipItem) => {
-  return getThingsBackgroundStyle(equip, equip.color)
-}
 
 // 获取装备类型名称
 const getEquipTypeName = (type: string): string => {
@@ -369,7 +168,7 @@ const getEquipTypeName = (type: string): string => {
 }
 
 // 获取装备属性加成
-const getEquipBonus = (equip: EquipItem | undefined) => {
+const getEquipBonus = (equip: EquipItemType | undefined) => {
   if (!equip) return []
   
   const bonus = equip.getRoleBonus()
@@ -393,7 +192,7 @@ const getTotalEquipBonus = () => {
 }
 
 // 查看装备详情
-const viewEquipDetail = (equip: EquipItem) => {
+const viewEquipDetail = (equip: EquipItemType) => {
   ElMessage.info(`查看装备详情: ${equip.name}`)
   // 这里可以打开详情弹窗或跳转到详情页面
 }
@@ -537,94 +336,6 @@ const jsonData = computed(() => {
   font-size: 24px;
 }
 
-/* 悬浮卡片样式 */
-.equip-popover-content {
-  padding: 0;
-}
-
-.popover-header {
-  margin-bottom: 12px;
-}
-
-.popover-title {
-  margin: 0 0 8px 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: #303133;
-}
-
-.popover-category {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.popover-description {
-  font-size: 14px;
-  color: #606266;
-  margin-bottom: 12px;
-  line-height: 1.4;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.description-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-}
-
-.desc-label {
-  color: #909399;
-  font-weight: 500;
-}
-
-.desc-value {
-  color: #303133;
-  font-weight: 600;
-}
-
-.shop-source {
-  color: #e6a23c;
-  font-weight: 600;
-}
-
-.popover-time {
-  border-top: 1px solid #ebeef5;
-  padding-top: 12px;
-  margin-top: 12px;
-}
-
-.time-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  margin-bottom: 4px;
-}
-
-.time-label {
-  color: #909399;
-  font-weight: 500;
-}
-
-.time-value {
-  color: #606266;
-  font-weight: 500;
-}
-
-.popover-bonus {
-  border-top: 1px solid #ebeef5;
-  padding-top: 12px;
-}
-
-.bonus-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
-}
 
 
 @media (max-width: 768px) {

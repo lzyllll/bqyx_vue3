@@ -169,9 +169,11 @@
                   :class="{ 'completed': achieve.state, 'wearing': achieve.wearB }"
                 >
                   <div class="achieve-icon">
-                    <el-icon v-if="achieve.wearB" class="wearing-icon"><Star /></el-icon>
-                    <el-icon v-else-if="achieve.state" class="completed-icon"><Check /></el-icon>
-                    <el-icon v-else class="pending-icon"><Clock /></el-icon>
+                    <img 
+                      :src="getAchieveSvg(achieve.name)" 
+                      :alt="getChineseName(achieve.name)"
+                      class="achieve-svg-icon"
+                    />
                   </div>
                   <div class="achieve-info">
                     <div class="achieve-name">{{ getChineseName(achieve.name) }}</div>
@@ -254,6 +256,7 @@ import type { Achieve, AchieveItem } from '@/types/archive/module/achieve'
 import { Trophy, List, Star, Check, Clock, Search, Refresh, TrendCharts, ArrowUp, ArrowDown } from '@element-plus/icons-vue'
 import achieveClassData from '@/assets/data/achieves/achieveClass.json'
 import { getFormattedBonusList } from '@/utils/translate'
+import { getAchieveSvg } from '@/utils/backgroundImages'
 import JsonViewer from '@/components/JsonViewer.vue'
 
 const archiveStore = useArchiveStore()
@@ -570,7 +573,7 @@ const jsonData = computed(() => {
 
 .achieve-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 8px;
 }
 
@@ -600,7 +603,6 @@ const jsonData = computed(() => {
 }
 
 .achieve-icon {
-  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -610,16 +612,10 @@ const jsonData = computed(() => {
   background: #f5f7fa;
 }
 
-.wearing-icon {
-  color: #e6a23c;
-}
-
-.completed-icon {
-  color: #67c23a;
-}
-
-.pending-icon {
-  color: #909399;
+.achieve-svg-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .achieve-info {

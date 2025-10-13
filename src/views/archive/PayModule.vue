@@ -91,10 +91,12 @@
             class="record-item"
           >
             <div class="record-image">
-              <div
-                class="item-image"
-                :style="getItemImageStyle(record)"
-              >
+              <div class="item-image">
+                <!-- 商品图片 -->
+                <img 
+                  :src="getItemImageSrc(record)" 
+                  class="item-svg-image"
+                />
                 <!-- 新商品标识 -->
                 <div v-if="record.newB" class="new-badge">新</div>
               </div>
@@ -168,7 +170,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { useArchiveStore } from '@/stores/archive'
-import { getThingsBackgroundStyle } from '@/utils/backgroundImages'
+import { getThingsImage } from '@/utils/backgroundImages'
 import { Search } from '@element-plus/icons-vue'
 
 // 支付数据映射
@@ -194,14 +196,14 @@ const initPayDataMap = async () => {
   }
 }
 
-// 获取商品图片样式
-const getItemImageStyle = (record: any) => {
+// 获取商品图片源
+const getItemImageSrc = (record: any) => {
   const imageData = {
     name: record.name,
     partType: record.dataType || 'other',
     imgName: record.name
   }
-  return getThingsBackgroundStyle(imageData, '')
+  return getThingsImage(imageData)
 }
 
 // 获取分类标签类型
@@ -465,10 +467,21 @@ onMounted(async () => {
   width: 80px;
   height: 80px;
   border-radius: 8px;
-  background-size: cover;
-  background-position: center;
   position: relative;
   border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+}
+
+.item-svg-image {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 .new-badge {
