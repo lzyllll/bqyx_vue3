@@ -1,4 +1,5 @@
 <template>
+    <!-- 显示属性加成 -->
     <div class="equip-total-bonus-section">
         <el-divider v-if="showDivider" content-position="left">
             <el-icon>

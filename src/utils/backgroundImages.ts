@@ -258,6 +258,33 @@ export function getSkillSvg(skillName: string): string {
   return new URL(`../assets/images/skill/${skillName}.svg`, import.meta.url).href
 }
 
+/**
+ * 获取基因 SVG 图片
+ * @param geneName 基因名称
+ * @returns 基因 SVG 图片 URL
+ */
+export function getGeneSvg(geneName: string): string {
+  return new URL(`../assets/images/gene/${geneName}.svg`, import.meta.url).href
+}
+
+/**
+ * 获取基因背景样式（基因图片在上，格子背景在下）
+ * @param item 基因对象
+ * @param color 背景颜色
+ * @returns CSS样式对象
+ */
+export function getGeneBackgroundStyle(item: { name: string }, color?: string) {
+  const geneImageUrl = getGeneSvg(item.name)
+  const gridImageUrl = getGridBackgroundImage(color)
+  
+  return {
+    backgroundImage: `url(${geneImageUrl}), url(${gridImageUrl})`,
+    backgroundSize: '48px 48px, 56px 56px',
+    backgroundRepeat: 'no-repeat, no-repeat',
+    backgroundPosition: 'center, center'
+  }
+}
+
 
 
 

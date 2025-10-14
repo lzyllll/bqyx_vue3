@@ -1,4 +1,5 @@
 <template>
+    <!-- 显示属性加成 浮窗-->
     <div v-if="bonusList.length > 0" class="bonus-list-container">
         <div class="bonus-title">{{ title }}</div>
         <div class="bonus-list">

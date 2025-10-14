@@ -37,6 +37,7 @@ const WorldMapModule = () => import('@/views/archive/WorldMapModule.vue')
 const PayModule = () => import('@/views/archive/PayModule.vue')
 const EquipHouseModule = () => import('@/views/archive/EquipHouseModule.vue')
 const DropModule = () => import('@/views/archive/DropModule.vue')
+const GeneBagModule = () => import('@/views/archive/GeneBagModule.vue')
 const routes: RouteRecordRaw[] = [
   {
     path: '/login',
@@ -154,7 +155,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'geneBag',
         name: 'GeneBagModule',
-        component: GenericModule,
+        component: GeneBagModule,
         meta: { requiresAuth: false }
       },
       {

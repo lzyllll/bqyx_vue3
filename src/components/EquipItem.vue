@@ -84,6 +84,16 @@
           />
         </div>
         
+        <!-- 英雄技能加成 -->
+        <div class="detail-section" v-if="getHeroSkillBonus(equip).length > 0">
+          <h4>英雄技能加成</h4>
+          <BonusList 
+            :bonus-list="getHeroSkillBonus(equip)"
+            title=""
+            :compact="true"
+          />
+        </div>
+        
         <div class="detail-section">
           <h4>时间信息</h4>
           <div class="detail-row">
@@ -157,6 +167,25 @@ function getEquipBonus(equip: EquipItem) {
   
   const bonus = equip.getRoleBonus()
   return getFormattedBonusList(bonus)
+}
+
+/**
+ * 获取英雄技能加成
+ */
+function getHeroSkillBonus(equip: EquipItem) {
+  if (!equip || !equip.heroSkillAddObj) return []
+  
+  // 将数值转换为百分比格式
+  const formattedBonus: Record<string, string> = {}
+  Object.entries(equip.heroSkillAddObj).forEach(([key, value]) => {
+    if (value !== 0 && value !== null && value !== undefined) {
+      // 将数值转换为百分比显示，保留全部小数
+      const percentage = value * 100
+      formattedBonus[key] = value > 0 ? `+${percentage}%` : `${percentage}%`
+    }
+  })
+  
+  return getFormattedBonusList(formattedBonus)
 }
 
 
