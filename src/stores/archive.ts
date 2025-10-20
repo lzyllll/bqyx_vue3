@@ -7,11 +7,7 @@ import type {ArmsItem } from '@/types/archive/module/arms';
 import type { RoleBonus } from '@/types/archive/Bonus';
 import { BonusMerge } from '@/utils/bonusAdd';
 
-function dealArmsInfo(items:ArmsItem[]){
-  items.forEach((item)=>{
-    item.fresh()
-  })
-}
+
 
 
 export const useArchiveStore = defineStore('archive', () => {
