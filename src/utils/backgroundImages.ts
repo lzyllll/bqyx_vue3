@@ -285,6 +285,15 @@ export function getGeneBackgroundStyle(item: { name: string }, color?: string) {
   }
 }
 
+/**
+ * 获取 Boss SVG 图片
+ * @param bossName Boss 名称
+ * @returns Boss SVG 图片 URL
+ */
+export function getBossSvg(bossName: string): string {
+  return new URL(`../assets/images/boss/${bossName}.svg`, import.meta.url).href
+}
+
 
 
 

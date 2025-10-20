@@ -2,6 +2,7 @@ import { Expose, Transform, Type, plainToClass } from 'class-transformer';
 import { PercentNum } from '@/utils/percent';
 import { type RoleBonus } from '../Bonus';
 import achievesDict from '@/assets/data/achieves/achieveClass.json'
+import { BonusMerge } from '@/utils/bonusAdd';
 /**
  * 单个成就项实现类
  */
@@ -47,6 +48,15 @@ export class Achieve {
 
   onlyNoCompleteB: boolean;
 
+  getRoleBonus(): RoleBonus {
+    var bonus: RoleBonus = {}
+    //已完成成就加成
+    bonus = BonusMerge(bonus, this.getCompletedAchievesBonus())
+    //已穿戴成就加成
+    bonus = BonusMerge(bonus, this.getEquipedAchievesRoleBonus())
+    return bonus
+  }
+
   /**
    * 获取已完成的成就总数
    * @returns 已完成的成就 总数
@@ -56,7 +66,7 @@ export class Achieve {
       .filter(item => item.state)
       .length
   }
-  /**获取已完成成就数，计算全体战斗力加成 */
+  /**获取已完，计算全体战斗力加成 */
   getCompletedAchievesBonus(): RoleBonus {
     //数量-150
     var achieveLength = Math.max(this.getCompletedAchievesLength() - 150, 0)

@@ -3,6 +3,7 @@ import { BagItemBase } from '../base';
 
 import CarsDict from '@/assets/data/vehicle/cars.json'
 import StrengthenDict from '@/assets/data/equip/itemsStrengthenClass.json'
+import suitData from '@/assets/data/equip/suit.json'
 import evoDict from '@/assets/data/equip/evoAdd.json'
 import { getOrZero } from '@/utils/safeGet';
 import { BonusMerge } from '@/utils/bonusAdd';
@@ -87,7 +88,6 @@ export class EquipItem extends BagItemBase {
     // 如果有 dps神级,一般为裤子，头盔，衣服，腰带
     if (copyObj.hasOwnProperty('dpsAllBlack')) {
       if (isDarkGold) {
-
         copyObj['dpsAllBlack'] += this.getHurtAdd()
       } else {
         copyObj['dpsAllBlack'] *= this.getHurtMul()
@@ -96,6 +96,7 @@ export class EquipItem extends BagItemBase {
     return copyObj
 
   }
+
   //获取属性加成
   getRoleBonus(): RoleBonus {
     // 如果为vehicle类型,属性需要从字典中获取
@@ -107,6 +108,7 @@ export class EquipItem extends BagItemBase {
     //原始的加成
     var bonus: RoleBonus = Object.assign({}, this.obj)
     //强化的加成
+
     bonus = BonusMerge(this.getStrengthenBonus(), bonus)
     // 进化等级的加成,这里需要原属性，因为有可能乘法
     bonus = this.getEvoLevelBonus(bonus)
@@ -124,7 +126,46 @@ export class EquipItems {
   weapon?: EquipItem
   device?: EquipItem
   jewelry?: EquipItem
+  getSuitName(): string {
+    const arr: EquipItem[] = [this.head, this.coat, this.pants, this.belt].filter(item => item?.name);
 
+    // 统计每个名称出现的次数
+    const nameCount = new Map<string, number>();
+    for (let item of arr) {
+      nameCount.set(item.name, (nameCount.get(item.name) || 0) + 1);
+    }
+
+    // 找出出现次数最多的名称和次数
+    const [mostFrequentName, maxCount] = [...nameCount].reduce(
+      (max, curr) => curr[1] > max[1] ? curr : max
+    );
+    if (maxCount >= 2) {
+      return mostFrequentName
+    }
+    return ''
+  }
+  /**
+   * 静态方法，根据名称获取套装中文名称
+   * @returns 套装中文名称
+   */
+  static getSuitCnName(name:string):string{
+    return suitData[name]?.cnName || ''
+  }
+
+  getSuitBonus(): RoleBonus {
+
+    // 从suit.json动态获取套装属性
+    const roleBonus = suitData[this.getSuitName()]?.RoleBonus
+
+    if (roleBonus) {
+      // 直接返回角色加成属性（已经是数字类型）
+      return roleBonus
+    }
+    return {}
+  }
+
+ 
+  
 }
 /**
  * 装备实现类
@@ -163,14 +204,17 @@ export class Equip {
   }
 
   /**
-   *  返回套装的加成
+   *  返回所有加成
    * @return
    */
   getRoleBonus() {
-    var bonus:RoleBonus = {}
+    var bonus: RoleBonus = {}
+    //装备属性
     for (const equip of Object.values(this.items) as EquipItem[]) {
-      bonus = BonusMerge(bonus,equip.getRoleBonus())
+      bonus = BonusMerge(bonus, equip.getRoleBonus())
     }
+    //套装加成
+    bonus = BonusMerge(bonus, this.items.getSuitBonus())
     return bonus
   }
 }
@@ -235,6 +279,6 @@ export class EquipContainer {
   showFashionB: boolean;
   /** 入库时间 */
   inHouseTime: string | null;
-  
-  
+
+
 }

@@ -143,7 +143,8 @@ const routeMap: Record<string, string> = {
   'blackMarket': '/archive/blackMarket',
   'more': '/archive/more',
   'moreBag': '/archive/moreBag',
-  'state': '/archive/state'
+  'state': '/archive/state',
+  'roleBonus': '/archive/roleBonus'
 }
 
 // 检查是否为当前模块

@@ -9,7 +9,7 @@
     <el-popover
       placement="bottom"
       :width="350"
-      trigger="hover"
+      trigger="click"
       :title="equip.cnName"
     >
       <template #reference>

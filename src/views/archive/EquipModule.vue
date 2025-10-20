@@ -22,6 +22,14 @@
           subtitle="装备属性总加成"
           empty-text="暂无装备加成"
         />
+                <!-- 装备套装总加成 -->
+        <BonusDisplay 
+          :bonus-list="getSuitProBonus()"
+          :compact="false"
+          title="装备套装加成"
+          :subtitle="suitSubtitle"
+          empty-text="暂无任何套装，现在只支持狂人和战神"
+        />
         
         <!-- 装备展示 -->
         <div class="equip-display-section">
@@ -107,7 +115,7 @@ import { computed } from 'vue'
 import { useArchiveStore } from '@/stores/archive'
 import { Tools, List, Trophy, Star, Setting, Box, Plus } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
-import type { Equip, EquipItem as EquipItemType, EquipItems } from '@/types/archive/module/equip'
+import  { Equip, EquipItems } from '@/types/archive/module/equip'
 import { getFormattedBonusList } from '@/utils/translate'
 import { BonusMerge } from '@/utils/bonusAdd'
 import BonusDisplay from '@/components/BonusDisplay.vue'
@@ -167,13 +175,7 @@ const getEquipTypeName = (type: string): string => {
   return typeMap[type] || type
 }
 
-// 获取装备属性加成
-const getEquipBonus = (equip: EquipItemType | undefined) => {
-  if (!equip) return []
-  
-  const bonus = equip.getRoleBonus()
-  return getFormattedBonusList(bonus)
-}
+
 
 // 获取装备总属性加成
 const getTotalEquipBonus = () => {
@@ -191,11 +193,17 @@ const getTotalEquipBonus = () => {
   return getFormattedBonusList(totalBonus)
 }
 
-// 查看装备详情
-const viewEquipDetail = (equip: EquipItemType) => {
-  ElMessage.info(`查看装备详情: ${equip.name}`)
-  // 这里可以打开详情弹窗或跳转到详情页面
+const getSuitProBonus = ()=>{
+  return getFormattedBonusList(data.value?.items?.getSuitBonus())
 }
+
+// 动态套装副标题
+const suitSubtitle = computed(() => {
+  const suitName = data.value?.items?.getSuitName()
+  return suitName ? `${EquipItems.getSuitCnName(suitName)} 套装加成` : '装备套装总加成'
+})
+
+
 
 // JSON数据
 const jsonData = computed(() => {

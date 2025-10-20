@@ -1,6 +1,7 @@
 import { Expose, Transform, Type } from 'class-transformer';
 import { type RoleBonus } from '../Bonus';
 import UnionBonusDict from '@/assets/data//union/unionBuildingPropertyClass.json'
+import { BonusMerge } from '@/utils/bonusAdd';
 /**
  * 公会烹饪实现类
  */
@@ -254,6 +255,18 @@ export class Union {
       default:
         return bonus;
     }
+  }
+  /**
+   * 该模块的所有加成
+   * @returns 军队加成
+   */
+  getRoleBonus():RoleBonus{
+    var bonus: RoleBonus = {}
+    //守望者
+    bonus = BonusMerge(bonus, this.getWatchManBonus())
+    //食物
+    bonus = BonusMerge(bonus, this.getCookBonus())
+    return bonus
   }
 
 

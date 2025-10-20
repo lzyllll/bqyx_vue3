@@ -1,0 +1,268 @@
+{
+  "ashesSuit": {
+    "RoleBonus": {
+      "hurtAll": 1.15
+    },
+    "cnName": "灰烬"
+  },
+  "goshawkSuit": {
+    "RoleBonus": {
+      "dpsAll": 1.15
+    },
+    "cnName": "苍鹰"
+  },
+  "thunderSuit": {
+    "RoleBonus": {
+      "dpsAll": 1.25
+    },
+    "cnName": "雷霆"
+  },
+  "aintSuit": {
+    "RoleBonus": {
+      "hurtAll": 1.25
+    },
+    "cnName": "鬼鲛"
+  },
+  "oracleSuit": {
+    "RoleBonus": {
+      "hurtAll": 1.3
+    },
+    "cnName": "神谕"
+  },
+  "specialForces": {
+    "RoleBonus": {
+      "fightDedut": 1.0,
+      "lifeMul": 0.85,
+      "attackGap": 0.7,
+      "dodge": 0.6
+    },
+    "cnName": "特种"
+  },
+  "whiteSwat": {
+    "RoleBonus": {
+      "dodge": 0.85,
+      "dpsAll": 0.55,
+      "moveMul": 1.0,
+      "attackGap": 0.7
+    },
+    "cnName": "冒险"
+  },
+  "forestSpecialForces": {
+    "RoleBonus": {
+      "fightDedut": 1.0,
+      "lifeMul": 0.7,
+      "attackGap": 0.85,
+      "dodge": 0.7
+    },
+    "cnName": "丛林"
+  },
+  "swat": {
+    "RoleBonus": {
+      "dodge": 0.7,
+      "dpsAll": 0.7,
+      "moveMul": 1.0,
+      "attackGap": 0.6
+    },
+    "cnName": "暗影"
+  },
+  "wildGeneral": {
+    "RoleBonus": {
+      "lifeRate": 1.0,
+      "critPro3": 0.7,
+      "cdMul": 0.85,
+      "moveMul": 1.0
+    },
+    "cnName": "无暇"
+  },
+  "redSwat": {
+    "RoleBonus": {
+      "dodge": 0.7,
+      "dpsAll": 0.7,
+      "moveMul": 1.0,
+      "attackGap": 0.5
+    },
+    "cnName": "魅影"
+  },
+  "desertSpecialForces": {
+    "RoleBonus": {
+      "fightDedut": 0.85,
+      "lifeMul": 1.0,
+      "attackGap": 0.7,
+      "dodge": 0.5
+    },
+    "cnName": "沙漠"
+  },
+  "blueGeneral": {
+    "RoleBonus": {
+      "lifeRate": 1.0,
+      "critPro3": 0.85,
+      "cdMul": 0.7,
+      "moveMul": 0.85
+    },
+    "cnName": "绝世"
+  },
+  "redGeneral": {
+    "RoleBonus": {
+      "lifeRate": 0.7,
+      "critPro3": 0.85,
+      "cdMul": 1.0,
+      "moveMul": 0.7
+    },
+    "cnName": "幽灵"
+  },
+  "silverArmour": {
+    "RoleBonus": {
+      "fightDedut": 0.7,
+      "lifeMul": 1.0,
+      "attackGap": 0.85,
+      "lifeRate": 0.85
+    },
+    "cnName": "银甲"
+  },
+  "greenPurplePhotons": {
+    "RoleBonus": {
+      "dodge": 1.0,
+      "dpsAll": 0.85,
+      "moveMul": 0.7,
+      "cdMul": 0.85
+    },
+    "cnName": "电子"
+  },
+  "purplePhotons": {
+    "RoleBonus": {
+      "dodge": 0.7,
+      "dpsAll": 1.0,
+      "moveMul": 0.85,
+      "cdMul": 0.7
+    },
+    "cnName": "原子"
+  },
+  "goldArmour": {
+    "RoleBonus": {
+      "fightDedut": 0.85,
+      "lifeMul": 0.7,
+      "attackGap": 1.0,
+      "lifeRate": 1.0
+    },
+    "cnName": "金甲"
+  },
+  "redPurplePhotons": {
+    "RoleBonus": {
+      "dodge": 0.85,
+      "dpsAll": 1.0,
+      "moveMul": 0.7,
+      "cdMul": 0.7
+    },
+    "cnName": "光子"
+  },
+  "greenGale": {
+    "RoleBonus": {
+      "fightDedut": 0.7,
+      "lifeMul": 1.0,
+      "attackGap": 0.85,
+      "cdMul": 0.7
+    },
+    "cnName": "疾风"
+  },
+  "greenGhost": {
+    "RoleBonus": {
+      "lifeRate": 0.7,
+      "critPro3": 0.9,
+      "cdMul": 1.0,
+      "dodge": 0.55
+    },
+    "cnName": "幽鬼"
+  },
+  "purpleSnake": {
+    "RoleBonus": {
+      "hurtAll": 1.0,
+      "dodge": 0.85,
+      "moveMul": 0.7,
+      "cdMul": 0.85
+    },
+    "cnName": "灵蛇"
+  },
+  "ghostDukeSuit": {
+    "RoleBonus": {
+      "critPro3": 1.0,
+      "lifeRate": 0.5,
+      "cdMul": 1.0,
+      "dodge": 0.65
+    },
+    "cnName": "鬼爵"
+  },
+  "auroraSuit": {
+    "RoleBonus": {
+      "hurtAll": 1.1,
+      "dodge": 0.85,
+      "moveMul": 0.7,
+      "cdMul": 0.85
+    },
+    "cnName": "极光"
+  },
+  "earthForces": {
+    "RoleBonus": {
+      "fightDedut": 0.7,
+      "lifeMul": 1.1,
+      "attackGap": 0.9,
+      "cdMul": 0.55
+    },
+    "cnName": "地球军"
+  },
+  "intercessorSuit": {
+    "RoleBonus": {
+      "critPro3": 1.0,
+      "dpsAll": 0.35,
+      "lifeRate": 0.7,
+      "cdMul": 1.0
+    },
+    "cnName": "仲裁者"
+  },
+  "exilesSuit": {
+    "RoleBonus": {
+      "lifeMul": 0.9,
+      "hurtAll": 0.95,
+      "moveMul": 0.7,
+      "cdMul": 0.85
+    },
+    "cnName": "流亡者"
+  },
+  "scavengersSuit": {
+    "RoleBonus": {
+      "lifeMul": 0.6,
+      "critPro3": 0.9,
+      "dodge": 0.6,
+      "fightDedut": 0.7
+    },
+    "cnName": "拾荒者"
+  },
+  "blueArmy": {
+    "RoleBonus": {
+      "lifeRate": 1.0,
+      "critPro3": 1.0,
+      "cdMul": 1.0,
+      "dpsAll": 0.32
+    },
+    "cnName": "猎魔"
+  },
+  "madamor": {
+    "RoleBonus": {
+      "hurtAll": 1.35
+    },
+    "cnName": "狂人"
+  },
+  "madpur": {
+    "RoleBonus": {
+      "hurtAll": 1.5,
+      "critPro3": 0.03
+    },
+    "cnName": "战神"
+  },
+  "madya": {
+    "RoleBonus": {
+      "hurtAll": 1.55,
+      "critPro3": 0.03
+    },
+    "cnName": "战神"
+  }
+}

@@ -52,7 +52,7 @@ export class BagItemBase {
   name: string;
   /** 物品中文名称 */
   cnName: string;
-  /** 物品等级 */
+  /** 物品等级 需要加上addLevel */
   @Transform(({ value,obj }) => {
     return (value??0) + (obj.addLevel??0);
   })

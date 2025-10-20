@@ -5,13 +5,13 @@ import { type BossCardBonus} from '../Bonus';
  * Boss卡片项实现类
  */
 export class BossCardItem {
-  /** 伤害 */
+  /** 伤害系数 */
   dp: number;
-  /** 未知 */
+  /** 进化等级 */
   ev: number;
   /** ID */
   id: string;
-  /** 生命 */
+  /** 生命系数 */
   li: number;
   /** 未知 */
   lk: number;
@@ -22,11 +22,9 @@ export class BossCardItem {
   o: Record<string, number>;
   /** 星级 */
   s: number;
-  /** 未知数组 */
+  /** 技能数组 如44_1,44_2，具体看EditBossSkill.json */
   @Type(() => String)
   sr: string[];
-
-
 }
 
 /**
@@ -60,25 +58,25 @@ export class BossCard {
   /** 礼物ID数组 */
   @Type(() => Object)
   giftIdA: unknown[];
-  /** 未知 */
+  /** 高级抽卡次数 */
   hNum: number;
   /** 是否隐藏血条 */
   hideHB: boolean;
   /** 最后ID */
   lastId: number;
-  /** 数量 */
+  /** 普通抽卡次数 */
   num: number;
   /** 未知 */
   on: number;
-  /** PK石 */
+  /** 获取PK石 */
   pkStone: number;
   /** PK胜利 */
   pkWin: number;
-  /** PK胜利星级 */
+  /** PK胜利获取的星级 */
   pkWinStar: number;
   /** 未知 */
   rn: number;
-  /** 未知 */
+  /** 7星抽卡次数 */
   s7N: number;
   /** 星级 */
   starF: number;
@@ -95,7 +93,7 @@ export class BossCard {
   /**
    * 获取角色加成，遍历所有魂卡，获取每个属性的最大加成
    */
-  gerRoleBonus():BossCardBonus {
+  getRoleBonus():BossCardBonus {
     var bonus: BossCardBonus = {}
     //遍历所有魂卡
     for (const card of this.arr) {

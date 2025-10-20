@@ -2,8 +2,9 @@ import { Type } from 'class-transformer';
 import { TimeRecord } from '../base';
 import HeadTitlesDict from '@/assets/data/headTitle/headClass.json'
 import HeadHonorDict from '@/assets/data/headTitle/headHonor.json'
-import { type HeadTitleBonus, type HonorTitleBonus } from '../Bonus';
+import { type HeadTitleBonus, type HonorTitleBonus, type RoleBonus } from '../Bonus';
 import { TypeRecord } from '@/utils/decorator/typeRecords';
+import { BonusMerge } from '@/utils/bonusAdd';
 /**
  * 头像信息实现类
  */
@@ -25,6 +26,19 @@ export class Head {
   @TypeRecord(HeadInfo)
   obj: Record<string, HeadInfo>;
   
+  /**
+   * 该模块的所有加成
+   * @returns 头衔加成
+   */
+  getRoleBonus():RoleBonus{
+    var bonus: RoleBonus = {}
+    //当前装备头衔
+    bonus = BonusMerge(bonus, this.getNowTitleBonus())
+    //荣誉头衔
+    bonus = BonusMerge(bonus, this.getHonorTitleBonus())
+    return bonus
+  }
+
   getCompletedTitleNames(): string[] {
     return Object.values(this.obj).map(item => item?.name || '').filter(name => name)
   }

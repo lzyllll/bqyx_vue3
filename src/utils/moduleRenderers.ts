@@ -58,7 +58,8 @@ export const moduleInfos: ModuleInfo[] = [
   { key: 'skill', name: '技能', description: '技能数据', category: '角色' },
   { key: 'more', name: '更多数据', description: '更多数据', category: '其他' },
   { key: 'moreBag', name: '更多背包', description: '更多背包数据', category: '背包' },
-  { key: 'state', name: '状态数据', description: '状态数据', category: '系统' }
+  { key: 'state', name: '状态数据', description: '状态数据', category: '系统' },
+  { key: 'roleBonus', name: '角色属性加成', description: '所有模块的属性加成统计', category: '基础' }
 ]
 
 // 获取模块信息

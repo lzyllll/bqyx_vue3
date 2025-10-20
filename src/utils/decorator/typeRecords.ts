@@ -1,4 +1,6 @@
-import { Transform, plainToClass } from 'class-transformer';
+import { Transform, plainToClass, plainToInstance } from 'class-transformer';
+import { getArmInfo } from '../armsInfo';
+import { Arms, ArmsItem } from '@/types/archive/module/arms';
 
 /**
  * [自定义工具] 一个自定义的 class-transformer 装饰器，用于安全地转换 Record<string, T> (字典/哈希表) 类型。
@@ -57,4 +59,48 @@ export function TypeRecord<T>(classType: new (...args: any[]) => T) {
     return value;
     
   }, { toPlainOnly: true, toClassOnly: true });
+}
+
+
+export function EvoArmInfoStartAdd(key:any) {
+  return Transform(({ obj }) => {
+    const armInfo = getArmInfo(obj.name);
+    return (armInfo?.[key]??0 )+ (obj.evoLv ?? 0)
+  }, { toClassOnly: true });
+}
+
+
+
+/**
+ * 自动处理 ArmsItem 的 armInfo 数据填充
+ * 遍历数组并对每个项目使用 plainToInstance 转换
+ */
+export function AutoFillArmsInfo() {
+  return Transform(({ value }) => {
+    // 只在 plainToInstance 时处理
+    
+    if (!Array.isArray(value)) return value;
+    
+    // 遍历数组，对每个 ArmsItem 进行转换
+    return value.map(item => {
+      if (!item || typeof item !== 'object') return item;
+      
+      const armInfo = getArmInfo(item.name);
+      
+      // 自动填充缺失的属性
+      const filledItem = {
+        ...item,
+        bulletWidth: item.bulletWidth ?? armInfo.bulletWidth,
+        hitType: item.hitType ?? armInfo.hitType ?? '',
+        armsType: armInfo.type ?? '',
+        bulletSpeed: item.bulletSpeed ?? armInfo.bulletSpeed ?? 0,
+        bulletLife: item.bulletLife ?? armInfo.bulletLife ?? 0,
+        shootNum: item.shootNum ?? armInfo.shootNum ?? 1,
+        bulletNum: item.bulletNum ?? armInfo.bulletNum ?? 1,
+        evoMaxLv: item.evoMaxLv ?? armInfo.evoMaxLv ?? 0,
+        evoMustFirstLv: armInfo.evoMustFirstLv ?? 0
+      };
+      return plainToInstance(ArmsItem,filledItem);
+    });
+  });
 }

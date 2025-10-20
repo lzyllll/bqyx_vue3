@@ -38,6 +38,10 @@ const PayModule = () => import('@/views/archive/PayModule.vue')
 const EquipHouseModule = () => import('@/views/archive/EquipHouseModule.vue')
 const DropModule = () => import('@/views/archive/DropModule.vue')
 const GeneBagModule = () => import('@/views/archive/GeneBagModule.vue')
+const CountModule = () => import('@/views/archive/CountModule.vue')
+const ArmsBagModule = () => import('@/views/archive/ArmsBagModule.vue')
+const ArmsHouseModule = () => import('@/views/archive/ArmsHouseModule.vue')
+const RoleBonusModule = () => import('@/views/archive/RoleBonusModule.vue')
 const routes: RouteRecordRaw[] = [
   {
     path: '/login',
@@ -137,13 +141,13 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'armsBag',
         name: 'ArmsBagModule',
-        component: GenericModule,
+        component: ArmsBagModule,
         meta: { requiresAuth: false }
       },
       {
         path: 'armsHouse',
         name: 'ArmsHouseModule',
-        component: GenericModule,
+        component: ArmsHouseModule,
         meta: { requiresAuth: false }
       },
       {
@@ -311,7 +315,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'count',
         name: 'CountModule',
-        component: GenericModule,
+        component: CountModule,
         meta: { requiresAuth: false }
       },
       {
@@ -353,6 +357,12 @@ const routes: RouteRecordRaw[] = [
         path: 'guide',
         name: 'GuideModule',
         component: GenericModule,
+        meta: { requiresAuth: false }
+      },
+      {
+        path: 'roleBonus',
+        name: 'RoleBonusModule',
+        component: RoleBonusModule,
         meta: { requiresAuth: false }
       },
       {

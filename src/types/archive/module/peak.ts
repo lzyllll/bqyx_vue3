@@ -3,6 +3,7 @@ import { SaveObject } from '../base';
 import { PetAttributes } from './gene';
 import pointDict from '@/assets/data/peak/pointMul.json'
 import { type PeakBonus, type RoleBonus } from '../Bonus';
+import { BonusMerge } from '@/utils/bonusAdd';
 
 
 /**
@@ -108,7 +109,7 @@ export class Peak {
 
   /**获取当前使用的巅峰方案 */
   getCurrentPoint(): PeakPoint | null {
-    var now = this.now ?? '1'
+    var now = (this.now!='') ? this.now : '1'
 
     const pointObjMap: Record<string,SaveObject<PeakPoint>> = {
       '1': this.pointObj,
@@ -126,5 +127,17 @@ export class Peak {
     return {
       dpsWhole:(this.dpN??0) / 2 / 100
     }
+  }
+  /**
+   * 该模块的所有加成
+   * @returns 巅峰加成
+   */
+  getRoleBonus():RoleBonus{
+    var bonus = {}
+    //巅峰点数加成
+    bonus = BonusMerge(bonus, this.getCurrentPoint()?.getAllRoleBonusValues()||{})  
+    //全体战力加成
+    bonus = BonusMerge(bonus, this.getDpsWhole())
+    return bonus
   }
 }

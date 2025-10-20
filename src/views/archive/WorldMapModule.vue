@@ -75,6 +75,8 @@
                 <el-option label="按挑战等级排序" value="challengeLevel" />
                 <el-option label="按胜利数排序" value="winNum" />
                 <el-option label="按失败数排序" value="failNum" />
+                <el-option label="按无双水晶排序" value="db" />
+                <el-option label="按万能球排序" value="dm" />
               </el-select>
             </el-col>
             <el-col :span="4">
@@ -96,7 +98,7 @@
             >
               <el-popover 
                 placement="bottom"
-                trigger="hover"
+                trigger="click"
                 width="400"
               >
                 <template #reference>
@@ -572,6 +574,10 @@ const filteredMaps = computed(() => {
         return b.winNum - a.winNum
       case 'failNum':
         return b.failNum - a.failNum
+      case 'db':
+        return (b.db || 0) - (a.db || 0)
+      case 'dm':
+        return (b.dm || 0) - (a.dm || 0)
       default:
         return 0
     }

@@ -49,7 +49,7 @@
                 :key="armsItem.id"
               >
                 <div class="arms-item-wrapper">
-                  <ArmsDisplay :arms-item="armsItem" />
+                  <ArmsDisplay :arms-item="armsItem" :role-bonus="roleBonus" />
                 </div>
               </el-col>
             </el-row>
@@ -84,6 +84,11 @@ const data = computed((): Arms | null => {
   return archiveStore.getModuleData('arms') as Arms | null
 })
 
+// 获取整个角色的角色加成
+const roleBonus = computed(() => {
+  return archiveStore.getAllRoleBonus()
+})
+
 
 
 // 武器统计
@@ -107,11 +112,7 @@ const armsStats = computed(() => [
 ])
 
 
-// 查看武器详情
-const viewArmsDetail = (arms: ArmsItem) => {
-  ElMessage.info(`查看武器详情: ${arms.name}`)
-  // 这里可以打开详情弹窗或跳转到详情页面
-}
+
 
 // JSON数据
 const jsonData = computed(() => {
