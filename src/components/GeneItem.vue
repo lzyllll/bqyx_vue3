@@ -1,18 +1,18 @@
 <template>
-  <div 
-    :class="[
-      'gene-item',
-      { 'new-item': gene.newB, 'locked': gene.lockB }
-    ]"
+  <el-popover
+    placement="bottom"
+    :width="350"
+    trigger="click"
+    :title="gene.cnName"
   >
-    <!-- 基因图片和背景 -->
-    <el-popover
-      placement="bottom"
-      :width="350"
-      trigger="hover"
-      :title="gene.cnName"
-    >
-      <template #reference>
+    <template #reference>
+      <div 
+        :class="[
+          'gene-item',
+          { 'new-item': gene.newB, 'locked': gene.lockB }
+        ]"
+      >
+        <!-- 基因图片和背景 -->
         <div 
           class="item-image"
           :style="{ backgroundImage: `url(${getGridBackgroundImage(gene.color)})` }"
@@ -34,92 +34,92 @@
           <!-- 锁定标识 -->
           <div v-if="gene.lockB" class="lock-badge">🔒</div>
         </div>
-      </template>
-    
-      <!-- Popover内容 -->
-      <div class="gene-details">
-        <div class="detail-section">
-          <h4>基本信息</h4>
-          <div class="detail-grid">
-            <div class="detail-row">
-              <span class="label">名称:</span>
-              <span class="value">{{ gene.cnName }}</span>
-            </div>
-            <div class="detail-row">
-              <div class="tag-row">
-                <el-tag :type="getColorTagType(gene.color) as any" size="small">
-                  {{ getColorName(gene.color) }}
-                </el-tag>
+        
+        <!-- 基因信息 -->
+        <div class="item-info">
+          <div class="item-name" :title="gene.cnName">
+            {{ gene.cnName }}
+          </div>
+          <div class="item-meta">
+            <div class="tag-group">
+              <el-tag 
+                :type="getColorTagType(gene.color) as any" 
+                size="small"
+                class="item-quality-tag"
+              >
+                {{ getColorName(gene.color) }}
+              </el-tag>
+              <!-- 等级显示 -->
+              <div v-if="gene.itemsLevel > 1" class="item-level">
+                Lv.{{ gene.itemsLevel }}
               </div>
             </div>
-            <div class="detail-row" v-if="gene.itemsLevel > 1">
-              <span class="label">等级:</span>
-              <span class="value">Lv.{{ gene.itemsLevel }}</span>
-            </div>
-            <div class="detail-row">
-              <span class="label">位置:</span>
-              <span class="value">{{ gene.site }}</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 属性加成 -->
-        <div v-if="hasAttributes" class="detail-section">
-          <h4>属性加成</h4>
-          <div class="attributes-grid-two-column">
-            <div v-for="attr in validAttributes" :key="attr.key" class="attribute-row">
-              <span class="attr-label">{{ getAttributeName(attr.key) }}:</span>
-              <span class="attr-value" :class="{ 'positive': attr.value > 0, 'negative': attr.value < 0 }">
-                {{ formatAttributeValue(attr.value, attr.key) }}
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 天赋技能 -->
-        <div v-if="gene.talentSkillArr && gene.talentSkillArr.length > 0" class="detail-section">
-          <h4>天赋技能</h4>
-          <div class="skill-list">
-            <div v-for="skill in gene.talentSkillArr" :key="skill" class="skill-item talent-skill">
-              {{ skill }}
-            </div>
-          </div>
-        </div>
-
-        <!-- 后天技能 -->
-        <div v-if="gene.laterSkillArr && gene.laterSkillArr.length > 0" class="detail-section">
-          <h4>后天技能</h4>
-          <div class="skill-list">
-            <div v-for="skill in gene.laterSkillArr" :key="skill" class="skill-item later-skill">
-              {{ skill }}
-            </div>
           </div>
         </div>
       </div>
-    </el-popover>
+    </template>
     
-    <!-- 基因信息 -->
-    <div class="item-info">
-      <div class="item-name" :title="gene.cnName">
-        {{ gene.cnName }}
+    <!-- Popover内容 -->
+    <div class="gene-details">
+      <div class="detail-section">
+        <h4>基本信息</h4>
+        <div class="detail-grid">
+          <div class="detail-row">
+            <span class="label">名称:</span>
+            <span class="value">{{ gene.cnName }}</span>
+          </div>
+          <div class="detail-row">
+            <div class="tag-row">
+              <el-tag :type="getColorTagType(gene.color) as any" size="small">
+                {{ getColorName(gene.color) }}
+              </el-tag>
+            </div>
+          </div>
+          <div class="detail-row" v-if="gene.itemsLevel > 1">
+            <span class="label">等级:</span>
+            <span class="value">Lv.{{ gene.itemsLevel }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="label">位置:</span>
+            <span class="value">{{ gene.site }}</span>
+          </div>
+        </div>
       </div>
-      <div class="item-meta">
-        <div class="tag-group">
-          <el-tag 
-            :type="getColorTagType(gene.color) as any" 
-            size="small"
-            class="item-quality-tag"
-          >
-            {{ getColorName(gene.color) }}
-          </el-tag>
-          <!-- 等级显示 -->
-          <div v-if="gene.itemsLevel > 1" class="item-level">
-            Lv.{{ gene.itemsLevel }}
+
+      <!-- 属性加成 -->
+      <div v-if="hasAttributes" class="detail-section">
+        <h4>属性加成</h4>
+        <div class="attributes-grid-two-column">
+          <div v-for="attr in validAttributes" :key="attr.key" class="attribute-row">
+            <span class="attr-label">{{ getAttributeName(attr.key) }}:</span>
+            <span class="attr-value" :class="{ 'positive': attr.value > 0, 'negative': attr.value < 0 }">
+              {{ formatAttributeValue(attr.value, attr.key) }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 天赋技能 -->
+      <div v-if="gene.talentSkillArr && gene.talentSkillArr.length > 0" class="detail-section">
+        <h4>天赋技能</h4>
+        <div class="skill-list">
+          <div v-for="skill in gene.talentSkillArr" :key="skill" class="skill-item talent-skill">
+            {{ skill }}
+          </div>
+        </div>
+      </div>
+
+      <!-- 后天技能 -->
+      <div v-if="gene.laterSkillArr && gene.laterSkillArr.length > 0" class="detail-section">
+        <h4>后天技能</h4>
+        <div class="skill-list">
+          <div v-for="skill in gene.laterSkillArr" :key="skill" class="skill-item later-skill">
+            {{ skill }}
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </el-popover>
 </template>
 
 <script setup lang="ts">
@@ -205,15 +205,12 @@ const formatAttributeValue = (value: number, key: string) => {
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   background: #fafafa;
-  transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
 }
 
 .gene-item:hover {
   border-color: #409eff;
-  box-shadow: 0 4px 8px rgba(64, 158, 255, 0.2);
-  transform: translateY(-2px);
 }
 
 .gene-item.new-item {

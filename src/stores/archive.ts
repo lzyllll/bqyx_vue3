@@ -3,10 +3,9 @@ import { ref } from 'vue'
 // import type { ArchiveData } from '@/types/archive'
 import { ArchiveData } from '@/types/archive/root'
 import { plainToInstance } from 'class-transformer';
-import type {ArmsItem } from '@/types/archive/module/arms';
+
 import type { RoleBonus } from '@/types/archive/Bonus';
 import { BonusMerge } from '@/utils/bonusAdd';
-
 
 
 
@@ -41,25 +40,25 @@ export const useArchiveStore = defineStore('archive', () => {
   const getAllRoleBonus = ():RoleBonus => {
     var totalBonus: RoleBonus = {}
     //成就加成
-    totalBonus = BonusMerge(totalBonus, archiveData.value?.achieve.getRoleBonus()||{})
+    totalBonus = BonusMerge(totalBonus, archiveData.value?.achieve.getRoleBonus()||{} as RoleBonus)
     //装备加成
-    totalBonus = BonusMerge(totalBonus, archiveData.value?.equip.getRoleBonus()||{})
+    totalBonus = BonusMerge(totalBonus, archiveData.value?.equip.getRoleBonus()||{} as RoleBonus)
     //宠物 todo 暂时没有完成生命加成
-    totalBonus = BonusMerge(totalBonus, archiveData.value?.pet?.getFightPet()?.getRoleBonus() || {})
+    totalBonus = BonusMerge(totalBonus, archiveData.value?.pet?.getFightPet()?.getRoleBonus() || {} as RoleBonus)
     //虚天塔
-    totalBonus = BonusMerge(totalBonus, archiveData.value?.tower.getRoleBonus()||{})
+    totalBonus = BonusMerge(totalBonus, archiveData.value?.tower.getRoleBonus()||{} as RoleBonus)
     //巅峰加成
-    totalBonus = BonusMerge(totalBonus, archiveData.value?.peak.getRoleBonus()||{})
+    totalBonus = BonusMerge(totalBonus, archiveData.value?.peak.getRoleBonus()||{} as RoleBonus)
     //vip加成
-    totalBonus = BonusMerge(totalBonus, archiveData.value?.vip.getRoleBonus()||{})
+    totalBonus = BonusMerge(totalBonus, archiveData.value?.vip.getRoleBonus()||{} as RoleBonus)
     //总统加成
-    totalBonus = BonusMerge(totalBonus, archiveData.value?.post.getRoleBonus()||{})
+    totalBonus = BonusMerge(totalBonus, archiveData.value?.post.getRoleBonus()||{} as RoleBonus)
     //军队加成
-    totalBonus = BonusMerge(totalBonus, archiveData.value?.union.getRoleBonus()||{})
+    totalBonus = BonusMerge(totalBonus, archiveData.value?.union.getRoleBonus()||{} as RoleBonus)
     //魂卡
-    totalBonus = BonusMerge(totalBonus, archiveData.value?.bossCard.getRoleBonus() || {})
+    totalBonus = BonusMerge(totalBonus, archiveData.value?.bossCard.getRoleBonus() || {} as RoleBonus)
     //头衔
-    totalBonus = BonusMerge(totalBonus, archiveData.value?.head.getRoleBonus()||{})
+    totalBonus = BonusMerge(totalBonus, archiveData.value?.head.getRoleBonus()||{} as RoleBonus)
     return totalBonus
 
   }

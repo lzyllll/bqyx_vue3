@@ -1,7 +1,7 @@
 import type { RoleBonus } from "@/types/archive/Bonus";
 
 
-export function BonusMerge(obj1: RoleBonus, obj2: RoleBonus): RoleBonus {
+export function BonusMerge(obj1: RoleBonus, obj2: Partial<RoleBonus>): RoleBonus {
     const result: any = { ...obj1 }; // 先拷贝第一个对象
     // 遍历第二个对象的所有属性
     for (const key in obj2) {

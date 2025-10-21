@@ -1,92 +1,92 @@
 <template>
-  <div class="boss-card-item">
-    <!-- Boss 头部信息 -->
-    <div class="boss-header">
-      <el-popover
-        placement="right"
-        :width="300"
-        trigger="click"
-        :show-after="100"
-      >
-        <template #reference>
-          <div class="boss-icon clickable">
+  <el-popover
+    placement="right"
+    :width="300"
+    trigger="click"
+    :show-after="100"
+  >
+    <template #reference>
+      <div class="boss-card-item">
+        <!-- Boss 头部信息 -->
+        <div class="boss-header">
+          <div class="boss-icon">
             <img :src="bossIconUrl" :alt="bossData.n" class="boss-image" />
           </div>
-        </template>
-        
-        <!-- 悬浮窗内容 -->
-        <div class="popover-content">
-          <div class="popover-header">
-            <h4 class="popover-title">{{ bossData.n }}</h4>
-            <div class="popover-basic-info">
-              <span class="info-item">{{ bossData.s }}★</span>
-              <span class="info-item">进化 {{ bossData.ev }}</span>
-              <span class="info-item">生命 {{ formatNumber(bossData.li) }}</span>
-              <span class="info-item">伤害 {{ formatNumber(bossData.dp) }}</span>
-            </div>
-          </div>
-          
-          <!-- 属性加成 -->
-          <div v-if="bonusList.length > 0" class="popover-bonus">
-            <h5>属性加成</h5>
-            <div class="bonus-grid">
-              <div 
-                v-for="bonus in bonusList" 
-                :key="bonus.key"
-                class="bonus-item"
-              >
-                <span class="bonus-key">{{ bonus.key }}</span>
-                <span class="bonus-value">{{ bonus.value }}</span>
+          <div class="boss-info">
+            <div class="boss-name">{{ bossData.n }}</div>
+            <div class="boss-stats">
+              <div class="stat-row">
+                <span class="stat-compact">{{ bossData.s }}★</span>
+                <span class="stat-compact">ev.{{ bossData.ev }}</span>
+                <el-tag type="success" size="small" class="stat-tag">生命:{{ formatNumber(bossData.li) }}</el-tag>
+                <el-tag type="danger" size="small" class="stat-tag">伤害:{{ formatNumber(bossData.dp) }}</el-tag>
               </div>
             </div>
           </div>
-          
-          <!-- 技能列表 -->
-          <div v-if="skillsList.length > 0" class="popover-skills">
-            <h5>技能列表 ({{ skillsList.length }})</h5>
-            <div class="skills-grid">
-              <el-tag 
-                v-for="skill in skillsList" 
-                :key="skill.id"
-                :type="getSkillTagType(skill.id)"
-                size="small"
-                class="skill-tag-popup"
-              >
-                {{ skill.name }}
-              </el-tag>
-            </div>
-          </div>
         </div>
-      </el-popover>
-      <div class="boss-info">
-        <div class="boss-name">{{ bossData.n }}</div>
-        <div class="boss-stats">
-          <div class="stat-row">
-            <span class="stat-compact">{{ bossData.s }}★</span>
-            <span class="stat-compact">ev.{{ bossData.ev }}</span>
-            <el-tag type="success" size="small" class="stat-tag">生命:{{ formatNumber(bossData.li) }}</el-tag>
-            <el-tag type="danger" size="small" class="stat-tag">伤害:{{ formatNumber(bossData.dp) }}</el-tag>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- 技能列表 -->
-    <div v-if="bossData.sr && bossData.sr.length > 0" class="skills-section">
-      <div class="skills-tags">
-        <el-tag 
-          v-for="skill in skillsList" 
-          :key="skill.id"
-          :type="getSkillTagType(skill.id)"
-          size="small"
-          :title="`${skill.id}: ${skill.name}`"
-          class="skill-tag"
-        >
-          {{ skill.name }}
-        </el-tag>
+        <!-- 技能列表 -->
+        <div v-if="bossData.sr && bossData.sr.length > 0" class="skills-section">
+          <div class="skills-tags">
+            <el-tag 
+              v-for="skill in skillsList" 
+              :key="skill.id"
+              :type="getSkillTagType(skill.id)"
+              size="small"
+              :title="`${skill.id}: ${skill.name}`"
+              class="skill-tag"
+            >
+              {{ skill.name }}
+            </el-tag>
+          </div>
+        </div>
+      </div>
+    </template>
+    
+    <!-- 悬浮窗内容 -->
+    <div class="popover-content">
+      <div class="popover-header">
+        <h4 class="popover-title">{{ bossData.n }}</h4>
+        <div class="popover-basic-info">
+          <span class="info-item">{{ bossData.s }}★</span>
+          <span class="info-item">进化 {{ bossData.ev }}</span>
+          <span class="info-item">生命 {{ formatNumber(bossData.li) }}</span>
+          <span class="info-item">伤害 {{ formatNumber(bossData.dp) }}</span>
+        </div>
+      </div>
+      
+      <!-- 属性加成 -->
+      <div v-if="bonusList.length > 0" class="popover-bonus">
+        <h5>属性加成</h5>
+        <div class="bonus-grid">
+          <div 
+            v-for="bonus in bonusList" 
+            :key="bonus.key"
+            class="bonus-item"
+          >
+            <span class="bonus-key">{{ bonus.key }}</span>
+            <span class="bonus-value">{{ bonus.value }}</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 技能列表 -->
+      <div v-if="skillsList.length > 0" class="popover-skills">
+        <h5>技能列表 ({{ skillsList.length }})</h5>
+        <div class="skills-grid">
+          <el-tag 
+            v-for="skill in skillsList" 
+            :key="skill.id"
+            :type="getSkillTagType(skill.id)"
+            size="small"
+            class="skill-tag-popup"
+          >
+            {{ skill.name }}
+          </el-tag>
+        </div>
       </div>
     </div>
-  </div>
+  </el-popover>
 </template>
 
 <script setup lang="ts">
@@ -216,6 +216,7 @@ function getSkillTagType(skillId: string): 'primary' | 'success' | 'warning' | '
   display: flex;
   flex-direction: column;
   gap: 8px;
+  cursor: pointer;
 }
 
 .boss-card-item:hover {
@@ -242,16 +243,6 @@ function getSkillTagType(skillId: string): 'primary' | 'success' | 'warning' | '
   flex-shrink: 0;
 }
 
-.boss-icon.clickable {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.boss-icon.clickable:hover {
-  border-color: #409eff;
-  box-shadow: 0 2px 4px rgba(64, 158, 255, 0.3);
-  transform: scale(1.05);
-}
 
 .boss-image {
   width: 100%;

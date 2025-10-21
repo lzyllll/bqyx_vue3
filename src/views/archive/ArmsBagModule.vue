@@ -27,6 +27,7 @@
               v-for="armsItem in data?.items" 
               :key="armsItem.id"
               :arms-item="armsItem"
+              :role-bonus="getAllRoleBonus()"
               class="arms-flex-item"
             />
           </div>
@@ -55,6 +56,7 @@ import ArmsDisplay from '@/components/ArmsDisplay.vue'
 import StatsCards from '@/components/StatsCards.vue'
 
 const archiveStore = useArchiveStore()
+const { getAllRoleBonus } = archiveStore
 
 // 获取武器背包模块数据
 const data = computed((): ArmsBag | null => {

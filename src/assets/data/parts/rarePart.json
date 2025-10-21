@@ -1,0 +1,522 @@
+{
+  "loaderParts": {
+    "name": "loaderParts",
+    "cnName": "零件",
+    "objType": "loader"
+  },
+  "huntParts": {
+    "name": "huntParts",
+    "cnName": "猎人技能器",
+    "objType": "skill",
+    "skillArr": "huntParts",
+    "maxLevel": 4,
+    "iconUrl": "ThingsIcon/huntParts"
+  },
+  "acidicParts": {
+    "name": "acidicParts",
+    "cnName": "腐蚀芯片",
+    "objType": "special",
+    "skillArr": "acidicParts",
+    "maxLevel": 4,
+    "iconUrl": "ThingsIcon/acidicParts"
+  },
+  "shockParts_1": {
+    "armBonus": {
+      "bulletWidth": 0.2
+    },
+    "name": "shockParts_1",
+    "baseLabel": "shockParts",
+    "cnName": "宽震器",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/shockParts1"
+  },
+  "shockParts_2": {
+    "armBonus": {
+      "bulletWidth": 0.35
+    },
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "name": "shockParts_2",
+    "iconUrl": "PartsIcon/shockParts2",
+    "cnName": "宽震器",
+    "baseLabel": "shockParts",
+    "objType": "rare"
+  },
+  "hardeningParts_1": {
+    "armBonus": {
+      "bulletLife": 0.1
+    },
+    "name": "hardeningParts_1",
+    "baseLabel": "hardeningParts",
+    "cnName": "硬化器",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/hardeningParts1"
+  },
+  "hardeningParts_2": {
+    "armBonus": {
+      "bulletLife": 0.2
+    },
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "name": "hardeningParts_2",
+    "iconUrl": "PartsIcon/hardeningParts2",
+    "cnName": "硬化器",
+    "baseLabel": "hardeningParts",
+    "objType": "rare"
+  },
+  "speedParts_1": {
+    "armBonus": {
+      "bulletSpeed": 0.2
+    },
+    "name": "speedParts_1",
+    "baseLabel": "speedParts",
+    "cnName": "加速器",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/speedParts1"
+  },
+  "speedParts_2": {
+    "armBonus": {
+      "bulletSpeed": 0.35
+    },
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "name": "speedParts_2",
+    "iconUrl": "PartsIcon/speedParts2",
+    "cnName": "加速器",
+    "baseLabel": "speedParts",
+    "objType": "rare"
+  },
+  "downSpeedParts_1": {
+    "armBonus": {
+      "bulletSpeed": -0.12
+    },
+    "name": "downSpeedParts_1",
+    "baseLabel": "downSpeedParts",
+    "cnName": "减速器",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/downSpeedParts1"
+  },
+  "downSpeedParts_2": {
+    "armBonus": {
+      "bulletSpeed": -0.2
+    },
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "name": "downSpeedParts_2",
+    "iconUrl": "PartsIcon/downSpeedParts2",
+    "cnName": "减速器",
+    "baseLabel": "downSpeedParts",
+    "objType": "rare"
+  },
+  "twoShootParts_1": {
+    "armBonus": {
+      "twoShootPro": 0.05
+    },
+    "name": "twoShootParts_1",
+    "baseLabel": "twoShootParts",
+    "cnName": "连发器",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/twoShootParts1"
+  },
+  "twoShootParts_2": {
+    "armBonus": {
+      "twoShootPro": 0.09
+    },
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "name": "twoShootParts_2",
+    "iconUrl": "PartsIcon/twoShootParts2",
+    "cnName": "连发器",
+    "baseLabel": "twoShootParts",
+    "objType": "rare"
+  },
+  "eleParts_1": {
+    "armBonus": {
+      "eleHurtMul": 0.07
+    },
+    "name": "eleParts_1",
+    "baseLabel": "eleParts",
+    "cnName": "元素泡",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/eleParts1"
+  },
+  "eleParts_2": {
+    "armBonus": {
+      "eleHurtMul": 0.12
+    },
+    "name": "eleParts_2",
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "iconUrl": "PartsIcon/eleParts2",
+    "cnName": "元素泡",
+    "baseLabel": "eleParts",
+    "objType": "rare"
+  },
+  "penbodyParts_1": {
+    "armBonus": {
+      "penetrationNum": 1
+    },
+    "name": "penbodyParts_1",
+    "baseLabel": "penbodyParts",
+    "cnName": "穿人器",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/penbodyParts1"
+  },
+  "penbodyParts_2": {
+    "armBonus": {
+      "penetrationNum": 2
+    },
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "name": "penbodyParts_2",
+    "iconUrl": "PartsIcon/penbodyParts2",
+    "baseLabel": "penbodyParts",
+    "cnName": "穿人器",
+    "objType": "rare"
+  },
+  "redArmsParts_1": {
+    "armBonus": {
+      "redHurtMul": 0.3
+    },
+    "name": "redArmsParts_1",
+    "baseLabel": "redArmsParts",
+    "cnName": "红武增强器",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/redArmsParts1"
+  },
+  "redArmsParts_2": {
+    "armBonus": {
+      "redHurtMul": 0.6
+    },
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "name": "redArmsParts_2",
+    "iconUrl": "PartsIcon/redArmsParts2",
+    "baseLabel": "redArmsParts",
+    "cnName": "红武增强器",
+    "objType": "rare"
+  },
+  "uidpsParts_1": {
+    "armBonus": {
+      "uidpsMul": 0.05
+    },
+    "name": "uidpsParts_1",
+    "baseLabel": "uidpsParts",
+    "cnName": "调表器",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/uidpsParts1"
+  },
+  "burstParts_1": {
+    "skillArr": "burstParts_1",
+    "name": "burstParts_1",
+    "baseLabel": "burstParts",
+    "cnName": "爆裂弹",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/burstParts1"
+  },
+  "burstParts_2": {
+    "skillArr": "burstParts_2",
+    "itemsLevel": 2,
+    "maxLevel": 2,
+    "name": "burstParts_2",
+    "iconUrl": "PartsIcon/burstParts2",
+    "baseLabel": "burstParts",
+    "cnName": "爆裂弹",
+    "objType": "rare"
+  },
+  "electricParts_1": {
+    "armBonus": {
+      "electricEleB": true
+    },
+    "name": "electricParts_1",
+    "baseLabel": "electricParts",
+    "cnName": "电磁球",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/electricParts1",
+    "description": "让武器获得电磁元素伤害，伤害与当前武器元素伤害相同。一把武器只能生效1种元素球。"
+  },
+  "electricParts_2": {
+    "armBonus": {
+      "electricEleB": true
+    },
+    "name": "electricParts_2",
+    "baseLabel": "electricParts",
+    "cnName": "电磁球",
+    "objType": "rare",
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "iconUrl": "PartsIcon/electricParts2",
+    "description": "让武器获得电磁元素伤害，伤害与当前武器元素伤害相同。可与其他一级（放置在前）、二级元素球搭配使用，同时生效多种元素伤害。"
+  },
+  "fireParts_1": {
+    "armBonus": {
+      "fireEleB": true
+    },
+    "name": "fireParts_1",
+    "baseLabel": "fireParts",
+    "cnName": "火焰球",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/fireParts1",
+    "description": "让武器获得火焰元素伤害，伤害与当前武器元素伤害相同。一把武器只能生效1种元素球。"
+  },
+  "fireParts_2": {
+    "armBonus": {
+      "fireEleB": true
+    },
+    "name": "fireParts_2",
+    "baseLabel": "fireParts",
+    "cnName": "火焰球",
+    "objType": "rare",
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "iconUrl": "PartsIcon/fireParts2",
+    "description": "让武器获得火焰元素伤害，伤害与当前武器元素伤害相同。可与其他一级（放置在前）、二级元素球搭配使用，同时生效多种元素伤害。"
+  },
+  "frozenParts_1": {
+    "armBonus": {
+      "frozenEleB": true
+    },
+    "name": "frozenParts_1",
+    "baseLabel": "frozenParts",
+    "cnName": "冷冻球",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/frozenParts1",
+    "description": "让武器获得冷冻元素伤害，伤害与当前武器元素伤害相同。一把武器只能生效1种元素球。"
+  },
+  "frozenParts_2": {
+    "armBonus": {
+      "frozenEleB": true
+    },
+    "name": "frozenParts_2",
+    "baseLabel": "frozenParts",
+    "cnName": "冷冻球",
+    "objType": "rare",
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "iconUrl": "PartsIcon/frozenParts2",
+    "description": "让武器获得冷冻元素伤害，伤害与当前武器元素伤害相同。可与其他一级（放置在前）、二级元素球搭配使用，同时生效多种元素伤害。"
+  },
+  "poisonParts_1": {
+    "armBonus": {
+      "poisonEleB": true
+    },
+    "name": "poisonParts_1",
+    "baseLabel": "poisonParts",
+    "cnName": "生化球",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/poisonParts1",
+    "description": "让武器获得生化元素伤害，伤害与当前武器元素伤害相同。一把武器只能生效1种元素球。"
+  },
+  "poisonParts_2": {
+    "armBonus": {
+      "poisonEleB": true
+    },
+    "name": "poisonParts_2",
+    "baseLabel": "poisonParts",
+    "cnName": "生化球",
+    "objType": "rare",
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "iconUrl": "PartsIcon/poisonParts2",
+    "description": "让武器获得生化元素伤害，伤害与当前武器元素伤害相同。可与其他一级（放置在前）、二级元素球搭配使用，同时生效多种元素伤害。"
+  },
+  "mooncakeParts_1": {
+    "name": "mooncakeParts_1",
+    "baseLabel": "mooncakeParts",
+    "cnName": "月饼子弹",
+    "skillArr": "mooncakeParts_1",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/mooncakeParts1",
+    "description": "让武器子弹变成月饼。"
+  },
+  "balloonParts_1": {
+    "armBonus": {
+      "gravity": -2
+    },
+    "name": "balloonParts_1",
+    "baseLabel": "balloonParts",
+    "cnName": "气球子弹",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/balloonParts1",
+    "description": "让武器子弹变成气球，并减慢武器的子弹速度（极源除外）。"
+  },
+  "pistolCopyParts_1": {
+    "name": "pistolCopyParts_1",
+    "baseLabel": "pistolCopyParts",
+    "cnName": "手枪克隆器",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/pistolCopyParts1",
+    "description": "让手枪变成双持武器（仅改变外观，不会增加武器伤害输出）。"
+  },
+  "shotgunCopyParts_1": {
+    "name": "shotgunCopyParts_1",
+    "baseLabel": "shotgunCopyParts",
+    "cnName": "散弹克隆器",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/shotgunCopyParts1",
+    "description": "让散弹枪变成双持武器（仅改变外观，不会增加武器伤害输出）。"
+  },
+  "lshapedParts_1": {
+    "armBonus": {
+      "rareHurtMul": 0.12
+    },
+    "name": "lshapedParts_1",
+    "baseLabel": "lshapedParts",
+    "cnName": "C型枪管",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/lshapedParts1",
+    "description": "子弹通过C型枪管，以180度向后方射出，伤害提升。"
+  },
+  "lshapedParts_2": {
+    "armBonus": {
+      "rareHurtMul": 0.2
+    },
+    "maxLevel": 2,
+    "itemsLevel": 2,
+    "name": "lshapedParts_2",
+    "iconUrl": "PartsIcon/lshapedParts2",
+    "baseLabel": "lshapedParts",
+    "cnName": "C型枪管",
+    "objType": "rare",
+    "description": "子弹通过C型枪管，以180度向后方射出，伤害提升。"
+  },
+  "digWallParts_1": {
+    "armBonus": {
+      "rareHurtMul": -0.3,
+      "penetrationGap": 1000
+    },
+    "name": "digWallParts_1",
+    "baseLabel": "digWallParts",
+    "cnName": "挖墙弹",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/digWallParts1",
+    "description": "使子弹无限穿墙，但伤害会降低。"
+  },
+  "angleCtrlParts_1": {
+    "armBonus": {
+      "shootAngleCtrlB": true
+    },
+    "name": "angleCtrlParts_1",
+    "baseLabel": "angleCtrlParts",
+    "cnName": "散射角控制器",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/angleCtrlParts1",
+    "description": "准星越靠近武器时，武器散射角度越小。只对有多子弹的武器生效。"
+  },
+  "degaussingParts_1": {
+    "armBonus": {
+      "noMagneticB": true
+    },
+    "name": "degaussingParts_1",
+    "baseLabel": "degaussingParts",
+    "cnName": "消磁器",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/degaussingParts1",
+    "description": "不受磁力场影响。"
+  },
+  "noHurtParts_1": {
+    "armBonus": {
+      "rareHurtMul": -0.99
+    },
+    "name": "noHurtParts_1",
+    "baseLabel": "noHurtParts",
+    "cnName": "枪口塞",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/noHurtParts1",
+    "description": "大幅降低武器伤害，仅供特殊场景使用。"
+  },
+  "addAiRangeParts_1": {
+    "armBonus": {
+      "aiShootRange": 300
+    },
+    "name": "addAiRangeParts_1",
+    "baseLabel": "noHurtParts",
+    "cnName": "AI增强镜",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/addAiRangeParts1",
+    "description": "对AI射程超过1500的枪械无效。"
+  },
+  "downAiRangeParts_1": {
+    "armBonus": {
+      "aiShootRange": -250
+    },
+    "name": "downAiRangeParts_1",
+    "baseLabel": "noHurtParts",
+    "cnName": "AI遮目镜",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/downAiRangeParts1",
+    "description": "对AI射程超过1500的枪械无效。"
+  },
+  "demCapacityParts_1": {
+    "name": "demCapacityParts_1",
+    "baseLabel": "demCapacityParts",
+    "cnName": "修罗弹夹",
+    "skillArr": "demCapacityParts_1",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/demCapacityParts1"
+  },
+  "demCapacityParts_2": {
+    "name": "demCapacityParts_2",
+    "itemsLevel": 2,
+    "baseLabel": "demCapacityParts",
+    "cnName": "修罗弹夹",
+    "skillArr": "demCapacityParts_2",
+    "objType": "rare",
+    "maxLevel": 2,
+    "iconUrl": "PartsIcon/demCapacityParts2"
+  },
+  "spurtingCube_1": {
+    "name": "spurtingCube_1",
+    "baseLabel": "spurtingCube",
+    "cnName": "溅射体",
+    "skillArr": "Hit_Spurting_ArmsSkill",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/spurtingCube1",
+    "description": "对拥有“击中溅射”技能的武器无效。"
+  },
+  "darkgoldCpu_1": {
+    "name": "darkgoldCpu_1",
+    "baseLabel": "darkgoldCpu",
+    "cnName": "暗金之芯",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/darkgoldCpu1",
+    "description": "\n\t\t\t\t将以下武器跃升为暗金品质同时提升伤害：红色随机属性武器(+400%)、黑色随机属性武器(+400%)。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]等级礼包（需要进阶出1把暗金武器）\n\t\t\t"
+  },
+  "purgoldCpu_1": {
+    "name": "purgoldCpu_1",
+    "baseLabel": "purgoldCpu",
+    "cnName": "紫金之芯",
+    "objType": "rare",
+    "maxLevel": 1,
+    "iconUrl": "PartsIcon/purgoldCpu1",
+    "description": "\n\t\t\t\t将以下武器跃升为紫金（无双）品质同时提升伤害：红色随机属性武器(+600%)、黑色随机属性武器(+1000%)、戌狗、烟花弩、炮仗、圣诞火铳。\n\t\t\t\t[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}\n\t\t\t\t[n]等级礼包（需要进阶出2把无双武器）\n\t\t\t\t[n]物品合成（需要进阶出2把无双武器）\n\t\t\t"
+  }
+}

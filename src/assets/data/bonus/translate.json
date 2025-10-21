@@ -88,5 +88,6 @@
   "vehicleDefMul": { "label": "载具防御力", "format": "percent" },
   "vehicleDpsMul": { "label": "载具攻击力", "format": "percent" },
   "weaponDropPro": { "label": "副手掉率", "format": "percent" },
-  "zodiacArmsHurtAdd": { "label": "生肖武器伤害", "format": "plus" }
+  "zodiacArmsHurtAdd": { "label": "生肖武器伤害", "format": "plus" },
+  "attackGap": { "label": "射速加成", "format": "percent" }
 }

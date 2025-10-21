@@ -7,9 +7,9 @@ import bulletData from '@/assets/data/arms/bullet.json'
  * 所以需要先从存档数据中获取值,如果没有，再从获取，合成武器都是一个值，不是范围
  */
 interface BulletAttr{
-    evoMustFirstLv: number
-    dpsMul: number
-    aiShootRange: number
+    evoMustFirstLv?: number
+    dpsMul?: number
+    aiShootRange?: number
     type?: string
     bulletNum?: number
     shootNum?: number
@@ -17,8 +17,8 @@ interface BulletAttr{
     bulletSpeed?: number
     hitType?: string
     bulletWidth?: number
-    extraMul?:string,
-    uiDpsMul?:string
+    extraMul?:number,
+    uiDpsMul?:number
     evoMaxLv?:number
 
 }

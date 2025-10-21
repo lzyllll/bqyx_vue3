@@ -70,10 +70,18 @@ export interface moreBonus{
 
 }
 export interface CombatBonus{
+  /** 重装间隔加成 */
+  reload?:number;
+  /**射速加成 如 0.06 */
+  attackGap?:number;
   /** 穿透 */
   damageMul?: number;
-  /** 弹容 */
+  //弹容
+  capacity?:number;
+  /** 弹容black 加成 */
   capacityMulBlack?: number;
+  /** 弹容 加成*/
+  capacityMul?: number;
   /** 携弹量 */
   chargerMulBlack?: number;
   /** 生命回复/神级 */
@@ -175,6 +183,7 @@ export interface OtherBonus {
 
 // 原始完整接口（可选，如果需要保持完整）
 export interface RoleBonus extends DropRateBonus, CombatBonus, OtherBonus,moreBonus,DpsBonus {
+
 
 }
 

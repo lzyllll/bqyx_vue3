@@ -1,5 +1,5 @@
 import { Transform, plainToClass, plainToInstance } from 'class-transformer';
-import { getArmInfo } from '../armsInfo';
+import { getArmInfo } from '../archive/armsInfo';
 import { Arms, ArmsItem } from '@/types/archive/module/arms';
 
 /**

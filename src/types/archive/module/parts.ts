@@ -1,5 +1,6 @@
 import { Expose, plainToInstance, Transform, Type } from 'class-transformer';
 import { BagItemBase } from '../base';
+import { getRarePartInfo } from '@/utils/rareParts';
 
 /**
  * 零件物品实现类
@@ -41,6 +42,77 @@ export class PartsItem extends BagItemBase {
   color: string = undefined as any; // 提供初始化器，消除 TS2612 错误,覆盖
 }
 
+/**
+ * 稀有零件类，继承自 PartsItem
+ * 提供根据名称获取 ArmBonus 的功能
+ */
+export class RarePartsItem extends PartsItem {
+  /** 零件类型 */
+  objType?: string;
+  /** 基础标签 */
+  baseLabel?: string;
+  /** 技能数组 */
+  skillArr?: string;
+  /** 最大等级 */
+  maxLevel?: number;
+  /** 图标URL */
+  iconUrl?: string;
+  /** 描述 */
+  description?: string;
+  /** 武器加成 */
+  armBonus?: Record<string, any>;
+
+  /**
+   * 获取零件字典名（name + itemsLevel）
+   * @returns 拼接后的字典名
+   */
+  getPartDictName(): string {
+    return `${this.name}_${this.itemsLevel}`;
+  }
+
+  /**
+   * 根据当前零件信息获取 ArmBonus
+   * @returns ArmBonus 对象，如果未找到返回 null
+   */
+  getArmyInfo(): Record<string, any> | null {
+    const dictName = this.getPartDictName();
+    const partInfo = getRarePartInfo(dictName);
+    
+    if (!partInfo || !partInfo.armBonus) {
+      return null;
+    }
+    
+    return partInfo.armBonus;
+  }
+
+  /**
+   * 获取当前零件的 ArmBonus
+   * @returns 当前零件的 ArmBonus，如果没有返回空对象
+   */
+  getArmBonus(): Record<string, any> {
+    if (this.armBonus) {
+      return this.armBonus;
+    }
+    // 使用新的 getArmyInfo 方法
+    const bonus = this.getArmyInfo();
+    return bonus || {};
+  }
+
+  /**
+   * 获取零件等级描述
+   * @returns 等级描述
+   */
+  getLevelDescription(): string {
+    if (!this.maxLevel) return '';
+    
+    if (this.itemsLevel >= this.maxLevel) {
+      return `满级 (${this.itemsLevel}/${this.maxLevel})`;
+    } else {
+      return `等级 ${this.itemsLevel}/${this.maxLevel}`;
+    }
+  }
+}
+
 
 // 基础零件类
 export class BasePart extends PartsItem {
@@ -50,8 +122,7 @@ export class BasePart extends PartsItem {
   getValue(): number {
     return 0;
   }
-  protected getDpsByLv():number {
-    var lv = this.itemsLevel
+  protected getDpsByLv(lv:number):number {
     if (lv >= 51 && lv <= 104) return lv * lv * 15 - 28000;
     if (lv >= 1 && lv < 51) return lv * lv * 4 + 20;
     return 1;
@@ -60,13 +131,12 @@ export class BasePart extends PartsItem {
    * 
    * 除了dps零件，等级的倍率
    */
-  protected getMulByLv() {
-    var partLv = this.itemsLevel
+  protected getMulByLv(partLv:number,armsLv:number) {
     if (partLv == 0) { return 0; }
     // 武器不是只能装小于他等级的零件吗，为什么判断
-    // if (partLv > armsLv) { partLv = armsLv };
-    const dpsArms = this.getDpsByLv();
-    const dpsPart = this.getDpsByLv();
+    if (partLv > armsLv) { partLv = armsLv };
+    const dpsArms = this.getDpsByLv(armsLv);
+    const dpsPart = this.getDpsByLv(partLv);
     return dpsArms > 0 ? (1 - (1 - dpsPart / dpsArms) * 0.4) : 1;
   }
 }
@@ -99,7 +169,7 @@ export class DpsPart extends BasePart {
    * 比如 602350 * 1.5
    */
   getDps():number{
-    return this.getValue() * this.getDpsByLv()
+    return this.getValue() * this.getDpsByLv(this.itemsLevel)
   }
 
 }
@@ -123,8 +193,9 @@ export class CapacityPart extends BasePart {
     if (lv >= 20) return .33;
     return .25;
   }
-  getAttackGapMul(){
-    return this.getValue() * this.getMulByLv()
+  getCapacityMul(armsLv:number){
+    var partLv = this.itemsLevel
+    return this.getValue() * this.getMulByLv(partLv,armsLv)
   }
 }
 
@@ -148,8 +219,11 @@ export class AttackGapPart extends BasePart {
     return -0.22;
   }
   /**零件的射速加成倍率 */
-  getShotSpeedMul(){
-    return this.getValue() * this.getMulByLv()
+  getAttackGapMul(armsLv:number){
+    var partLv = this.itemsLevel ?? 0;
+    // console.log('value:',this.getValue())
+    // console.log('mul:',this.getMulByLv(partLv,armsLv))
+    return this.getValue() * this.getMulByLv(partLv,armsLv)
   }
 }
 
@@ -175,8 +249,9 @@ export class ReloadPart extends BasePart {
   /**
    * 零件的装弹加成
    */
-  getReloadGapMul(){
-    return this.getValue() * this.getMulByLv()
+  getReloadGapMul(armsLv:number){
+    var partLv = this.itemsLevel ?? 0;
+    return this.getValue() * this.getMulByLv(partLv,armsLv)
   }
 }
 
@@ -202,14 +277,16 @@ export class PrecisionPart extends BasePart {
   /**
    *  获取shakeAngle加成
    */
-  getShakeAngle(){
-    return this.getValue() * this.getMulByLv()
+  getShakeAngle(armsLv:number){
+    var partLv = this.itemsLevel ?? 0;
+    return this.getValue() * this.getMulByLv(partLv,armsLv)
   }
   /**
    *  获取shookAngle加成
    */
-  getShookeAngle(){
-    return this.getValue() * this.getMulByLv() / 2
+  getShookeAngle(armsLv:number){
+    var partLv = this.itemsLevel ?? 0;
+    return this.getValue() * this.getMulByLv(partLv,armsLv) / 2
   }
 }
 
@@ -232,8 +309,9 @@ export class ShootRangePart extends BasePart {
     if (lv >= 20) return 200;
     return 150;
   }
-  getShootRange(){
-    return this.getValue() * this.getMulByLv()
+  getShootRange(armsLv:number){
+    var partLv = this.itemsLevel ?? 0;
+    return this.getValue() * this.getMulByLv(partLv,armsLv)
   }
 }
 
@@ -256,14 +334,14 @@ export class acidicPart extends BasePart {
 
 export class PartsItems {
   dpsPart?: DpsPart;      // 伤害零件
-  capacityPart?: CapacityPart = new CapacityPart();    // 弹容零件
-  attackGapPart?: AttackGapPart = new AttackGapPart();   // 攻速零件
-  reloadPart?: ReloadPart = new ReloadPart();      // 装弹零件
-  precisionPart?: PrecisionPart = new PrecisionPart();   // 精准零件
-  shootRangePart?: ShootRangePart = new ShootRangePart();  // 射程零件
-  acidicPart?: acidicPart = new acidicPart();  //腐蚀芯片
-  huntPart?: huntPart = new huntPart();    //猎人技能器
-  rareParts?: PartsItem[] = []; //稀零
+  capacityPart?: CapacityPart    // 弹容零件
+  attackGapPart?: AttackGapPart   // 攻速零件
+  reloadPart?: ReloadPart       // 装弹零件
+  precisionPart?: PrecisionPart   // 精准零件
+  shootRangePart?: ShootRangePart   // 射程零件
+  acidicPart?: acidicPart   //腐蚀芯片
+  huntPart?: huntPart     //猎人技能器
+  rareParts?: PartsItem[]; //稀零
 }
 
 
@@ -277,8 +355,8 @@ interface PartConfig {
 // 零件位置配置映射
 export const PartPositionConfig: Record<number, PartConfig> = {
   0: { field: 'dpsPart', class: DpsPart },
-  1: { field: 'capacityPart', class: CapacityPart },
-  2: { field: 'attackGapPart', class: AttackGapPart },
+  1: { field: 'attackGapPart', class: AttackGapPart },
+  2: { field: 'capacityPart', class: CapacityPart },
   3: { field: 'reloadPart', class: ReloadPart },
   4: { field: 'precisionPart', class: PrecisionPart },
   5: { field: 'shootRangePart', class: ShootRangePart },
@@ -344,9 +422,13 @@ export class PartsSave {
    * @returns 伤害倍数
    */
   getDpsMul() {
-    return (this.partsItems.acidicPart.getHurtMul()??0) + (this.partsItems.huntPart.getHurtMul()??0);
+    return (this.partsItems?.acidicPart?.getHurtMul()??0) + (this.partsItems?.huntPart?.getHurtMul()??0);
   }
 
+
+  getCapacityMul(armsLv:number){
+    return this.partsItems?.capacityPart?.getCapacityMul(armsLv) || 0;
+  }
   /**
    * 获取零件dps加成
    * @returns 

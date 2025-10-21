@@ -1,12 +1,15 @@
 import { Expose, plainToClass, plainToInstance, Transform, Type } from 'class-transformer';
 import { BagItemBase } from '../base';
 import { AttackGapPart, CapacityPart, DpsPart, PartsItem, PartsSave, PrecisionPart, ReloadPart, ShootRangePart } from './parts';
-import { getArmInfo, getExtraMul } from '@/utils/armsInfo';
+import { getArmInfo, getExtraMul } from '@/utils/archive/armsInfo';
 import { EvoArmInfoStartAdd, AutoFillArmsInfo } from '@/utils/decorator/typeRecords';
 import { ColorType, isBlackOrMore } from '@/utils/archive/colors';
 import { getEvoMul } from '@/utils/archive/evo';
 import { getAddMulStrengthen } from '@/utils/archive/strengthen';
+import { getAngleMul, getAttackGapAdd, getCapacityMulByType, getReloadGapMul } from '@/utils/archive/armsType';
 import type { RoleBonus } from '../Bonus';
+import { getOrZero as safeZero } from '@/utils/safeGet';
+import { getRarePartInfo } from '@/utils/rareParts';
 
 // import { TransformFromArmInfo } from '@/utils/decorator/typeRecords'
 const LONG_LINE = "longLine";
@@ -155,6 +158,10 @@ export class ArmsItem extends BagItemBase {
 
   evoMustFirstLv: number = 0;
 
+
+  getElementHurtMul(){
+    return this.eleLv * 0.05
+  }
   /**
  * 获取射击速度（只有武器属性，无任何加成）
  * @returns 
@@ -164,7 +171,8 @@ export class ArmsItem extends BagItemBase {
   }
 
   /**
-   * 计算射程，注意，面板显示的时候需要 * 1.2
+   * 计算射程，用于计算伤害中，精准度倍率，
+   * 注意，面板显示的时候需要 * 1.2
    * @returns 
    */
   getShootRange(): number {
@@ -187,8 +195,22 @@ export class ArmsItem extends BagItemBase {
     }
     return maxLine0 > v0 ? v0 : maxLine0;
   }
+
   /**
-   * 获取ui射程
+   * 获取最终射程
+   * @param startShootRange 无加成的射程（非ui的，不需要*1.2） 
+   */
+  getFinalShootRnage(startShootRange:number){
+    var armsLv = this.itemsLevel ?? 0
+    var partShootAdd = this.partsSave?.partsItems?.shootRangePart?.getShootRange(armsLv) ?? 0 
+    //setShootRange((this.getShootRange() + parts0.shootDistance) * (parts0.shootDistanceAddMul + 1));
+    // console.log(partShootAdd)
+    return (startShootRange + partShootAdd) * 1.2
+  }
+
+
+  /**
+   * 获取ui射程 无加成
    * @returns 
    */
   getUIShootRange(): number {
@@ -204,7 +226,7 @@ export class ArmsItem extends BagItemBase {
     return s0 * a0;
   }
   /**
-   * 计算ai射程
+   * 计算ai射程 无加成
    * @param precisionB0 
    * @returns 
    */
@@ -224,25 +246,65 @@ export class ArmsItem extends BagItemBase {
   }
 
   /**
-   *  获取精准度，用于计算hurt之类的
-   * @returns 
+   * 通用精准度计算方法
+   * @param shakeAngle 抖动角度
+   * @param shootAngle 射击角度  
+   * @param shootRange 射程
+   * @returns 精准度值
    */
-  getPrecision() {
-    const val1 = Math.max(1 - this.shakeAngle / 30, 0.4);
-    const val2 = Math.max(1 - this.shootAngle / 30, 0.3);
-    const val3 = Math.min((this.getShootRange() + 500) / 1100, 1);
+  private calculatePrecision(shakeAngle: number, shootAngle: number, shootRange: number): number {
+    const val1 = Math.max(1 - shakeAngle / 30, 0.4);
+    const val2 = Math.max(1 - shootAngle / 30, 0.3);
+    const val3 = Math.min((shootRange + 500) / 1100, 1);
     return val1 * val2 * val3;
   }
 
   /**
-   * 用于计算ui面板显示的精准度
+   *  获取精准度，用于计算hurt之类的 无加成
+   * @returns 
+   */
+  getPrecision() {
+    return this.calculatePrecision(this.shakeAngle, this.shootAngle, this.getShootRange());
+  }
+
+  /**
+   * 用于计算ui面板显示的精准度 无加成
    * @returns 
    */
   getUIPrecision() {
-    const val1 = Math.max(1 - this.shakeAngle / 30, 0.4);
-    const val2 = Math.max(1 - this.shootAngle / 30, 0.3);
-    const val3 = Math.min((720 / 1.2 + 500) / 1100, 1);
-    return val1 * val2 * val3;
+    return this.calculatePrecision(this.shakeAngle, this.shootAngle, 720 / 1.2);
+  }
+
+  /**
+   * 计算加成后的角度
+   * @returns 包含加成后抖动角度和射击角度的对象
+   */
+  private getEnhancedAngles(): { shakeAngle: number; shootAngle: number } {
+    var armsLv = this.itemsLevel ?? 0 
+    //零件
+    var precShakeAngleMul = this.partsSave?.partsItems?.precisionPart?.getShakeAngle(armsLv) || 0;
+    var precShootAngleMul = precShakeAngleMul / 2
+    var shakeAngle = this.shakeAngle * (1 + precShakeAngleMul * getAngleMul(this.armsType)) 
+    var shootAngle = this.shootAngle * (1 + precShootAngleMul * getAngleMul(this.armsType))
+    return { shakeAngle, shootAngle };
+  }
+
+  /**
+   * 最终精准度 用于计算战斗力的
+   * @returns 
+   */
+  getFinalPrecision(finalSHootRange:number):number{
+    const { shakeAngle, shootAngle } = this.getEnhancedAngles();
+    return this.calculatePrecision(shakeAngle, shootAngle, finalSHootRange);
+  }
+
+  /**
+   * 获取加成后的精准度（使用固定射程600）
+   * @returns 
+   */
+  getEnhancedPrecision(): number {
+    const { shakeAngle, shootAngle } = this.getEnhancedAngles();
+    return this.calculatePrecision(shakeAngle, shootAngle, 600);
   }
 
   /**
@@ -298,7 +360,7 @@ export class ArmsItem extends BagItemBase {
     //处女座
     if (["consVirgo"].includes(this.name)) {
       var arr = [0, 2.4, 3.4]
-      //由于使用了装饰器，直接从开始level + 进化的次数,
+      //由于使用了装饰器直接处理，直接从Firstlevel + 进化的次数,
       // 所以需要还原 - 开始level = 进化的次数
       return arr[this.evoLv - this.evoMustFirstLv]
     }
@@ -324,32 +386,22 @@ export class ArmsItem extends BagItemBase {
     //生肖武器
     //"辰龙", "未羊", "寅虎"
     if (['yearDragon', 'yearSheep', '"yearTiger'].includes(this.name)) {
-      var year_arr = [100, 125]
+      var year_arr = [1.00, 1.25]
       return year_arr[this.evoLv - this.evoMustFirstLv]
     }
 
-
-
-    // 暗金武器进化maxlv大于1级时
+    // PURGOLD武器进化maxlv大于1级时
     if (this.color == ColorType.PURGOLD && this.evoMaxLv > 1) {
-      // 暗金武器进化等级小于等于14级时，进化倍数*0.8
-      // 因为我用了0 占位，所以需要-1 
+      // PURGOLD武器进化等级小于等于14级时，进化倍数*0.8
       //占位好处是，直接从列表，等级加成对应 即 evoLv1 = arr[1]
-      if ((this.evoLv - 1) <= 13) {
+      if ((this.evoLv) <= 13) {
         mul *= 0.8
       }
     }
     return mul;
   }
 
-  /**
-   * 获取武器角色加成
-   * @returns 角色加成对象
-   */
-  getRoleBonus(): Record<string, any> {
-    // 武器本身不提供角色加成，返回空对象
-    return {};
-  }
+
 
   /**
    * 计算武器最终伤害
@@ -369,7 +421,7 @@ export class ArmsItem extends BagItemBase {
     //hurt_rifle
     const eaHurt = roleBonus[`hurt_${this.armsType}`] || 0;
     // 加成
-    //重命名一下，遍于自己理解
+    //重命名一下，遍于自己理解,外加safeZero
     const playerDpsMul = roleBonus.dpsMul || 0;
     const playerDps = roleBonus.dps || 0;
     const vipDpsMul = roleBonus.dpsVip || 0;
@@ -396,7 +448,7 @@ export class ArmsItem extends BagItemBase {
 
     // 计算基础DPS
     const dps0 = this.getDps();
-    console.log(dps0)
+    // console.log(dps0)
 
     // console.log(`this.getDps():${dps0}`)
     const dps2 = dps0 * (1 + partsDpsMul) * (1 + playerDpsMul + eaDpsMul0) +
@@ -434,10 +486,32 @@ export class ArmsItem extends BagItemBase {
 
 
     hurt *= this.getEvoMul();
+    //遍历稀零写一块去，还有，某些只生效一次，要加flag标志
+    //todo
+    var rareHurtMul = 0
+    if(this.partsSave.partsItems.rareParts){
+      // 遍历稀有零件，检查purgoldCpu_1且颜色为black时的伤害加成
+      this.partsSave.partsItems.rareParts.forEach(rarePart => {
+        //紫金之芯
+        if(rarePart.name === 'purgoldCpu'){
+          if( this.color === ColorType.BLACK){
+            hurt *= 10 + 1;
+          }else if(this.color = ColorType.RED){
+            hurt *= 6 + 1;
+          }
+          
+        }
+        //获取武器属性加成
+        var rarePartInfo = getRarePartInfo(rarePart.name)
+        rareHurtMul += (rarePartInfo?.armBonus?.rareHurtMul) ?? 0
+      });
+    }
+
     //部件 品质伤害 暗金，紫金之芯
     // if (parts0.colorHurtMul > 0) {
     //   hurt2 *= 1 + parts0.colorHurtMul;
     // }
+
 
     //部件 红武增强器
     // if(parts0.redHurtMul > 0)
@@ -448,7 +522,7 @@ export class ArmsItem extends BagItemBase {
     //   }
     // }
 
-    //是否为生肖武器
+    //是否为生肖武器 可能是生肖成就？
     //  if(this.def.isZodiacB())
     //  {
     //     hurt2 *= 1 + ea0.zodiacArmsHurtAdd;
@@ -461,11 +535,86 @@ export class ArmsItem extends BagItemBase {
     //   hurt2 *= 1 + parts0.rareHurtMul;
     //   hurt2 *= extraMul;
     // }
-    hurt *= getExtraMul(this.name)
-
+    var extraMul = getExtraMul(this.name)
+    if(rareHurtMul !=0 || extraMul !=1){
+      hurt *= 1 + rareHurtMul
+      hurt *= extraMul
+    }
 
     return hurt;
   }
+
+
+
+  /**
+   * 计算武器最终容量
+   * todo 存在误差，1左右
+   */
+  getFinalCapacity(roleBonus: RoleBonus) {
+    //
+    var armsLv = this.itemsLevel
+    //零件加成
+    var partsCapacityMul =
+      this.partsSave?.partsItems?.capacityPart?.getCapacityMul(armsLv) || 0;
+    // console.log(this.partsSave?.partsItems?.capacityPart.itemsLevel)
+    //装备加成
+    //对应类型装备的加成
+    var eaCapacityMul = roleBonus[`capacityMul_${this.armsType}`] || 0;
+    var eaCapacity = roleBonus[`capacity_${this.armsType}`] || 0;
+    // var eaReload0 = roleBonus[`reload_${this.armsType}`] || 0;
+
+    let capacityReal = this.capacity *
+      (1 + safeZero(roleBonus.capacityMul)
+        + eaCapacityMul
+        + partsCapacityMul
+      )
+      + safeZero(roleBonus.capacity) * getCapacityMulByType(this.armsType) + eaCapacity
+    // console.log(`容量计算: ${this.capacity} * (1 + ${roleBonus.capacityMul} + ${eaCapacityMul} + ${partsCapacityMul}) + ${roleBonus.capacity} * ${this.getCapacityMulByType()} + ${eaCapacity} = ${capacityReal}`);
+    return capacityReal
+  }
+
+
+  /**
+   * 获取射速间隔，如果为射速 需要 1/attackGap
+   * @param roleBonus   
+   * @returns 最终射速,带有加成
+   */
+  getFinalAttackGap(roleBonus: RoleBonus) {
+    var armsLv = this.itemsLevel
+    var partAttackGapMul =
+      this.partsSave?.partsItems?.attackGapPart?.getAttackGapMul(armsLv) || 0
+    // partAttackGapMul = -0.54
+    var attackGap =
+      this.attackGap * (1 + getAttackGapAdd(this.armsType) * partAttackGapMul)
+      / (1 + safeZero(roleBonus.attackGap))
+    // console.log(`${this.attackGap} * (1 + ${getAttackGapAdd(this.armsType)} * ${partAttackGapMul}) / (1 + ${safeZero(roleBonus.attackGap)})`);
+    return Math.max(attackGap, 0.05);
+  }
+
+  /**
+   * 获取最终重装间隔
+   * @param roleBonus 角色加成对象
+   * @param finalAttackGap 最终攻击间隔
+   * @returns 最终重装间隔
+   */
+  getFinalReloadGap(roleBonus: RoleBonus,finalAttackGap:number) {
+    var armsLv = this.itemsLevel
+    //特定武器类型加成
+    var eaReload = roleBonus[`reload_${this.armsType}`] ?? 0
+    //零件加成
+    var partReload =
+      this.partsSave?.partsItems?.reloadPart?.getReloadGapMul(armsLv) || 0
+    //根据武器类型的加成
+    var reloadMul = getReloadGapMul(this.armsType)
+
+    var finalReloadGap = this.reloadGap /
+      (1+(safeZero(roleBonus.reload) + eaReload) * reloadMul)
+      * (1 + partReload * reloadMul)
+    // console.log('finalReloadGap =', this.reloadGap, '/ (1+(' + safeZero(roleBonus.reload) + ' + ' + eaReload + ') * ' + reloadMul + ') * (1 + ' + partReload + ' + ' + reloadMul + ') =', finalReloadGap)
+    return Math.max(finalReloadGap, 0.7 * finalAttackGap);
+  }
+
+
 
   /**
    * 根据DPS计算伤害

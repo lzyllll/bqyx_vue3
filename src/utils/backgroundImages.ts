@@ -93,14 +93,14 @@ export function getpartsImage(item: { name: string; itemsLevel: number }): strin
   if (item.name === 'loaderParts') {
     // 如果等级小于69，都使用loaderParts_69.png
     if (item.itemsLevel < 69) {
-      return new URL('@/assets/images/parts/loaderParts_69.png', import.meta.url).href
+      return new URL('@/assets/images/PartsIcon/loaderParts_69.png', import.meta.url).href
     }
     // 否则使用对应等级的图像
-    return new URL(`../assets/images/parts/loaderParts_${item.itemsLevel}.png`, import.meta.url).href
+    return new URL(`../assets/images/PartsIcon/loaderParts_${item.itemsLevel}.png`, import.meta.url).href
   }
 
   // 如果不是loaderParts，使用对应名称的图像
-  return new URL(`../assets/images/parts/${item.name}_${item.itemsLevel}.png`, import.meta.url).href
+  return new URL(`../assets/images/PartsIcon/${item.name}_${item.itemsLevel}.png`, import.meta.url).href
 }
 
 /**
@@ -124,8 +124,6 @@ const equipImageMap: Record<string, string> = {
   'jewelry': 'jewelry',
   //护盾
   'shield': 'shield',
-  //其他
-  'parts': 'parts'
 }
 
 export function getThingsImage(item: { name: string; partType: string, imgName: string }): string {
