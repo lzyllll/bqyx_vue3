@@ -386,7 +386,7 @@ export class ArmsItem extends BagItemBase {
     //生肖武器
     //"辰龙", "未羊", "寅虎"
     if (['yearDragon', 'yearSheep', '"yearTiger'].includes(this.name)) {
-      var year_arr = [1.00, 1.25]
+      var year_arr = [0,1.00, 1.25]
       return year_arr[this.evoLv - this.evoMustFirstLv]
     }
 
@@ -484,7 +484,7 @@ export class ArmsItem extends BagItemBase {
     // 无法进化的武器 86黑武，非合成武器（无法进阶的） * 1 无变化
     //
 
-
+    // console.log(this.getEvoMul())
     hurt *= this.getEvoMul();
     //遍历稀零写一块去，还有，某些只生效一次，要加flag标志
     //todo
