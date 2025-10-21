@@ -493,6 +493,9 @@ export class ArmsItem extends BagItemBase {
       // 遍历稀有零件，检查purgoldCpu_1且颜色为black时的伤害加成
       this.partsSave.partsItems.rareParts.forEach(rarePart => {
         //紫金之芯
+        //将 name 转为 name_lv 这样的格式，这样才能从数据字典对应
+        var partName = rarePart.getPartDictName()
+        
         if(rarePart.name === 'purgoldCpu'){
           if( this.color === ColorType.BLACK){
             hurt *= 10 + 1;
@@ -502,7 +505,7 @@ export class ArmsItem extends BagItemBase {
           
         }
         //获取武器属性加成
-        var rarePartInfo = getRarePartInfo(rarePart.name)
+        var rarePartInfo = getRarePartInfo(partName)
         rareHurtMul += (rarePartInfo?.armBonus?.rareHurtMul) ?? 0
       });
     }

@@ -341,7 +341,7 @@ export class PartsItems {
   shootRangePart?: ShootRangePart   // 射程零件
   acidicPart?: acidicPart   //腐蚀芯片
   huntPart?: huntPart     //猎人技能器
-  rareParts?: PartsItem[]; //稀零
+  rareParts?: RarePartsItem[]; //稀零
 }
 
 
@@ -399,7 +399,7 @@ export class PartsSave {
         if (!partsItems.rareParts) {
           partsItems.rareParts = [];
         }
-        partsItems.rareParts.push(plainToInstance(PartsItem, partItem));
+        partsItems.rareParts.push(plainToInstance(RarePartsItem, partItem));
       }
     });
     return partsItems;
