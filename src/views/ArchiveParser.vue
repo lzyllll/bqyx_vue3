@@ -2,7 +2,7 @@
   <div class="archive-parser">
     <!-- Header -->
     <div class="page-header">
-      <h1>爆枪英雄 - 存档解析器</h1>
+      <h1>存档解析器</h1>
       <div class="header-actions">
         <el-button type="primary" @click="uploadFile" :icon="Upload">
           上传存档文件
@@ -44,6 +44,22 @@
           <el-button type="primary" @click="uploadFile">
             选择文件
           </el-button>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-section">
+          <h3>快速导航</h3>
+          <div class="nav-buttons">
+            <el-button type="success" @click="goToWeapons" :icon="Document">
+              武器仓库
+            </el-button>
+            <el-button type="warning" @click="goToBosses" :icon="Document">
+              Boss仓库
+            </el-button>
+            <el-button type="info" @click="goToArchive" :icon="Document">
+              存档模块
+            </el-button>
+          </div>
         </div>
         
         <!-- 备用拖拽区域 -->
@@ -188,6 +204,19 @@ const clearData = () => {
 
 const toggleSidebar = () => {
   sidebarVisible.value = !sidebarVisible.value
+}
+
+// 导航方法
+const goToWeapons = () => {
+  router.push('/weapons')
+}
+
+const goToBosses = () => {
+  router.push('/bosses')
+}
+
+const goToArchive = () => {
+  router.push('/archive/main')
 }
 /** 
 const formatFileSize = (bytes: number) => {
@@ -376,6 +405,36 @@ onMounted(() => {
 .drop-zone:hover {
   border-color: #409eff;
   color: #409eff;
+}
+
+/* 导航区域样式 */
+.navigation-section {
+  background: #f8f9fa;
+  border: 1px solid #e4e7ed;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.navigation-section h3 {
+  margin: 0 0 20px 0;
+  color: #303133;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav-buttons .el-button {
+  min-width: 120px;
+  height: 40px;
+  font-weight: 600;
 }
 
 .upload-icon {

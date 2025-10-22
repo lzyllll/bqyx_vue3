@@ -23,6 +23,11 @@
 
         <!-- 武器属性详情 -->
         <div class="arms-stats">
+          <!-- 最终战力显示 -->
+          <div v-if="finalCombatPower > 0" class="final-combat-power">
+            <div class="combat-power-label">最终战力(测试中-废弃)）:</div>
+            <div class="combat-power-value">{{ formatCombatPower(finalCombatPower) }}</div>
+          </div>
           
           <div class="stats-layout">
             <!-- 左侧属性区域 -->
@@ -59,6 +64,22 @@
                   <el-tag type="warning" size="small">
                     {{ getElementTypeName(armsItem.ele) }} Lv.{{ armsItem.eleLv }} (+{{ formatNumber(armsItem.getElementHurtMul() * 100) }}%)
                   </el-tag>
+                </div>
+                
+                <!-- 特殊属性 -->
+                <div v-if="specialAttributes.length > 0" class="stat-item">
+                  <span class="stat-label">特殊属性:</span>
+                  <div class="special-attributes">
+                    <el-tag v-for="attr in specialAttributes" :key="attr" type="info" size="small" class="attr-tag">
+                      {{ attr }}
+                    </el-tag>
+                  </div>
+                </div>
+                
+                <!-- 获取时间 -->
+                <div v-if="armsItem.getTime" class="stat-item">
+                  <span class="stat-label">获取时间:</span>
+                  <span class="stat-value time-value">{{ formatTime(armsItem.getTime) }}</span>
                 </div>
               </div>
 
@@ -117,6 +138,26 @@
                 </div>
                 <div v-else class="no-parts">
                   无
+                </div>
+              </div>
+
+              <!-- 技能信息 -->
+              <div class="parts-section">
+                <div class="section-title">技能信息</div>
+                <div v-if="weaponSkills.length > 0" class="skills-grid">
+                  <div v-for="skill in weaponSkills" :key="skill" class="skill-item">
+                    <div class="skill-name">{{ skill }}</div>
+                    <div class="skill-type">普通技能</div>
+                  </div>
+                </div>
+                <div v-if="godSkills.length > 0" class="skills-grid">
+                  <div v-for="skill in godSkills" :key="skill" class="skill-item god-skill">
+                    <div class="skill-name">{{ skill }}</div>
+                    <div class="skill-type">神级技能</div>
+                  </div>
+                </div>
+                <div v-if="weaponSkills.length === 0 && godSkills.length === 0" class="no-parts">
+                  无技能
                 </div>
               </div>
 
@@ -213,6 +254,30 @@ const formatDamage = (num: number) => {
   return num.toString()
 }
 
+// 格式化战力数字，支持亿/万单位
+const formatCombatPower = (num: number) => {
+  if (num >= 100000000) {
+    const yi = Math.floor(num / 100000000)
+    const remainder = num % 100000000
+    if (remainder === 0) {
+      return `${yi}亿`
+    } else {
+      const remainderStr = remainder.toString().padStart(8, '0')
+      return `${yi}.${remainderStr.slice(0, 2)}亿`
+    }
+  } else if (num >= 10000) {
+    const wan = Math.floor(num / 10000)
+    const remainder = num % 10000
+    if (remainder === 0) {
+      return `${wan}万`
+    } else {
+      const remainderStr = remainder.toString().padStart(4, '0')
+      return `${wan}.${remainderStr.slice(0, 2)}万`
+    }
+  }
+  return formatNumber(num)
+}
+
 
 // 使用computed计算武器属性
 const attackSpeed = computed(() => props.armsItem.getAttackSpeed())
@@ -223,7 +288,7 @@ const aiShootRange = computed(() => props.armsItem.getAIShootRange())
 // 计算武器伤害
 const weaponDamage = computed(() => {
   if (props.roleBonus) {
-    return props.armsItem.getHurt(props.roleBonus)
+    return props.armsItem.getFinalHurt(props.roleBonus)
   }
   return 0
 })
@@ -272,6 +337,81 @@ const finalShootRange = computed(() => {
 // 计算加成后的精准度
 const enhancedPrecision = computed(() => {
   return props.armsItem.getEnhancedPrecision()
+})
+
+// 计算最终战力（使用getFinalDps方法）
+const finalCombatPower = computed(() => {
+  if (props.roleBonus) {
+    const finalCapacity = props.armsItem.getFinalCapacity(props.roleBonus)
+    const finalAttackGap = props.armsItem.getFinalAttackGap(props.roleBonus)
+    const finalReloadGap = props.armsItem.getFinalReloadGap(props.roleBonus, finalAttackGap)
+    const finalShootRange = props.armsItem.getFinalShootRnage(props.armsItem.getShootRange())
+    const finalPrecision = props.armsItem.getFinalPrecision(finalShootRange)
+    const finalHurtRatio = props.armsItem.getFinalHurt(props.roleBonus)
+    
+    return props.armsItem.getFinalDps(
+      finalCapacity,
+      finalAttackGap,
+      finalReloadGap,
+      finalPrecision,
+      finalHurtRatio
+    )
+  }
+  return 0
+})
+
+// 获取武器技能
+const weaponSkills = computed(() => {
+  return props.armsItem.skillArr || []
+})
+
+// 获取神级技能
+const godSkills = computed(() => {
+  return props.armsItem.godSkillArr || []
+})
+
+// 获取特殊属性
+const specialAttributes = computed(() => {
+  const attributes = []
+  
+  // 穿透属性
+  if (props.armsItem.penetrationGap > 0) {
+    attributes.push(`穿透间隔: ${props.armsItem.penetrationGap}`)
+  }
+  if (props.armsItem.penetrationNum > 0) {
+    attributes.push(`穿透数量: ${props.armsItem.penetrationNum}`)
+  }
+  
+  // 暴击属性
+  if (props.armsItem.critD?.mul > 0) {
+    attributes.push(`暴击倍率: ${props.armsItem.critD.mul}`)
+  }
+  if (props.armsItem.critD?.pro > 0) {
+    attributes.push(`暴击概率: ${(props.armsItem.critD.pro * 100).toFixed(1)}%`)
+  }
+  
+  // 弹跳属性
+  if (props.armsItem.bounceD?.floor > 0) {
+    attributes.push(`地板弹跳: ${props.armsItem.bounceD.floor}`)
+  }
+  if (props.armsItem.bounceD?.body > 0) {
+    attributes.push(`身体弹跳: ${props.armsItem.bounceD.body}`)
+  }
+  
+  // 连发属性
+  if (props.armsItem.twoShootPro > 0) {
+    attributes.push(`连发概率: ${(props.armsItem.twoShootPro * 100).toFixed(1)}%`)
+  }
+  
+  // 跟随属性
+  if (props.armsItem.followD?.value > 0) {
+    attributes.push(`跟随值: ${props.armsItem.followD.value}`)
+  }
+  if (props.armsItem.followD?.delay > 0) {
+    attributes.push(`跟随延迟: ${props.armsItem.followD.delay}`)
+  }
+  
+  return attributes
 })
 
 
@@ -432,6 +572,40 @@ const formatBonusValue = (value: any): string => {
   return value.toString()
 }
 
+// 格式化时间
+const formatTime = (timeStr: string): string => {
+  if (!timeStr) return ''
+  
+  try {
+    // 解析时间字符串，支持多种格式
+    let date: Date
+    
+    if (timeStr.includes('-') && timeStr.includes(':')) {
+      // 格式: "2025-06-06 21:32:19"
+      date = new Date(timeStr.replace(' ', 'T'))
+    } else {
+      // 尝试其他格式
+      date = new Date(timeStr)
+    }
+    
+    if (isNaN(date.getTime())) {
+      return timeStr // 如果解析失败，返回原始字符串
+    }
+    
+    // 格式化为本地时间
+    return date.toLocaleString('zh-CN', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    })
+  } catch (error) {
+    return timeStr // 出错时返回原始字符串
+  }
+}
+
 
 </script>
 
@@ -555,6 +729,34 @@ const formatBonusValue = (value: any): string => {
 /* 武器属性弹窗样式 */
 .arms-stats {
   padding: 8px 0;
+}
+
+/* 最终战力样式 */
+.final-combat-power {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  border: 2px solid #ff4757;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.combat-power-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.combat-power-value {
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -755,6 +957,67 @@ const formatBonusValue = (value: any): string => {
   font-size: 14px;
   padding: 20px;
   font-style: italic;
+}
+
+/* 特殊属性样式 */
+.special-attributes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.attr-tag {
+  font-size: 10px;
+  height: 20px;
+  line-height: 18px;
+}
+
+/* 技能样式 */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.skill-item {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 11px;
+}
+
+.skill-item.god-skill {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  border-color: #ffd700;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #303133;
+  margin-bottom: 2px;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.skill-type {
+  color: #409eff;
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.skill-item.god-skill .skill-type {
+  color: #b8860b;
+  font-weight: 600;
+}
+
+/* 时间显示样式 */
+.time-value {
+  color: #909399 !important;
+  font-size: 12px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
 }
 
 </style>

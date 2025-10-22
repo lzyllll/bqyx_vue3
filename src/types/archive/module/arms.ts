@@ -110,6 +110,9 @@ export class ArmSaveItem extends BagItemBase {
 
   @Type(() => String)
   skillArr: string[]
+  
+  /** 获取时间 */
+  declare getTime: string;
   /** 伤害比率 */
   hurtRatio: number;
   /** 未知数组 */
@@ -285,30 +288,8 @@ export class ArmSaveItem extends BagItemBase {
   ) {
   
     //还原到baseHurt, 最终伤害有稀零和extraMul加成
-    var rareHurtMul = 0
-    var colorHurtMul = null;
-    var partUiMul = 0;
     //获取rareHurtMul,colorHurtMul,partUiMul
-    if (this.partsSave?.partsItems?.rareParts) {
-      // 遍历稀有零件，检查purgoldCpu_1且颜色为black时的伤害加成
-      this.partsSave.partsItems.rareParts.forEach(rarePart => {
-        //紫金之芯
-        if (rarePart.name === 'purgoldCpu') {
-          if (this.color === ColorType.BLACK) {
-            colorHurtMul = 10;
-          } else if (this.color = ColorType.RED) {
-            colorHurtMul = 6;
-          }
-        }
-        //将 name 转为 name_lv 这样的格式，这样才能从数据字典对应
-        var partName = rarePart.getPartDictName()
-        //获取武器属性加成
-        var rarePartInfo = getRarePartInfo(partName)
-        rareHurtMul += (rarePartInfo?.armBonus?.rareHurtMul) ?? 0
-        //擦，竟然是小写的 uidpsMul
-        partUiMul += (rarePartInfo?.armBonus?.uidpsMul) ?? 0
-      });
-    }
+    const { rareHurtMul, colorHurtMul, partUiMul } = this.getRarePartsMul();
     //还原到baseHurt / extra / (1+rareHurtMul)
     var baseHurt = finalHurtRatio / getExtraMul(this.name) / (1 + rareHurtMul);
 
@@ -339,6 +320,39 @@ export class ArmSaveItem extends BagItemBase {
   getElementDpsMul() {
     var hurtMul = this.getElementHurtMul()
     return hurtMul * 0.3
+  }
+
+  /**
+   * 获取稀有零件加成倍数
+   * @returns 返回包含rareHurtMul, colorHurtMul, partUiMul的对象
+   */
+  getRarePartsMul(): { rareHurtMul: number; colorHurtMul: number | null; partUiMul: number } {
+    var rareHurtMul = 0;
+    var colorHurtMul: number | null = null;
+    var partUiMul = 0;
+
+    if (this.partsSave?.partsItems?.rareParts) {
+      // 遍历稀有零件，检查purgoldCpu_1且颜色为black时的伤害加成
+      this.partsSave.partsItems.rareParts.forEach(rarePart => {
+        //紫金之芯
+        if (rarePart.name === 'purgoldCpu') {
+          if (this.color === ColorType.BLACK) {
+            colorHurtMul = 10;
+          } else if (this.color === ColorType.RED) {
+            colorHurtMul = 6;
+          }
+        }
+        //将 name 转为 name_lv 这样的格式，这样才能从数据字典对应
+        var partName = rarePart.getPartDictName()
+        //获取武器属性加成
+        var rarePartInfo = getRarePartInfo(partName)
+        rareHurtMul += (rarePartInfo?.armBonus?.rareHurtMul) ?? 0
+        //擦，竟然是小写的 uidpsMul
+        partUiMul += (rarePartInfo?.armBonus?.uidpsMul) ?? 0
+      });
+    }
+
+    return { rareHurtMul, colorHurtMul, partUiMul };
   }
   /**
  * 获取射击速度（只有武器属性，无任何加成）
@@ -586,7 +600,7 @@ export class ArmSaveItem extends BagItemBase {
    * @param roleBonus 角色加成对象
    * @returns 最终伤害值
    */
-  getHurt(roleBonus: RoleBonus): number {
+  getFinalHurt(roleBonus: RoleBonus): number {
     // 获取对应类型DPS倍数加成
     //例如
 
@@ -625,7 +639,7 @@ export class ArmSaveItem extends BagItemBase {
 
 
     // 计算基础DPS
-    const dps0 = this.getDps();
+    const dps0 = Math.ceil(this.getDps());
     // console.log(dps0)
 
     // console.log(`this.getDps():${dps0}`)
@@ -666,25 +680,11 @@ export class ArmSaveItem extends BagItemBase {
     hurt *= this.getEvoMul();
     //遍历稀零写一块去，还有，某些只生效一次，要加flag标志
     //todo
-    var rareHurtMul = 0
-    if (this?.partsSave?.partsItems?.rareParts) {
-      // 遍历稀有零件，检查purgoldCpu_1且颜色为black时的伤害加成
-      this?.partsSave?.partsItems?.rareParts.forEach(rarePart => {
-        //紫金之芯
-        //将 name 转为 name_lv 这样的格式，这样才能从数据字典对应
-        var partName = rarePart.getPartDictName()
-
-        if (rarePart.name === 'purgoldCpu') {
-          if (this.color === ColorType.BLACK) {
-            hurt *= 10 + 1;
-          } else if (this.color = ColorType.RED) {
-            hurt *= 6 + 1;
-          }
-        }
-        //获取武器属性加成
-        var rarePartInfo = getRarePartInfo(partName)
-        rareHurtMul += (rarePartInfo?.armBonus?.rareHurtMul) ?? 0
-      });
+    const { rareHurtMul, colorHurtMul } = this.getRarePartsMul();
+    
+    // 应用紫金之芯加成
+    if (colorHurtMul !== null) {
+      hurt *= 1 + colorHurtMul;
     }
 
     //部件 品质伤害 暗金，紫金之芯

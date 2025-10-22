@@ -399,6 +399,12 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '',
+        name: 'ArchiveParser',
+        component: ArchiveParser,
+        meta: { requiresAuth: false }
+      },
+      {
+        path: 'weapons',
         name: 'WeaponList',
         component: WeaponList,
         meta: { requiresAuth: false }
@@ -424,7 +430,7 @@ const routes: RouteRecordRaw[] = [
         meta: { requiresAuth: true }
       },
       {
-        path: 'boss',
+        path: 'bosses',
         name: 'BossList',
         component: BossList,
         meta: { requiresAuth: false }

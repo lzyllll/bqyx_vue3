@@ -211,7 +211,7 @@ export class Equip {
     var bonus: RoleBonus = {}
     //装备属性
     for (const equip of Object.values(this.items) as EquipItem[]) {
-      bonus = BonusMerge(bonus, equip.getRoleBonus())
+      bonus = BonusMerge(bonus, equip?.getRoleBonus()??{})
     }
     //套装加成
     bonus = BonusMerge(bonus, this.items.getSuitBonus())
