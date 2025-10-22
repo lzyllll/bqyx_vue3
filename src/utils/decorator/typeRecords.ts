@@ -1,6 +1,6 @@
 import { Transform, plainToClass, plainToInstance } from 'class-transformer';
 import { getArmInfo } from '../archive/armsInfo';
-import { Arms, ArmsItem } from '@/types/archive/module/arms';
+import { Arms, ArmSaveItem } from '@/types/archive/module/arms';
 
 /**
  * [自定义工具] 一个自定义的 class-transformer 装饰器，用于安全地转换 Record<string, T> (字典/哈希表) 类型。
@@ -90,6 +90,8 @@ export function AutoFillArmsInfo() {
       // 自动填充缺失的属性
       const filledItem = {
         ...item,
+        uiDpsMul: armInfo.uiDpsMul ?? 1,
+        dpsMul: armInfo.dpsMul ?? 1,
         bulletWidth: item.bulletWidth ?? armInfo.bulletWidth,
         hitType: item.hitType ?? armInfo.hitType ?? '',
         armsType: armInfo.type ?? '',
@@ -100,7 +102,7 @@ export function AutoFillArmsInfo() {
         evoMaxLv: item.evoMaxLv ?? armInfo.evoMaxLv ?? 0,
         evoMustFirstLv: armInfo.evoMustFirstLv ?? 0
       };
-      return plainToInstance(ArmsItem,filledItem);
+      return plainToInstance(ArmSaveItem,filledItem);
     });
   });
 }

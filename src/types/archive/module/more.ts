@@ -1,6 +1,6 @@
 import { Type } from 'class-transformer';
 import { ArrayContainer } from '../base';
-import { ArmsItem } from './arms';
+import { ArmSaveItem } from './arms';
 import { Base } from './baseInfo';
 import { EquipItem } from './equip';
 import { Love } from './love';
@@ -28,7 +28,7 @@ export class MoreCount {
 export class MoreSave {
   /** 武器 */
   @Type(() => ArrayContainer)
-  arms: ArrayContainer<ArmsItem>;
+  arms: ArrayContainer<ArmSaveItem>;
   /** 基础 */
   @Type(() => Base)
   base: Base;

@@ -73,7 +73,7 @@ import { computed } from 'vue'
 import { useArchiveStore } from '@/stores/archive'
 import { Tools, List, Trophy, Star, Setting, Box } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
-import type { Arms, ArmsItem } from '@/types/archive/module/arms'
+import type { Arms, ArmSaveItem } from '@/types/archive/module/arms'
 import JsonViewer from '@/components/JsonViewer.vue'
 import ArmsDisplay from '@/components/ArmsDisplay.vue'
 

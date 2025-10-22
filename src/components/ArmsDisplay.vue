@@ -23,6 +23,7 @@
 
         <!-- 武器属性详情 -->
         <div class="arms-stats">
+          
           <div class="stats-layout">
             <!-- 左侧属性区域 -->
             <div class="stats-left">
@@ -148,6 +149,7 @@
       </el-popover>
     </div>
 
+
     <!-- 武器信息 -->
     <div class="arms-info">
       <!-- 品质标签 -->
@@ -167,21 +169,21 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
 import { Lock } from '@element-plus/icons-vue'
-import { ArmsItem } from '@/types/archive/module/arms'
+import { ArmSaveItem } from '@/types/archive/module/arms'
 import type { RoleBonus } from '@/types/archive/Bonus'
 import { getArmsBackgroundStyle } from '@/utils/backgroundImages'
 import { getColorTagType, translateColorName } from '@/utils/colorUtils'
 import { getRarePartInfo } from '@/utils/rareParts'
 
 interface Props {
-  armsItem: ArmsItem
+  armsItem: ArmSaveItem
   roleBonus?: RoleBonus
 }
 
 const props = defineProps<Props>()
 
 
-const getArmsImageStyle = (item: ArmsItem) => {
+const getArmsImageStyle = (item: ArmSaveItem) => {
   return getArmsBackgroundStyle(
     {
       name: item.name,
@@ -210,6 +212,7 @@ const formatDamage = (num: number) => {
   }
   return num.toString()
 }
+
 
 // 使用computed计算武器属性
 const attackSpeed = computed(() => props.armsItem.getAttackSpeed())
@@ -270,6 +273,8 @@ const finalShootRange = computed(() => {
 const enhancedPrecision = computed(() => {
   return props.armsItem.getEnhancedPrecision()
 })
+
+
 
 // 获取稀有零件信息
 const rarePartsInfo = computed(() => {
@@ -552,6 +557,7 @@ const formatBonusValue = (value: any): string => {
   padding: 8px 0;
 }
 
+
 .stats-layout {
   display: flex;
   gap: 20px;
@@ -750,4 +756,5 @@ const formatBonusValue = (value: any): string => {
   padding: 20px;
   font-style: italic;
 }
+
 </style>

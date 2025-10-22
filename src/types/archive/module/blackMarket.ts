@@ -1,6 +1,6 @@
 import { Type } from 'class-transformer';
 import { ArrayContainer } from '../base';
-import { ArmsItem } from './arms';
+import { ArmSaveItem } from './arms';
 import { EquipContainer } from './equip';
 
 /**
@@ -11,7 +11,7 @@ export class BlackMarket {
   addB: boolean;
   /** 武器 */
   @Type(() => ArrayContainer)
-  arms: ArrayContainer<ArmsItem>;
+  arms: ArrayContainer<ArmSaveItem>;
   /** 购买数量 */
   buyNum: number;
   /** 装备 */

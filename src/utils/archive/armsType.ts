@@ -1,6 +1,15 @@
 // 武器类型枚举与常量集合，以及通用工具方法
 
 // 枚举：武器类型（与旧版常量字符串保持一致）
+
+
+/**
+ * 生肖武器
+ */
+export var Year_arm_arr = 
+  ['yearDragon', 'yearSheep', 'yearTiger']
+
+
 export enum ArmsType {
   LINE = "line",
   POINT = "point",

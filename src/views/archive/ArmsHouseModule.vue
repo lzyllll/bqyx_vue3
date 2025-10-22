@@ -49,7 +49,7 @@ import { computed } from 'vue'
 import { useArchiveStore } from '@/stores/archive'
 import { House, Star, Lock } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
-import type { ArmsHouse, ArmsItem } from '@/types/archive/module/arms'
+import type { ArmsHouse, ArmSaveItem } from '@/types/archive/module/arms'
 import JsonViewer from '@/components/JsonViewer.vue'
 import ArmsDisplay from '@/components/ArmsDisplay.vue'
 import StatsCards from '@/components/StatsCards.vue'
@@ -121,7 +121,7 @@ const armsHouseStats = computed(() => {
 })
 
 // 查看武器详情
-const viewArmsDetail = (arms: ArmsItem) => {
+const viewArmsDetail = (arms: ArmSaveItem) => {
   ElMessage.info(`查看武器详情: ${arms.name}`)
   // 这里可以打开详情弹窗或跳转到详情页面
 }

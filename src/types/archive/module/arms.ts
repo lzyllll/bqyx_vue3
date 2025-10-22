@@ -6,7 +6,7 @@ import { EvoArmInfoStartAdd, AutoFillArmsInfo } from '@/utils/decorator/typeReco
 import { ColorType, isBlackOrMore } from '@/utils/archive/colors';
 import { getEvoMul } from '@/utils/archive/evo';
 import { getAddMulStrengthen } from '@/utils/archive/strengthen';
-import { getAngleMul, getAttackGapAdd, getCapacityMulByType, getReloadGapMul } from '@/utils/archive/armsType';
+import { getAngleMul, getAttackGapAdd, getCapacityMulByType, getReloadGapMul, Year_arm_arr } from '@/utils/archive/armsType';
 import type { RoleBonus } from '../Bonus';
 import { getOrZero as safeZero } from '@/utils/safeGet';
 import { getRarePartInfo } from '@/utils/rareParts';
@@ -72,7 +72,7 @@ export class FollowData {
 
 
 
-export class ArmsItem extends BagItemBase {
+export class ArmSaveItem extends BagItemBase {
   /**声明覆盖，添加装饰器，修正evoLv */
   //该函数用于将evoLv 添加，因为传入的evoLv是5，但有的，比如处女座，传入1，但需要FirstLv:13 来修正
   @EvoArmInfoStartAdd("evoMustFirstLv")
@@ -98,7 +98,7 @@ export class ArmsItem extends BagItemBase {
   /** 元素类型 */
   ele: string | null;
   /** 元素等级 */
-  eleLv: number;
+  eleLv: number = 0;
   /** 是否首选 */
   firstChoiceB: boolean;
   /** 跟随数据 */
@@ -107,6 +107,9 @@ export class ArmsItem extends BagItemBase {
   /** 神器技能数组 */
   @Type(() => String)
   godSkillArr: string[];
+
+  @Type(() => String)
+  skillArr: string[]
   /** 伤害比率 */
   hurtRatio: number;
   /** 未知数组 */
@@ -116,17 +119,17 @@ export class ArmsItem extends BagItemBase {
   @Type(() => PartsSave)
   partsSave: PartsSave | null;
   /** 穿透间隔 */
-  penetrationGap: number;
+  penetrationGap: number = 0;
   /** 穿透数量 */
-  penetrationNum: number;
+  penetrationNum: number = 0;
   /** 重新装弹间隔 */
-  reloadGap: number;
+  reloadGap: number = 0;
   /** 未知 */
   s: unknown | null;
   /** 摇摆角度 */
-  shakeAngle: number;
+  shakeAngle: number = 0;
   /** 射击角度 */
-  shootAngle: number;
+  shootAngle: number = 0;
 
   /** 射击音效URL */
   shootSoundUrl: string;
@@ -157,10 +160,185 @@ export class ArmsItem extends BagItemBase {
   evoMaxLv: number;
 
   evoMustFirstLv: number = 0;
+  twoShootPro?: number;
+  uiDpsMul: number = 1;
+  dpsMul: number;
+  
+  //用于计算基础战斗力 ??????暂时不知道用
+  private getBaseDpsByLv(lv: number) {
+    lv = lv + 5
+    if (this.name == 'laser1') {
+      lv -= 1
+    }
+    if (lv >= 51 && lv <= 104) return lv * lv * 15 - 28000;
+    if (lv >= 1 && lv < 51) return lv * lv * 4 + 20;
+    return 1;
+  }
+
+  /**修正 自己写的激光修正 非游戏中*/
+  private changeDpsMul(){
+    if(this.name == "laser1"){
+      return 0.5
+
+    }
+    return 1
+
+  }
 
 
-  getElementHurtMul(){
-    return this.eleLv * 0.05
+  /**
+   * 获取uiDpsMul
+   * @returns 
+   */
+  getUiDpsMul() {
+    let v = 1.0;
+    if (this.armsType === "crossbow") {
+      v = 2.6;
+    } else if (["flamer", "howitzer", "wavegun", "laser", "lightning", "weather", "cutter"].includes(this.armsType)) {
+      v = 2.0;
+    }
+    const isPurGold = this.color === "purgold";
+    const isYaGold = this.color === "yagold";
+    if (["darkgold", "purgold", "yagold"].includes(this.color)) {
+      if (this.armsType === "sniper") { v *= (isPurGold || isYaGold) ? 1.35 : 1.3; }
+      else if (this.armsType === "shotgun") { v *= isYaGold ? 1.21 : (isPurGold ? 1.23 : 1.15); }
+      else if (this.armsType === "rocket") { if (isPurGold || isYaGold) { v *= (this.name === "卡特巨炮") ? 1.12 : 0.8; } else { v *= 0.95; } }
+      else if (this.armsType === "rifle" && (isPurGold || isYaGold)) { v *= 1.08; }
+      else if (this.armsType === "pistol" && (isPurGold || isYaGold)) { v *= 1.03; }
+      else if (this.armsType === "flamer") { if (this.evoLv >= 9) v *= 0.97; if (isYaGold) v *= 0.735; else if (isPurGold) v *= 0.8; }
+      else if (this.armsType === "laser") { if (this.evoLv >= 9) v *= 0.965; if (isPurGold || isYaGold) v *= 0.83; }
+      else if (this.armsType === "energy") { v = 1.462; if (isPurGold || isYaGold) v *= 0.84; }
+      else if (this.armsType === "lightning" && this.name === "extremeGun" && (isPurGold || isYaGold)) { v *= 0.84; }
+    }
+    return v * (isBlackOrMore(this.color as any) ? 1.3 : 1.0);
+  }
+
+
+  /**
+   * 神级技能的 最终ui显示的dps 加成Mul
+   * 某些需要特殊处理
+   */
+  private getGodSkillNumMul() {
+    var godSkillNum = this.godSkillArr.length ?? 0
+    return godSkillNum
+  }
+
+
+  private getSkillNumMul() {
+    return this.skillArr.length ?? 0
+  }
+  /**
+   * 特殊属性 最终ui显示的dps 加成Mul
+   * @returns 
+   */
+  private getSpecialSkillNumMUl() {
+    var num0: number = 0;
+    if (this.penetrationGap > 0) {
+      num0++;
+    }
+    if (this.penetrationNum > 0) {
+      num0++;
+    }
+    if (this.critD?.mul > 0) {
+      num0++;
+    }
+    if (this.bounceD?.floor > 0) {
+      num0++;
+    }
+    if (this.bounceD?.body > 0) {
+      num0++;
+    }
+    if (this.twoShootPro > 0) {
+      num0++;
+    }
+    return num0;
+
+  }
+
+
+
+  /**
+   * 元素加成，根据等级获取加成 如 eleLv ：5 冰冻等级 25%
+   * @returns 
+   */
+  getElementHurtMul() {
+    // this.eleLv * 0.05
+    var eleMaxLv = 10
+    //如果等级为0 ，直接返0
+    if (this.eleLv == 0) {
+      return 0
+    }
+    //最高等级为10
+    var lv = Math.min(this.eleLv, eleMaxLv)
+    return lv * 0.05 + 0.05
+  }
+
+  /**
+   * 总终 武器战斗力的计算   xxx亿  已废弃，无法使用
+   */
+  getFinalDps(
+    finalCapacity: number,
+    finalAttackGap: number,
+    finalReloadGap: number,
+    finalPrecision: number,
+    finalHurtRatio: number
+  ) {
+  
+    //还原到baseHurt, 最终伤害有稀零和extraMul加成
+    var rareHurtMul = 0
+    var colorHurtMul = null;
+    var partUiMul = 0;
+    //获取rareHurtMul,colorHurtMul,partUiMul
+    if (this.partsSave?.partsItems?.rareParts) {
+      // 遍历稀有零件，检查purgoldCpu_1且颜色为black时的伤害加成
+      this.partsSave.partsItems.rareParts.forEach(rarePart => {
+        //紫金之芯
+        if (rarePart.name === 'purgoldCpu') {
+          if (this.color === ColorType.BLACK) {
+            colorHurtMul = 10;
+          } else if (this.color = ColorType.RED) {
+            colorHurtMul = 6;
+          }
+        }
+        //将 name 转为 name_lv 这样的格式，这样才能从数据字典对应
+        var partName = rarePart.getPartDictName()
+        //获取武器属性加成
+        var rarePartInfo = getRarePartInfo(partName)
+        rareHurtMul += (rarePartInfo?.armBonus?.rareHurtMul) ?? 0
+        //擦，竟然是小写的 uidpsMul
+        partUiMul += (rarePartInfo?.armBonus?.uidpsMul) ?? 0
+      });
+    }
+    //还原到baseHurt / extra / (1+rareHurtMul)
+    var baseHurt = finalHurtRatio / getExtraMul(this.name) / (1 + rareHurtMul);
+
+    const l_dps0 = baseHurt *
+      this.bulletNum * this.shootNum /
+      finalAttackGap * finalPrecision;
+    const r_mul0 = 1 - finalReloadGap / (finalAttackGap * finalCapacity + finalReloadGap);
+
+    var finalDps = l_dps0 * r_mul0;
+    finalDps /= this.getDpsMul()
+    finalDps *= 1 + (
+      this.getSpecialSkillNumMUl() + this.getSkillNumMul()
+    ) * 0.15 + this.getGodSkillNumMul() * 0.2;
+    finalDps *= this.uiDpsMul + partUiMul;
+    
+    finalDps *= this.getUiDpsMul();
+ 
+
+    finalDps *= (1 + this.getElementDpsMul());
+    if(colorHurtMul){
+      finalDps /= 1 + colorHurtMul * 0.13;
+    }
+
+
+    return finalDps;
+  }
+
+  getElementDpsMul() {
+    var hurtMul = this.getElementHurtMul()
+    return hurtMul * 0.3
   }
   /**
  * 获取射击速度（只有武器属性，无任何加成）
@@ -200,9 +378,9 @@ export class ArmsItem extends BagItemBase {
    * 获取最终射程
    * @param startShootRange 无加成的射程（非ui的，不需要*1.2） 
    */
-  getFinalShootRnage(startShootRange:number){
+  getFinalShootRnage(startShootRange: number) {
     var armsLv = this.itemsLevel ?? 0
-    var partShootAdd = this.partsSave?.partsItems?.shootRangePart?.getShootRange(armsLv) ?? 0 
+    var partShootAdd = this.partsSave?.partsItems?.shootRangePart?.getShootRange(armsLv) ?? 0
     //setShootRange((this.getShootRange() + parts0.shootDistance) * (parts0.shootDistanceAddMul + 1));
     // console.log(partShootAdd)
     return (startShootRange + partShootAdd) * 1.2
@@ -280,26 +458,26 @@ export class ArmsItem extends BagItemBase {
    * @returns 包含加成后抖动角度和射击角度的对象
    */
   private getEnhancedAngles(): { shakeAngle: number; shootAngle: number } {
-    var armsLv = this.itemsLevel ?? 0 
+    var armsLv = this.itemsLevel ?? 0
     //零件
     var precShakeAngleMul = this.partsSave?.partsItems?.precisionPart?.getShakeAngle(armsLv) || 0;
     var precShootAngleMul = precShakeAngleMul / 2
-    var shakeAngle = this.shakeAngle * (1 + precShakeAngleMul * getAngleMul(this.armsType)) 
+    var shakeAngle = this.shakeAngle * (1 + precShakeAngleMul * getAngleMul(this.armsType))
     var shootAngle = this.shootAngle * (1 + precShootAngleMul * getAngleMul(this.armsType))
     return { shakeAngle, shootAngle };
   }
 
   /**
-   * 最终精准度 用于计算战斗力的
+   * 最终精准度 用于计算战斗力的,以及展示
    * @returns 
    */
-  getFinalPrecision(finalSHootRange:number):number{
+  getFinalPrecision(finalSHootRange: number): number {
     const { shakeAngle, shootAngle } = this.getEnhancedAngles();
     return this.calculatePrecision(shakeAngle, shootAngle, finalSHootRange);
   }
 
   /**
-   * 获取加成后的精准度（使用固定射程600）
+   * 获取加成后的精准度（使用固定射程600）用于展示
    * @returns 
    */
   getEnhancedPrecision(): number {
@@ -385,8 +563,8 @@ export class ArmsItem extends BagItemBase {
 
     //生肖武器
     //"辰龙", "未羊", "寅虎"
-    if (['yearDragon', 'yearSheep', '"yearTiger'].includes(this.name)) {
-      var year_arr = [0,1.00, 1.25]
+    if (Year_arm_arr.includes(this.name)) {
+      var year_arr = [0, 1.00, 1.25]
       return year_arr[this.evoLv - this.evoMustFirstLv]
     }
 
@@ -489,20 +667,19 @@ export class ArmsItem extends BagItemBase {
     //遍历稀零写一块去，还有，某些只生效一次，要加flag标志
     //todo
     var rareHurtMul = 0
-    if(this.partsSave.partsItems.rareParts){
+    if (this?.partsSave?.partsItems?.rareParts) {
       // 遍历稀有零件，检查purgoldCpu_1且颜色为black时的伤害加成
-      this.partsSave.partsItems.rareParts.forEach(rarePart => {
+      this?.partsSave?.partsItems?.rareParts.forEach(rarePart => {
         //紫金之芯
         //将 name 转为 name_lv 这样的格式，这样才能从数据字典对应
         var partName = rarePart.getPartDictName()
-        
-        if(rarePart.name === 'purgoldCpu'){
-          if( this.color === ColorType.BLACK){
+
+        if (rarePart.name === 'purgoldCpu') {
+          if (this.color === ColorType.BLACK) {
             hurt *= 10 + 1;
-          }else if(this.color = ColorType.RED){
+          } else if (this.color = ColorType.RED) {
             hurt *= 6 + 1;
           }
-          
         }
         //获取武器属性加成
         var rarePartInfo = getRarePartInfo(partName)
@@ -539,7 +716,7 @@ export class ArmsItem extends BagItemBase {
     //   hurt2 *= extraMul;
     // }
     var extraMul = getExtraMul(this.name)
-    if(rareHurtMul !=0 || extraMul !=1){
+    if (rareHurtMul != 0 || extraMul != 1) {
       hurt *= 1 + rareHurtMul
       hurt *= extraMul
     }
@@ -600,7 +777,7 @@ export class ArmsItem extends BagItemBase {
    * @param finalAttackGap 最终攻击间隔
    * @returns 最终重装间隔
    */
-  getFinalReloadGap(roleBonus: RoleBonus,finalAttackGap:number) {
+  getFinalReloadGap(roleBonus: RoleBonus, finalAttackGap: number) {
     var armsLv = this.itemsLevel
     //特定武器类型加成
     var eaReload = roleBonus[`reload_${this.armsType}`] ?? 0
@@ -611,7 +788,7 @@ export class ArmsItem extends BagItemBase {
     var reloadMul = getReloadGapMul(this.armsType)
 
     var finalReloadGap = this.reloadGap /
-      (1+(safeZero(roleBonus.reload) + eaReload) * reloadMul)
+      (1 + (safeZero(roleBonus.reload) + eaReload) * reloadMul)
       * (1 + partReload * reloadMul)
     // console.log('finalReloadGap =', this.reloadGap, '/ (1+(' + safeZero(roleBonus.reload) + ' + ' + eaReload + ') * ' + reloadMul + ') * (1 + ' + partReload + ' + ' + reloadMul + ') =', finalReloadGap)
     return Math.max(finalReloadGap, 0.7 * finalAttackGap);
@@ -654,7 +831,11 @@ export class ArmsItem extends BagItemBase {
     return armsTypeAddMap[this.armsType] ?? 0.5;
   }
 
+
+
+
 }
+
 
 
 
@@ -665,7 +846,7 @@ export class Arms {
   /** 武器数组 */
   @Expose({ name: 'arr' })
   @AutoFillArmsInfo()
-  items: ArmsItem[];
+  items: ArmSaveItem[];
   /** 抓取最大数量 */
   gripMaxNum: number;
   /** 最后ID */
@@ -686,7 +867,7 @@ export class ArmsBag {
   // @Expose({ name: 'arr' })
   @Expose({ name: 'arr' })
   @AutoFillArmsInfo()
-  items: ArmsItem[];
+  items: ArmSaveItem[];
   /** 抓取最大数量 */
   gripMaxNum: number;
   /** 最后ID */
@@ -706,7 +887,7 @@ export class ArmsHouse {
   // @Expose({ name: 'arr' })
   @Expose({ name: 'arr' })
   @AutoFillArmsInfo()
-  items: ArmsItem[];
+  items: ArmSaveItem[];
   /** 抓取最大数量 */
   gripMaxNum: number;
   /** 最后ID */
